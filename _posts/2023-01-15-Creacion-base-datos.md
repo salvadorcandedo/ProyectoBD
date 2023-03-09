@@ -25,15 +25,19 @@ tags:
 
 ## Creacion base de datos 
 Ayudándonos de la sentencia Create Database crearemos la base de datos para Administrador de Fincas.
+
 ```` sql
 Use master
 Go
 Create Database AdmFincas
 Go
 ````
+
 Ejecuto la siguiente sentencia para consultar información sobre mi base de datos usando un procedimiento almacenado.
+
 ```` sql
 
 sp_helpdb AdmFincas
 Go
+
 ````
