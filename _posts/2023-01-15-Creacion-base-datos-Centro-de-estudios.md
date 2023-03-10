@@ -2,7 +2,7 @@
 layout: single
 title: Creación de la base de datos Centro de estudios
 excerpt: "Modelo Lógico Conceptual."
-date: 2020-08-22
+date: 2023-01-16
 classes: wide
 header:
   teaser: /assets/images/htb-writeup-magic/magic_logo.png
@@ -87,26 +87,26 @@ para que la base de datos tenga coherencia y no se produzcan errores:
 
 
 
-## Creación base de datos 
-Ayudándonos de la sentencia Create Database crearemos la base de datos para Administrador de Fincas.
+
 
 
 # `Modelo Lógico Conceptual`
 
-
+# Entidades
 Creo las siguientes Entidades en Data Modeler: 
 - Proyecto
 - Alumno
 - Tutor
+- Centro
+- Área
+- Provincia
 - Titulación
 - Empresa
-- Centro
 - Municipio
-- Provincia
-- Área
 
 
 
+# Relaciones
 > Las Tablas sin PK se las asigna el datamodeler al realizar la ingeniería al modelo relacional 
 - En una provincia puede haber varios municipios, pero cada municipio se encuentra en una única provincia. 
 
@@ -130,17 +130,19 @@ Creo las siguientes Entidades en Data Modeler:
 
 ---
 Una vez realizado el modelo lógico debería verse tal que así: 
-![](/assets/images/centroestudios/Logical.png)
+
+![](assets/images/centroestudios/Logical.png)
 
 ---
 
 ## Modelo Lógico Relacional
 
 Modelo Lógico Relacional
-Al realizar la ingeniería al modelo relacional se generan 13 tablas, 4 más que en el modelo lógico
-porque había 4 relaciones N:M , por tanto estas 4 nuevas tablas serían:
+Al realizar la ingeniería al modelo relacional se generan 13 tablas
+En las relaciones N:M se crean nuevas tablas para romper con la 
 
- | Alumno   | `Estudia `   | titulación  |
+
+ | Alumno | `Estudia ` | titulación |
 
 
 * Decido incluir  Curso como parte de la PK compuesta.
@@ -161,19 +163,18 @@ porque había 4 relaciones N:M , por tanto estas 4 nuevas tablas serían:
 ## Aplicamos la normalización hasta la tercera forma normal
 --- 
 - Se encuentran ya en 1FN?
-> > No existen grupos repetitivos ni tampoco campos
+>  No existen grupos repetitivos ni tampoco campos
 multivaluados.
 - En cuanto a la 2FN?
 
- Las tablas que tienen PK compuestas y atributos no primarios son:
- > La tabla Estudia que tiene el atributo no primario Nota que depende de toda la PK(DNI_Alumno, Titulación_ID y Año), por tanto cumpliría esta norma.
->   >La tabla Trabaja tiene el atributo No primario fecha_Fin_Contrato que aunque no dependa
-de toda al PK compuesta, ya que depende más de la Fecha_inicio_contrato, pero no lo saco para otra tabla
+ La 2Fn Noss dice que los atributos no clave son todos aquellos que no forman parte de la clave primária y ningumo de ellos dependerá de una parte de la clave primaria. 
+
+ > 
 - Cumplea la 3FN?,
 
 > Si,porque no hay ningún atributo no Primario que dependa de otros atributos no primarios en lugar de su PK 
 
-![](/assets/images/centroestudios/Relational.png)
+![](assets/images/centroestudios/Relational_1.png)
 
 ---
 ### Una vez realizados el modelo Lógico Conceptual y Relacional ya solo queda generar el DLL en Data-Modeler para que podamos usarlo en nuestro smss
