@@ -136,6 +136,9 @@ Una vez realizado el modelo lógico debería verse tal que así:
 <img src="/assets/images/centroestudios/Logical.png">
 </p>
 
+
+![](/assets/images/centroestudios/Logical.png)
+
 ---
 
 ## Modelo Lógico Relacional
