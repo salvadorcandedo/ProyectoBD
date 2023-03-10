@@ -131,7 +131,7 @@ Creo las siguientes Entidades en Data Modeler:
 ---
 Una vez realizado el modelo lógico debería verse tal que así: 
 
-![](assets/images/centroestudios/Logical.png)
+![](/assets/images/centroestudios/Logical.png)
 
 ---
 
@@ -167,14 +167,14 @@ En las relaciones N:M se crean nuevas tablas para romper con la
 multivaluados.
 - En cuanto a la 2FN?
 
- La 2Fn Noss dice que los atributos no clave son todos aquellos que no forman parte de la clave primária y ningumo de ellos dependerá de una parte de la clave primaria. 
+ La 2Fn Nos dice que los atributos no clave son todos aquellos que no forman parte de la clave primária y ningumo de ellos dependerá de una parte de la clave primaria. 
 
  > 
 - Cumplea la 3FN?,
 
 > Si,porque no hay ningún atributo no Primario que dependa de otros atributos no primarios en lugar de su PK 
 
-![](assets/images/centroestudios/Relational_1.png)
+![](/assets/images/centroestudios/Relational_1.png)
 
 ---
 ### Una vez realizados el modelo Lógico Conceptual y Relacional ya solo queda generar el DLL en Data-Modeler para que podamos usarlo en nuestro smss
