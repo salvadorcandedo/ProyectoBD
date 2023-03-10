@@ -74,9 +74,9 @@ para que la base de datos tenga coherencia y no se produzcan errores:
 - Una empresa podrá acoger a varios alumnos en prácticas.
 - Una empresa podrá contratar a varios alumnos.
 - Una empresa puede dedicarse a varias actividades.
-- Aplica el proceso de Normalización a las tablas obtenidas hasta la Tercera Forma - Normal (3FN).
+
 ---
----
+
 ---
 
 
