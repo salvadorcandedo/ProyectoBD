@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: compress
 title: Creación de la base de datos Centro de estudios
 excerpt: "Modelo Lógico Conceptual."
 date: 2023-01-16
