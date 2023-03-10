@@ -220,7 +220,7 @@ GO
 CREATE TABLE Area 
     (
      Nombre VARCHAR NOT NULL , 
-     Descrippción VARCHAR NOT NULL , 
+     Descripcion VARCHAR NOT NULL , 
      Area_ID NUMERIC (28) NOT NULL IDENTITY NOT FOR REPLICATION 
     )
 GO
