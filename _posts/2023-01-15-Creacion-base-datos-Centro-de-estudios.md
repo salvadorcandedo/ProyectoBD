@@ -133,7 +133,7 @@ Una vez realizado el modelo lógico debería verse tal que así:
 
 
 <p align="center">
-<img src="/ProyectoBD/assets/images/centroestudios/Logical.png">
+<img src="/assets/images/centroestudios/Logical.png">
 </p>
 
 
@@ -182,7 +182,7 @@ multivaluados.
 
 
 <p align="center">
-<img src="/ProyectoBD/assets/images/centroestudios/Relational_1.png">
+<img src="/assets/images/centroestudios/Relational_1.png">
 </p>
 
 ---
