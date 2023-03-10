@@ -131,7 +131,10 @@ Creo las siguientes Entidades en Data Modeler:
 ---
 Una vez realizado el modelo lógico debería verse tal que así: 
 
-![](/assets/images/centroestudios/Logical.png)
+
+<p align="center">
+<img src="/assets/images/centroestudios/Logical.png">
+</p>
 
 ---
 
@@ -174,7 +177,10 @@ multivaluados.
 
 > Si,porque no hay ningún atributo no Primario que dependa de otros atributos no primarios en lugar de su PK 
 
-![](/assets/images/centroestudios/Relational_1.png)
+
+<p align="center">
+<img src="/assets/images/centroestudios/Relational_1.png">
+</p>
 
 ---
 ### Una vez realizados el modelo Lógico Conceptual y Relacional ya solo queda generar el DLL en Data-Modeler para que podamos usarlo en nuestro smss
