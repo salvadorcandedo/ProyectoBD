@@ -21,6 +21,18 @@ tags:
   - 
   - 
 ---
+- [Enunciado del ejercicio](#enunciado-del-ejercicio)
+  - [ANALISIS DEL SISTEMA DE INFORMACIÓN](#analisis-del-sistema-de-información)
+    - [(ANÁLISIS PREVIO O DE OPORTUNIDAD)](#análisis-previo-o-de-oportunidad)
+    - [Especificaciones y requerimientos:](#especificaciones-y-requerimientos)
+  - [Restricciones (Supuestos Semánticos):](#restricciones-supuestos-semánticos)
+- [`Modelo Lógico Conceptual`](#modelo-lógico-conceptual)
+- [Entidades](#entidades)
+- [Relaciones](#relaciones)
+  - [Modelo Lógico Relacional](#modelo-lógico-relacional)
+  - [Aplicamos la normalización hasta la tercera forma normal](#aplicamos-la-normalización-hasta-la-tercera-forma-normal)
+    - [Una vez realizados el modelo Lógico Conceptual y Relacional ya solo queda generar el DLL en Data-Modeler para que podamos usarlo en nuestro smss](#una-vez-realizados-el-modelo-lógico-conceptual-y-relacional-ya-solo-queda-generar-el-dll-en-data-modeler-para-que-podamos-usarlo-en-nuestro-smss)
+- [CREACIÓN BASE DE DATOS EN SQL SERVER](#creación-base-de-datos-en-sql-server)
 
 # Enunciado del ejercicio
 
@@ -200,7 +212,7 @@ multivaluados.
 -- Generado por Oracle SQL Developer Data Modeler 22.2.0.165.1149
 --   en:        2023-01-15 04:18:44 CET
 --   sitio:      SQL Server 2012
---   tipo:      SQL Server 2012
+--   tipo:      SQL Server 
 
 
 
@@ -281,9 +293,9 @@ CREATE TABLE Estudia
     (
      Alumno_DNI VARCHAR NOT NULL , 
      titulacion_ID VARCHAR NOT NULL , 
-     Curso UNKNOWN 
---  ERROR: Datatype UNKNOWN is not allowed 
-                    NOT NULL 
+     Curso VARCHAR NOT NULL ,
+ 
+                    
     )
 GO
 
@@ -658,7 +670,7 @@ GO
 
 ```` sql
 
-DROP DATABASE IF EXIST Centro_Estudios
+DROP DATABASE IF EXISTS Centro_Estudios
 GO
 CREATE DATABASE Centro_Estudios
 GO

@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Creación de la base de datos Centro de estudios
+title: Creación de la base de datos Libreria
 excerpt: "Modelo Lógico Conceptual."
 date: 2023-01-16
 classes: wide
@@ -22,18 +22,38 @@ tags:
   - 
 ---
 
+- Modelo Lógico Conceptual
+- Generando DLL en Data Modele
+- Creando la base de datos en SQL Server.
+- Diagrama del modelo en SQL Serve
 # Enunciado del ejercicio
 
-Un Centro de enseñanza de secundaria desea registrar los datos de los alumnos que han cursado ciclos de FP manteniendo actualizados los datos con los trabajos o formaciones recibidas
-porque a menudo en el Centro, se reciben llamadas de empresas solicitando alumnos que hayan
-finalizado con un perfil determinado para ocupar una vacante.
-Con esta base de datos queremos registrar y así poder obtener a posteriori, la información de las
-actividades realizadas por los alumnos en las FCT, y en trabajos anteriores, así como los estudios
-que hayan cursado y finalizado consiguiendo de esta manera una selección de alumnos más rápida y
-eficaz al perfil solicitado por la empresa.
-Además se registrarán los proyectos que entregan los alumnos en el módulo final de Proyectos.
-También guardaremos información de las empresas relacionadas con los ciclos con indicación de
-las actividades o áreas que desarrollan.
+## Librería OnLine
+Un cliente nos contrata para diseñar el MODELO DE DATOS de un sitio web de una
+LIBRERIA ONLINE.
+
+En el caso de los libros de papel interesa guardar donde ha sido impreso y la fecha de
+impresión. En el caso de un ebook guardaremos el tamaño del archivo. Hay que tener en cuenta que
+un mismo libro tiene precios diferentes en papel y en formato ebook.
+De los autores nos interesa almacenar el DNI,nombre, apellidos, dirección.
+Además debemos almacenar los datos de su residencia ( localidad, provincia, CCAA con
+información adicional) y url de su página web. Tambien los Royalties que puede obtener (rangos
+bajo - medio)
+Para las editoriales guardaremos un identificador, nombre, dirección, localidad, provincia,
+número de teléfono y la url de su página web y tambien información adicional (logo, año
+fundación ,...)
+La tienda online dispondrá de varios almacenes, de cada uno guardaremos un identificador,
+una dirección, localidad,provincia y un teléfono de contacto.
+Un almacén puede almacenar diferentes libros. Un mismo libro puede estar almacenado en
+diferentes almacenes. Nos interesa saber el número de copias de cada libro que hay en cada
+almacén.
+La base de datos debe almacenar los datos de los clientes. De cada cliente guardamos su
+nombre, apellidos, dirección, localidad, provincia, email y sus teléfonos de contacto.
+Un cliente puede tener varias cestas de la compra en el sitio web. Cada cesta de la compra
+está identificada por un identificador único, contiene la fecha de la compra y puede contener varios
+libros.
+Los clientes pueden ser de 2 tipos : NORMAL o PREMIUM. Los PREMIUM pueden tener
+varias modalidades de pago (TARJETA o PAYPAL)
 
 ---
 ## ANALISIS DEL SISTEMA DE INFORMACIÓN 
@@ -41,21 +61,44 @@ las actividades o áreas que desarrollan.
 ### (ANÁLISIS PREVIO O DE OPORTUNIDAD)
 ### Especificaciones y requerimientos:
 
-- De los `alumnos` interesa conocer sus datos personales, académicos y experiencia laboral:
-- `Datos personales`: DNI nombre, apellidos, fecha nacimiento, dirección, Municipio, Provincia,Código postal, email y teléfono de contacto.
-- `Datos académicos`:
-Información de la FCT: Empresa en la que la ha realizado, Convocatoria (JUN o DIC) y año, Areasen las que las ha desarrollado (Programación, Redes, Sistemas Operativos,..)
-- `Información del Proyecto del Ciclo actual`: Título del proyecto, Breve descripción, Profesor tutor
-(dni,nombre y apellidos, teléfono, email), Fecha presentación, Nota obtenida
-Para cada titulación obtenida por el alumno: Título, Nombre del Centro, Municipio del Centro,
-Provincia del Centro, Año, Nota obtenida por el alumno en ese título.
-Experiencia laboral con indicación para cada una de las empresas en las que ha trabajado de:
-- `Nombre de la Empresa`. Fecha inicio de trabajo del alumno en esa empresa, Fecha fin de trabajo del alumno en esa empresa (si sigue trabajando no tendrá información), Areas o actividades en las que
-ha trabajado en ese periodo en esa empresa
-- `De las empresas interesa conocer`: CIF, Nombre, NumConvenio (Número de convenio con el
-Centro en el caso de que exista, para hacer la FCT), Dirección, Municipio, Código Postal, Email,
-Teléfono, Sitio Web, Areas o actividades en las que trabaja (Programación, Redes, Sistemas
-Operativos,..
+
+- Cada `libro` tiene un ISBN (que actua como `PK`), título, año de publicación y descripción.
+También es interesante almacenar los datos del autor/es y de la editorial que ha publicado el libro.
+
+- Los libros que se podrán comprar en la web pueden ser libros de `papel` o libros electrónicos
+(`ebooks`).
+
+- En el caso de los libros de papel interesa guardar donde ha sido impreso y la fecha de
+impresión. En el caso de un ebook guardaremos el tamaño del archivo. Hay que tener en cuenta que
+un mismo libro tiene precios diferentes en papel y en formato ebook.
+
+- De los `autores `nos interesa almacenar el DNI,nombre, apellidos, dirección.
+Además debemos almacenar los datos de su residencia ( localidad, provincia, CCAA con
+información adicional) y url de su página web. Tambien los Royalties que puede obtener (rangos
+bajo - medio)
+
+- La tienda online dispondrá de varios `almacenes`, de cada uno guardaremos un identificador,
+una dirección, localidad,provincia y un teléfono de contacto.
+Un almacén puede almacenar diferentes libros. Un mismo libro puede estar almacenado en
+diferentes almacenes. Nos interesa saber el número de copias de cada libro que hay en cada
+almacén.
+
+
+- La base de datos debe almacenar los datos de los `clientes`. De cada cliente guardamos su
+nombre, apellidos, dirección, localidad, provincia, email y sus teléfonos de contacto.
+Un cliente puede tener varias `cestas de la compra` en el sitio web. Cada cesta de la compra
+está identificada por un identificador único, contiene la fecha de la compra y puede contener varios
+libros.
+
+- Los clientes pueden ser de 2 tipos : `NORMAL o PREMIUM`. Los PREMIUM pueden tener
+varias modalidades de pago (`TARJETA o PAYPAL`)
+
+
+ - Para las `editoriales` guardaremos un identificador, nombre, dirección, localidad, provincia,
+número de teléfono y la url de su página web y tambien información adicional (logo, año
+fundación ,...)
+
+
 
 ---
 
@@ -94,15 +137,12 @@ para que la base de datos tenga coherencia y no se produzcan errores:
 
 # Entidades
 Creo las siguientes Entidades en Data Modeler: 
-- Proyecto
-- Alumno
-- Tutor
-- Centro
-- Área
-- Provincia
-- Titulación
-- Empresa
-- Municipio
+- Libro (En papel y en ebook [entidades hijas ])
+- Editorial
+- Almacén
+- Autor
+- Pago (paypal o tarjeta[entidades hijas ])
+- Cesta
 
 
 
