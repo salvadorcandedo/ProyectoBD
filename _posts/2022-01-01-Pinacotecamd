@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Creación de la base de datos Centro de estudios
+title: Creación de la base de datos Pinacoteca
 excerpt: "Modelo Lógico Conceptual."
 date: 2023-01-16
 classes: wide
@@ -33,7 +33,9 @@ tags:
 
 
 ---
+
 # Modelo Lógico Conceptual
+
 Creo las siguientes Entidades :
 - Obra, con tres entidades hijas :
   - Obra propia (que la posee el museo)
