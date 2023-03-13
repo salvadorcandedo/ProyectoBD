@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A237E747-1FA0-B116-F5EC-3F1EB62DE368" name="EQUIPAMIENTO">
+<createdBy>ivana</createdBy>
+<createdTime>2022-12-15 16:52:48 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<engineerTo>
+<item key="FD66F03D-79F3-954A-A47C-3D26EBAA9D5E" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Nombre" id="D9828B65-09AE-0A3C-DC3B-8B76D4164AC7">
+<createdBy>ivana</createdBy>
+<createdTime>2022-12-15 16:53:41 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<engineerTo>
+<item key="FD66F03D-79F3-954A-A47C-3D26EBAA9D5E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Codigo_equipamiento" id="DCF89F72-1FB4-3048-5497-D759D89286CF">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 17:31:13 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<engineerTo>
+<item key="FD66F03D-79F3-954A-A47C-3D26EBAA9D5E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="C603B608-D309-C5C9-D3C1-2EA1A1B9C4A3" name="EQUIPAMIENTO PK">
+<createdBy>ivana</createdBy>
+<createdTime>2022-12-15 16:53:56 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<engineerTo>
+<item key="FD66F03D-79F3-954A-A47C-3D26EBAA9D5E" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>DCF89F72-1FB4-3048-5497-D759D89286CF</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

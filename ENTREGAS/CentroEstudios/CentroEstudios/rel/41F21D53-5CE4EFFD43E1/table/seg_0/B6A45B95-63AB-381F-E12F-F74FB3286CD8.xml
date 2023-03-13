@@ -1,0 +1,52 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B6A45B95-63AB-381F-E12F-F74FB3286CD8" name="titulacion">
+<sourceDDLFile>Centroestudios.ddl</sourceDDLFile>
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<importedID>544AC3CB-6559-B5B5-FEB4-0E943CAB3464</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="E401C7A1-61F9-7A7B-772B-4631FF38A168">
+<sourceDDLFile>Centroestudios.ddl</sourceDDLFile>
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<importedID>4020D11A-14C4-4D0C-A4E4-95B75A21F883</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28BB6D78-438B-F7A6-6F7C-2EC4AAFA12CC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Titulo" id="23FAF089-3BDE-4D2A-0057-B3CECC756519">
+<sourceDDLFile>Centroestudios.ddl</sourceDDLFile>
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<importedID>F65E0DE8-74FD-7AA1-5DE5-605BF9BA8841</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28BB6D78-438B-F7A6-6F7C-2EC4AAFA12CC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3D86C2E6-D4EC-E78F-9A9B-E0FAF162C016" name="titulacion_PK">
+<sourceDDLFile>Centroestudios.ddl</sourceDDLFile>
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<importedID>54BC8AB8-29E2-96AE-7F8C-C7974715FB1A</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E401C7A1-61F9-7A7B-772B-4631FF38A168"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

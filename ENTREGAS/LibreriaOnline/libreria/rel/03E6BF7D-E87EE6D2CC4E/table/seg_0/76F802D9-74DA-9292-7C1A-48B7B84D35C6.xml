@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="76F802D9-74DA-9292-7C1A-48B7B84D35C6" name="INFO_ADICIONAL">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>5259F273-4620-0FCC-7E74-F3D31D7F5C08</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="EDITORIAL_cod_editorial" id="035CEEC7-33B0-983D-6B29-74F9B1E22415">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>5CE41CD8-495C-D930-B55F-547E61EB6076</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D73E1239-3DF4-CF6F-C96E-7F60C4147D4B" referredColumn="57A57446-6098-7382-7B2E-B1992639979F"/>
+</associations>
+</Column>
+<Column name="logo" id="6EDEC0D5-28BA-0142-7915-C67E68925D4A">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>71EFE909-C761-6255-21BF-D4F65E058658</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT010</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="año_fundacion" id="7EE5383A-E7F5-D2D1-017E-1898D1CF8AFC">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>5D76BCEA-5127-FEDC-6292-0833FB32A5D0</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="23731DBE-3BAF-8CAA-D62A-E8E858874BE2" name="INFO_ADICIONAL__IDX">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>4C87E36D-E140-11A2-71C1-21EE78FF8FDA</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="035CEEC7-33B0-983D-6B29-74F9B1E22415"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5FD911D7-BC21-DFEB-8A46-06032B928550" name="INFO_ADICIONAL_EDITORIAL_FK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>4C87E36D-E140-11A2-71C1-21EE78FF8FDA</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="035CEEC7-33B0-983D-6B29-74F9B1E22415"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

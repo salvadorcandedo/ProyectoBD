@@ -1,0 +1,70 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D68762E3-66FE-1FAA-A00B-06639854AD1D" name="Restaurador">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>BD499625-BDEC-14E9-3CB7-58FC883A07EE</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Codigo" id="19B09515-A47E-42C4-644D-F0FCE06A9017">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>CD88C894-9158-5795-806C-CD2E98D917D4</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre" id="E8BE9881-448C-0636-6717-691448165183">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>CCA8D0FC-40FE-7E3C-52D9-4357C832AE42</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Apellido1" id="598FD5E7-CBE9-A59E-15C0-46952BFDDF16">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>812D5818-0130-98F7-D8B2-E1B62F771D99</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Apellido2" id="8BE01AE4-E630-F6A3-76A8-4EBB6BF50D39">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>1D44F4F4-E96B-BBF3-056B-0A6AEB639E03</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E2D2202F-760D-0FF2-32E5-6BF607778F91" name="Restaurador_PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>357F93C1-BA9F-767C-26B3-EEAA13E77C4E</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="19B09515-A47E-42C4-644D-F0FCE06A9017"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

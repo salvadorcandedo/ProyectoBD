@@ -1,0 +1,55 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5DA30DAC-7E6D-D023-D4ED-B7123224E79A" name="Ubicacion">
+<createdBy>ivana</createdBy>
+<createdTime>2022-12-20 15:23:35 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<engineerTo>
+<item key="FD66F03D-79F3-954A-A47C-3D26EBAA9D5E" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Calle" id="F3C75C65-0EA5-0188-1757-4E794F521A44">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 17:39:29 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<engineerTo>
+<item key="FD66F03D-79F3-954A-A47C-3D26EBAA9D5E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="latitud" id="18C2A14D-C8CF-5D9C-2F48-A0FD6C55055E">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 17:40:40 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<engineerTo>
+<item key="FD66F03D-79F3-954A-A47C-3D26EBAA9D5E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="longitud" id="08C4C873-39D4-95B6-9E0D-CD5B90656179">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 17:40:40 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<engineerTo>
+<item key="FD66F03D-79F3-954A-A47C-3D26EBAA9D5E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

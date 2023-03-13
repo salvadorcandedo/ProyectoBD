@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxySqlServerv2k5 class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.TableProxySqlServerv2k5" name="Profesor" directorySegmentName="seg_0" id="0A3DBFFB-C2B1-7E75-72DC-38CB42B183CD">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<database>DB_NULLELEMENT</database>
+<schema>5357D8DF-EE9F-7C35-E28E-B50AB9F9027C</schema>
+<columnProxies>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="nombre" id="0677EB11-5F3C-9A2F-B1D1-1345E718B176">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="Apellido1" id="1E77999A-DF79-6918-0896-A5D31350B8A6">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="centro_Nombre" id="22AC7DAC-9B29-DCC9-03B1-64FDB628F80E">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:56:39 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="Apellido2" id="5EEC26B6-992B-46AC-090A-B0697D3420A0">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="Email" id="8BA6447E-8515-3EE5-3E2A-785475DFC0CF">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="centro_centro_ID" id="92E0D36F-EE86-6BBA-717E-4654D05AA885">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="centro_Telefono" id="AA6C529C-8F5C-D06F-D406-9980D62F72A2">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:56:39 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="telef" id="B8B4E156-C7B6-0E2B-F52E-BE52F81DC7F4">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="centro_CIP" id="D92B604B-E550-8A55-EB95-12E84388C42B">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:56:39 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="centro_Direccion" id="EB8CB0CD-77E0-6342-6032-15333F48E5D9">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:56:39 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="DNI_1" id="F7DE93C7-56BB-5DC7-41AB-BED6988AD1FA">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.PKProxySqlServerv2k5" name="Profesor_PK" id="A6B70333-1403-005E-B377-E65FBC426144">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<clustered>true</clustered>
+</PrimaryKey>
+</primaryKeys>
+</TableProxySqlServerv2k5>

@@ -1,0 +1,40 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxySqlServerv2k5 class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.TableProxySqlServerv2k5" name="Trabaja" directorySegmentName="seg_0" id="E239411D-2BBD-DE77-7967-15CBB0CB4AEF">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<database>DB_NULLELEMENT</database>
+<schema>F4D446E0-E830-258B-F57D-05A507B9E926</schema>
+<columnProxies>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="Empresa_cif" id="16059954-E650-BFB6-701C-2A8AE97591F7">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="Alumno_DNI" id="CDE0106D-2EC8-FED9-BE7B-ACBFBC43E770">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.FKProxySqlServerv2k5" name="Relation_9_Empresa_FK" id="0B215871-8846-CDA4-0744-D162BA72D52C">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>Centroestudios</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.FKProxySqlServerv2k5" name="Relation_9_Alumno_FK" id="36C3CB1F-1243-6509-C0D4-506117D22659">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>Centroestudios</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.PKProxySqlServerv2k5" name="Relation_9_PK" id="887D173D-DD7D-3728-0B61-BF96F024CD73">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<clustered>true</clustered>
+</PrimaryKey>
+</primaryKeys>
+</TableProxySqlServerv2k5>

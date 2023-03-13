@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="25EA2D6F-9204-8F95-FAFD-6179A8A00114" name="Estudia">
+<sourceDDLFile>Centroestudios.ddl</sourceDDLFile>
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<importedID>65651894-BE94-70D2-E420-08132DD194F6</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Alumno_DNI" id="86DF21A9-75DA-1E97-C811-50BF0C48462F">
+<sourceDDLFile>Centroestudios.ddl</sourceDDLFile>
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<importedID>A2332CCA-AF1F-4D81-589D-42E2DC34CB2C</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28BB6D78-438B-F7A6-6F7C-2EC4AAFA12CC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8E316438-1C02-5C84-4F96-E9330203B54D" referredColumn="FFB5D97F-76B9-17C9-DE8B-75D988F8C1A8"/>
+</associations>
+</Column>
+<Column name="titulacion_ID" id="059B665A-D4BC-AA02-A094-AD0B47EC1AD1">
+<sourceDDLFile>Centroestudios.ddl</sourceDDLFile>
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<importedID>35B001CE-F44C-2841-9DA7-E7AC1ACF481D</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28BB6D78-438B-F7A6-6F7C-2EC4AAFA12CC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DD540B2A-C878-515B-B43D-283823BDA2A4" referredColumn="E401C7A1-61F9-7A7B-772B-4631FF38A168"/>
+</associations>
+</Column>
+<Column name="Curso" id="B0304937-DB9E-F41A-CAB9-5922EB6D6E06">
+<sourceDDLFile>Centroestudios.ddl</sourceDDLFile>
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<importedID>B916BD93-B33C-F505-EAAC-A59F7C699122</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="85F9EB19-3FF5-C299-BC7A-2C4DADD9961E" name="Relation_17_PK">
+<sourceDDLFile>Centroestudios.ddl</sourceDDLFile>
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<importedID>924AE442-A4DC-22B9-70EE-8BF2658179BD</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="86DF21A9-75DA-1E97-C811-50BF0C48462F"/>
+<colUsage columnID="059B665A-D4BC-AA02-A094-AD0B47EC1AD1"/>
+<colUsage columnID="B0304937-DB9E-F41A-CAB9-5922EB6D6E06"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="319D807B-F2F3-7C38-29A6-64CA3776217D" name="Relation_17_Alumno_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="86DF21A9-75DA-1E97-C811-50BF0C48462F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="116367F2-C50A-425A-BC0A-0F8B30D011D8" name="Relation_17_titulacion_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="059B665A-D4BC-AA02-A094-AD0B47EC1AD1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

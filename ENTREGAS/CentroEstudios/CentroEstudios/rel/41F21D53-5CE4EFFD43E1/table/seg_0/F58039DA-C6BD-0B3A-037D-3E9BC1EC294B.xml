@@ -1,0 +1,154 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F58039DA-C6BD-0B3A-037D-3E9BC1EC294B" name="Proyecto">
+<sourceDDLFile>Centroestudios.ddl</sourceDDLFile>
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<importedID>8821EDB4-B526-4A0B-2259-F1C50A7A4899</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Titulo" id="845D1095-B4DB-9DC8-D7FE-3CD647330D3E">
+<sourceDDLFile>Centroestudios.ddl</sourceDDLFile>
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<importedID>8E9D84EE-5145-D309-764C-338AFF6815A4</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28BB6D78-438B-F7A6-6F7C-2EC4AAFA12CC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FechaEntregada" id="3F2BCB7B-8F6A-8098-2117-FF6127C56C83">
+<sourceDDLFile>Centroestudios.ddl</sourceDDLFile>
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<importedID>61F9D159-D130-8899-F276-C0357036D1CA</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>A2B6D450-7E3E-A98C-F62B-280854684DAA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nota" id="D0D7E706-8F66-FFD6-55F0-CEE7CFAE4BD7">
+<sourceDDLFile>Centroestudios.ddl</sourceDDLFile>
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<importedID>1EEE3BA2-F491-6540-5C19-64F1BB7BAE42</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28BB6D78-438B-F7A6-6F7C-2EC4AAFA12CC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cp" id="C8CC6C8C-255A-DFC1-796C-10A931E2A9B7">
+<sourceDDLFile>Centroestudios.ddl</sourceDDLFile>
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<importedID>47187DA2-186E-7E1C-D070-AB1AB8B874C7</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28BB6D78-438B-F7A6-6F7C-2EC4AAFA12CC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="DF899085-C0DE-5688-4383-7A1404AAB36D">
+<sourceDDLFile>Centroestudios.ddl</sourceDDLFile>
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<importedID>198A20A9-6837-3717-CAFD-B857D528F29A</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28BB6D78-438B-F7A6-6F7C-2EC4AAFA12CC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="telefono" id="61FBBA66-401F-63CC-92BD-7B5F7E2D7024">
+<sourceDDLFile>Centroestudios.ddl</sourceDDLFile>
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<importedID>8F0944EB-A986-860F-3B3C-89AB803FDF87</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28BB6D78-438B-F7A6-6F7C-2EC4AAFA12CC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="sitioweb" id="A1753668-7B12-5BE3-5D66-F6DB3F0CBFF1">
+<sourceDDLFile>Centroestudios.ddl</sourceDDLFile>
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<importedID>9B4B4925-E967-4B1B-36ED-A1DD711CD907</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28BB6D78-438B-F7A6-6F7C-2EC4AAFA12CC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Profesor_DNI_1" id="1D3057D4-0210-2C51-A66C-19D24F62A2E8">
+<sourceDDLFile>Centroestudios.ddl</sourceDDLFile>
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<importedID>DAFA5040-8EA2-7E7E-84DB-DF0B14FB767A</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28BB6D78-438B-F7A6-6F7C-2EC4AAFA12CC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="37929ABA-D9A5-93D2-A5C5-4D3C61F4AB27" referredColumn="F7DE93C7-56BB-5DC7-41AB-BED6988AD1FA"/>
+</associations>
+</Column>
+<Column name="Proyecto_ID" id="1798AD5E-813A-3834-EB74-43DC9B9B2E20">
+<sourceDDLFile>Centroestudios.ddl</sourceDDLFile>
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<importedID>F4F513FC-C39C-3065-8554-8025C50FDE9D</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>69BCDBAA-391B-D0E7-6254-0AD53CFB2FBE</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8459AA7E-DA03-0191-1417-C40A74C7F16A" name="Proyecto_PK">
+<sourceDDLFile>Centroestudios.ddl</sourceDDLFile>
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<importedID>69D8C1DB-9FE5-C4AE-4EC9-2771CA36D47E</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1798AD5E-813A-3834-EB74-43DC9B9B2E20"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9D487EB9-FD6A-9C7F-F83A-5C6016BBAF62" name="Proyecto_Profesor_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1D3057D4-0210-2C51-A66C-19D24F62A2E8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,83 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BAD2AFA4-3F2D-E59C-E2DA-D388ABDB85BD" name="Empresa">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 21:15:19 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="D942542B-FE6D-16A8-D20B-6F93E127130B" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>54D5128B-B679-7466-655A-9EE26EE683E1</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="CIF" id="595D8B61-6118-E67B-58A9-414F245436FF">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 23:37:59 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="D942542B-FE6D-16A8-D20B-6F93E127130B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>8,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NombreEmpresa" id="43835C50-28F3-5046-B68A-F0C6C4F6B7E0">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 21:18:17 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="D942542B-FE6D-16A8-D20B-6F93E127130B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Número" id="F4D0B912-1AD3-04CB-9D50-919B6B029D0B">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 21:41:20 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="D942542B-FE6D-16A8-D20B-6F93E127130B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Sucursal" id="0EA3ADC3-873E-8AB0-5BF8-7647DE04F285">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 21:41:27 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="D942542B-FE6D-16A8-D20B-6F93E127130B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="2900B698-CD9A-CA42-8B66-AD3E7454D287" name="Empresa PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 23:41:47 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="D942542B-FE6D-16A8-D20B-6F93E127130B" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>595D8B61-6118-E67B-58A9-414F245436FF</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

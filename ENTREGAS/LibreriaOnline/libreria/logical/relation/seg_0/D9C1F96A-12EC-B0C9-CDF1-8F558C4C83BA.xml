@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="CASTA_PAGO" directorySegmentName="seg_0" id="D9C1F96A-12EC-B0C9-CDF1-8F558C4C83BA">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 16:33:48 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<engineerTo>
+<item key="03E6BF7D-7672-C6FC-1AD4-E87EE6D2CC4E" value="true"/>
+</engineerTo>
+<sourceTransferable>false</sourceTransferable>
+<sourcePk>6E666EFF-B888-9BE2-36C6-20FF2AE18B21</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>8B351B4E-67D3-BB20-1AA2-5E30BE1B7A3F</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>0EB62F40-A60F-B9BA-86E0-1D416663B4AE</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

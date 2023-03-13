@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="DA84A2B4-9CA0-7AFB-CFA2-3FA3E638442D" containerWithKeyObject="62D6042E-C1E4-4303-F3A8-560F515556BC" localFKIndex="8582B335-17A4-BB70-92DC-B01756415993" name="Gasolina_COMBUSTIBLE_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:39 UTC</createdTime>
+<generatorID>FF879941-ED10-0370-5074-92D2D127EDF0</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<referredTableLongName>COMBUSTIBLE</referredTableLongName>
+<arc>1A8E7D2A-335E-353D-D677-9B57D601F4A5</arc>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>0D31EC22-3EB2-2D48-797F-1E072738949A</referredTableID>
+<keyObject>D614050D-A28F-539A-DCAA-11B5DA2D7B8A</keyObject>
+<referredKeyID>D614050D-A28F-539A-DCAA-11B5DA2D7B8A</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>COMBUSTIBLE_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

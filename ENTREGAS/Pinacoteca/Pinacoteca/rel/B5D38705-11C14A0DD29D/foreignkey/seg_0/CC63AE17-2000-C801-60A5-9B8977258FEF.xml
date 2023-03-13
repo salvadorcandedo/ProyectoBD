@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="CC63AE17-2000-C801-60A5-9B8977258FEF" containerWithKeyObject="0328210F-7F86-D1EF-56F9-FAB528D63E4E" localFKIndex="5792DBF4-77D9-A5DD-AC2B-98AC4C2E076E" name="Pinto-Estilo_Estilo_pictorico_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>39329300-7A77-30C0-219A-F0657229BFB5</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<referredTableLongName>Estilo_pictorico</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>7F783EFD-315C-B5A0-145A-91D541846C04</referredTableID>
+<keyObject>40254C25-5186-288E-0A36-9BA0FFAE6E14</keyObject>
+<referredKeyID>40254C25-5186-288E-0A36-9BA0FFAE6E14</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Estilo_pictorico_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

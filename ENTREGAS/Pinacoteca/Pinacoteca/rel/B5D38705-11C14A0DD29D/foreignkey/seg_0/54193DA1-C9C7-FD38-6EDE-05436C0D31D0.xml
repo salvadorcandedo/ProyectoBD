@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="54193DA1-C9C7-FD38-6EDE-05436C0D31D0" containerWithKeyObject="C095DEB6-3F2E-BBF1-4646-683326C7F3B4" localFKIndex="CCCC495A-5BFA-3EF4-3B66-0169B4085F91" name="Periodo_restauracion_Restaurador_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>F655E070-879A-3A82-A1C2-4B839E7BC7EE</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<referredTableLongName>Restaurador</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D68762E3-66FE-1FAA-A00B-06639854AD1D</referredTableID>
+<keyObject>E2D2202F-760D-0FF2-32E5-6BF607778F91</keyObject>
+<referredKeyID>E2D2202F-760D-0FF2-32E5-6BF607778F91</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Codigo</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

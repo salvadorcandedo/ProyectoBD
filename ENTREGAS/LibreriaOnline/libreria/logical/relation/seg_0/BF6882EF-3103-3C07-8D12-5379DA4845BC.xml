@@ -1,0 +1,34 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ALMACEN_LIBRO" directorySegmentName="seg_0" id="BF6882EF-3103-3C07-8D12-5379DA4845BC">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2021-12-24 11:40:57 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<engineerTo>
+<item key="03E6BF7D-7672-C6FC-1AD4-E87EE6D2CC4E" value="true"/>
+</engineerTo>
+<sourceTransferable>false</sourceTransferable>
+<targetTransferable>false</targetTransferable>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>7F85B247-510D-8A4A-D4DA-40FD897E89AE</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>4F3AB442-69FE-8B98-8693-D2F43E69BCBD</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<attribute name="num_copias" id="0F59B886-7B96-610A-5373-F708E1D732B9">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2021-12-24 11:41:10 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<engineerTo>
+<item key="03E6BF7D-7672-C6FC-1AD4-E87EE6D2CC4E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</attribute>
+</attributes>
+</Relation>

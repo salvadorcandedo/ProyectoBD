@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="29B83F45-9DF9-8A73-9817-60745D6E8524" name="PAYPAL">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>3D31A64F-635A-43CE-497E-E3A0D5F8210B</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_pago" id="37CBD8A0-4237-F870-DA9E-D559159753A9">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>6807BEC1-322F-5BE9-E5A8-1F169FD5BEBF</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9ED89BB9-B8EE-4F09-2FCD-215D612829EC" referredColumn="A11EEEFA-AEA9-7E4A-A21F-FC167B80D5E5"/>
+</associations>
+</Column>
+<Column name="id_paypal" id="171B3829-FB58-B16F-23A5-14CF26EFFEC0">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>BA5C357E-EF49-2F87-3C3F-A3E716C5BF33</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="correo_paypal" id="B32E7C9A-8FBB-71F8-CBB8-56544A76DEE3">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>356D3843-33A1-6AF2-D30A-948BA2469024</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2021DA86-F1D1-D434-33DA-BC013CDD7D0C" name="PAYPAL_PK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>33FE6FA9-C766-BEEC-73EA-39379909A405</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="37CBD8A0-4237-F870-DA9E-D559159753A9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F693B65F-A384-5512-74BA-A67BB891AAD6" name="PAYPAL_PKv1">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>788B8972-31F8-2972-4B96-1A154502015D</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="171B3829-FB58-B16F-23A5-14CF26EFFEC0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2941230C-0604-6978-9E1C-54054107D0B3" name="PAYPAL_PAGO_FK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>1A15C91C-FD90-FB93-FF8D-DD9C50420E05</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="37CBD8A0-4237-F870-DA9E-D559159753A9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

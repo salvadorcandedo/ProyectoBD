@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E96B5C49-4E04-5980-A456-654D35690153" name="VEHICULO">
+<createdBy>ivana</createdBy>
+<createdTime>2022-12-15 16:29:52 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<engineerTo>
+<item key="FD66F03D-79F3-954A-A47C-3D26EBAA9D5E" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Matrícula" id="45C22139-F6FE-C23B-9A6D-DD436FBEF5DA">
+<createdBy>ivana</createdBy>
+<createdTime>2022-12-15 16:29:59 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<engineerTo>
+<item key="FD66F03D-79F3-954A-A47C-3D26EBAA9D5E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Marca" id="FB80418B-D85E-3CF4-3855-EF2FA77CA0DB">
+<createdBy>ivana</createdBy>
+<createdTime>2022-12-15 16:34:22 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<engineerTo>
+<item key="FD66F03D-79F3-954A-A47C-3D26EBAA9D5E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Modelo" id="488EEE4B-A414-C55A-5401-63BB2D4A0BCA">
+<createdBy>ivana</createdBy>
+<createdTime>2022-12-15 16:34:27 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<engineerTo>
+<item key="FD66F03D-79F3-954A-A47C-3D26EBAA9D5E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="723480F8-5789-2539-BF48-4B0376211570" name="VEHICULO PK">
+<createdBy>ivana</createdBy>
+<createdTime>2022-12-15 16:30:12 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<engineerTo>
+<item key="FD66F03D-79F3-954A-A47C-3D26EBAA9D5E" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>45C22139-F6FE-C23B-9A6D-DD436FBEF5DA</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

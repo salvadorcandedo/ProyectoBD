@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="3E09D936-92BC-79BF-F75C-D935FD1A9756" containerWithKeyObject="07603D10-DED7-B8E6-A473-4E55E59E03CA" localFKIndex="F80B1CDD-DC3E-DD11-FE61-4BF7C095959E" name="PAGO_CESTA_FK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>D9C1F96A-12EC-B0C9-CDF1-8F558C4C83BA</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<referredTableLongName>CESTA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>05A04C64-36B0-2165-24CE-B11A60DC5928</referredTableID>
+<keyObject>ABA88B95-11DF-6BC4-B318-EA357F6E402C</keyObject>
+<referredKeyID>ABA88B95-11DF-6BC4-B318-EA357F6E402C</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_cesta</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

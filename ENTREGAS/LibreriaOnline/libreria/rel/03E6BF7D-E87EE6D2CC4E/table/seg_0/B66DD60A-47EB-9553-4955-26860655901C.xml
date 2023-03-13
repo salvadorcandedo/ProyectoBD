@@ -1,0 +1,125 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B66DD60A-47EB-9553-4955-26860655901C" name="PAPEL">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>7F85B247-510D-8A4A-D4DA-40FD897E89AE</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="isbn" id="6BBA7BD0-32E3-3D65-3507-392E066B8CD5">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>5F14B07A-8B48-E0C6-82C3-45B0263E88CE</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4E187996-D28F-EF77-153F-CEF2242A88BF" referredColumn="E86650C7-16E8-353F-B90D-21D6D3220F86"/>
+</associations>
+</Column>
+<Column name="LIBRO_isbn" id="6AEAEEEA-46B4-E9A4-F43C-BD257A3FF94D">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>43ACF158-576B-9FB5-548A-E9C4E667A396</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="43876904-4C79-1B86-7D5F-34147173A078" referredColumn="E86650C7-16E8-353F-B90D-21D6D3220F86"/>
+</associations>
+</Column>
+<Column name="lugar_impresion" id="1368F046-E60E-23AC-93DD-7098973BB546">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>8A9C0486-3461-5995-2439-A7224A9824C1</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_impresion" id="E8922B39-8059-5200-5A52-E22FC9961DED">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>0F156D0B-AE4C-E444-E967-43EBDCCCDFAF</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="precio" id="C2DC77EB-F241-65D5-379B-AB33945FE8C8">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>8EEBE0C6-E99A-2B7C-10E8-BD31CC309BC9</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E87D4D64-9873-341F-774F-623FEEEDA430" name="PAPEL_PK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>3ABC3BBF-AD5F-F985-3FF9-94ACC9C12FC5</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6BBA7BD0-32E3-3D65-3507-392E066B8CD5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="50C5E45B-D1A0-99D5-4026-4F8C01D72E84" name="PAPEL_PKv1">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>DE017221-EB58-98B6-E807-0CEF166520EE</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6AEAEEEA-46B4-E9A4-F43C-BD257A3FF94D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2792161E-0306-F604-9724-B4AAA851C380" name="PAPEL_LIBRO_FK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>4FBAEE13-B398-9DCC-03A4-F78C5D4FE047</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6BBA7BD0-32E3-3D65-3507-392E066B8CD5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="036F49FB-75D9-2D43-2520-70EE40F398DC" name="PAPEL_LIBRO_FKv2">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>58DA9BBB-502E-4D32-95DF-2FAD446C8896</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6AEAEEEA-46B4-E9A4-F43C-BD257A3FF94D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

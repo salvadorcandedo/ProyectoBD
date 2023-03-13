@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F9F9853B-B51B-D998-3461-9ABAFD083DA8" name="CLIENTE">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2021-12-14 19:19:09 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<engineerTo>
+<item key="03E6BF7D-7672-C6FC-1AD4-E87EE6D2CC4E" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="nombre" id="0147FBF5-3E8F-A442-2F7B-546AA952CD31">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2021-12-14 19:40:10 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<engineerTo>
+<item key="03E6BF7D-7672-C6FC-1AD4-E87EE6D2CC4E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="apellidos" id="A4A82EC6-72AB-A058-72FA-1FC3E31C39AF">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2021-12-14 19:40:25 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<engineerTo>
+<item key="03E6BF7D-7672-C6FC-1AD4-E87EE6D2CC4E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="direccion" id="BB6708C7-FAA6-3241-E40E-AD8669EA4EF4">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2021-12-14 19:40:47 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<engineerTo>
+<item key="03E6BF7D-7672-C6FC-1AD4-E87EE6D2CC4E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

@@ -1,0 +1,123 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5CEAD43A-2A55-7B6E-3225-A00DBB11233B" name="centro">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:59:40 UTC</createdTime>
+<generatorID>00CDD06F-9B4B-5945-F0D6-2D2562A6D8EB</generatorID>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<engineerTo>
+<item key="41F21D53-4476-823C-41BA-5CE4EFFD43E1" value="true"/>
+<item key="1E37BA33-576F-BB6E-0DD0-EEF2554B5900" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Nombre" id="11199524-3219-E35B-7F8F-0F060DE94FD5">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:59:40 UTC</createdTime>
+<generatorID>1E39F3D1-6AB6-C899-0918-25FBE3E97983</generatorID>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<engineerTo>
+<item key="41F21D53-4476-823C-41BA-5CE4EFFD43E1" value="true"/>
+<item key="1E37BA33-576F-BB6E-0DD0-EEF2554B5900" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28BB6D78-438B-F7A6-6F7C-2EC4AAFA12CC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Direccion" id="31EF4E7E-0CCE-D571-20CA-279589574F34">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:59:40 UTC</createdTime>
+<generatorID>9C288BC9-2417-1E18-BCAA-E973BB8DFB71</generatorID>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<engineerTo>
+<item key="41F21D53-4476-823C-41BA-5CE4EFFD43E1" value="true"/>
+<item key="1E37BA33-576F-BB6E-0DD0-EEF2554B5900" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28BB6D78-438B-F7A6-6F7C-2EC4AAFA12CC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CIP" id="AF7900E4-9610-544B-8C4F-74F07A06B5AA">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:59:40 UTC</createdTime>
+<generatorID>C97A16E5-1816-575E-A5DA-8F8A911C3195</generatorID>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<engineerTo>
+<item key="41F21D53-4476-823C-41BA-5CE4EFFD43E1" value="true"/>
+<item key="1E37BA33-576F-BB6E-0DD0-EEF2554B5900" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28BB6D78-438B-F7A6-6F7C-2EC4AAFA12CC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Telefono" id="C78E930E-77EF-F76C-E072-44ED5A6F0269">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:59:40 UTC</createdTime>
+<generatorID>C8C4903B-0F7D-A856-157E-46718E616072</generatorID>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<engineerTo>
+<item key="41F21D53-4476-823C-41BA-5CE4EFFD43E1" value="true"/>
+<item key="1E37BA33-576F-BB6E-0DD0-EEF2554B5900" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28BB6D78-438B-F7A6-6F7C-2EC4AAFA12CC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="centro ID" id="1F41D4D7-91B0-4A55-C8FD-9173F7A37490">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:59:40 UTC</createdTime>
+<generatorID>1BA9425F-BAF4-34CB-22EE-4B2CD04B3E2D</generatorID>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<engineerTo>
+<item key="41F21D53-4476-823C-41BA-5CE4EFFD43E1" value="true"/>
+<item key="1E37BA33-576F-BB6E-0DD0-EEF2554B5900" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>69BCDBAA-391B-D0E7-6254-0AD53CFB2FBE</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Municipio Municipio ID" id="4C91DB1C-7A9D-8721-F3C9-329693DC6D4E">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:59:40 UTC</createdTime>
+<generatorID>11123505-7F45-D0FE-269E-8D04BCB56017</generatorID>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<engineerTo>
+<item key="41F21D53-4476-823C-41BA-5CE4EFFD43E1" value="true"/>
+<item key="1E37BA33-576F-BB6E-0DD0-EEF2554B5900" value="true"/>
+</engineerTo>
+<referedAttribute>F1C9B72D-6A49-834E-E1F8-C1D37B007D1C</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>69BCDBAA-391B-D0E7-6254-0AD53CFB2FBE</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="AEB91C80-632D-7123-B71F-3C58462EDE7D" name="centro PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:59:40 UTC</createdTime>
+<generatorID>A25D1D8C-2292-BE4B-2A68-CDFD89D3D5AB</generatorID>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<engineerTo>
+<item key="41F21D53-4476-823C-41BA-5CE4EFFD43E1" value="true"/>
+<item key="1E37BA33-576F-BB6E-0DD0-EEF2554B5900" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4C91DB1C-7A9D-8721-F3C9-329693DC6D4E</attributeRef>
+<attributeRef>1F41D4D7-91B0-4A55-C8FD-9173F7A37490</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

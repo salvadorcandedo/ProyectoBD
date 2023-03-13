@@ -1,0 +1,69 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D414E7C8-052A-CB4A-BAE1-B878C487C7A0" name="TARJETA">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2021-12-20 19:45:13 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<engineerTo>
+<item key="03E6BF7D-7672-C6FC-1AD4-E87EE6D2CC4E" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>0EB62F40-A60F-B9BA-86E0-1D416663B4AE</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="numero tarjeta" id="5B7EB166-3444-0689-C0E0-2984F08D9B64">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2021-12-20 19:46:01 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<engineerTo>
+<item key="03E6BF7D-7672-C6FC-1AD4-E87EE6D2CC4E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>16</dataTypeSize>
+<ownDataTypeParameters>16,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nombre" id="7346BEF0-7AF6-60D4-8755-D0C0494A60AF">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 20:52:27 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<engineerTo>
+<item key="03E6BF7D-7672-C6FC-1AD4-E87EE6D2CC4E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Apellidos" id="2322DAEB-6051-8144-3C12-76B02B83EF23">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 20:53:02 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<engineerTo>
+<item key="03E6BF7D-7672-C6FC-1AD4-E87EE6D2CC4E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Cvv" id="7BBA87FD-A6E5-6A52-5CF7-A133D5E0E029">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 20:53:04 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<engineerTo>
+<item key="03E6BF7D-7672-C6FC-1AD4-E87EE6D2CC4E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

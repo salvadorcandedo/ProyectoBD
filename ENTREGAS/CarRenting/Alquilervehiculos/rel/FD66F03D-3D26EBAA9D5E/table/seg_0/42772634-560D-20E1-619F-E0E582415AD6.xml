@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="42772634-560D-20E1-619F-E0E582415AD6" name="paypal">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:39 UTC</createdTime>
+<generatorID>8BC5CBCE-DC54-A130-AD04-3A9604D10C0C</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CodigoPago" id="D37DC17A-7D5B-8945-A73F-ECA28130EDA8">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:39 UTC</createdTime>
+<generatorID>981F773C-6478-6D0E-7CE8-52ADF2915E6D</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9DDEF121-3CDB-F4EB-3F12-ACCD81667C8F" referredColumn="319DBE88-58FF-E9B7-0E92-FD3D79620041"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="70ECD46E-C4F5-8BAE-E0CF-7F60FCF8A4A9" name="paypal_PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:39 UTC</createdTime>
+<generatorID>439632E4-E401-7F9A-6127-3FFAFEE3A0DD</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D37DC17A-7D5B-8945-A73F-ECA28130EDA8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F3992162-DB65-74EA-250C-DBD6612C31D1" name="paypal_PKv1">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:39 UTC</createdTime>
+<generatorID>028EBC98-94F2-8528-7455-53B1667D22E8</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D37DC17A-7D5B-8945-A73F-ECA28130EDA8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A1A92544-35A8-4199-0515-8181FFD3C8D5" name="paypal_PAGO_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:39 UTC</createdTime>
+<generatorID>7C419A3E-7CF8-806E-83A9-C20E4B20C446</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D37DC17A-7D5B-8945-A73F-ECA28130EDA8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

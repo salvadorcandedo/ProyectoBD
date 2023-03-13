@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="49809880-B1FB-6E63-9B1A-FF93179093C6" name="NORMAL">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>58ACFE02-E50A-D344-794F-E2FB5CFF04EF</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_cliente" id="72A6BA4F-4FDE-64F6-A558-C819D30FCFAE">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>01EB3F50-A257-525D-DE74-1D4CBF2101DF</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="82ED3C29-3636-BE5C-02ED-77E5BF5F286A" referredColumn="CFFB6A54-51CB-C319-31AB-F97DD14BD53A"/>
+</associations>
+</Column>
+<Column name="CLIENTE_id_cliente" id="CBA9024D-0ED6-A887-AE2B-76F16214B285">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>E4D6FD27-69AD-0974-4D94-B404A3B01F7B</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3CCE528D-3325-3C75-5A7C-3643849F3FF6" referredColumn="CFFB6A54-51CB-C319-31AB-F97DD14BD53A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9490413F-CFFF-95F8-EF1C-C1E4141E68C7" name="NORMAL_PK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>F6AB7614-1602-B5C2-A3FB-B8E231FC2B5B</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="72A6BA4F-4FDE-64F6-A558-C819D30FCFAE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="846FC3D5-4F0C-4C32-422C-08F411CA8221" name="NORMAL_PKv1">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>77F7A851-458F-E4DF-7ADD-E196ACF66CF9</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CBA9024D-0ED6-A887-AE2B-76F16214B285"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CBCA6E13-7A6A-CC36-E616-128FA6E7378C" name="NORMAL_CLIENTE_FK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>E565D8BE-2F05-D699-B4C3-87770255C8CB</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="72A6BA4F-4FDE-64F6-A558-C819D30FCFAE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="61F01F7E-E093-5AF5-97A6-8FA2F8D76008" name="NORMAL_CLIENTE_FKv2">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>E59095C9-36CB-45FF-4943-79CBAE8D3D53</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CBA9024D-0ED6-A887-AE2B-76F16214B285"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

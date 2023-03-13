@@ -1,0 +1,132 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8768C163-F7FB-963A-E141-74C888DA5CCD" name="AUTOR">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>A3A22147-FD4C-9931-BF21-5C52F5FF17D1</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="dni" id="7362601C-7668-9EF2-9692-3449B491BE6F">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>9A8646BD-CFD3-E91E-0519-A3E59DAD9943</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>9</dataTypeSize>
+<ownDataTypeParameters>9,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="DEFB97BE-7152-DCA9-4B0D-BC9B8CD307F3">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>F491876B-7C93-4D4E-C31A-713C49E3E88B</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="apellidos" id="EB4A8DCE-90B0-AC56-C01E-DF32D774337F">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>C91D30F2-0C91-4481-9F9D-4F5BC594AF8E</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="direccion" id="904FE778-10A0-CB26-4986-BFA7B99A2622">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>157BE756-8A82-664C-C2A6-28A9D57FF970</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LOCALIDAD_cod_localidad" id="974F071C-8361-1D61-2DC1-E99BF505A7F8">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>B864723A-7E30-2A75-6A72-4B97C27A514D</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AA8B4162-BE7B-FFA6-DCEB-1CECD746FE30" referredColumn="87485236-795A-BFF7-6A6B-9A651A0D6E80"/>
+</associations>
+</Column>
+<Column name="LOCALIDAD_CCAA_cod_ccaa" id="BEF9AB6E-6A02-4F45-1888-9B0D6FC1BFC1">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>B6AAF4DF-42AE-BDED-1325-F0B78D57715D</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AA8B4162-BE7B-FFA6-DCEB-1CECD746FE30" referredColumn="15D16794-0172-483E-B93A-70D119103E58"/>
+</associations>
+</Column>
+<Column name="LOCALIDAD_cod_provincia" id="3AFF872F-6D0F-D35F-671F-9031C384B148">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>0C3251A8-8BAC-CEA8-AEA3-9732FA8C3F2B</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AA8B4162-BE7B-FFA6-DCEB-1CECD746FE30" referredColumn="EFF3F57E-B2C2-74CC-0174-D8747CEDDBC3"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F1817377-60E9-9480-6239-6CC4499680E7" name="AUTOR_PK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>B0B6C0B3-7D96-948D-CC66-B43C0128FC3C</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7362601C-7668-9EF2-9692-3449B491BE6F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="807163EE-897B-0140-82A1-DBA5DD55C0F4" name="AUTOR_LOCALIDAD_FK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>5E430D4D-7FD5-C30F-A8AC-9E71E21FB13E</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="974F071C-8361-1D61-2DC1-E99BF505A7F8"/>
+<colUsage columnID="BEF9AB6E-6A02-4F45-1888-9B0D6FC1BFC1"/>
+<colUsage columnID="3AFF872F-6D0F-D35F-671F-9031C384B148"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

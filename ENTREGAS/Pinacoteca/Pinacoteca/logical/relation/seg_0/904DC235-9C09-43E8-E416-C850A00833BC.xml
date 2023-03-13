@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="tienev3" directorySegmentName="seg_0" id="904DC235-9C09-43E8-E416-C850A00833BC">
+<createdBy>skate</createdBy>
+<createdTime>2022-12-02 11:49:02 UTC</createdTime>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<engineerTo>
+<item key="B5D38705-0494-7992-DCB3-11C14A0DD29D" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>60016137-B72C-3FD6-C496-4A0828AB80FC</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>FFD52CDE-E4EB-C8C3-392A-83B3C1641665</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

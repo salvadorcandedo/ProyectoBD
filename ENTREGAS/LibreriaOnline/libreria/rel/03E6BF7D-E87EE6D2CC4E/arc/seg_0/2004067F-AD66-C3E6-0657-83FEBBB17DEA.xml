@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKArc class="oracle.dbtools.crest.model.design.relational.FKArc" directorySegmentName="seg_0" id="2004067F-AD66-C3E6-0657-83FEBBB17DEA" name="FKArc_3">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<ownerDesignName>libreria_online</ownerDesignName>
+<mandatory>false</mandatory>
+<reverseArc>true</reverseArc>
+<table>07603D10-DED7-B8E6-A473-4E55E59E03CA</table>
+<fkeys>
+<fkeyID>7F0C3E45-AE3D-6BF0-20A4-4E1F82A6977B</fkeyID>
+<fkeyID>9ED89BB9-B8EE-4F09-2FCD-215D612829EC</fkeyID>
+</fkeys>
+</FKArc>

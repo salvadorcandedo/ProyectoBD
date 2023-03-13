@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Municipio_Provincia_FK" directorySegmentName="seg_0" id="A1AD29A2-D4E7-2D38-E344-7673474230A9">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:59:40 UTC</createdTime>
+<generatorID>B4261DC9-F18C-E3DF-10CB-F5F4CF90A730</generatorID>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<engineerTo>
+<item key="41F21D53-4476-823C-41BA-5CE4EFFD43E1" value="true"/>
+<item key="1E37BA33-576F-BB6E-0DD0-EEF2554B5900" value="true"/>
+</engineerTo>
+<sourcePk>9D7643C5-8A39-B1F0-1FF2-2940A5ED055D</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>907AE6E7-DEC8-C2C3-2C89-10BB069F2501</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>A786CFC1-23F6-E394-FEA7-F5E4BC81330D</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

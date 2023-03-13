@@ -1,0 +1,125 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3E304B3B-0304-CC56-3CEF-D3D1A6A4A110" name="RESERVA">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:39 UTC</createdTime>
+<generatorID>B106AB2B-6F99-C2C2-A061-B92649ADAA00</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CLIENTE_DNI" id="7DACF477-9533-5729-1EBA-FA015F38DE68">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:39 UTC</createdTime>
+<generatorID>C01613FB-21A7-E630-0D42-937FA24C1F61</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2AB39CDD-354C-046A-341D-657839A00CD3" referredColumn="8BA27D72-EFD4-529B-2DC9-26298CED7C8C"/>
+</associations>
+</Column>
+<Column name="Fecha_reserva" id="60F9822B-EFCE-7C0F-76CA-4F3E80AA1085">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:39 UTC</createdTime>
+<generatorID>CB6D6483-2A25-BA7F-6044-846187A3C528</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RESERVA_ID" id="05694F7E-BC7B-719E-BF2C-3CB1365D3C6E">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:40 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+<Column name="CATEGORIA_CATEGORIA_ID" id="AFF04D8C-E032-BB3B-F44B-59A8DBFE7641">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:40 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CF8A88C8-D063-1987-B41C-EF3573C5F1ED" referredColumn="C5C89853-D852-6B3D-7426-0CA1F18AF085"/>
+</associations>
+</Column>
+<Column name="Ubicacion_Ubicacion_ID" id="4795657A-A752-CC09-AAA0-820D40191587">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:40 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2DB8A45B-8FD0-FF72-CF69-49A8E170F521" referredColumn="6549ED25-5837-ED03-616C-363898F6E5B5"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="75F3293F-B45D-080C-2FB1-2A717AB71472" name="RESERVA_PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:40 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="05694F7E-BC7B-719E-BF2C-3CB1365D3C6E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CCBD710E-6CFF-2F61-898F-957BA4D6B1F6" name="RESERVA_CATEGORIA_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:40 UTC</createdTime>
+<generatorID>BF2708A0-ACB0-228D-2701-103BF1FDC41C</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AFF04D8C-E032-BB3B-F44B-59A8DBFE7641"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9A298C29-A1AD-0AB1-30A3-51C2FA76691E" name="RESERVA_Ubicacion_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:40 UTC</createdTime>
+<generatorID>9F71DD49-0666-4914-9FA6-5C6EF8FDA1D0</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4795657A-A752-CC09-AAA0-820D40191587"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="97B32BA1-CB0F-A43E-32A4-EF37287BEBFF" name="RESERVA_CLIENTE_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:40 UTC</createdTime>
+<generatorID>3A3B3955-3F06-2AD5-F27F-2DB9F524902B</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7DACF477-9533-5729-1EBA-FA015F38DE68"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

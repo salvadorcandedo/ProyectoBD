@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<InheritanceRelation class="oracle.dbtools.crest.model.design.logical.InheritanceRelation" name="Hierarchy_3" directorySegmentName="seg_0" id="7C419A3E-7CF8-806E-83A9-C20E4B20C446">
+<createdBy>ivana</createdBy>
+<createdTime>2022-12-15 16:46:06 UTC</createdTime>
+<ownerDesignName>alquiler de coches</ownerDesignName>
+<engineerTo>
+<item key="FD66F03D-79F3-954A-A47C-3D26EBAA9D5E" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<nameOnSource>Super Type</nameOnSource>
+<nameOnTarget>Sub Type</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceEntity>100F9F21-5AA4-0E3C-7497-FD6F196469F2</sourceEntity>
+<targetEntity>8BC5CBCE-DC54-A130-AD04-3A9604D10C0C</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</InheritanceRelation>

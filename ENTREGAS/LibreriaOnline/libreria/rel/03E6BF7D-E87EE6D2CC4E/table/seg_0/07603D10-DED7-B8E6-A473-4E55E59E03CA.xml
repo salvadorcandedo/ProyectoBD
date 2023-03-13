@@ -1,0 +1,159 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="07603D10-DED7-B8E6-A473-4E55E59E03CA" name="PAGO">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>0EB62F40-A60F-B9BA-86E0-1D416663B4AE</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_pago" id="A11EEEFA-AEA9-7E4A-A21F-FC167B80D5E5">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>6807BEC1-322F-5BE9-E5A8-1F169FD5BEBF</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="total" id="DD7A0206-59A8-679B-887B-293D59CEA9D1">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>49C31815-0CDA-9677-2612-6BE000D6D856</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_pago" id="BAF5D50B-026D-0439-BEAD-00599F9730D6">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>9F165041-E37D-C1DF-65A8-FA42419B9B9C</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="hora" id="9A55A330-23BC-8642-BF50-B667849ADE90">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>EC59BD0A-009C-DD3D-9E39-7035A7359D64</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TARJETA_id_tarjeta" id="B28CEC88-A708-4F2C-A4F0-552EFB9338C7">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>C2828747-7995-EE3F-27CA-B939504DE305</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="14E3B8E3-2B43-88ED-DDB5-E49FA8F30FD5" referredColumn="E1F325C5-4248-D524-DFCA-941C784B44B5"/>
+</associations>
+</Column>
+<Column name="PAYPAL_id_paypal" id="B876EF18-7C07-260C-A83B-8198B12CB1C4">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>4644DE30-6B10-DED9-C3C1-34C2ABE6B523</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B77B27A9-55D4-ECB0-34A5-8254B1DBEF25" referredColumn="171B3829-FB58-B16F-23A5-14CF26EFFEC0"/>
+</associations>
+</Column>
+<Column name="CESTA_id_cesta" id="23B0CEFE-2DD9-3FF5-A3C9-3AAD7C40A0AC">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>BDFF17C2-7B69-8E07-DDDE-7B10507F12DD</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3E09D936-92BC-79BF-F75C-D935FD1A9756" referredColumn="2F763C93-754E-0538-C549-8C76251A04C5"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="55544633-DD1E-06F7-6A93-92354B82AA18" name="PAGO_PK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>33FE6FA9-C766-BEEC-73EA-39379909A405</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A11EEEFA-AEA9-7E4A-A21F-FC167B80D5E5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8030E82A-CCA6-4BC0-43D1-3307A944A8F1" name="PAGO__IDX">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>D9C1F96A-12EC-B0C9-CDF1-8F558C4C83BA</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="23B0CEFE-2DD9-3FF5-A3C9-3AAD7C40A0AC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F80B1CDD-DC3E-DD11-FE61-4BF7C095959E" name="PAGO_CESTA_FK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>D9C1F96A-12EC-B0C9-CDF1-8F558C4C83BA</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="23B0CEFE-2DD9-3FF5-A3C9-3AAD7C40A0AC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F7DDDE67-B65B-89AE-BE75-5A4BDF09B90C" name="PAGO_PAYPAL_FK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>B319E4BB-4FF9-F6D1-2C61-34332D336D0F</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B876EF18-7C07-260C-A83B-8198B12CB1C4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="75F55CE7-7647-1171-2040-F15E812E5F60" name="PAGO_TARJETA_FK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>74B5A513-1346-05B2-155C-67B444EB064A</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B28CEC88-A708-4F2C-A4F0-552EFB9338C7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

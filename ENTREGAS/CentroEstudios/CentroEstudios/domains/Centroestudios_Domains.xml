@@ -1,0 +1,40 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<DomainFile class="oracle.dbtools.crest.model.design.DomainFileWrapper" fileName="Centroestudios_Domains">
+<domains>
+<Domain class="oracle.dbtools.crest.model.design.Domain" name="VARCHAR_0_0_0" id="28BB6D78-438B-F7A6-6F7C-2EC4AAFA12CC">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<avTSortOrder>0</avTSortOrder>
+<fileName>Centroestudios_Domains</fileName>
+<logicalDatatype>LOGDT024</logicalDatatype>
+</Domain>
+<Domain class="oracle.dbtools.crest.model.design.Domain" name="NUMERIC_28_0_0" id="69BCDBAA-391B-D0E7-6254-0AD53CFB2FBE">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<avTSortOrder>0</avTSortOrder>
+<dataTypePrecision>28</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<dataTypeSize>0</dataTypeSize>
+<fileName>Centroestudios_Domains</fileName>
+<logicalDatatype>LOGDT019</logicalDatatype>
+</Domain>
+<Domain class="oracle.dbtools.crest.model.design.Domain" name="Date_0_0_0" id="A2B6D450-7E3E-A98C-F62B-280854684DAA">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<avTSortOrder>0</avTSortOrder>
+<fileName>Centroestudios_Domains</fileName>
+<logicalDatatype>LOGDT007</logicalDatatype>
+</Domain>
+<Domain class="oracle.dbtools.crest.model.design.Domain" name="unknown_0_0_0" id="BB505960-DEEB-FABB-FE6F-DC8775031B46">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<avTSortOrder>0</avTSortOrder>
+<fileName>Centroestudios_Domains</fileName>
+<logicalDatatype>LOGDT017</logicalDatatype>
+</Domain>
+</domains>
+</DomainFile>

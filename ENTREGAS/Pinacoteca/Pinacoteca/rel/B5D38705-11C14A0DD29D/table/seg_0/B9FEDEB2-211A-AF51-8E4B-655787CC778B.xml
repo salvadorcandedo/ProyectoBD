@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B9FEDEB2-211A-AF51-8E4B-655787CC778B" name="Telefono">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>FFD52CDE-E4EB-C8C3-392A-83B3C1641665</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Numero-telefono" id="3E8B2DE7-3FFA-4042-B19E-3EDC43E979C7">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>92CFB46A-FCFD-9C7F-674E-3BF2E8F9F254</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Obra_de_institucion_Obra_Obra_ID" id="3B06466D-3AFC-58F4-5FD8-0CA6E7D9B491">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="471F19FC-B0D1-3C24-015A-ADCC4B192F40" referredColumn="65577A3E-3C58-D310-2B32-AA65578F42D8"/>
+</associations>
+</Column>
+<Column name="Obra_de_coleccionista_Obra_Obra_ID" id="17F4906B-27F6-32C5-2D5E-BD16434F0594">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D3ABF00A-4D7D-89C8-4390-E28C57705FFA" referredColumn="2FD8DC76-1397-F86F-A963-BAE5B95EB467"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AF6C53CA-C2A7-36D3-B124-6685AF187CBE" name="Telefono_PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>2E9D60BE-5A6C-26B8-66CC-5AF8D2C2F91C</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3E8B2DE7-3FFA-4042-B19E-3EDC43E979C7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E9BBF211-7F66-285D-4F28-EA2B3B3942AF" name="Telefono_Obra_de_institucion_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>904DC235-9C09-43E8-E416-C850A00833BC</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3B06466D-3AFC-58F4-5FD8-0CA6E7D9B491"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6EFE58A8-9B2E-2758-22E2-EA018EB324CE" name="Telefono_Obra_de_coleccionista_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>866C106C-E882-9931-E703-C8E313AE6837</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="17F4906B-27F6-32C5-2D5E-BD16434F0594"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

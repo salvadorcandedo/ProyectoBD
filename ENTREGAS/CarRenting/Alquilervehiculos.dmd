@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Alquilervehiculos" id="74F37828-AB11-2B5C-1824-FB770AA36E4B" version="3.5">
+<createdBy>ivana</createdBy>
+<createdTime>2022-12-15 16:23:08 UTC</createdTime>
+<ownerDesignName>alquiler de coches</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>74F37828-AB11-2B5C-1824-FB770AA36E4B</designId>
+</OSDM_Design>

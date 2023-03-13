@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="centro_Municipio_FK" directorySegmentName="seg_0" id="11123505-7F45-D0FE-269E-8D04BCB56017">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:59:40 UTC</createdTime>
+<generatorID>5935815B-86AE-7A4E-AB14-2F23490A0F3B</generatorID>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<engineerTo>
+<item key="41F21D53-4476-823C-41BA-5CE4EFFD43E1" value="true"/>
+<item key="1E37BA33-576F-BB6E-0DD0-EEF2554B5900" value="true"/>
+</engineerTo>
+<sourcePk>A8048BE0-C1D0-3FBA-F1F1-3126520C90CD</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>A786CFC1-23F6-E394-FEA7-F5E4BC81330D</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>5CEAD43A-2A55-7B6E-3225-A00DBB11233B</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_17_titulacion_FK" directorySegmentName="seg_0" id="B7412C77-5DE0-6170-F5EC-C738868E6A0E">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:59:40 UTC</createdTime>
+<generatorID>DD540B2A-C878-515B-B43D-283823BDA2A4</generatorID>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<engineerTo>
+<item key="41F21D53-4476-823C-41BA-5CE4EFFD43E1" value="true"/>
+<item key="1E37BA33-576F-BB6E-0DD0-EEF2554B5900" value="true"/>
+</engineerTo>
+<sourcePk>3F9BE720-356E-71A1-8418-0DDACC859E38</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>45757A77-B1CF-726D-E721-3B225EA3AE53</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>536AFF4D-8A42-059B-0423-C8D253D48B36</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

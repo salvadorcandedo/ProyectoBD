@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="PAGO_TARJETA" directorySegmentName="seg_0" id="74B5A513-1346-05B2-155C-67B444EB064A">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2021-12-28 19:44:24 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<engineerTo>
+<item key="03E6BF7D-7672-C6FC-1AD4-E87EE6D2CC4E" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>D414E7C8-052A-CB4A-BAE1-B878C487C7A0</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>0EB62F40-A60F-B9BA-86E0-1D416663B4AE</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

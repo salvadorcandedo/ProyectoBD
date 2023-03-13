@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="EBOOK LIBRO FK" directorySegmentName="seg_0" id="CA985397-2662-2FED-31EE-5EAA8E26CC1B">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2021-12-20 16:31:20 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<engineerTo>
+<item key="03E6BF7D-7672-C6FC-1AD4-E87EE6D2CC4E" value="true"/>
+</engineerTo>
+<sourcePk>3ABC3BBF-AD5F-F985-3FF9-94ACC9C12FC5</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>6B0EE923-EAAC-F1CC-D65A-1CAAF015689F</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>75C6331C-053E-8720-B557-747A0B7866DE</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

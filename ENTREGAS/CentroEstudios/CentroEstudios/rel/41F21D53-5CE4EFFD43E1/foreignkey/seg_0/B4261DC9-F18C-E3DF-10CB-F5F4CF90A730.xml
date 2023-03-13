@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="B4261DC9-F18C-E3DF-10CB-F5F4CF90A730" containerWithKeyObject="CFF23657-6434-D7EF-A5B2-64B9C91B43A1" localFKIndex="8B5C7EDF-1C0C-82C3-4080-7EFBCE2148CC" name="Municipio_Provincia_FK">
+<sourceDDLFile>Centroestudios.ddl</sourceDDLFile>
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<importedID>C39BA177-A760-F986-609F-4A2CBECFB5BD</importedID>
+<referredTableLongName>Provincia</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>79AE64EA-07FA-757B-E16F-E000B60A1F22</referredTableID>
+<keyObject>B9D326EC-498C-DFBE-CB64-CFBAADB5302C</keyObject>
+<referredKeyID>B9D326EC-498C-DFBE-CB64-CFBAADB5302C</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Provincia_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

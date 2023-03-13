@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E239411D-2BBD-DE77-7967-15CBB0CB4AEF" name="Trabaja">
+<sourceDDLFile>Centroestudios.ddl</sourceDDLFile>
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<importedID>E0995161-CDD7-5708-1FA2-7588F52FE786</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Alumno_DNI" id="CDE0106D-2EC8-FED9-BE7B-ACBFBC43E770">
+<sourceDDLFile>Centroestudios.ddl</sourceDDLFile>
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<importedID>461256C5-D586-14BC-F4CB-040073D90394</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28BB6D78-438B-F7A6-6F7C-2EC4AAFA12CC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A862EC50-CA5E-506A-115B-C1190ABB730F" referredColumn="FFB5D97F-76B9-17C9-DE8B-75D988F8C1A8"/>
+</associations>
+</Column>
+<Column name="Empresa_cif" id="16059954-E650-BFB6-701C-2A8AE97591F7">
+<sourceDDLFile>Centroestudios.ddl</sourceDDLFile>
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<importedID>4878DCB0-8918-7BAD-8A0B-CACC1C562874</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28BB6D78-438B-F7A6-6F7C-2EC4AAFA12CC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="00D2360B-8E34-6012-1454-7EB3138CD6E8" referredColumn="6505F62C-EBC8-3E81-8721-41FF78B72DDE"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="887D173D-DD7D-3728-0B61-BF96F024CD73" name="Relation_9_PK">
+<sourceDDLFile>Centroestudios.ddl</sourceDDLFile>
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<importedID>08D60095-D854-3D89-2318-5E7323A213CA</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CDE0106D-2EC8-FED9-BE7B-ACBFBC43E770"/>
+<colUsage columnID="16059954-E650-BFB6-701C-2A8AE97591F7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="36C3CB1F-1243-6509-C0D4-506117D22659" name="Relation_9_Alumno_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CDE0106D-2EC8-FED9-BE7B-ACBFBC43E770"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0B215871-8846-CDA4-0744-D162BA72D52C" name="Relation_9_Empresa_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:45:17 UTC</createdTime>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="16059954-E650-BFB6-701C-2A8AE97591F7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="AUTOR_ROYALTY" directorySegmentName="seg_0" id="F6799F2F-0CE1-6791-595D-BF7F5F0B24C6">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-01-08 17:47:50 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<engineerTo>
+<item key="03E6BF7D-7672-C6FC-1AD4-E87EE6D2CC4E" value="true"/>
+</engineerTo>
+<sourceTransferable>false</sourceTransferable>
+<sourcePk>B0B6C0B3-7D96-948D-CC66-B43C0128FC3C</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>A3A22147-FD4C-9931-BF21-5C52F5FF17D1</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>BA8A5B71-5450-032D-3D7B-1119BBC0F828</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

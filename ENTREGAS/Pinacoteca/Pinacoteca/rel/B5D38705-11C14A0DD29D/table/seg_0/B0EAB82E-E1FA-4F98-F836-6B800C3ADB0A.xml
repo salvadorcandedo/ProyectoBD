@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B0EAB82E-E1FA-4F98-F836-6B800C3ADB0A" name="Obra_de_coleccionista">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>755153ED-1171-27F1-8CAE-F42624DC5579</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Obra_Obra_ID" id="2FD8DC76-1397-F86F-A963-BAE5B95EB467">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="54B26C36-6F0F-D45D-4441-28CFFDA8962D" referredColumn="817C61BA-5994-7692-4C53-0DD11BCD3BC7"/>
+</associations>
+</Column>
+<Column name="Nombre_prestamista" id="03D98DDA-DFA2-1CF9-D852-56F7B1D67A30">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>C8A8EFEC-EDAA-D3E4-F22C-B6EDB3CCCE63</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Apellido1" id="A1879407-4F26-B8B0-A33F-A106191EFFDF">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>3F31FD91-9973-2089-FA89-561968556826</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Apellido2" id="D35F687D-5590-21F8-FAFD-1D02B0CE50F5">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>51190F2F-5402-9D26-8AD3-90540F4A44FD</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Direccion_Direccion_ID" id="5ED3B699-C043-D86C-6713-FA314B77BF37">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="62D49472-3098-18AD-6A70-ACF8DF41DB74" referredColumn="ADF2E066-8D97-FC2D-5A3A-FD25375D584B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="577C3590-947C-6A57-E3CC-FE1773D100AB" name="Obra_de_coleccionista_PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="2FD8DC76-1397-F86F-A963-BAE5B95EB467"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="26C1E9A4-4BDC-8E38-9E95-5AA5C712DBB4" name="Obra_de_coleccionista_Obra_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>88DF690F-1963-3A2F-B724-0EEC4B7045A8</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2FD8DC76-1397-F86F-A963-BAE5B95EB467"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="23148FC2-CAC3-D0F0-27AB-C64990FAFF3B" name="Obra_de_coleccionista_Direccion_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>3AC918DE-BB2E-E801-1689-A4DB8F4304ED</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5ED3B699-C043-D86C-6713-FA314B77BF37"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

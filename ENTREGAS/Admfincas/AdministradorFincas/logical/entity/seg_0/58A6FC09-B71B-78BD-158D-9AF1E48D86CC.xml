@@ -1,0 +1,117 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="58A6FC09-B71B-78BD-158D-9AF1E48D86CC" name="Propiedad">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 19:10:22 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="D942542B-FE6D-16A8-D20B-6F93E127130B" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDpropiedad" id="7F20A904-FD7B-20A8-7DA4-23E25C4DD638">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 20:04:19 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="D942542B-FE6D-16A8-D20B-6F93E127130B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="AñoConstruccion" id="D8D5BB04-CC77-FD8D-1E0A-121A1BB4A5A3">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 19:22:51 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="D942542B-FE6D-16A8-D20B-6F93E127130B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="AñoCompra" id="B77656FF-2FEB-A623-565E-9A1B80BE1F9B">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 19:22:51 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="D942542B-FE6D-16A8-D20B-6F93E127130B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="PrecioCompra" id="C1C06C13-3D95-6B06-FE8F-6F5F18A301B2">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 19:43:38 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="D942542B-FE6D-16A8-D20B-6F93E127130B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="AreaMetrosCuadrados" id="7EF18A3A-3126-5920-2C0D-DE4D17593C61">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 01:38:35 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="D942542B-FE6D-16A8-D20B-6F93E127130B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Baños" id="B9295699-4919-E6A0-0A2D-F8909B9FDC55">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 01:40:18 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="D942542B-FE6D-16A8-D20B-6F93E127130B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Habitaciones" id="6DC99841-731C-CD6B-B4D1-57C76AF1D622">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 01:40:22 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="D942542B-FE6D-16A8-D20B-6F93E127130B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="508B6E8F-4ECC-6E3F-3741-0EC5D17CEC93" name="Propiedad PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 20:04:37 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="D942542B-FE6D-16A8-D20B-6F93E127130B" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>7F20A904-FD7B-20A8-7DA4-23E25C4DD638</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E69214BC-0630-A4EA-3341-DBF4FEEAF9C3" name="PROVINCIA">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>B504BCC8-417A-C469-1879-22163D9C9294</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cod_provincia" id="C2796422-2A44-8125-052F-7B8A994AE504">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>CC461876-58A7-A87C-D4F1-7F9BF6EA92D3</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CCAA_cod_ccaa" id="7956D430-3251-073A-1F33-A503F4028916">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>C0BC814B-3598-0708-3580-701F481BCB3A</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E4E4A589-065B-2087-4A20-4DF567B2AA0E" referredColumn="27D45F09-07FD-F8FB-6679-80A4269912E1"/>
+</associations>
+</Column>
+<Column name="nombre_provincia" id="34189956-8632-C056-625C-57B4B7DEE587">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>6C203505-A56D-EEDF-A678-DB654A244125</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cod_provincia1" id="92A4519F-B595-CDD3-BC7A-95344FE97A46">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>BE31464C-6326-73B6-B30C-633054EAE596</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+<dependOnForeignKeyID>E4E4A589-065B-2087-4A20-4DF567B2AA0E</dependOnForeignKeyID>
+</Column>
+<Column name="nombre_provincia1" id="D915249A-816D-51FF-108C-BB7D8C430FAF">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>406FF2A8-3178-CAA4-89F3-871EE823D531</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+<dependOnForeignKeyID>E4E4A589-065B-2087-4A20-4DF567B2AA0E</dependOnForeignKeyID>
+<isDependOnFK_AsMandatory>true</isDependOnFK_AsMandatory>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B4A851E5-0066-9644-0BBB-E43EAEF61BD4" name="PROVINCIA_PK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>A09A36CA-66AE-BE6B-F3E9-51BEE60A7073</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7956D430-3251-073A-1F33-A503F4028916"/>
+<colUsage columnID="C2796422-2A44-8125-052F-7B8A994AE504"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0EA7F1C3-4F33-99D7-3E27-2BF3AE61E562" name="PROVINCIA_CCAA_FK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>CD842D48-7C2C-B20C-4064-713BDB89FCDB</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7956D430-3251-073A-1F33-A503F4028916"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

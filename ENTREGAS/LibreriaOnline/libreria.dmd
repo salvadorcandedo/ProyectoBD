@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="libreria" id="FAD4455E-A126-5EE3-5A39-EA2F3282F2D8" version="3.5">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2021-12-14 19:12:40 UTC</createdTime>
+<ownerDesignName>libreria_online</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>FAD4455E-A126-5EE3-5A39-EA2F3282F2D8</designId>
+</OSDM_Design>

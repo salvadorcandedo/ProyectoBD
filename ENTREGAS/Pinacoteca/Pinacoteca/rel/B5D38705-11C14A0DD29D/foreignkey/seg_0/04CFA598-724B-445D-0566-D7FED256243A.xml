@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="04CFA598-724B-445D-0566-D7FED256243A" containerWithKeyObject="8E2680E7-5745-09C5-77B3-F0362E96293E" localFKIndex="C3853B9D-5385-39B9-140A-DD32C47409DF" name="Conservador_Exposicion_temporal_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>062A372F-8CD3-5994-3666-DC72FF3ECF31</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<referredTableLongName>Exposicion_temporal</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>34AF3744-733F-D7AD-CE7D-C4A161EA8CF7</referredTableID>
+<keyObject>7F040C64-AD5B-06EF-D5B3-308EF78594D3</keyObject>
+<referredKeyID>7F040C64-AD5B-06EF-D5B3-308EF78594D3</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Exposicion_temporal_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

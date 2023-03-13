@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="54B26C36-6F0F-D45D-4441-28CFFDA8962D" containerWithKeyObject="B0EAB82E-E1FA-4F98-F836-6B800C3ADB0A" localFKIndex="26C1E9A4-4BDC-8E38-9E95-5AA5C712DBB4" name="Obra_de_coleccionista_Obra_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>88DF690F-1963-3A2F-B724-0EEC4B7045A8</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<referredTableLongName>Obra</referredTableLongName>
+<arc>A87B4301-8E73-BA6C-F585-665392A537E4</arc>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>E54BCF4F-D3F2-CD2C-8BDA-51345B69D1A0</referredTableID>
+<keyObject>25F3285E-DACA-61C9-D1AD-483B53532834</keyObject>
+<referredKeyID>25F3285E-DACA-61C9-D1AD-483B53532834</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Obra_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

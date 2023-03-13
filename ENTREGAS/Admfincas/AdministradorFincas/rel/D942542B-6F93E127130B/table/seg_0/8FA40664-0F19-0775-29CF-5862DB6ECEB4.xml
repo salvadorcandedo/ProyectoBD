@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8FA40664-0F19-0775-29CF-5862DB6ECEB4" name="Telefono_Particular">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 03:24:35 UTC</createdTime>
+<generatorID>273A6CBC-6130-23A3-B0AF-1B4625DC45ED</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Num_telefono" id="D45D70D3-2332-135D-D3CE-D6543D56C0CC">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 03:24:35 UTC</createdTime>
+<generatorID>5E06C024-CC99-868F-3015-241A18B3068D</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CIF" id="8ADCFCCF-A470-AC54-5F68-F58F58D2C4FC">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 03:24:35 UTC</createdTime>
+<generatorID>CFB96FB2-D102-8951-F5E2-BEE4D01B9BB8</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>8,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Individuo_DNi" id="3452F4AF-D633-F88A-B2D1-80CAF0EC930A">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 03:24:35 UTC</createdTime>
+<generatorID>68FD5E07-EBA4-A897-4425-AB4E951E2726</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4CF97B34-5B8E-A5D1-E8AC-2751C302E32E" referredColumn="528D4C6F-ED61-A471-9360-8FEB9CA6765B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D5757020-25C5-DC3D-F6A4-52BFB0CFCFEC" name="Telefono_Particular_Individuo_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 03:24:35 UTC</createdTime>
+<generatorID>7FDB5649-A8FF-2B0E-638E-F5C3CE44271E</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3452F4AF-D633-F88A-B2D1-80CAF0EC930A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

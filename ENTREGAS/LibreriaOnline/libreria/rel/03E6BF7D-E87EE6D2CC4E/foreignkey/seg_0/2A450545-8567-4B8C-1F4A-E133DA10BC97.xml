@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="2A450545-8567-4B8C-1F4A-E133DA10BC97" containerWithKeyObject="00C933D3-8A20-1E97-82B2-2535E5770795" localFKIndex="349E645D-1CFE-DCCD-2145-2ABB7C29C842" name="LINEA_CESTA_CESTA_FK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>DFF47CA0-0410-3E5D-8D29-9D2CC018EBAC</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<referredTableLongName>CESTA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>05A04C64-36B0-2165-24CE-B11A60DC5928</referredTableID>
+<keyObject>ABA88B95-11DF-6BC4-B318-EA357F6E402C</keyObject>
+<referredKeyID>ABA88B95-11DF-6BC4-B318-EA357F6E402C</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_cesta</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

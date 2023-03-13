@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<relationalModel class="oracle.dbtools.crest.model.design.relational.RelationalDesign" name="Relational_1" id="41F21D53-4476-823C-41BA-5CE4EFFD43E1" mainViewID="B0597237-753E-7914-92D5-2F4149268D0A">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-10 00:37:20 UTC</createdTime>
+<ownerDesignName>SalvaCentroEstudios</ownerDesignName>
+<shouldBeOpen>true</shouldBeOpen>
+<selectedRDBMSSite>980FCE9E-D688-BDF0-C89A-C9FB2DCAED45</selectedRDBMSSite>
+<importDDLFileStamps>
+<importDDLFileStamp class="oracle.dbtools.crest.imports.DDLFileStamp">
+<fileName>Centroestudios.ddl</fileName>
+<pathName>C:\Users\Salva\Documents\ENTREGAS\CentroEstudios</pathName>
+<dbType>13</dbType>
+</importDDLFileStamp>
+</importDDLFileStamps>
+</relationalModel>

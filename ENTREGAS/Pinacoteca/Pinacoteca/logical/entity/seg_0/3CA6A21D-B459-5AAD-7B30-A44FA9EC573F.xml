@@ -1,0 +1,69 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="3CA6A21D-B459-5AAD-7B30-A44FA9EC573F" name="Exposicion_temporal">
+<createdBy>skate</createdBy>
+<createdTime>2022-12-01 17:11:21 UTC</createdTime>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<engineerTo>
+<item key="B5D38705-0494-7992-DCB3-11C14A0DD29D" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Titulo" id="E290E944-50EC-3D34-C975-D62F5FB48F50">
+<createdBy>skate</createdBy>
+<createdTime>2022-12-02 11:46:06 UTC</createdTime>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<engineerTo>
+<item key="B5D38705-0494-7992-DCB3-11C14A0DD29D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Fecha_inicio" id="83C9336E-CB05-0E46-CF0B-0A7F65FDAABA">
+<createdBy>skate</createdBy>
+<createdTime>2022-12-02 11:46:06 UTC</createdTime>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<engineerTo>
+<item key="B5D38705-0494-7992-DCB3-11C14A0DD29D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Fecha_fin" id="496DD09A-4419-8C57-C064-785FF60E181C">
+<createdBy>skate</createdBy>
+<createdTime>2022-12-02 11:46:39 UTC</createdTime>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<engineerTo>
+<item key="B5D38705-0494-7992-DCB3-11C14A0DD29D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Codigo" id="A77F9392-396E-CDB7-1841-98993EAD2DC6">
+<createdBy>skate</createdBy>
+<createdTime>2022-12-02 11:01:29 UTC</createdTime>
+<generatorID>062A372F-8CD3-5994-3666-DC72FF3ECF31</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<engineerTo>
+<item key="B5D38705-0494-7992-DCB3-11C14A0DD29D" value="true"/>
+</engineerTo>
+<referedAttribute>02E18E55-8328-E8F5-D138-55231B43F145</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

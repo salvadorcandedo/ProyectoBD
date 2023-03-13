@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="00C933D3-8A20-1E97-82B2-2535E5770795" name="LINEA_CESTA">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>E25D7681-A61B-2840-60B9-44D0160C1FD5</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cantidad" id="E4EBD901-5EFC-8092-8EC4-7C5C56FBC526">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>689B19A2-DF89-9FEB-DFA2-AE333228B768</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_linea" id="1EEEF783-5F50-EF24-328B-474882C0AE2E">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>80CFECA9-E1ED-A7AE-D259-F30E65010DFA</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LIBRO_isbn" id="73783413-4B49-C912-EF5E-73AD70504D01">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>8490468F-D11F-77B6-DE84-D57E5171A398</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2FC92A22-8298-8B30-7604-7CD5E77260F5" referredColumn="E86650C7-16E8-353F-B90D-21D6D3220F86"/>
+</associations>
+</Column>
+<Column name="CESTA_id_cesta" id="F4A8FBF8-8E1D-125B-5FAB-8AFE802FF663">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>B13CAA9E-6CBF-4244-2354-470860032E94</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2A450545-8567-4B8C-1F4A-E133DA10BC97" referredColumn="2F763C93-754E-0538-C549-8C76251A04C5"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B74B9F9B-2B96-05E7-F678-D58373FF04B6" name="LINEA_CESTA_PK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>DDB7326F-A94F-2DE2-3BD5-C55204841DC0</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1EEEF783-5F50-EF24-328B-474882C0AE2E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="566E67C4-32A2-BA87-28DB-C009FD84338C" name="LINEA_CESTA__IDX">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>0F0F80C6-CB48-3714-723F-7805CBAC1A62</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="73783413-4B49-C912-EF5E-73AD70504D01"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="349E645D-1CFE-DCCD-2145-2ABB7C29C842" name="LINEA_CESTA_CESTA_FK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>DFF47CA0-0410-3E5D-8D29-9D2CC018EBAC</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F4A8FBF8-8E1D-125B-5FAB-8AFE802FF663"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0A2F0736-CABB-5C95-7778-5DD2CDAE300A" name="LINEA_CESTA_LIBRO_FK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>0F0F80C6-CB48-3714-723F-7805CBAC1A62</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="73783413-4B49-C912-EF5E-73AD70504D01"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

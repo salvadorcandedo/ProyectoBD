@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<InheritanceRelation class="oracle.dbtools.crest.model.design.logical.InheritanceRelation" name="Hierarchy_1" directorySegmentName="seg_0" id="EF79579E-E0F6-2A27-0D28-4F5DD2CC5A5C">
+<createdBy>skate</createdBy>
+<createdTime>2022-12-01 17:03:08 UTC</createdTime>
+<ownerDesignName>Tarea_Pinacoteca</ownerDesignName>
+<engineerTo>
+<item key="B5D38705-0494-7992-DCB3-11C14A0DD29D" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<nameOnSource>Super Type</nameOnSource>
+<nameOnTarget>Sub Type</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceEntity>D97DA5F0-27B4-DF33-4F0B-5218B114CFFA</sourceEntity>
+<targetEntity>018CF5EC-927F-D456-CD8C-A14932D1E5F6</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</InheritanceRelation>

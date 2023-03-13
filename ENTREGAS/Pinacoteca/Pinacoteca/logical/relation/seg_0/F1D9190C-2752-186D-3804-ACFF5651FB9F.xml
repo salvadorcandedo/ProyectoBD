@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="contienev2" directorySegmentName="seg_0" id="F1D9190C-2752-186D-3804-ACFF5651FB9F">
+<createdBy>skate</createdBy>
+<createdTime>2022-12-02 09:48:55 UTC</createdTime>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<engineerTo>
+<item key="B5D38705-0494-7992-DCB3-11C14A0DD29D" value="true"/>
+</engineerTo>
+<sourcePk>3EE5DA58-B263-9A3C-0B0C-810A0B8BE45F</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>8FD5DEA4-984E-0E98-7C96-B2ACF4EDD52B</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>018CF5EC-927F-D456-CD8C-A14932D1E5F6</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

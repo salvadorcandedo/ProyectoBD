@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="37C3C9B7-841B-C81F-5A8A-C0E0EE1912F7" name="LOCALIDAD">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>EA36787F-9C77-0328-D892-837F87EABE81</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="nombre_localidad" id="079CF8EC-3D2F-7A00-E6D5-68F3368623DE">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>D4423FC9-51D4-96FC-4121-2D60E859016D</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cod_localidad" id="87485236-795A-BFF7-6A6B-9A651A0D6E80">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>2123EC7E-5699-16EA-5A30-AF021545726E</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PROVINCIA_CCAA_cod_ccaa" id="15D16794-0172-483E-B93A-70D119103E58">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>06C8BDBA-D23B-2C1A-60E0-97C9D98DC050</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4B583BE3-90BF-1463-4533-EEC76BCC219F" referredColumn="7956D430-3251-073A-1F33-A503F4028916"/>
+</associations>
+</Column>
+<Column name="PROVINCIA_cod_provincia" id="EFF3F57E-B2C2-74CC-0174-D8747CEDDBC3">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>3B1A222A-1C62-8EF7-9DF6-492B9D41B0AC</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4B583BE3-90BF-1463-4533-EEC76BCC219F" referredColumn="C2796422-2A44-8125-052F-7B8A994AE504"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9B3E7577-5C2D-7175-2AD9-F3D09DB119E8" name="LOCALIDAD_PK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>6EE3FE54-21C3-1AC0-CCDC-AF87A52836CF</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="87485236-795A-BFF7-6A6B-9A651A0D6E80"/>
+<colUsage columnID="15D16794-0172-483E-B93A-70D119103E58"/>
+<colUsage columnID="EFF3F57E-B2C2-74CC-0174-D8747CEDDBC3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E940425F-DDE1-40CE-77F9-BAC0884FD8EB" name="LOCALIDAD_PROVINCIA_FK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>7D831310-836A-608A-D06E-A17EC5D974C0</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="15D16794-0172-483E-B93A-70D119103E58"/>
+<colUsage columnID="EFF3F57E-B2C2-74CC-0174-D8747CEDDBC3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,51 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B110104F-7E47-D9FF-C1FA-FEA2BF8A6EAF" name="GPS">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:39 UTC</createdTime>
+<generatorID>A76481C2-E1F8-7DDE-07BA-D28012DB13EC</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Codigo_equipamiento" id="C92C8852-D2D8-991E-E0F8-9F6BC17AD65C">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:39 UTC</createdTime>
+<generatorID>DCF89F72-1FB4-3048-5497-D759D89286CF</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="029A94D8-E95F-F2B7-010E-5113ADFC0CA6" referredColumn="0081C09C-7EB7-453F-2C88-18B330F5D3FC"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="42FE3583-99EB-5C1F-C3D8-4EABC68F5D8A" name="GPS_PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:39 UTC</createdTime>
+<generatorID>C603B608-D309-C5C9-D3C1-2EA1A1B9C4A3</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C92C8852-D2D8-991E-E0F8-9F6BC17AD65C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1BA11FB9-906B-5BE9-E618-5A352C046257" name="GPS_EQUIPAMIENTO_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:39 UTC</createdTime>
+<generatorID>4A303890-6F6F-B62D-825F-C8743406233A</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C92C8852-D2D8-991E-E0F8-9F6BC17AD65C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

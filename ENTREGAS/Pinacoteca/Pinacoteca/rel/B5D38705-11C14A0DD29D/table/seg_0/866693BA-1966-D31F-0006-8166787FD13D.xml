@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="866693BA-1966-D31F-0006-8166787FD13D" name="Obra_propia">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>018CF5EC-927F-D456-CD8C-A14932D1E5F6</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Obra_Obra_ID" id="96C2C2AD-B995-1C16-38E2-BE910A548BFC">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EA79C4A8-358D-75FC-CB95-5DFAF7331478" referredColumn="817C61BA-5994-7692-4C53-0DD11BCD3BC7"/>
+</associations>
+</Column>
+<Column name="Sala_Num_sala" id="45292986-D207-A443-84E6-EE3E496F5253">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>6BAC9F8D-AF09-6696-C21B-B184A05C9FF0</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E50361DB-C4DF-57C8-EA57-A8629B591949" referredColumn="9739A99C-612A-6637-1856-A41998BCC390"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="385F97D2-69D3-FEC5-7EE2-254A8303C580" name="Obra_propia_PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="96C2C2AD-B995-1C16-38E2-BE910A548BFC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2BA6C41F-100C-C231-BC62-805019A80124" name="Obra_propia_Obra_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>EF79579E-E0F6-2A27-0D28-4F5DD2CC5A5C</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="96C2C2AD-B995-1C16-38E2-BE910A548BFC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="873FC8E2-ADBE-8D8D-382D-98FB93AB84B1" name="Obra_propia_Sala_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>F1D9190C-2752-186D-3804-ACFF5651FB9F</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="45292986-D207-A443-84E6-EE3E496F5253"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="85E0B5EC-75BC-B03F-E012-77A5A08DA567" name="ALMACEN_LIBRO">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PAPEL_isbn" id="0EEAC5E9-696B-22BE-A706-26510A482F7A">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="30285ECE-CD32-7474-F591-0A23C1F10CAB" referredColumn="6BBA7BD0-32E3-3D65-3507-392E066B8CD5"/>
+</associations>
+</Column>
+<Column name="ALMACEN_cod_almacen" id="B4E1853F-845D-90B2-23DA-CC8185BAA9BC">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT057</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="30C15BE7-8C8B-AC3B-D77F-1A0260BE506A" referredColumn="23A88B34-8A90-82FE-71B2-CAC4BD46C167"/>
+</associations>
+</Column>
+<Column name="num_copias" id="35C5CE55-B20D-8F21-41D7-36F9A39D3A18">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>0F59B886-7B96-610A-5373-F708E1D732B9</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+<isDependOnFK_AsMandatory>true</isDependOnFK_AsMandatory>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A14ECA1A-B308-7E9F-7BDF-E8CF75EBB2F4" name="ALMACEN_LIBRO_PK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0EEAC5E9-696B-22BE-A706-26510A482F7A"/>
+<colUsage columnID="B4E1853F-845D-90B2-23DA-CC8185BAA9BC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3E36EA77-75F9-EBF7-33EB-A0FDA1BA586A" name="ALMACEN_LIBRO_PAPEL_FK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>BF6882EF-3103-3C07-8D12-5379DA4845BC</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0EEAC5E9-696B-22BE-A706-26510A482F7A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="60ADBE1C-FEF3-4C4D-24D6-7EDE7AA50250" name="ALMACEN_LIBRO_ALMACEN_FK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>BF6882EF-3103-3C07-8D12-5379DA4845BC</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B4E1853F-845D-90B2-23DA-CC8185BAA9BC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

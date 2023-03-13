@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="7F0C3E45-AE3D-6BF0-20A4-4E1F82A6977B" containerWithKeyObject="12AE3245-CDCE-60BB-1D30-F1DCD9DBEDA5" localFKIndex="493303C6-C36A-977B-3335-466C3C920A9F" name="TARJETA_PAGO_FK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>08C197B7-7116-31D4-9F7B-0C7D58AE057B</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<referredTableLongName>PAGO</referredTableLongName>
+<arc>2004067F-AD66-C3E6-0657-83FEBBB17DEA</arc>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>07603D10-DED7-B8E6-A473-4E55E59E03CA</referredTableID>
+<keyObject>55544633-DD1E-06F7-6A93-92354B82AA18</keyObject>
+<referredKeyID>55544633-DD1E-06F7-6A93-92354B82AA18</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_pago</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

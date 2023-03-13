@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="804964B4-EE05-204C-1672-62271DA9666F" containerWithKeyObject="C095DEB6-3F2E-BBF1-4646-683326C7F3B4" localFKIndex="17C9D82F-B7CF-463B-1017-9B8397B441EB" name="Periodo_restauracion_Obra_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>104A7CA0-11A9-B539-CD26-BC65A110E47B</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<referredTableLongName>Obra</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>E54BCF4F-D3F2-CD2C-8BDA-51345B69D1A0</referredTableID>
+<keyObject>25F3285E-DACA-61C9-D1AD-483B53532834</keyObject>
+<referredKeyID>25F3285E-DACA-61C9-D1AD-483B53532834</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Obra_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

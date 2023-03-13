@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="43F118B1-9F77-A338-E9A5-E66E495BA685" name="LIBRO_EDITORIAL">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="EDITORIAL_cod_editorial" id="915EC1D8-2E75-65FB-E6E4-F4F0F04F6FBC">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7A78CE09-003D-EF0A-3C6C-86CEA2A1E1B7" referredColumn="57A57446-6098-7382-7B2E-B1992639979F"/>
+</associations>
+</Column>
+<Column name="LIBRO_isbn" id="3780AFAF-8895-EE09-4CFE-639A354012B2">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B0F46287-5274-EFC5-C974-D7621580FFA0" referredColumn="E86650C7-16E8-353F-B90D-21D6D3220F86"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5FAFA43E-AD73-B46F-8A1B-719834B58AA1" name="LIBRO_EDITORIAL_PK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="915EC1D8-2E75-65FB-E6E4-F4F0F04F6FBC"/>
+<colUsage columnID="3780AFAF-8895-EE09-4CFE-639A354012B2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8B74C942-5CD0-FC1A-A1C9-8823660BA61B" name="LIBRO_EDITORIAL_EDITORIAL_FK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>FA51EC7A-E5B9-753B-05AC-E31994160F7F</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="915EC1D8-2E75-65FB-E6E4-F4F0F04F6FBC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C33C0161-BC18-213B-4768-23D147921FB5" name="LIBRO_EDITORIAL_LIBRO_FK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>FA51EC7A-E5B9-753B-05AC-E31994160F7F</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3780AFAF-8895-EE09-4CFE-639A354012B2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

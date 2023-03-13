@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Proyecto_Profesor_FK" directorySegmentName="seg_0" id="4B2A0C6A-F228-4F85-6382-7B6AA8D3F880">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-11 22:59:40 UTC</createdTime>
+<generatorID>37929ABA-D9A5-93D2-A5C5-4D3C61F4AB27</generatorID>
+<ownerDesignName>CentroEstudios</ownerDesignName>
+<engineerTo>
+<item key="41F21D53-4476-823C-41BA-5CE4EFFD43E1" value="true"/>
+<item key="1E37BA33-576F-BB6E-0DD0-EEF2554B5900" value="true"/>
+</engineerTo>
+<sourcePk>D0642552-A9FA-B0FB-A85A-6D478C3809CB</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>EDF116AC-1BBB-E260-E277-E5A5F710A06B</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>A6A3C0EA-F200-E048-C5C6-B26FCBEC99C7</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

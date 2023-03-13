@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7F85B247-510D-8A4A-D4DA-40FD897E89AE" name="PAPEL">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2021-12-14 19:14:57 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<engineerTo>
+<item key="03E6BF7D-7672-C6FC-1AD4-E87EE6D2CC4E" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>6B0EE923-EAAC-F1CC-D65A-1CAAF015689F</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="LIBRO isbn" id="43ACF158-576B-9FB5-548A-E9C4E667A396">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2021-12-20 16:30:50 UTC</createdTime>
+<generatorID>58DA9BBB-502E-4D32-95DF-2FAD446C8896</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<engineerTo>
+<item key="03E6BF7D-7672-C6FC-1AD4-E87EE6D2CC4E" value="true"/>
+</engineerTo>
+<referedAttribute>5F14B07A-8B48-E0C6-82C3-45B0263E88CE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="lugar impresion" id="8A9C0486-3461-5995-2439-A7224A9824C1">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2021-12-14 19:15:19 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<engineerTo>
+<item key="03E6BF7D-7672-C6FC-1AD4-E87EE6D2CC4E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha impresion" id="0F156D0B-AE4C-E444-E967-43EBDCCCDFAF">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2021-12-14 19:15:59 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<engineerTo>
+<item key="03E6BF7D-7672-C6FC-1AD4-E87EE6D2CC4E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="precio" id="8EEBE0C6-E99A-2B7C-10E8-BD31CC309BC9">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2021-12-14 19:21:43 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<engineerTo>
+<item key="03E6BF7D-7672-C6FC-1AD4-E87EE6D2CC4E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="DE017221-EB58-98B6-E807-0CEF166520EE" name="PAPEL PK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2021-12-20 16:30:50 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<engineerTo>
+<item key="03E6BF7D-7672-C6FC-1AD4-E87EE6D2CC4E" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>43ACF158-576B-9FB5-548A-E9C4E667A396</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

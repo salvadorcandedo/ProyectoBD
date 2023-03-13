@@ -1,0 +1,142 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8E2680E7-5745-09C5-77B3-F0362E96293E" name="Conservador">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>9693D327-72A3-8EF4-E5C9-D7781A3B3610</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Codigo" id="4E0114C8-1A17-74FA-8060-441A830FFD27">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>02E18E55-8328-E8F5-D138-55231B43F145</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre" id="086A8667-0C2F-955A-F511-B6567903BC7D">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>3CEAD8BB-447F-71E2-C3A1-1DF542230D35</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Apellido1" id="9B570317-0814-030B-9D40-397464D922D6">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>8C12AACB-F093-31B2-23C0-835F2155686B</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Apellido2" id="ADFD4C40-5AF1-5D5D-A4EC-9642D651D223">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>47CCE7F5-5880-F2EF-6138-1B3585E843E9</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Estilo_pictorico_Estilo_pictorico_ID" id="495BA9BF-423A-87E1-B60E-EA73CD0EB7FC">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6E7C6A49-E370-D04A-1ACD-E7F7CEBF9283" referredColumn="4E5EE3F6-EF4E-4095-3F47-96A6E251C324"/>
+</associations>
+</Column>
+<Column name="Exposicion_temporal_Exposicion_temporal_ID" id="DBCA341E-A451-4137-9053-73BF86B6B5FA">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="04CFA598-724B-445D-0566-D7FED256243A" referredColumn="0053B638-4C65-1465-C969-C6AABA9CCD6F"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D90F58DC-14F6-AEF7-377E-1CC17D614858" name="Conservador_PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>1CDF096A-BBEA-9430-D233-6524142060D4</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4E0114C8-1A17-74FA-8060-441A830FFD27"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8FD5C9F3-4EE3-C162-C855-95DEE9062C1F" name="Conservador__IDX">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>E2C96756-02C1-0A81-1879-4FCA61EC020A</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="495BA9BF-423A-87E1-B60E-EA73CD0EB7FC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="30C135BC-B50C-FD68-8E2B-3A7010D442A8" name="Conservador__IDXv1">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>062A372F-8CD3-5994-3666-DC72FF3ECF31</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="DBCA341E-A451-4137-9053-73BF86B6B5FA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="28EC8810-FC88-4CF1-BF40-B6A6522E00A2" name="Conservador_Estilo_pictorico_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>E2C96756-02C1-0A81-1879-4FCA61EC020A</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="495BA9BF-423A-87E1-B60E-EA73CD0EB7FC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C3853B9D-5385-39B9-140A-DD32C47409DF" name="Conservador_Exposicion_temporal_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 05:16:31 UTC</createdTime>
+<generatorID>062A372F-8CD3-5994-3666-DC72FF3ECF31</generatorID>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DBCA341E-A451-4137-9053-73BF86B6B5FA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

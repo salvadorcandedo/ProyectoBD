@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="AUTOR_ESCRIBE_LIBRO" directorySegmentName="seg_0" id="199AA235-67BC-3AA7-1172-7FD4C11A84B1">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2021-12-20 16:34:16 UTC</createdTime>
+<ownerDesignName>libreria</ownerDesignName>
+<engineerTo>
+<item key="03E6BF7D-7672-C6FC-1AD4-E87EE6D2CC4E" value="true"/>
+</engineerTo>
+<sourceTransferable>false</sourceTransferable>
+<targetTransferable>false</targetTransferable>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>A3A22147-FD4C-9931-BF21-5C52F5FF17D1</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>6B0EE923-EAAC-F1CC-D65A-1CAAF015689F</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

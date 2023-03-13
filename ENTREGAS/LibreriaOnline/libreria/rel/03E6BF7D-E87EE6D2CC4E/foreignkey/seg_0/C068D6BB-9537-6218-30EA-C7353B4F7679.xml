@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C068D6BB-9537-6218-30EA-C7353B4F7679" containerWithKeyObject="998E38FE-B450-3A86-4F83-E1B31F8541F1" localFKIndex="AD0E3229-6DE5-4DCC-97E6-D43E8CE6E237" name="ALMACEN_LOCALIDAD_FK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>3A83DF50-1469-80B6-4996-4DC84E875393</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<referredTableLongName>LOCALIDAD</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>37C3C9B7-841B-C81F-5A8A-C0E0EE1912F7</referredTableID>
+<keyObject>9B3E7577-5C2D-7175-2AD9-F3D09DB119E8</keyObject>
+<referredKeyID>9B3E7577-5C2D-7175-2AD9-F3D09DB119E8</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cod_localidad,PROVINCIA_CCAA_cod_ccaa,PROVINCIA_cod_provincia</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="87F81485-CE6B-50F9-3AE9-9BDF2AC28320" mainViewID="3F32700D-989D-C29F-DE12-697F48699108">
+<createdBy>skate</createdBy>
+<createdTime>2022-12-01 17:00:53 UTC</createdTime>
+<ownerDesignName>Tarea_Pinacoteca</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

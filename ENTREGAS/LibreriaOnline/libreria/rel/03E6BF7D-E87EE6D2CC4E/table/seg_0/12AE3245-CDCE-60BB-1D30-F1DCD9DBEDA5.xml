@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="12AE3245-CDCE-60BB-1D30-F1DCD9DBEDA5" name="TARJETA">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>D414E7C8-052A-CB4A-BAE1-B878C487C7A0</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_pago" id="0B5635D9-982F-C72C-71BD-685292FD7767">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>6807BEC1-322F-5BE9-E5A8-1F169FD5BEBF</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7F0C3E45-AE3D-6BF0-20A4-4E1F82A6977B" referredColumn="A11EEEFA-AEA9-7E4A-A21F-FC167B80D5E5"/>
+</associations>
+</Column>
+<Column name="id_tarjeta" id="E1F325C5-4248-D524-DFCA-941C784B44B5">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>947DA6A2-9FF4-CFB3-1A04-49697D83B0DA</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="numero_tarjeta" id="2B7DEC8C-DFE7-C071-2644-7139B3778BBC">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>5B7EB166-3444-0689-C0E0-2984F08D9B64</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>16</dataTypeSize>
+<ownDataTypeParameters>16,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7B52281A-F6F1-B852-7196-3ACFDA0EDD86" name="TARJETA_PK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>33FE6FA9-C766-BEEC-73EA-39379909A405</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0B5635D9-982F-C72C-71BD-685292FD7767"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E63EED1B-3E70-2AA4-092C-FED6655F8B67" name="TARJETA_PKv1">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>0AF46CB8-7FBA-3DBE-DC1C-25761A67ACC4</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E1F325C5-4248-D524-DFCA-941C784B44B5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="493303C6-C36A-977B-3335-466C3C920A9F" name="TARJETA_PAGO_FK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>08C197B7-7116-31D4-9F7B-0C7D58AE057B</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0B5635D9-982F-C72C-71BD-685292FD7767"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

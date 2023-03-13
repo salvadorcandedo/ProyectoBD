@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B53B09D5-8A10-3C18-E9C5-49B5961B8F3E" name="ALQUILER">
+<createdBy>ivana</createdBy>
+<createdTime>2022-12-20 16:03:51 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<engineerTo>
+<item key="FD66F03D-79F3-954A-A47C-3D26EBAA9D5E" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="CodigoAlquiler" id="3D6D03B3-EEF0-DEC0-2891-5F3F8DBA941D">
+<createdBy>ivana</createdBy>
+<createdTime>2022-12-20 16:03:59 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<engineerTo>
+<item key="FD66F03D-79F3-954A-A47C-3D26EBAA9D5E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FechaInicio" id="D0C31C73-472B-2692-A338-7F0D5520339F">
+<createdBy>ivana</createdBy>
+<createdTime>2022-12-20 16:05:16 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<engineerTo>
+<item key="FD66F03D-79F3-954A-A47C-3D26EBAA9D5E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Observaciones" id="99235E13-68B8-B629-838C-1CCC0136BBE6">
+<createdBy>ivana</createdBy>
+<createdTime>2022-12-20 16:06:18 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<engineerTo>
+<item key="FD66F03D-79F3-954A-A47C-3D26EBAA9D5E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Matrícula" id="2D9562B9-67C2-FE6A-0DE5-F55B8B625135">
+<createdBy>ivana</createdBy>
+<createdTime>2022-12-20 16:07:17 UTC</createdTime>
+<generatorID>E4A1A6F5-36DD-27EC-8324-6FBB3D0CA0B6</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<engineerTo>
+<item key="FD66F03D-79F3-954A-A47C-3D26EBAA9D5E" value="true"/>
+</engineerTo>
+<referedAttribute>45C22139-F6FE-C23B-9A6D-DD436FBEF5DA</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CodigoPago" id="6CA21938-F97C-B74F-E71E-2E162BD91A15">
+<createdBy>ivana</createdBy>
+<createdTime>2023-01-09 16:27:54 UTC</createdTime>
+<generatorID>3608C71A-B6CE-BC47-06F1-6483D3725A2D</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<engineerTo>
+<item key="FD66F03D-79F3-954A-A47C-3D26EBAA9D5E" value="true"/>
+</engineerTo>
+<referedAttribute>981F773C-6478-6D0E-7CE8-52ADF2915E6D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="91663F5B-6A16-B58F-A57D-133EF8E01E02" name="ALQUILER PK">
+<createdBy>ivana</createdBy>
+<createdTime>2022-12-20 16:05:15 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<engineerTo>
+<item key="FD66F03D-79F3-954A-A47C-3D26EBAA9D5E" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>3D6D03B3-EEF0-DEC0-2891-5F3F8DBA941D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="62D6042E-C1E4-4303-F3A8-560F515556BC" name="Gasolina">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:39 UTC</createdTime>
+<generatorID>4F285E2B-0E75-DE38-4509-47BCAEE79B02</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="COMBUSTIBLE_COMBUSTIBLE_ID" id="06E20B08-B6B0-30CD-417F-99CF5E68814A">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:39 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DA84A2B4-9CA0-7AFB-CFA2-3FA3E638442D" referredColumn="FE0CB0C8-ED10-E4C8-A46B-EA87029BA868"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="56C31D3C-7074-5413-E407-C0284455DC43" name="Gasolina_PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:39 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="06E20B08-B6B0-30CD-417F-99CF5E68814A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8582B335-17A4-BB70-92DC-B01756415993" name="Gasolina_COMBUSTIBLE_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:39 UTC</createdTime>
+<generatorID>FF879941-ED10-0370-5074-92D2D127EDF0</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="06E20B08-B6B0-30CD-417F-99CF5E68814A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

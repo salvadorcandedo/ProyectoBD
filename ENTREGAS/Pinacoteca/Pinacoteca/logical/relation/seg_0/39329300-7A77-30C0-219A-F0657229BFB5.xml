@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Pinto-Estilo" directorySegmentName="seg_0" id="39329300-7A77-30C0-219A-F0657229BFB5">
+<createdBy>skate</createdBy>
+<createdTime>2022-12-02 09:51:52 UTC</createdTime>
+<ownerDesignName>Pinacoteca</ownerDesignName>
+<engineerTo>
+<item key="B5D38705-0494-7992-DCB3-11C14A0DD29D" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>6ADB0F20-1157-5497-BEA9-2404810236E0</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>5FBB214A-A578-4316-E54B-2FBA16DCF91B</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

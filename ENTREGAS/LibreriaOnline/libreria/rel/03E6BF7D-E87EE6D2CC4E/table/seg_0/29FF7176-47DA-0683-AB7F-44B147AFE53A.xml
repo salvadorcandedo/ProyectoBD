@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="29FF7176-47DA-0683-AB7F-44B147AFE53A" name="PREMIUM">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>4FA11E87-6C9B-2020-1A0A-01A1DB89FF7F</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_cliente" id="AD2028F5-F2C4-0281-7CC2-DED64D957B1A">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>01EB3F50-A257-525D-DE74-1D4CBF2101DF</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5DE5FED0-3E65-1475-CDC3-E2345FEF6B89" referredColumn="CFFB6A54-51CB-C319-31AB-F97DD14BD53A"/>
+</associations>
+</Column>
+<Column name="CLIENTE_id_cliente" id="8C1211F2-BB55-2EA6-498C-5A4AC38A980F">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>9A8FD71F-CC96-DBC1-B5C1-3E8378A2CA32</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F14DC89F-3697-2F52-8AD7-4616C2EF9BAA" referredColumn="CFFB6A54-51CB-C319-31AB-F97DD14BD53A"/>
+</associations>
+</Column>
+<Column name="cod_premium" id="F0FB810E-4281-78F2-1E51-C00798438B05">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>393C461A-EE83-16CC-4822-13E530B7A3FA</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E2ADD106-FE3D-2800-B935-9FFE8D0224AD" name="PREMIUM_PK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>F6AB7614-1602-B5C2-A3FB-B8E231FC2B5B</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AD2028F5-F2C4-0281-7CC2-DED64D957B1A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B3FFB4F0-B26D-3ED6-03E8-5BD7DCFFE064" name="PREMIUM_PKv1">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>2EBD2374-D8FC-85D8-721C-068FFFEA673E</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8C1211F2-BB55-2EA6-498C-5A4AC38A980F"/>
+<colUsage columnID="F0FB810E-4281-78F2-1E51-C00798438B05"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F4F4E8DE-041E-39CB-4ABE-CBD43C9CB1C2" name="PREMIUM_CLIENTE_FK">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>105177C3-88F7-FE80-9246-4EEC38581C62</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AD2028F5-F2C4-0281-7CC2-DED64D957B1A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D38F668D-7AD7-F7F5-2199-E600805EF75A" name="PREMIUM_CLIENTE_FKv2">
+<createdBy>diego.rodriguezcaama</createdBy>
+<createdTime>2022-02-08 19:23:24 UTC</createdTime>
+<generatorID>148E633B-7959-148E-B187-70DA0EA158C9</generatorID>
+<ownerDesignName>libreria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8C1211F2-BB55-2EA6-498C-5A4AC38A980F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

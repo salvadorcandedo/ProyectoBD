@@ -1,0 +1,162 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DD5C21D5-D51E-E4D9-F23D-DDC1ABCA5446" name="ALQUILER">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:39 UTC</createdTime>
+<generatorID>B53B09D5-8A10-3C18-E9C5-49B5961B8F3E</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CodigoAlquiler" id="31DF7452-10F4-18C4-37DB-C0CB713A8FEB">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:39 UTC</createdTime>
+<generatorID>3D6D03B3-EEF0-DEC0-2891-5F3F8DBA941D</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FechaInicio" id="02EFB577-E884-B55B-4196-1759708A2122">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:39 UTC</createdTime>
+<generatorID>D0C31C73-472B-2692-A338-7F0D5520339F</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Observaciones" id="63523E63-2986-466A-8299-A54FD798274C">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:39 UTC</createdTime>
+<generatorID>99235E13-68B8-B629-838C-1CCC0136BBE6</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VEHICULO_Matrícula" id="3DA12757-A2F4-E8F4-637C-8A687F7058E9">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:39 UTC</createdTime>
+<generatorID>2D9562B9-67C2-FE6A-0DE5-F55B8B625135</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="012D846E-249D-49B0-2597-CEC132F72918" referredColumn="C6B0BF15-EB81-2099-3F3D-E0779B331ED8"/>
+</associations>
+</Column>
+<Column name="PAGO_CodigoPago" id="DB171A14-8112-0F55-DB92-FF626294D0B9">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:39 UTC</createdTime>
+<generatorID>6CA21938-F97C-B74F-E71E-2E162BD91A15</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="93D88115-39CD-FDCB-BD99-FAE100B60DDB" referredColumn="319DBE88-58FF-E9B7-0E92-FD3D79620041"/>
+</associations>
+</Column>
+<Column name="Ubicacion_Ubicacion_ID" id="2895B17C-4EB2-EB6D-B754-A4507A955E8D">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:40 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="17CF4439-25C5-C6C5-021B-5A1CA128C007" referredColumn="6549ED25-5837-ED03-616C-363898F6E5B5"/>
+</associations>
+</Column>
+<Column name="COMBUSTIBLE_COMBUSTIBLE_ID" id="29AA98C3-7F61-2872-0409-6FEFDBC22B17">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:40 UTC</createdTime>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7AC58A1D-B136-0EE2-142C-BD58A114AFF2" referredColumn="FE0CB0C8-ED10-E4C8-A46B-EA87029BA868"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0C9887AC-8930-A70A-CFC6-BAA9C1145BAD" name="ALQUILER_PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:39 UTC</createdTime>
+<generatorID>91663F5B-6A16-B58F-A57D-133EF8E01E02</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="31DF7452-10F4-18C4-37DB-C0CB713A8FEB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F08E1DB5-B4AF-5760-44A2-206AC960707E" name="ALQUILER_PAGO_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:40 UTC</createdTime>
+<generatorID>3608C71A-B6CE-BC47-06F1-6483D3725A2D</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DB171A14-8112-0F55-DB92-FF626294D0B9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0CBE44C6-3C47-A83F-C737-CFE446681207" name="ALQUILER_Ubicacion_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:40 UTC</createdTime>
+<generatorID>B88DFB57-38AE-831F-7C2D-0F28E7D2817C</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2895B17C-4EB2-EB6D-B754-A4507A955E8D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A780DAD8-F7BD-D6FF-351B-D6551C867F33" name="ALQUILER_COMBUSTIBLE_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:40 UTC</createdTime>
+<generatorID>26396189-C528-D941-3AF0-93452A162FA1</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="29AA98C3-7F61-2872-0409-6FEFDBC22B17"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3306C401-932B-E2F4-6149-C374EE456E22" name="ALQUILER_VEHICULO_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 18:31:40 UTC</createdTime>
+<generatorID>E4A1A6F5-36DD-27EC-8324-6FBB3D0CA0B6</generatorID>
+<ownerDesignName>Alquilervehiculos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3DA12757-A2F4-E8F4-637C-8A687F7058E9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
