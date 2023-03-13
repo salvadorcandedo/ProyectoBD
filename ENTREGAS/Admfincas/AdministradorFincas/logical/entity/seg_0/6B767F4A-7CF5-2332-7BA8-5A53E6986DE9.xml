@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="6B767F4A-7CF5-2332-7BA8-5A53E6986DE9" name="Telefono_Empresa">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 17:52:50 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="717B4307-64AB-CE9A-5FCC-4BDDE67CBB24" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Num_Empresa" id="011C03A6-2372-7F73-B341-B6ECDA2CF7B4">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 17:52:50 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="717B4307-64AB-CE9A-5FCC-4BDDE67CBB24" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CIF" id="AF8748C1-24B7-E0BA-F111-6857C60A523C">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 17:53:23 UTC</createdTime>
+<generatorID>2AEABCBC-BC76-8A8A-19B2-8E05EE206DA4</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="717B4307-64AB-CE9A-5FCC-4BDDE67CBB24" value="true"/>
+</engineerTo>
+<referedAttribute>595D8B61-6118-E67B-58A9-414F245436FF</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

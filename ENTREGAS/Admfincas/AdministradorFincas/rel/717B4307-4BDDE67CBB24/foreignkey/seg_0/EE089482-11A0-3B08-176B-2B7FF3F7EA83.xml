@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="EE089482-11A0-3B08-176B-2B7FF3F7EA83" containerWithKeyObject="7DA78F34-D7CE-8AA6-0B75-6F425917E5AB" localFKIndex="FF09FE38-CA8D-DFD3-45D9-23C237FE7E11" name="Paypal_Pago_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:33 UTC</createdTime>
+<generatorID>2EA93A4F-52C1-B7C6-2EDC-1C043B1D829C</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<referredTableLongName>Pago</referredTableLongName>
+<arc>CD86DEF7-55DC-0B64-0996-BCD26D3A5689</arc>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>E740CDE9-0127-E5C4-0163-3F1030F26A42</referredTableID>
+<keyObject>4B19F73A-7590-C648-4A1D-79C0C6747C7A</keyObject>
+<referredKeyID>4B19F73A-7590-C648-4A1D-79C0C6747C7A</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_Pago</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

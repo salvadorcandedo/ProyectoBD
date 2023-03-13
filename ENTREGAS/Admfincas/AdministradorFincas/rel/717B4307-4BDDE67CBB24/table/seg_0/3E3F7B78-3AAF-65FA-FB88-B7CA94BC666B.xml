@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3E3F7B78-3AAF-65FA-FB88-B7CA94BC666B" name="Mantenimiento">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:33 UTC</createdTime>
+<generatorID>F49D83E3-B06F-5E26-D054-7D493CA422C3</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Descripcion" id="D0FBF99F-6E31-C024-7408-EDCD1FD0A9B5">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:33 UTC</createdTime>
+<generatorID>63EDE8F7-A0CD-914E-50B9-8B25274A556F</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FechaInicio" id="009FE274-B288-A290-11FA-12DADD83DCC4">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:33 UTC</createdTime>
+<generatorID>02D19AB1-9DAE-623D-7295-739B754B4D8D</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FechaAcabado" id="2E050DBB-1AE9-ABA2-544B-A49F66066A67">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:33 UTC</createdTime>
+<generatorID>106EF06B-92C0-0A32-FCAE-43E645A22432</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Propiedad_IDpropiedad" id="A6FA4AA3-50B8-340E-4283-C37DEC1B6789">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:33 UTC</createdTime>
+<generatorID>3D764D57-1D61-637F-5FE4-B81B19B3EA91</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="01ADCE75-2B95-E589-E823-7DE9BB1903AA" referredColumn="68D46F57-3885-8885-2F1D-F53A443AC2C2"/>
+</associations>
+</Column>
+<Column name="Mantenimiento_ID" id="673AA90F-ED8F-DF1C-9C44-CFC0D1636A56">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:33 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="42FF5841-76D5-6375-63BB-4A0D5BB410B5" name="Mantenimiento_PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:33 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="673AA90F-ED8F-DF1C-9C44-CFC0D1636A56"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EF6A86FD-DC93-C99B-7ABF-504DE2E733DE" name="Mantenimiento_Propiedad_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:34 UTC</createdTime>
+<generatorID>BCF86B60-DBF3-A19C-C82E-33B84ACB7B84</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A6FA4AA3-50B8-340E-4283-C37DEC1B6789"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

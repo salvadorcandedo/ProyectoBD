@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0C6F7724-CA4F-E41F-87D5-7E31BE874E09" name="Propietario-propiedad">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:34 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<ordsAlias>relation_25</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Propiedad_IDpropiedad" id="C03EB4EC-2D67-E786-C105-5C04704EEE39">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:34 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C84DECCD-3CCD-E286-4D1D-1D08182D4744" referredColumn="68D46F57-3885-8885-2F1D-F53A443AC2C2"/>
+</associations>
+</Column>
+<Column name="Propietario_ID_Propietario" id="2DFE3725-738B-FE04-88B6-F3D800D0871F">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:34 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B10BE20D-5D16-7E49-A5DF-7019E06B1396" referredColumn="16774913-A58E-735C-6057-EED2B9224866"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="392B1FB1-54FE-67F6-D5C9-99BB63573A09" name="Relation_25_PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:34 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C03EB4EC-2D67-E786-C105-5C04704EEE39"/>
+<colUsage columnID="2DFE3725-738B-FE04-88B6-F3D800D0871F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4770EB71-2875-806E-DD12-861A7072355C" name="Relation_25_Propiedad_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:34 UTC</createdTime>
+<generatorID>C0C3BA38-C90F-002A-7E88-082678180736</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C03EB4EC-2D67-E786-C105-5C04704EEE39"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B9958404-05D1-8772-C10B-6A0144116720" name="Relation_25_Propietario_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:34 UTC</createdTime>
+<generatorID>C0C3BA38-C90F-002A-7E88-082678180736</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2DFE3725-738B-FE04-88B6-F3D800D0871F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

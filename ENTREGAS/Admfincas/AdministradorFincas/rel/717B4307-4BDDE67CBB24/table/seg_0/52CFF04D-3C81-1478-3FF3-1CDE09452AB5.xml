@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="52CFF04D-3C81-1478-3FF3-1CDE09452AB5" name="Garage">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:33 UTC</createdTime>
+<generatorID>27F9334E-1F02-5E64-853A-A4BA061E5070</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Aparcamiento_Aparcamiento_ID" id="5B5FA908-8565-4368-11AB-1FBF065378B8">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:33 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BB37C94F-7099-5D63-171A-3DE442F81390" referredColumn="87CF0869-2ED3-876E-68D8-0A369FC3AF16"/>
+</associations>
+</Column>
+<Column name="tamaño" id="CD190D06-1BA7-C6C3-4C3A-ECC9FE2911E4">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:33 UTC</createdTime>
+<generatorID>5553FD86-FC79-F756-4516-2B19AE1AB615</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5D74AD93-F9C3-FAFA-C6F3-4F80E52812DE" name="Garage_PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:33 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="5B5FA908-8565-4368-11AB-1FBF065378B8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="896CEE0C-9807-E84D-FAF9-81239639A41B" name="Garage_Aparcamiento_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:33 UTC</createdTime>
+<generatorID>D28E7FE3-3AC8-2531-928E-2EC3083B8CC3</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5B5FA908-8565-4368-11AB-1FBF065378B8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

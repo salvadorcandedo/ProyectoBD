@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="EA9C835F-D03A-FDA3-7FD3-11798F32460F" containerWithKeyObject="1B33E294-7F56-324C-E9BF-FF87838033A7" localFKIndex="8170AB1A-20F1-595C-B8E7-6514209F835D" name="FINCA_URBANA_Tipo_Propiedad_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:33 UTC</createdTime>
+<generatorID>5FDC8932-D541-A331-C284-1A1B4432BBD6</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<referredTableLongName>Tipo_Propiedad</referredTableLongName>
+<arc>FB757B3D-E92F-C4A6-B7E1-E017A77C1E7E</arc>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>CF0CDC31-1AD2-61BA-6DC2-CFF531D667C7</referredTableID>
+<keyObject>B0526803-977D-8A50-B663-05C7FA3C380B</keyObject>
+<referredKeyID>B0526803-977D-8A50-B663-05C7FA3C380B</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Tipo_Propiedad_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

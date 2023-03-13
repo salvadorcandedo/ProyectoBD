@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7DA78F34-D7CE-8AA6-0B75-6F425917E5AB" name="Paypal">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:33 UTC</createdTime>
+<generatorID>4EE883E5-9AC8-C077-B1DC-49C7C382A631</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_Pago" id="48991F00-7891-4F76-1803-8B97DC6FCBD9">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:33 UTC</createdTime>
+<generatorID>095F3E60-9DDB-39AB-D731-F350ED72E544</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EE089482-11A0-3B08-176B-2B7FF3F7EA83" referredColumn="66D007CC-2AD2-9AFE-C98C-0EC23F5178D1"/>
+</associations>
+</Column>
+<Column name="Nombreusuario" id="A56724B7-15F7-ABED-9A55-F36F28D4A610">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:33 UTC</createdTime>
+<generatorID>4FD66826-286A-4DB7-B57B-4C6166498F27</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Correo" id="2B021B3F-CE7A-2F00-BB40-DD79B7251EF1">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:33 UTC</createdTime>
+<generatorID>F6BA9CB7-BD88-C04A-193C-782A7D573023</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="90F8995D-5A1D-2AEA-4418-FD78FAD6A7C2" name="Paypal_PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:33 UTC</createdTime>
+<generatorID>9188F8ED-3FED-CC3D-91CE-8D7C62AAE24B</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="48991F00-7891-4F76-1803-8B97DC6FCBD9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FF09FE38-CA8D-DFD3-45D9-23C237FE7E11" name="Paypal_Pago_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:33 UTC</createdTime>
+<generatorID>2EA93A4F-52C1-B7C6-2EDC-1C043B1D829C</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="48991F00-7891-4F76-1803-8B97DC6FCBD9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

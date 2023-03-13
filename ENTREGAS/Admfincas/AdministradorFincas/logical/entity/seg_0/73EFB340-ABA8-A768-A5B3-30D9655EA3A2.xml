@@ -1,0 +1,82 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="73EFB340-ABA8-A768-A5B3-30D9655EA3A2" name="Individuo">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 21:15:23 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="717B4307-64AB-CE9A-5FCC-4BDDE67CBB24" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>54D5128B-B679-7466-655A-9EE26EE683E1</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="DNi" id="C9DA3BB6-6304-E418-89E3-5A0862C2429C">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 21:17:09 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="717B4307-64AB-CE9A-5FCC-4BDDE67CBB24" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nombre" id="3527F44D-2C71-BBB1-32C4-7F5ED633F49E">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 21:17:00 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="717B4307-64AB-CE9A-5FCC-4BDDE67CBB24" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Apellido" id="FAB1272C-19E5-07FA-1FFA-BEA3AC599671">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 21:17:04 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="717B4307-64AB-CE9A-5FCC-4BDDE67CBB24" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Apellido2" id="20443DC3-B112-1DE0-CC06-DCA70960D183">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 21:17:31 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="717B4307-64AB-CE9A-5FCC-4BDDE67CBB24" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4175D1C2-2AB7-80F5-88A4-746054B18DE3" name="Particular PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 23:46:55 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="717B4307-64AB-CE9A-5FCC-4BDDE67CBB24" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C9DA3BB6-6304-E418-89E3-5A0862C2429C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,33 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="6BF583BC-E4BC-E248-BEE4-376F7C805F5C" name="Aparcamiento">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-12 21:19:57 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="717B4307-64AB-CE9A-5FCC-4BDDE67CBB24" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDpropiedad" id="3D45E3D9-176D-178F-A044-09C9D566D9FD">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 00:41:23 UTC</createdTime>
+<generatorID>2AB306F5-B82E-7FE6-15BD-FE9265BDD1B2</generatorID>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<engineerTo>
+<item key="717B4307-64AB-CE9A-5FCC-4BDDE67CBB24" value="true"/>
+</engineerTo>
+<referedAttribute>7F20A904-FD7B-20A8-7DA4-23E25C4DD638</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

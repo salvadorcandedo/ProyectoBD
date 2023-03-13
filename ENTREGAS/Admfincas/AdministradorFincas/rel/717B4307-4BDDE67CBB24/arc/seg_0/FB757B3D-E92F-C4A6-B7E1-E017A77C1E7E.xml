@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKArc class="oracle.dbtools.crest.model.design.relational.FKArc" directorySegmentName="seg_0" id="FB757B3D-E92F-C4A6-B7E1-E017A77C1E7E" name="FKArc_4">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 18:04:33 UTC</createdTime>
+<ownerDesignName>AdministradorFincas</ownerDesignName>
+<mandatory>false</mandatory>
+<reverseArc>true</reverseArc>
+<table>CF0CDC31-1AD2-61BA-6DC2-CFF531D667C7</table>
+<fkeys>
+<fkeyID>EA9C835F-D03A-FDA3-7FD3-11798F32460F</fkeyID>
+<fkeyID>A732ECF8-8965-2C78-B71A-C83C61AD269F</fkeyID>
+</fkeys>
+</FKArc>
