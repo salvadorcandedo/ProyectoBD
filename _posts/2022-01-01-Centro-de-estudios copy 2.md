@@ -32,6 +32,7 @@ tags:
   - [Modelo Lógico Relacional](#modelo-lógico-relacional)
   - [Aplicamos la normalización hasta la tercera forma normal](#aplicamos-la-normalización-hasta-la-tercera-forma-normal)
     - [Una vez realizados el modelo Lógico Conceptual y Relacional ya solo queda generar el DLL en Data-Modeler para que podamos usarlo en nuestro smss](#una-vez-realizados-el-modelo-lógico-conceptual-y-relacional-ya-solo-queda-generar-el-dll-en-data-modeler-para-que-podamos-usarlo-en-nuestro-smss)
+- [DLL](#dll)
 - [CREACIÓN BASE DE DATOS EN SQL SERVER](#creación-base-de-datos-en-sql-server)
 
 # Enunciado del ejercicio
@@ -206,7 +207,7 @@ multivaluados.
 
 
 
-
+# DLL
 
 ```sql
 -- Generado por Oracle SQL Developer Data Modeler 22.2.0.165.1149
