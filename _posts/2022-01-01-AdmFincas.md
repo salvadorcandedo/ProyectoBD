@@ -48,14 +48,14 @@ El objetivo de este proyecto es diseñar un modelo de base de datos lógico-rela
     - [Alquiler](#alquiler)
     - [Cliente](#cliente)
     - [Gasto](#gasto)
-        - [Servicio](#servicio)
+        - [Trabajo](#trabajo)
   - [Modelo Lógico:](#modelo-lógico)
 - [Modelo Relacional](#modelo-relacional)
 - [Análisis de las normas de formalización en el modelo de base de datos](#análisis-de-las-normas-de-formalización-en-el-modelo-de-base-de-datos)
   - [Norma 1FN](#norma-1fn)
   - [Norma 2FN](#norma-2fn)
   - [Norma 3FN](#norma-3fn)
-- [Crear Base de Datos Pinacoteca en SQL Server](#crear-base-de-datos-pinacoteca-en-sql-server)
+- [Crear Base de Datos AdmFincas en SQL Server](#crear-base-de-datos-admfincas-en-sql-server)
 - [DDL](#ddl)
 - [Administración](#administración)
   - [Creación de una base de datos desde una query](#creación-de-una-base-de-datos-desde-una-query)
@@ -115,10 +115,10 @@ También interesa Guardar información sobre la propiedad asi cómo su tipo, si 
 
 	
 
-| ID_Propietario| Contacto | 
-|----------|----------|
-| 1   | Paco |
-| 2  | Starbuks |
+| ID_Propietario|  
+|----------|
+| 1   | 
+| 2  | 
 
 
 | Dni | Nombre | Apellido 1|Apellido 2|
@@ -143,8 +143,8 @@ También interesa Guardar información sobre la propiedad asi cómo su tipo, si 
   
 | IDpropiedad|  | AñoConstruccion  |Superficie |Baños| Habitaciones |
 |----------|----------|----------|----------|----------| ----|
-| 1   | Calle Ejemplo1 |Candedo |40|300| 300|
-| 2  | Calle Ejemplo 2 |Wayne | 45 |450| 300|
+| 1   | Calle Ejemplo1 |Candedo |40|300| 300| 3 | 2 |
+| 2  | Calle Ejemplo 2 |Wayne | 45 |450| 300| 2 | 1 |
 
 
 ### Alquiler
@@ -154,10 +154,10 @@ También interesa Guardar información sobre la propiedad asi cómo su tipo, si 
 - SeguroDeposito
 - Renta mensual
 - PrecioTotal
-- ID_Cliente(FK)
-- IDpropiedad(FK)
+  - ID_Cliente(FK)
+  - IDpropiedad(FK)
 
-| ID_Alquiler| Fecha_Inicio | Fecha_Fin|SeguroDeposito |Renta mensual| Email| PrecioTotal |
+| ID_Alquiler| Fecha_Inicio | Fecha_Fin|SeguroDeposito |Renta mensual| | PrecioTotal |
 |----------|----------|----------|----------|----------|----------|----------|
 | 1   | 10/10/2023| 10/10/2023|  |300 | 230 |example@yahoo.es| 
 | 2  | 10/10/2023| 10/10/2023| 450| 230 |981998822| example@yahoo.es| 
@@ -172,17 +172,23 @@ También interesa Guardar información sobre la propiedad asi cómo su tipo, si 
 
 | ID| Fecha de inicio| Fecha de fin|Precio mensual|Duración en meses| 
 |----------|----------|----------|----------|----------|
-| 1   | 10/01/02 | 10/02/01   |300|| 
-| 2  | 10/02/01 |Martinez | 350 || 
+| 1   | 10/01/02 | 10/02/01   |300|1 | 
+| 2  | 10/02/01 |Martinez | 350 | 2  | 
 
 ### Gasto
-
+> Esta tabla se usa para calcular el gasto total del mantenimiento
 - ID
 - Fecha
-- Descripción
-- Importe
+- Valor
+- Coste total
+  
 
-##### Servicio
+| ID| Fecha | Valor |Coste total|
+|----------|----------|----------|---------|
+| 1   | 10/01/02 | 220-300  |300|
+| 2  | 10/02/01 |100-150  | 350 |
+
+##### Trabajo
 
 - ID
 - Nombre
@@ -204,7 +210,7 @@ También interesa Guardar información sobre la propiedad asi cómo su tipo, si 
 
 # Modelo Relacional
 
-Al generar el modelo relacional se generan dos tablas más ya que existían dos relaciones N:M
+Al realizar la ingeniería al  modelo relacional se generan dos tablas más ya que existían dos relaciones N:M
 
 
 - Mantenimiento-trabajo entre la entidad Mantenimiento y Trabajo
@@ -244,7 +250,7 @@ atributos no primarios en lugar de su PK en su tabla correspondiente.
 
 
 
-# Crear Base de Datos Pinacoteca en SQL Server
+# Crear Base de Datos AdmFincas en SQL Server
 
 ```sql
 USE master
@@ -262,7 +268,7 @@ GO
 
 ```sql
 -- Generado por Oracle SQL Developer Data Modeler 22.2.0.165.1149
---   en:        2023-03-13 05:07:25 CET
+--   en:        2023-03-13 19:32:31 CET
 --   sitio:      SQL Server 2012
 --   tipo:      SQL Server 2012
 
@@ -335,21 +341,20 @@ GO
 
 CREATE TABLE Empresa 
     (
-     Propietario_Propietario_ID NUMERIC (28) NOT NULL , 
+     ID_Propietario VARCHAR NOT NULL , 
      CIF NVARCHAR (8) NOT NULL , 
      NombreEmpresa VARCHAR NOT NULL , 
-     Número VARCHAR NOT NULL , 
      Sucursal VARCHAR NOT NULL , 
      Direccion_Direccion_ID NUMERIC (28) NOT NULL 
     )
 GO
 
-ALTER TABLE Empresa ADD CONSTRAINT Empresa_PK PRIMARY KEY CLUSTERED (Propietario_Propietario_ID)
+ALTER TABLE Empresa ADD CONSTRAINT Empresa_PK PRIMARY KEY CLUSTERED (ID_Propietario)
      WITH (
      ALLOW_PAGE_LOCKS = ON , 
      ALLOW_ROW_LOCKS = ON )
 GO
-ALTER TABLE Empresa ADD CONSTRAINT Empresa_CIF_UN UNIQUE NONCLUSTERED (CIF)
+ALTER TABLE Empresa ADD CONSTRAINT Empresa_PKv1 UNIQUE NONCLUSTERED (CIF)
 GO
 
 CREATE TABLE FINCA_RÚSTICA 
@@ -401,7 +406,7 @@ GO
 
 CREATE TABLE Individuo 
     (
-     Propietario_Propietario_ID NUMERIC (28) NOT NULL , 
+     ID_Propietario VARCHAR NOT NULL , 
      DNi VARCHAR NOT NULL , 
      Nombre VARCHAR NOT NULL , 
      Apellido VARCHAR NOT NULL , 
@@ -409,12 +414,12 @@ CREATE TABLE Individuo
     )
 GO
 
-ALTER TABLE Individuo ADD CONSTRAINT Individuo_PK PRIMARY KEY CLUSTERED (Propietario_Propietario_ID)
+ALTER TABLE Individuo ADD CONSTRAINT Individuo_PK PRIMARY KEY CLUSTERED (ID_Propietario)
      WITH (
      ALLOW_PAGE_LOCKS = ON , 
      ALLOW_ROW_LOCKS = ON )
 GO
-ALTER TABLE Individuo ADD CONSTRAINT Individuo_DNi_UN UNIQUE NONCLUSTERED (DNi)
+ALTER TABLE Individuo ADD CONSTRAINT Individuo_PKv1 UNIQUE NONCLUSTERED (DNi)
 GO
 
 CREATE TABLE Mantenimiento 
@@ -428,19 +433,6 @@ CREATE TABLE Mantenimiento
 GO
 
 ALTER TABLE Mantenimiento ADD CONSTRAINT Mantenimiento_PK PRIMARY KEY CLUSTERED (Mantenimiento_ID)
-     WITH (
-     ALLOW_PAGE_LOCKS = ON , 
-     ALLOW_ROW_LOCKS = ON )
-GO
-
-CREATE TABLE "Mantenimiento-trabajo" 
-    (
-     Mantenimiento_Mantenimiento_ID NUMERIC (28) NOT NULL , 
-     Trabajo_Trabajo_ID NUMERIC (28) NOT NULL 
-    )
-GO
-
-ALTER TABLE "Mantenimiento-trabajo" ADD CONSTRAINT Relation_15_PK PRIMARY KEY CLUSTERED (Mantenimiento_Mantenimiento_ID, Trabajo_Trabajo_ID)
      WITH (
      ALLOW_PAGE_LOCKS = ON , 
      ALLOW_ROW_LOCKS = ON )
@@ -508,27 +500,26 @@ ALTER TABLE Propiedad ADD CONSTRAINT Propiedad_PK PRIMARY KEY CLUSTERED (IDpropi
      ALLOW_ROW_LOCKS = ON )
 GO
 
-CREATE TABLE "Propiedad-Propietario" 
+CREATE TABLE Propietario 
     (
-     Propiedad_IDpropiedad VARCHAR NOT NULL , 
-     Propietario_Propietario_ID NUMERIC (28) NOT NULL 
+     ID_Propietario VARCHAR NOT NULL 
     )
 GO
 
-ALTER TABLE "Propiedad-Propietario" ADD CONSTRAINT Relation_25_PK PRIMARY KEY CLUSTERED (Propiedad_IDpropiedad, Propietario_Propietario_ID)
+ALTER TABLE Propietario ADD CONSTRAINT Propietario_PK PRIMARY KEY CLUSTERED (ID_Propietario)
      WITH (
      ALLOW_PAGE_LOCKS = ON , 
      ALLOW_ROW_LOCKS = ON )
 GO
 
-CREATE TABLE Propietario 
+CREATE TABLE "Propietario-propiedad" 
     (
-     Propietario_ID NUMERIC (28) NOT NULL IDENTITY NOT FOR REPLICATION , 
-     Contacto VARCHAR NOT NULL 
+     Propiedad_IDpropiedad VARCHAR NOT NULL , 
+     Propietario_ID_Propietario VARCHAR NOT NULL 
     )
 GO
 
-ALTER TABLE Propietario ADD CONSTRAINT Propietario_PK PRIMARY KEY CLUSTERED (Propietario_ID)
+ALTER TABLE "Propietario-propiedad" ADD CONSTRAINT Relation_25_PK PRIMARY KEY CLUSTERED (Propiedad_IDpropiedad, Propietario_ID_Propietario)
      WITH (
      ALLOW_PAGE_LOCKS = ON , 
      ALLOW_ROW_LOCKS = ON )
@@ -566,17 +557,16 @@ ALTER TABLE Tarjeta_De_Crédito ADD CONSTRAINT Tarjeta_De_Crédito_PK PRIMARY KE
      ALLOW_ROW_LOCKS = ON )
 GO
 
-CREATE TABLE Telefono_ContactoEmpresas 
+CREATE TABLE Telefono_Empresa 
     (
-     Num_telefono VARCHAR , 
+     Num_Empresa VARCHAR NOT NULL , 
      Empresa_CIF NVARCHAR (8) NOT NULL 
     )
 GO
 
 CREATE TABLE Telefono_Particular 
     (
-     Num_telefono VARCHAR , 
-     CIF NVARCHAR (8) NOT NULL , 
+     Num_Individuo VARCHAR , 
      Individuo_DNi VARCHAR NOT NULL 
     )
 GO
@@ -606,6 +596,19 @@ CREATE TABLE Trabajo
 GO
 
 ALTER TABLE Trabajo ADD CONSTRAINT Trabajo_PK PRIMARY KEY CLUSTERED (Trabajo_ID)
+     WITH (
+     ALLOW_PAGE_LOCKS = ON , 
+     ALLOW_ROW_LOCKS = ON )
+GO
+
+CREATE TABLE "Trabajo-Mantenimiento" 
+    (
+     Mantenimiento_Mantenimiento_ID NUMERIC (28) NOT NULL , 
+     Trabajo_Trabajo_ID NUMERIC (28) NOT NULL 
+    )
+GO
+
+ALTER TABLE "Trabajo-Mantenimiento" ADD CONSTRAINT Relation_15_PK PRIMARY KEY CLUSTERED (Mantenimiento_Mantenimiento_ID, Trabajo_Trabajo_ID)
      WITH (
      ALLOW_PAGE_LOCKS = ON , 
      ALLOW_ROW_LOCKS = ON )
@@ -692,11 +695,11 @@ GO
 ALTER TABLE Empresa 
     ADD CONSTRAINT Empresa_Propietario_FK FOREIGN KEY 
     ( 
-     Propietario_Propietario_ID
+     ID_Propietario
     ) 
     REFERENCES Propietario 
     ( 
-     Propietario_ID 
+     ID_Propietario 
     ) 
     ON DELETE NO ACTION 
     ON UPDATE NO ACTION 
@@ -757,11 +760,11 @@ GO
 ALTER TABLE Individuo 
     ADD CONSTRAINT Individuo_Propietario_FK FOREIGN KEY 
     ( 
-     Propietario_Propietario_ID
+     ID_Propietario
     ) 
     REFERENCES Propietario 
     ( 
-     Propietario_ID 
+     ID_Propietario 
     ) 
     ON DELETE NO ACTION 
     ON UPDATE NO ACTION 
@@ -858,7 +861,7 @@ ALTER TABLE ProveedorServicios
     ON UPDATE NO ACTION 
 GO
 
-ALTER TABLE "Mantenimiento-trabajo" 
+ALTER TABLE "Trabajo-Mantenimiento" 
     ADD CONSTRAINT Relation_15_Mantenimiento_FK FOREIGN KEY 
     ( 
      Mantenimiento_Mantenimiento_ID
@@ -871,7 +874,7 @@ ALTER TABLE "Mantenimiento-trabajo"
     ON UPDATE NO ACTION 
 GO
 
-ALTER TABLE "Mantenimiento-trabajo" 
+ALTER TABLE "Trabajo-Mantenimiento" 
     ADD CONSTRAINT Relation_15_Trabajo_FK FOREIGN KEY 
     ( 
      Trabajo_Trabajo_ID
@@ -884,7 +887,7 @@ ALTER TABLE "Mantenimiento-trabajo"
     ON UPDATE NO ACTION 
 GO
 
-ALTER TABLE "Propiedad-Propietario" 
+ALTER TABLE "Propietario-propiedad" 
     ADD CONSTRAINT Relation_25_Propiedad_FK FOREIGN KEY 
     ( 
      Propiedad_IDpropiedad
@@ -897,14 +900,14 @@ ALTER TABLE "Propiedad-Propietario"
     ON UPDATE NO ACTION 
 GO
 
-ALTER TABLE "Propiedad-Propietario" 
+ALTER TABLE "Propietario-propiedad" 
     ADD CONSTRAINT Relation_25_Propietario_FK FOREIGN KEY 
     ( 
-     Propietario_Propietario_ID
+     Propietario_ID_Propietario
     ) 
     REFERENCES Propietario 
     ( 
-     Propietario_ID 
+     ID_Propietario 
     ) 
     ON DELETE NO ACTION 
     ON UPDATE NO ACTION 
@@ -923,8 +926,8 @@ ALTER TABLE Tarjeta_De_Crédito
     ON UPDATE NO ACTION 
 GO
 
-ALTER TABLE Telefono_ContactoEmpresas 
-    ADD CONSTRAINT Telefono_ContactoEmpresas_Empresa_FK FOREIGN KEY 
+ALTER TABLE Telefono_Empresa 
+    ADD CONSTRAINT Telefono_Empresa_Empresa_FK FOREIGN KEY 
     ( 
      Empresa_CIF
     ) 
