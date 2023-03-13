@@ -82,7 +82,7 @@ El modelo Lógico realizado se ve tal que asi:
 
 
 <p align="center">
-<img src="/ProyectoBD/assets/images/centroestudios/Relational_1.png">
+<img src="/ProyectoBD/assets/images/PinacotecaBD/Logical.png">
 </p>
 
 
@@ -110,7 +110,7 @@ mutuamente sus PK haciendo de FK.
 
 
 <p align="center">
-<img src="/ProyectoBD/assets/images/centroestudios/Relational_1.png">
+<img src="/ProyectoBD/assets/images/PinacotecaBD/Relational_1.png">
 </p>
 
 
