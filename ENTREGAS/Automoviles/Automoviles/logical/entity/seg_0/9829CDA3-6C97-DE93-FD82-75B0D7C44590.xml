@@ -1,0 +1,82 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9829CDA3-6C97-DE93-FD82-75B0D7C44590" name="Propietario">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:37:03 UTC</createdTime>
+<ownerDesignName>Automoviles</ownerDesignName>
+<engineerTo>
+<item key="3AFB8A0F-9D5B-9C5F-C5EA-559A15A92189" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="DNI" id="C1201702-075D-95C2-0030-DC28E5D555DE">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:37:08 UTC</createdTime>
+<ownerDesignName>Automoviles</ownerDesignName>
+<engineerTo>
+<item key="3AFB8A0F-9D5B-9C5F-C5EA-559A15A92189" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9</dataTypeSize>
+<ownDataTypeParameters>9,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nombre" id="11AF04C4-D9D0-EF20-E29E-8508E7C963E7">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:37:16 UTC</createdTime>
+<ownerDesignName>Automoviles</ownerDesignName>
+<engineerTo>
+<item key="3AFB8A0F-9D5B-9C5F-C5EA-559A15A92189" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Apellido" id="E4C87644-AA3B-0B0C-491A-D399BF2D5530">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:37:30 UTC</createdTime>
+<ownerDesignName>Automoviles</ownerDesignName>
+<engineerTo>
+<item key="3AFB8A0F-9D5B-9C5F-C5EA-559A15A92189" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Apellido2" id="BA462554-2D70-BEC6-4685-01FA013FB2F8">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:37:30 UTC</createdTime>
+<ownerDesignName>Automoviles</ownerDesignName>
+<engineerTo>
+<item key="3AFB8A0F-9D5B-9C5F-C5EA-559A15A92189" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="37F517D9-7511-DAB0-CB2F-E5AA2A011C06" name="Propietario PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:37:15 UTC</createdTime>
+<ownerDesignName>Automoviles</ownerDesignName>
+<engineerTo>
+<item key="3AFB8A0F-9D5B-9C5F-C5EA-559A15A92189" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C1201702-075D-95C2-0030-DC28E5D555DE</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

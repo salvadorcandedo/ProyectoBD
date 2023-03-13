@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Automoviles" id="AB58BDC6-EB14-9BEB-FE01-C13A46EFA71E" version="3.5">
+<createdBy>skate</createdBy>
+<createdTime>2022-11-05 17:21:45 UTC</createdTime>
+<ownerDesignName>Tarea_Automoviles</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>AB58BDC6-EB14-9BEB-FE01-C13A46EFA71E</designId>
+</OSDM_Design>

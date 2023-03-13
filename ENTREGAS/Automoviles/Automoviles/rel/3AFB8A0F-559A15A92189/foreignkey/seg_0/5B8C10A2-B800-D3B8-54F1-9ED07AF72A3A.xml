@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5B8C10A2-B800-D3B8-54F1-9ED07AF72A3A" containerWithKeyObject="A9B9E130-EDB9-08AB-C2E7-1355FB7DDDDA" localFKIndex="3EE9E270-17CC-6FDB-800D-72A307E20A1B" name="Movimiento_Cambio_tecnico_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<generatorID>970B1DB4-DADA-1F2F-D253-6C94F8A7863E</generatorID>
+<ownerDesignName>Automoviles</ownerDesignName>
+<referredTableLongName>Cambio_tecnico</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>DEC719FC-5760-C9C7-F427-CD4E3A835AE3</referredTableID>
+<keyObject>72691F41-3985-EF32-766D-4A41DB1DBFE0</keyObject>
+<referredKeyID>72691F41-3985-EF32-766D-4A41DB1DBFE0</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Tipo_cambio</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

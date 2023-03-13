@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="36C50D8B-785C-9EB3-21C9-EE9428451948" name="Profesion">
+<createdBy>skate</createdBy>
+<createdTime>2022-11-05 17:43:05 UTC</createdTime>
+<ownerDesignName>Automoviles</ownerDesignName>
+<engineerTo>
+<item key="3AFB8A0F-9D5B-9C5F-C5EA-559A15A92189" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Nombre_profesion" id="7CB1A55F-F136-734B-66AD-8E6173D10BE7">
+<createdBy>skate</createdBy>
+<createdTime>2022-11-05 17:43:17 UTC</createdTime>
+<ownerDesignName>Automoviles</ownerDesignName>
+<engineerTo>
+<item key="3AFB8A0F-9D5B-9C5F-C5EA-559A15A92189" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

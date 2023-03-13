@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B74610A1-7475-B38D-CCB7-D85CE937306E" name="Marca">
+<createdBy>skate</createdBy>
+<createdTime>2022-11-05 17:37:26 UTC</createdTime>
+<ownerDesignName>Automoviles</ownerDesignName>
+<engineerTo>
+<item key="3AFB8A0F-9D5B-9C5F-C5EA-559A15A92189" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Nombre_marca" id="1C47F8A1-12C6-0514-F05B-0F5ECC0E92CF">
+<createdBy>skate</createdBy>
+<createdTime>2022-11-05 17:39:18 UTC</createdTime>
+<ownerDesignName>Automoviles</ownerDesignName>
+<engineerTo>
+<item key="3AFB8A0F-9D5B-9C5F-C5EA-559A15A92189" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

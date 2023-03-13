@@ -1,0 +1,122 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CE79041F-98A6-AB79-1B2F-B1AB3C97F8EA" name="Vehiculo">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<generatorID>7E7BB1E2-EF1F-936F-D0CB-6BAC33731FAC</generatorID>
+<ownerDesignName>Automoviles</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Matricula" id="8384B1FB-C4DC-6FB7-0165-E6B99EAEE849">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<generatorID>FA7A50DC-CA86-732D-D469-E432562EC6F4</generatorID>
+<ownerDesignName>Automoviles</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>7 CHAR</dataTypeSize>
+<ownDataTypeParameters>7 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Año_fabricación" id="87DFA431-ADD9-C6C7-ADDA-83525E9A5554">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<generatorID>7FB2606D-DCE0-906F-8349-AA59147F3D18</generatorID>
+<ownerDesignName>Automoviles</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Serie_motor" id="19DD55B6-48D2-DB6A-F739-D7F998FD704C">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<generatorID>68F17C4C-959D-B01C-DB1E-83E1AD6238B9</generatorID>
+<ownerDesignName>Automoviles</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>23 CHAR</dataTypeSize>
+<ownDataTypeParameters>23 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Fecha_entrada_CCAA" id="BDB3EE77-6DB8-0F0E-CA2F-C2F9CA3628DB">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<generatorID>295BD7F8-196F-679C-92B3-8A3D5AAECF03</generatorID>
+<ownerDesignName>Automoviles</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Color_Color_ID" id="8CBC1462-4E6D-01C5-9452-D84159DD36E3">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<ownerDesignName>Automoviles</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="13D1AC25-F776-ADDF-A6DD-F80D3CA69200" referredColumn="72AC4527-BC3B-E7AE-E365-2D34820570EC"/>
+</associations>
+</Column>
+<Column name="Modelo_Modelo_ID" id="E665FC41-044F-39C7-0201-C137DA9B7DDE">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<ownerDesignName>Automoviles</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A4061211-0031-6D3B-51BA-60F8FC60F05A" referredColumn="66358768-7564-565B-0014-FF7ABC89C95C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6DDBDC40-7E65-AAD2-A383-FB24FF0491AA" name="Vehiculo_PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<generatorID>DD8D4949-35BC-D13B-3B41-1BFE4B57E1CA</generatorID>
+<ownerDesignName>Automoviles</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8384B1FB-C4DC-6FB7-0165-E6B99EAEE849"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="59115CEA-BD84-BC5D-4BEC-03EACC2785C9" name="Vehiculo_Color_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<generatorID>AC71849F-A127-BAC0-5573-856DCE1A1F5F</generatorID>
+<ownerDesignName>Automoviles</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8CBC1462-4E6D-01C5-9452-D84159DD36E3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3D178F6C-29E5-27BD-2A2E-9F17968FCAB2" name="Vehiculo_Modelo_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<generatorID>AA355D63-1EE5-8CFF-3CBA-7D8FCF0EF927</generatorID>
+<ownerDesignName>Automoviles</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E665FC41-044F-39C7-0201-C137DA9B7DDE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4FD6AEFD-0160-FAB8-B4DE-DAE16E96A594" name="Movimiento">
+<createdBy>skate</createdBy>
+<createdTime>2022-11-21 15:56:34 UTC</createdTime>
+<ownerDesignName>Automoviles</ownerDesignName>
+<engineerTo>
+<item key="3AFB8A0F-9D5B-9C5F-C5EA-559A15A92189" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Fecha" id="F5F2674A-C294-7134-8094-CC7BBD1E16A1">
+<createdBy>skate</createdBy>
+<createdTime>2022-11-21 15:56:46 UTC</createdTime>
+<ownerDesignName>Automoviles</ownerDesignName>
+<engineerTo>
+<item key="3AFB8A0F-9D5B-9C5F-C5EA-559A15A92189" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Tipo_cambio" id="D6425212-26EE-D96A-5466-39745B998EEA">
+<createdBy>skate</createdBy>
+<createdTime>2022-11-21 15:57:21 UTC</createdTime>
+<generatorID>970B1DB4-DADA-1F2F-D253-6C94F8A7863E</generatorID>
+<ownerDesignName>Automoviles</ownerDesignName>
+<engineerTo>
+<item key="3AFB8A0F-9D5B-9C5F-C5EA-559A15A92189" value="true"/>
+</engineerTo>
+<referedAttribute>96A04B63-1851-1A9E-5EC5-E6E89E0BB119</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Matricula" id="A9188A83-FA3D-1F03-C2DD-FF9D12459886">
+<createdBy>skate</createdBy>
+<createdTime>2022-11-21 15:57:32 UTC</createdTime>
+<generatorID>E3760967-DC4B-47BD-C8C6-60550664E381</generatorID>
+<ownerDesignName>Automoviles</ownerDesignName>
+<engineerTo>
+<item key="3AFB8A0F-9D5B-9C5F-C5EA-559A15A92189" value="true"/>
+</engineerTo>
+<referedAttribute>FA7A50DC-CA86-732D-D469-E432562EC6F4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>7 CHAR</dataTypeSize>
+<ownDataTypeParameters>7 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="7D7DCFA6-CF27-6A0C-A1E2-E66BA1C3C850" mainViewID="7D92B893-C1A3-2715-0C70-F8FC27144F0B">
+<createdBy>skate</createdBy>
+<createdTime>2022-11-05 17:21:45 UTC</createdTime>
+<ownerDesignName>Tarea_Automoviles</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

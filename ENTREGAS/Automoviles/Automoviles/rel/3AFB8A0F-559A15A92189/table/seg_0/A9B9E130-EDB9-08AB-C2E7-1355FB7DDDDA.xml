@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A9B9E130-EDB9-08AB-C2E7-1355FB7DDDDA" name="Movimiento">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<generatorID>4FD6AEFD-0160-FAB8-B4DE-DAE16E96A594</generatorID>
+<ownerDesignName>Automoviles</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Fecha" id="1AB4EA47-A4BA-4E4D-0B8B-18FBD2AA7D0D">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<generatorID>F5F2674A-C294-7134-8094-CC7BBD1E16A1</generatorID>
+<ownerDesignName>Automoviles</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cambio_tecnico_Tipo_cambio" id="46297D6A-876F-ACD2-B4E9-6A25333228E0">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<generatorID>D6425212-26EE-D96A-5466-39745B998EEA</generatorID>
+<ownerDesignName>Automoviles</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5B8C10A2-B800-D3B8-54F1-9ED07AF72A3A" referredColumn="DF797FD9-A1BE-15F3-923E-84DF22700C91"/>
+</associations>
+</Column>
+<Column name="Vehiculo_Matricula" id="D2F2C24B-BE1D-07A1-AE10-F1EEDC8E5985">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<generatorID>A9188A83-FA3D-1F03-C2DD-FF9D12459886</generatorID>
+<ownerDesignName>Automoviles</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>7 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F4796FDB-F48E-A01C-14C2-3E5D224E18C3" referredColumn="8384B1FB-C4DC-6FB7-0165-E6B99EAEE849"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3EE9E270-17CC-6FDB-800D-72A307E20A1B" name="Movimiento_Cambio_tecnico_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<generatorID>970B1DB4-DADA-1F2F-D253-6C94F8A7863E</generatorID>
+<ownerDesignName>Automoviles</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="46297D6A-876F-ACD2-B4E9-6A25333228E0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B7250B63-D0D4-514D-7AB4-9856D30D7211" name="Movimiento_Vehiculo_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<generatorID>E3760967-DC4B-47BD-C8C6-60550664E381</generatorID>
+<ownerDesignName>Automoviles</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D2F2C24B-BE1D-07A1-AE10-F1EEDC8E5985"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

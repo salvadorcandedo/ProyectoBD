@@ -1,0 +1,121 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A2C06660-7358-49E5-2395-EDB9C06AAFF6" name="Propietario">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<generatorID>9829CDA3-6C97-DE93-FD82-75B0D7C44590</generatorID>
+<ownerDesignName>Automoviles</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="DNI" id="0064D6F0-6ACE-F0B6-CAE2-BA4FABA4E2FE">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<generatorID>C1201702-075D-95C2-0030-DC28E5D555DE</generatorID>
+<ownerDesignName>Automoviles</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9</dataTypeSize>
+<ownDataTypeParameters>9,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre" id="B4C67101-9A8E-0F58-9993-DA12E978430F">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<generatorID>11AF04C4-D9D0-EF20-E29E-8508E7C963E7</generatorID>
+<ownerDesignName>Automoviles</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Apellido" id="6A2F1145-1641-BB3D-A716-57E591892A16">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<generatorID>E4C87644-AA3B-0B0C-491A-D399BF2D5530</generatorID>
+<ownerDesignName>Automoviles</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Apellido2" id="F09FF649-1775-A201-495F-F0A0CBD8D4FE">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<generatorID>BA462554-2D70-BEC6-4685-01FA013FB2F8</generatorID>
+<ownerDesignName>Automoviles</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nacionalidad_Nacionalidad_ID" id="870AE807-AF17-4D60-7EA7-F08472BEEF36">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<ownerDesignName>Automoviles</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="005B7F10-FFEB-C5B3-DE98-809203B5769F" referredColumn="21A9890B-36C5-2B6B-7947-6AE670644149"/>
+</associations>
+</Column>
+<Column name="Profesion_Profesion_ID" id="47980580-6963-2D0D-7C3D-F40E42F98E0F">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<ownerDesignName>Automoviles</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AB67F802-AB15-5FC6-6AE1-96100957B0FC" referredColumn="FD28D3F1-A14B-886B-DF98-85B54648FB1E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2816F599-60BF-167F-EE54-CEEAD90BFE96" name="Propietario_PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<generatorID>37F517D9-7511-DAB0-CB2F-E5AA2A011C06</generatorID>
+<ownerDesignName>Automoviles</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0064D6F0-6ACE-F0B6-CAE2-BA4FABA4E2FE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="26F39B48-E9FF-267B-7A77-680D73EC56B3" name="Propietario_Nacionalidad_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<generatorID>F31E6B1E-0F18-297F-6BBE-7FE06A49DC15</generatorID>
+<ownerDesignName>Automoviles</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="870AE807-AF17-4D60-7EA7-F08472BEEF36"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7CD57270-687B-B5FC-802F-56FE3B2CD59B" name="Propietario_Profesion_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-13 19:43:43 UTC</createdTime>
+<generatorID>58B779FC-F3B6-46CD-7116-954C987E3E20</generatorID>
+<ownerDesignName>Automoviles</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="47980580-6963-2D0D-7C3D-F40E42F98E0F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
