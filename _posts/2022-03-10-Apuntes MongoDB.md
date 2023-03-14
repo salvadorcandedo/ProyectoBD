@@ -1,7 +1,7 @@
 ---
 layout: single
-title: Creación del Proyecto Administrador de Fincas
-excerpt: "Proyecto Modelado y Administración Base de Datos "
+title: Apuntes MongoDB
+excerpt: 
 date: 2023-03-10
 classes: wide
 header:
@@ -23,57 +23,7 @@ tags:
 ---
 
 
-  <head>
-        <meta charset="UTF-8"/>
-        <script>
-            document.addEventListener("DOMContentLoaded", function(){
-                const ampli = document.getElementById("indice");
-                const desple = document.getElementById("desplegable");
-                const indicador = document.getElementById("masmenos");                    
-                
 
-                desple.style.height = "0px"
-                ampli.addEventListener("click", function(){
-                    
-                    if (desple.style.height == "0px"){
-                        desple.style.height = desple.scrollHeight + "px";
-                        indicador.innerHTML = "-"
-                    }
-                    else{
-                        desple.style.height = "0px";
-                        indicador.innerHTML = "+"
-                    }
-                })
-            }
-            )
-        </script>
-        <style>
-            #desplegable{
-                height: 0px;
-                overflow: hidden;
-                transition: height 1.5s ease;
-            }
-        </style>
-    </head>
-    <body>
-            <h1>parrafo desplegable</h1> 
-        <p id="indice"><span id="masmenos">+</span>indice</p>
-        <pre id="desplegable">
-
-        kasgdflsabdhkgsadfvasde
-            saldvhbasdv
-            sdf
-            sdf
-            sdf
-            sdf
-            sdf
-            sdf
-            sdf
-            sdf
-            fsd
-        
-        </pre>
-    </body>
 
 
 
