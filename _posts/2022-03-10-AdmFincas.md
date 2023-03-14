@@ -1,8 +1,8 @@
 ---
 layout: single
 title: Creación del Proyecto Administrador de Fincas
-excerpt: "Modelo Lógico Conceptual."
-date: 2023-01-16
+excerpt: "Proyecto Modelado y Administración Base de Datos "
+date: 2023-03-10
 classes: wide
 header:
   teaser: /assets/images/htb-writeup-magic/magic_logo.png
@@ -278,7 +278,7 @@ GO
 
 ```sql
 -- Generado por Oracle SQL Developer Data Modeler 22.2.0.165.1149
---   en:        2023-03-13 19:32:31 CET
+--   en:        2023-03-10 19:32:31 CET
 --   sitio:      SQL Server 2012
 --   tipo:      SQL Server 2012
 
@@ -1061,28 +1061,28 @@ Go
 CREATE DATABASE Prueba2
 ON
 PRIMARY  
-    (NAME = Bici1,
+    (NAME = Fincas1,
     FILENAME = 'C:\ProyectoBD\rentdat1.mdf',
     SIZE = 100MB,
     MAXSIZE = 200,
     FILEGROWTH = 20),
-    ( NAME = Bici2,
+    ( NAME = Fincas2,
     FILENAME = 'C:\ProyectoBD\rentdat2.ndf',
     SIZE = 100MB,
     MAXSIZE = 200,
     FILEGROWTH = 20),
-    ( NAME = Bici3,
+    ( NAME = Fincas3,
     FILENAME = 'C:\ProyectoBD\rentdat3.ndf',
     SIZE = 100MB,
     MAXSIZE = 200,
     FILEGROWTH = 20)
 LOG ON 
-   (NAME = Bicilog1,
+   (NAME = Fincaslog1,
     FILENAME = 'C:\ProyectoBD\rentlog1.ldf',
     SIZE = 100MB,
     MAXSIZE = 200,
     FILEGROWTH = 20),
-   (NAME = Bicilog2,
+   (NAME = Fincaslog2,
     FILENAME = 'C:\ProyectoBD\rentlog2.ldf',
     SIZE = 100MB,
     MAXSIZE = 200,
@@ -1117,7 +1117,7 @@ Go
 
 - Se puede revertir el cambio anterior con la suguiente query
 ```sql
-ALTER DATABASE Bici_Coruña
+ALTER DATABASE AdmFincas_Coruña
 REMOVE FILE BPri5_dat; 
 Go
 ```
@@ -1222,10 +1222,13 @@ Algunos de los roles mas comunes son:
 
 *   public: El rol public es un rol predefinido que se utiliza como grupo predeterminado para todos los usuarios y roles en una base de datos. Todos los usuarios y roles tienen automáticamente los permisos concedidos al rol public. 
 > Añado el usuario SCP a un rol 
+
+
 ```sql
 EXEC sp_addsrvrolemember 'SCP', 'db_executor' ;
 GO
 ```
+
 ```sql
 alter server role db_executor
     add member SCP ;
@@ -1255,6 +1258,7 @@ Grant select on [dbo.][Propiedades] to SCP
 ```
 > Le concedo permiso de select a SCP 
 Para Comprobar:
+
 ```sql
 Execute as user ='SCP'
 GO
