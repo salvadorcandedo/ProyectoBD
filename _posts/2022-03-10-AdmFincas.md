@@ -34,6 +34,11 @@ tags:
 El objetivo de este proyecto es diseñar un modelo de base de datos lógico-relacional para un Administrador de fincas. Este modelo permitirá gestionar los distintos aspectos relacionados con la administración de fincas, como los propietarios, las viviendas, los inquilinos, los contratos, los gastos y los servicios.
 
 
+       
+    
+
+
+
 
 - [Modelo de base de datos lógico-relacional para un Administrador de fincas](#modelo-de-base-de-datos-lógico-relacional-para-un-administrador-de-fincas)
   - [Introducción](#introducción)
