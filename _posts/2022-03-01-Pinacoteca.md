@@ -5,9 +5,9 @@ excerpt: "Modelo Lógico Conceptual."
 date: 2023-01-16
 classes: wide
 header:
-  teaser: /assets/images/htb-writeup-magic/magic_logo.png
+  teaser: 
   teaser_home_page: true
-  icon: /assets/images/hackthebox.webp
+  icon: 
 categories:
   - Datamodeler
   - ssms
@@ -69,11 +69,11 @@ Creo las siguientes Entidades :
 - Un restaurador puede encargarse de varios Periodos de restauración
 - Un cuadro puede tener varios periodos de restauración pero durante el mismo periodo de restauración sólo puede trabajar en un sólo cuadro.
   
-- Una obra del museo se puede prestar a otro museo
+
 - La exposición temporal puede tener expuestas más de una obra de cualquiera de los tres tipos (propia , institución o prestada por un coleccionista)
   
   
-- Los tres posibles proveedores de cuadros (otros museos, institución o coleccionista) tienen relaciones 1:N con las Direcciones y los posibles telefonos que puedan tener
+- Los dos posibles proveedores de cuadros ( institución o coleccionista) tienen relaciones 1:N con las Direcciones y los posibles telefonos que puedan tener
   
 
 ----
