@@ -1,6 +1,7 @@
 ---
 layout: single
-title: Apuntes MongoDB
+
+excerpt: "Apuntes"title: Apuntes MongoDB
 excerpt: 
 date: 2023-03-10
 classes: wide
