@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Tutoridiomas" id="665E932C-2E8D-CA1C-E710-D3DFA969E10F" version="3.5">
+<createdBy>ivana</createdBy>
+<createdTime>2023-01-10 16:48:57 UTC</createdTime>
+<ownerDesignName>Tutor de Ididomas</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>665E932C-2E8D-CA1C-E710-D3DFA969E10F</designId>
+</OSDM_Design>

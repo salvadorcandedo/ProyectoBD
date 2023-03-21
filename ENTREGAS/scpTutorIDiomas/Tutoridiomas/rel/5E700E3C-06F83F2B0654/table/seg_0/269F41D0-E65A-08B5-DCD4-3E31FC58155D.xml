@@ -1,0 +1,51 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="269F41D0-E65A-08B5-DCD4-3E31FC58155D" name="Avanzado">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>FD9C6539-C46D-AECC-4D9A-603D1269D45B</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CodigoNivelEstudiante" id="B6100E4C-AB1F-EB7D-EAE1-694A62D99625">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>87BBB48E-A686-4855-8587-36F59DA4EE04</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8831D746-D1BE-0D2A-77E2-EF6BF6F1816D" referredColumn="36EF036D-333E-E200-FB86-1814B1E56460"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B0499506-B7FE-29C1-7BF7-C0DBF126F9D4" name="Avanzado_PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>9338F392-0963-2AFF-05BE-A547FC213CEF</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6100E4C-AB1F-EB7D-EAE1-694A62D99625"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="020DEE08-3173-3CA1-33C2-9A0FE0EE2D8B" name="Avanzado_NIVEL_ESTUDIANTE_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>D570592D-2682-F585-471F-8F0F27B6FCEF</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6100E4C-AB1F-EB7D-EAE1-694A62D99625"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,118 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="32435B75-E14E-D2B8-E473-83313DB20753" name="DIRECCION">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>B4565A7F-F63D-6FC2-7FB5-536CC84E287E</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Calle" id="492BF87D-0054-1515-2307-09EA4C765B34">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>E04BF064-E96E-9275-9E26-0C19075FBB9F</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Numero" id="93A51296-D665-1FCB-7660-B73303CE9F73">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>60E90ACA-94A8-17A8-D22F-C48591D28D65</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CodigoPostal" id="88EF542D-44E5-4792-C5D5-4C9CE6B1F708">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>B367DC6E-F067-54F0-6829-198F309D8DDD</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Localidad" id="F0F482FF-E734-E9FB-50CB-69CF9204ED26">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>D1D7C31D-B298-5826-F70C-853BFD408A37</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Provincia" id="F148025F-2E04-9DA0-14FB-9C790DE86E96">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>3E3E4B08-F0F5-0546-0835-9604E8A04159</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DIRECCION_ID" id="C3057711-6B2D-CEB6-A9F4-DD43B66C68B6">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+<Column name="TUTOR_TUTOR_ID" id="007F6F9F-C678-93E2-C07C-060B7B238F17">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="78AE2A9A-7644-2B1C-D589-E9B09BAA73B9" referredColumn="BE43A3FA-10FC-8D23-1756-5A8A6DC693FB"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E8417F2B-6B7D-D185-AB2D-CF5C0D1A1594" name="DIRECCION_PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="C3057711-6B2D-CEB6-A9F4-DD43B66C68B6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="75A3AE5C-B0CB-6C13-B0C9-845D6105FF6C" name="DIRECCION_TUTOR_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>A2BC2E87-E4E9-C7EB-3DF9-75BECF613C49</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="007F6F9F-C678-93E2-C07C-060B7B238F17"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

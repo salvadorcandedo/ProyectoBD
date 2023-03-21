@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5B3FEFC5-84F0-DD09-59C7-BAF4503E31EF" name="NIVEL_ESTUDIANTE">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>AE9B5E1D-5F45-565E-7DD9-EFE5BC3FFFCD</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CodigoNivelEstudiante" id="36EF036D-333E-E200-FB86-1814B1E56460">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>87BBB48E-A686-4855-8587-36F59DA4EE04</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Descripcion" id="147B6D11-8AA3-4BE0-0CB4-E8E2AC70BE5E">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>CA1110A0-991C-C51E-FAB6-89A37D639B8F</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B748A264-4ED3-79F3-B080-3E36B3C36BA6" name="NIVEL_ESTUDIANTE_PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>9338F392-0963-2AFF-05BE-A547FC213CEF</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="36EF036D-333E-E200-FB86-1814B1E56460"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C36B1F9F-B940-1AB8-36B7-678E63ED0A7F" name="ALUMNO">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>EC9BB18B-960A-7EAD-DE00-AE65293A4799</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Nombre" id="40DBB547-AE7F-2218-9F26-1B9ACBB5D3EF">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>A5784732-793F-D02D-F426-D3F020BB9AAF</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Apellidos" id="97A22415-2412-3DCA-9F5E-8622D2D25182">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>DDE6D44E-D0A1-0DD7-D0D2-077F44130B35</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CorreoElectronico" id="66D24D01-8B34-5211-2E88-4CF4D9A45BBE">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>40669D5C-CC12-BC23-A994-87290412236C</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="País" id="B04EAA12-1514-F565-3B6C-516D911C1439">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>41A3E31D-FD3F-6645-E8E3-478136929546</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Télefono" id="AF2A2AD9-6763-CA80-9ED2-6B45C4DE1614">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>97CA4213-2E65-0F83-5D51-838AF01D6F8C</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<ownDataTypeParameters>,12,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Edad" id="8DF522E0-8B24-08AE-EF95-89A4DD9C8995">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>767367D9-55DE-920F-FDE2-5C10E909BCBA</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ALUMNO_ID" id="682FC84F-BA1B-9B19-35F8-4F646E71DF1E">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="90E40806-6C75-EE27-1B63-3BF39E4A3FA3" name="ALUMNO_PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="682FC84F-BA1B-9B19-35F8-4F646E71DF1E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

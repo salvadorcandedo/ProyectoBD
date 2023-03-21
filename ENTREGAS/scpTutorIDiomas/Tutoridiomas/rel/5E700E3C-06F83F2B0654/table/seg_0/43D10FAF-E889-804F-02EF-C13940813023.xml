@@ -1,0 +1,149 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="43D10FAF-E889-804F-02EF-C13940813023" name="RESERVA">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>ABAC065F-6517-A1C3-185F-0B8E9CF9B338</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Descripcion" id="1300A670-3920-C03C-A3D6-75B5169570C3">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>7A04FCAE-F21D-2138-CDC9-33011B74E899</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RESERVA_ID" id="04C4A71E-449F-85D6-E57A-3863CCFD0210">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+<Column name="TUTOR_TUTOR_ID" id="2C42BA8F-C08F-A896-36E7-FB1313B20C61">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B8F14636-826B-6AC2-2465-CFB73F4A9F91" referredColumn="BE43A3FA-10FC-8D23-1756-5A8A6DC693FB"/>
+</associations>
+</Column>
+<Column name="PAGO_PAGO_ID" id="CE61887E-4383-1C9F-08F2-E8827C31785C">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E09581D7-DED6-13DE-F8DF-6333AFFEAE41" referredColumn="07510D2D-3E60-B414-EC10-2148E4FCE7C6"/>
+</associations>
+</Column>
+<Column name="DIRECCION_DIRECCION_ID" id="F28BE372-C17F-D5D3-D777-3D47D26DE057">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="563390B9-2A96-8DE6-8409-5FD035364E77" referredColumn="C3057711-6B2D-CEB6-A9F4-DD43B66C68B6"/>
+</associations>
+</Column>
+<Column name="ALUMNO_ALUMNO_ID" id="98C12701-95DF-8926-68C7-4143CE8BB11A">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CD11B23F-00CB-01A1-DED2-66F68134C7B2" referredColumn="682FC84F-BA1B-9B19-35F8-4F646E71DF1E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0159B590-615D-AE15-B7EB-8EC4A46B85D6" name="RESERVA_PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="04C4A71E-449F-85D6-E57A-3863CCFD0210"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="08979064-6DDD-0EF0-5D16-C4F6EA8DA2F4" name="RESERVA_TUTOR_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>E4F27CE7-487E-8307-A1BF-42F0198BFBB6</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2C42BA8F-C08F-A896-36E7-FB1313B20C61"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B37818F1-6873-8C68-D767-299592389ADA" name="RESERVA_PAGO_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>D47D04FE-36C5-B07C-5E62-EBC0500FDEE7</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CE61887E-4383-1C9F-08F2-E8827C31785C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="62434192-A883-F135-E3FA-0DDE81CBAFF8" name="RESERVA_DIRECCION_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>F7731402-7535-6E16-CD05-4B0D8C36A46B</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F28BE372-C17F-D5D3-D777-3D47D26DE057"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E9B0E89F-7DBC-BD7D-54BC-5E982030E488" name="RESERVA_ALUMNO_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>8383380F-8600-25C5-E1F4-08E8C81FA81D</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="98C12701-95DF-8926-68C7-4143CE8BB11A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

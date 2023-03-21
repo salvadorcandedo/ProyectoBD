@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="EF075623-6C16-0BBD-893D-8FB9973CE4CD" containerWithKeyObject="90B3346C-3899-DE6D-CB3B-916F65C05A78" localFKIndex="767F0DAA-8450-6919-6DED-5A170F7D8E63" name="TUTOR_FRANJA_HORARIA_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>E14A24B6-6BC2-3DEA-0D3A-9823A2F2E163</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<referredTableLongName>FRANJA_HORARIA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>2EA85BF2-848C-3284-4623-E2982421B7AC</referredTableID>
+<keyObject>13591762-5679-DA06-8C93-F0ED59181338</keyObject>
+<referredKeyID>13591762-5679-DA06-8C93-F0ED59181338</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>FRANJA_HORARIA_ID</refColNames>
+<transferable>false</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

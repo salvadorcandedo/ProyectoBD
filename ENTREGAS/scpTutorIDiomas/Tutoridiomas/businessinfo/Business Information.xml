@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="08B31E55-4829-DEFC-21BC-F6D69734E99B">
+<createdBy>ivana</createdBy>
+<createdTime>2023-01-10 16:48:57 UTC</createdTime>
+<ownerDesignName>Tutor de Ididomas</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</BusinessInfoDesign>

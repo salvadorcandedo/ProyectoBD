@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="688DC1AC-F26F-C038-2D12-390506B8167F" containerWithKeyObject="90B3346C-3899-DE6D-CB3B-916F65C05A78" localFKIndex="FD25529A-034D-DBFA-6AB5-A4FF08DB3D83" name="TUTOR_IDIOMA_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>CDCDA89E-EA85-2138-9E9B-303BE33DBB60</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<referredTableLongName>IDIOMA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>52E9C7C6-A022-8232-9992-BE163AD9D507</referredTableID>
+<keyObject>61403AA5-3567-4BC0-A4A1-C223BA153111</keyObject>
+<referredKeyID>61403AA5-3567-4BC0-A4A1-C223BA153111</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>IDIOMA_ID</refColNames>
+<transferable>false</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

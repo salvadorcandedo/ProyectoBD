@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="4976C91D-298F-4157-E536-6D0DF118BF98" containerWithKeyObject="90B3346C-3899-DE6D-CB3B-916F65C05A78" localFKIndex="2E496A94-A7E0-7549-665C-9FEAE6D6EEF0" name="TUTOR_NIVEL_ESTUDIANTE_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>8211C339-E1B0-1B36-842C-1EC9D785A60E</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<referredTableLongName>NIVEL_ESTUDIANTE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>5B3FEFC5-84F0-DD09-59C7-BAF4503E31EF</referredTableID>
+<keyObject>B748A264-4ED3-79F3-B080-3E36B3C36BA6</keyObject>
+<referredKeyID>B748A264-4ED3-79F3-B080-3E36B3C36BA6</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CodigoNivelEstudiante</refColNames>
+<transferable>false</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

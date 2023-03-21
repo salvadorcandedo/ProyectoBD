@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProcessModel class="oracle.dbtools.crest.model.design.process.ProcessModel" name="Process Model" id="EC9D478B-2AEE-69AD-E286-E17DAAF7B478">
+<createdBy>ivana</createdBy>
+<createdTime>2023-01-10 16:48:57 UTC</createdTime>
+<ownerDesignName>Tutor de Ididomas</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</ProcessModel>

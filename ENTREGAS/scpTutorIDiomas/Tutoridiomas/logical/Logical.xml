@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="BC679D2A-5DCD-DCFA-79A3-574705B70381" mainViewID="83AC3AF5-ADB1-A043-2D61-1CC772493A29">
+<createdBy>ivana</createdBy>
+<createdTime>2023-01-10 16:48:57 UTC</createdTime>
+<ownerDesignName>Tutor de Ididomas</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

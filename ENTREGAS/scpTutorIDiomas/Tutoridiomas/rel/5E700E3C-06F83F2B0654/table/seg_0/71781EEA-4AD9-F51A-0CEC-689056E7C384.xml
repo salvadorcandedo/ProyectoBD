@@ -1,0 +1,121 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="71781EEA-4AD9-F51A-0CEC-689056E7C384" name="SUSCRIPCION">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>B22DF91B-5D83-A6E5-56E1-CE98BBB1930B</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CodigoSuscripcion" id="BCA4643F-A1D2-2D10-DC0D-E2F38B982409">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>FDA05D89-4AF2-F25A-8C09-7AE12CDB2341</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Descripcion" id="304ECC61-F914-3290-2C60-974D5893E2A0">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>E2AD4135-41C7-1504-B499-4CE8EA5C92BB</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FechaSuscripcion" id="FD2340DC-89DE-3A8B-C266-2F9E890E3855">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>BF866C29-7A66-59E9-6038-6A755646D606</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FechaFin" id="F9343D96-3071-8CD8-1995-E1A58F284CDA">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>3CBD8A78-A603-A561-3169-59BED4E5D21F</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ALUMNO_ALUMNO_ID" id="28285D3F-4C3A-FDB4-7833-93E642A304E0">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9736732A-B75E-58E0-A091-4EB17B801B64" referredColumn="682FC84F-BA1B-9B19-35F8-4F646E71DF1E"/>
+</associations>
+</Column>
+<Column name="CLASE_Backup_CLASE_Backup_ID" id="622BF97D-0676-9290-926D-13736EBF63DA">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6BB28304-B0FC-AFE2-351A-C580318E373A" referredColumn="8E24DA5F-5ED7-5E0A-B6BC-D3FE4D42FE64"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="849BC0EF-F28F-D89C-ED5F-0DD28EE981DA" name="SUSCRIPCION_PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>1160D7AE-EB8D-E15E-2F19-2980B36A91F0</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BCA4643F-A1D2-2D10-DC0D-E2F38B982409"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6CD54020-DA96-2926-1D5E-DF06EC2EDC9E" name="SUSCRIPCION_ALUMNO_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>F825B741-F65F-B552-52CB-ECF39FC3455D</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="28285D3F-4C3A-FDB4-7833-93E642A304E0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2321A722-61F1-83FF-370F-533953A05B04" name="SUSCRIPCION_CLASE_Backup_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>6D341B77-8FCF-BDF3-1856-181AE74162AB</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="622BF97D-0676-9290-926D-13736EBF63DA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

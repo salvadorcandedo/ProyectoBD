@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D6A87B83-8BCB-7C4B-FF7A-46D77A8DE2E0" name="Tarjeta_Credito">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>DBF8AD9F-7C92-F91C-AE1B-E68A4414C8FC</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PAGO_PAGO_ID" id="B55CAF41-D03D-58D7-46C0-F0E8117EB827">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="24617E0D-FC8F-3B01-AB9E-D2C72D3C86A3" referredColumn="07510D2D-3E60-B414-EC10-2148E4FCE7C6"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A4F44F3A-E367-C7CE-B7B8-6E028B7B66AC" name="Tarjeta_Credito_PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="B55CAF41-D03D-58D7-46C0-F0E8117EB827"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EA9579D4-537D-7151-8059-4A36C37618A2" name="Tarjeta_Credito_PAGO_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>1D42D8E1-31ED-C757-5B7C-A1AB05BAB15F</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B55CAF41-D03D-58D7-46C0-F0E8117EB827"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

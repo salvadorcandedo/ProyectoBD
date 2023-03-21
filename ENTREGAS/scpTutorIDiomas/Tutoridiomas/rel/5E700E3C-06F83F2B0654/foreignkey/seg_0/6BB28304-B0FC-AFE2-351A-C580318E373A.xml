@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="6BB28304-B0FC-AFE2-351A-C580318E373A" containerWithKeyObject="71781EEA-4AD9-F51A-0CEC-689056E7C384" localFKIndex="2321A722-61F1-83FF-370F-533953A05B04" name="SUSCRIPCION_CLASE_Backup_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>6D341B77-8FCF-BDF3-1856-181AE74162AB</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<referredTableLongName>CLASE_Backup</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>49722CEB-2B45-8A43-5687-EE59C47365BF</referredTableID>
+<keyObject>4F1B9098-011C-6FC8-2E82-F53ED880C605</keyObject>
+<referredKeyID>4F1B9098-011C-6FC8-2E82-F53ED880C605</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CLASE_Backup_ID</refColNames>
+<transferable>false</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

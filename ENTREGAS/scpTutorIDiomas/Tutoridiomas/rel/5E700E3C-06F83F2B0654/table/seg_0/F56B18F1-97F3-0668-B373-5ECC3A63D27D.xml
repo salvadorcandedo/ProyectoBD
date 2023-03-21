@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F56B18F1-97F3-0668-B373-5ECC3A63D27D" name="PAY_PAL">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>5FD255BD-3E08-A260-80A6-54FB167FA9FD</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PAGO_PAGO_ID" id="1986A464-F99B-5CD4-34AC-7453524FC765">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="02A2A45C-212C-B820-2CE8-F1651B5F113B" referredColumn="07510D2D-3E60-B414-EC10-2148E4FCE7C6"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0B83EFE0-3BD5-A65A-2F86-AD945FFB91BA" name="PAY_PAL_PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="1986A464-F99B-5CD4-34AC-7453524FC765"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="10F462D1-E117-EDCA-66AE-07559B06C898" name="PAY_PAL_PAGO_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>A40ADBFD-3287-50E1-2BDA-A5339EC980BB</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1986A464-F99B-5CD4-34AC-7453524FC765"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

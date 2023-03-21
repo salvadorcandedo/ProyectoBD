@@ -1,0 +1,242 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="90B3346C-3899-DE6D-CB3B-916F65C05A78" name="TUTOR">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>A070DAEC-29C9-7F3E-10BB-AFB4DE285C69</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Nombre" id="2453B0F0-DA93-8228-2A19-A1BA326D4BAC">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>2F193D23-B40F-5366-EFFA-7611C47FCF83</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Apellidos" id="238A370E-C5A4-F9ED-E43A-55504DE36667">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>2D45DF90-3568-745F-7860-10D674F3029B</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CorreoElectronico" id="F300AF2F-9771-7494-3A83-CE8B1D3F548F">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>CCB31604-56CC-8FBA-E863-60BA751C853C</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FechaNacimiento" id="14E7AED7-6E43-5B91-DFE9-CD84C15950E2">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>83A166A9-6C70-827E-83A4-6C8984E3C0E5</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MaximaDistanciaDesplazamiento" id="497952B6-74A1-424C-63DC-005A63A02B68">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>9557551C-ADE6-AE22-6373-C9F62109E8A8</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CosteDesplazamiento" id="EF733CDC-C208-73BB-202E-3F9F7AF553A0">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>1E511672-C5DE-C1F0-A0D3-1509181A500A</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ImagenPerfil" id="474743D3-C3E7-ADBA-C5AD-82D181465B5E">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>B929FB35-0000-803D-32D3-BD739B29F1C7</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DesdeCuandoEsProfesora" id="38145ED5-3312-B61D-565D-5A2610936DF8">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>228BFDFC-9050-0517-5138-35835DDE8C73</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NIVEL_ESTUDIANTE_CodigoNivelEstudiante" id="90CC0085-D63B-ED08-CAE1-3A4D49572A26">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>6B482201-B1F6-F8A9-1274-A8D1F85780A5</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4976C91D-298F-4157-E536-6D0DF118BF98" referredColumn="36EF036D-333E-E200-FB86-1814B1E56460"/>
+</associations>
+</Column>
+<Column name="TUTOR_ID" id="BE43A3FA-10FC-8D23-1756-5A8A6DC693FB">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+<Column name="FRANJA_HORARIA_FRANJA_HORARIA_ID" id="3A616CEE-3512-4530-4D1C-E06E81E8CF61">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EF075623-6C16-0BBD-893D-8FB9973CE4CD" referredColumn="757D7E69-564C-3B41-3473-BB0C1DD8DBB8"/>
+</associations>
+</Column>
+<Column name="IDIOMA_IDIOMA_ID" id="0CC0E75F-F1F1-5810-BC9F-D9F98B7460D9">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="688DC1AC-F26F-C038-2D12-390506B8167F" referredColumn="AF6E79AC-8920-82AE-5C30-B7DDA27EF956"/>
+</associations>
+</Column>
+<Column name="FORMACIÓN_FORMACIÓN_ID" id="FC3A2DC1-21AE-E9BB-42CE-C8070E294F75">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E4872CC4-14A0-E268-3E15-669316F5B3B9" referredColumn="496C6C84-82F4-B513-13C1-45BE8DBCAAD7"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="95FC6ACD-CE9E-FB79-BCD5-967BEC0FF376" name="TUTOR_PK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="BE43A3FA-10FC-8D23-1756-5A8A6DC693FB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="767F0DAA-8450-6919-6DED-5A170F7D8E63" name="TUTOR_FRANJA_HORARIA_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>E14A24B6-6BC2-3DEA-0D3A-9823A2F2E163</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3A616CEE-3512-4530-4D1C-E06E81E8CF61"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FD25529A-034D-DBFA-6AB5-A4FF08DB3D83" name="TUTOR_IDIOMA_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>CDCDA89E-EA85-2138-9E9B-303BE33DBB60</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0CC0E75F-F1F1-5810-BC9F-D9F98B7460D9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="69351649-E6C6-A729-A1F1-D935299ECE83" name="TUTOR_FORMACIÓN_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>56D04487-3502-137D-9CF5-89A7675C1CBC</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FC3A2DC1-21AE-E9BB-42CE-C8070E294F75"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2E496A94-A7E0-7549-665C-9FEAE6D6EEF0" name="TUTOR_NIVEL_ESTUDIANTE_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:32 UTC</createdTime>
+<generatorID>8211C339-E1B0-1B36-842C-1EC9D785A60E</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="90CC0085-D63B-ED08-CAE1-3A4D49572A26"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="30E502E8-C56E-02E9-D2F7-1A883F9D70CC" name="TUTOR_RESEÑA_FK">
+<createdBy>Salva</createdBy>
+<createdTime>2023-03-21 16:26:33 UTC</createdTime>
+<generatorID>A2B9F56D-09B9-2407-F560-1DC384BF4794</generatorID>
+<ownerDesignName>Tutoridiomas</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+</indexes>
+</Table>
