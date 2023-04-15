@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Dockerizamos MySQL en Ubuntu y conectamos con interfaz Web
+title: Administracion
 excerpt: "Proyecto Modelado y Administración Base de Datos "
 date: 2023-03-10
 classes: wide
