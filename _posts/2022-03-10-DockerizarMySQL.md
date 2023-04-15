@@ -25,15 +25,14 @@ tags:
 
 - [Que son los contenedores?](#que-son-los-contenedores)
 - [Instalar Docker](#instalar-docker)
-  - [Install using the apt repository](#install-using-the-apt-repository)
-    - [Update the apt package index and install packages to allow apt to use a repository over HTTPS:](#update-the-apt-package-index-and-install-packages-to-allow-apt-to-use-a-repository-over-https)
-    - [Add Docker’s official GPG key:](#add-dockers-official-gpg-key)
-    - [Use the following command to set up the repository:](#use-the-following-command-to-set-up-the-repository)
-  - [Install Docker Engine](#install-docker-engine)
+  - [Instalamos el repositorio de docker con el gestor de paquetes apt de Ubuntu](#instalamos-el-repositorio-de-docker-con-el-gestor-de-paquetes-apt-de-ubuntu)
+    - [Hacemos un apt update para refrescar el listado de paquetes y instalamos certificados para permitir a apt usar un repositorio por https:](#hacemos-un-apt-update-para-refrescar-el-listado-de-paquetes-y-instalamos-certificados-para-permitir-a-apt-usar-un-repositorio-por-https)
+    - [Anadir la llave GPG para docker :](#anadir-la-llave-gpg-para-docker-)
+    - [Comando para automatizar la :](#comando-para-automatizar-la-)
+  - [Instalar la suite de Docker](#instalar-la-suite-de-docker)
 - [Crear Volumen para MySQL](#crear-volumen-para-mysql)
 - [Dockerizar PhpMyAdmin para conectarse a la base de datos Mysql](#dockerizar-phpmyadmin-para-conectarse-a-la-base-de-datos-mysql)
 - [Entrar en la Web de PhpMyadmin](#entrar-en-la-web-de-phpmyadmin)
-
 
 
 
@@ -67,15 +66,9 @@ Otra ventaja de Docker es que un desarrollador puede descargar y ejecutar cualqu
 
 Seguiremos el tutorial para instalarlo en Ubuntu
 
-## Install using the apt repository
+## Instalamos el repositorio de docker con el gestor de paquetes apt de Ubuntu
 
-Before you install Docker Engine for the first time on a new host machine, you need to set up the Docker repository. Afterward, you can install and update Docker from the repository.
-Set up the repository
-
-   
-   
-   
-### Update the apt package index and install packages to allow apt to use a repository over HTTPS:
+### Hacemos un apt update para refrescar el listado de paquetes y instalamos certificados para permitir a apt usar un repositorio por https:
   
 ```bash
 sudo apt-get update
@@ -91,7 +84,7 @@ sudo apt-get install \
 </p>
 
 
-### Add Docker’s official GPG key:
+### Anadir la llave GPG para docker :
 ```bash
  sudo install -m 0755 -d /etc/apt/keyrings
 
@@ -100,7 +93,7 @@ sudo apt-get install \
  sudo chmod a+r /etc/apt/keyrings/docker.gpg
 ```
 
-### Use the following command to set up the repository:
+### Comando para automatizar la :
 ```bash
  echo \
   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
@@ -108,13 +101,13 @@ sudo apt-get install \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 
-## Install Docker Engine
+## Instalar la suite de Docker
 ```bash
 sudo apt update 
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 Verify that the Docker Engine installation is successful by running the hello-world image:
-
+Podemos comprobar que docker esta instalado y funcionando en nuestra maquina haciendo un hello world :
 
 ```bash
  sudo docker run hello-world
@@ -128,7 +121,7 @@ Docker esta ya instalado y corriendo en nuestra maquina ubuntu
 
 # Crear Volumen para MySQL
 
-The following command will create the volume in your local machine which you can connect with MySQL container later:
+El siguiente comando crea un volumen donde dockerizaremos Mysql luego:
 ```bash
 sudo docker volume create mysql-volume
 ```
@@ -139,7 +132,17 @@ DRIVER    VOLUME NAME
 local     mysql-volume
 ```
 
-The following command will pull the MySQL server version 8.0.20 from the Docker registry and then instantiate a Docker container with the name “scp-mysql.” It will also attach the previously created volume “mysql-volume” with the Database and will expose the port 3306 so that you can reach the MySQL database outside the container, ademas le creara una contrasena para el root:
+El siguiente comando crea un container de docker con un mysql server en la verison 8.0.20 , aqui lo que hace cada parametro 
+docker run: inicia un nuevo contenedor a partir de una imagen Docker.
+* --name=scp-mysql: establece un nombre para el contenedor, en este caso usaremos "scp-mysql".
+* -p3306:3306: mapea el puerto 3306 del contenedor al puerto 3306 del host, lo que permite que se acceda al servidor MySQL dentro del contenedor desde fuera del contenedor a través de la red por ese puerto.
+* -v mysql-volume:/var/lib/mysql: asignamos el volumen creado anteriormente "mysql-volume" al directorio /var/lib/mysql dentro del contenedor. 
+Esto nos permite que los datos persistan incluso si el contenedor se detiene y se reinicia.
+* -e MYSQL_ROOT_PASSWORD=scp123: establece la contraseña de root del servidor MySQL dentro del contenedor en "scp123".
+-e MYSQL_ROOT_HOST=%: permite que la cuenta de root del servidor MySQL dentro del contenedor pueda iniciar sesión desde cualquier dirección IP. Esto se debe a que se establece el comodín % como el valor del parámetro MYSQL_ROOT_HOST.No es recomendable hacerlo con la cuenta de root por motivos de seguridad, en otro articulo me extendere sobre la securizacion de docker , por ahora y para pruebas lo dejaremos asi.
+
+* -d: ejecuta el contenedor en segundo plano (detach) .
+
 ```bash
 sudo docker run --name=scp-mysql -p3306:3306 -v mysql-volume:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=scp123 -e MYSQL_ROOT_HOST=% -d mysql/mysql-server:8.0.20
 ```
@@ -227,4 +230,4 @@ Si ha salido todo bien en principio deberiamos poder acceder a la gui de phphmya
 <img src="/ProyectoBD/assets/images/Dockersql/docker9.png">
 </p>
 
-Desde aqui podemos administrar la base de datos de Mysql igual que podriamos hacer con el SqlManager de Windows.
+Desde aqui podemos administrar la base de datos de Mysql igual que podriamos hacer con el ssms de Windows.
