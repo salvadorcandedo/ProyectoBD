@@ -632,10 +632,4 @@ RESTORE DATABASE AdmFincas FROM DISK = 'C:\MSSQL\BACKUPS\AdmFincas.bak';
 
 
 
-# Mongo DB
-Principales Diferencias entre Bases de datos NoSql y Sql:
- + Una base de datos NoSql está compuesta de colecciones, lo que equivaldría a tablas en las
-SQL.
- + Las colecciones están compuestas por documentos similar a los registros
- + Los documentos están formados por campos similar a las columnas de las filas
- + En las NoSql los campos pueden ser indexados. Funcionan igual que en las SQL
+

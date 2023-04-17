@@ -50,7 +50,7 @@ Para ejecutar ese comando a secas hace falta una previa configurtacion del PATH 
 
 Si nos devuelve un output similar significa que el servidor de mongo se ha iniciado correctamente en nuestra maquina
  <p align="center">
-<img src="/ProyectoBD/assets/images/mongobb1/mongo1.png">
+<img src="/ProyectoBD/assets/images/mongodb1/mongo1.png">
 </p>
 El output nos deberia devolver un mensaje indicando que el servidor esta iniciado y escuchando por el puerto 27017
 + >  waiting for
@@ -154,7 +154,7 @@ Si observamos el campo direccion vemos la clara diferencia entre las bases de da
 ]
 ```
  <p align="center">
-<img src="/ProyectoBD/assets/images/mongobb1/mongo2.png">
+<img src="/ProyectoBD/assets/imagesdmongodb1/mongo2.png">
 </p>
 ```java
 EMPEZAR EJEMPLO CRUD
