@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Administracion
-excerpt: "Proyecto Modelado y Administración Base de Datos "
+excerpt: "Proyecto Administración Base de Datos "
 date: 2023-03-10
 classes: wide
 header:

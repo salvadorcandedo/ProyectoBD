@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Dockerizamos MySQL en Ubuntu y conectamos con interfaz Web
-excerpt: "Proyecto Modelado y Administración Base de Datos "
+excerpt: " "
 date: 2023-03-10
 classes: wide
 header:
@@ -106,7 +106,7 @@ sudo apt-get install \
 sudo apt update 
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
-Verify that the Docker Engine installation is successful by running the hello-world image:
+
 Podemos comprobar que docker esta instalado y funcionando en nuestra maquina haciendo un hello world :
 
 ```bash
@@ -134,19 +134,16 @@ local     mysql-volume
 
 El siguiente comando crea un container de docker con un mysql server en la verison 8.0.20 , aqui lo que hace cada parametro 
 docker run: inicia un nuevo contenedor a partir de una imagen Docker.
+
+```bash
+sudo docker run --name=scp-mysql -p3306:3306 -v mysql-volume:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=scp123 -e MYSQL_ROOT_HOST=% -d mysql/mysql-server:8.0.20
+```
 * --name=scp-mysql: establece un nombre para el contenedor, en este caso usaremos "scp-mysql".
 * -p3306:3306: mapea el puerto 3306 del contenedor al puerto 3306 del host, lo que permite que se acceda al servidor MySQL dentro del contenedor desde fuera del contenedor a través de la red por ese puerto.
 * -v mysql-volume:/var/lib/mysql: asignamos el volumen creado anteriormente "mysql-volume" al directorio /var/lib/mysql dentro del contenedor. 
 Esto nos permite que los datos persistan incluso si el contenedor se detiene y se reinicia.
 * -e MYSQL_ROOT_PASSWORD=scp123: establece la contraseña de root del servidor MySQL dentro del contenedor en "scp123".
 -e MYSQL_ROOT_HOST=%: permite que la cuenta de root del servidor MySQL dentro del contenedor pueda iniciar sesión desde cualquier dirección IP. Esto se debe a que se establece el comodín % como el valor del parámetro MYSQL_ROOT_HOST.No es recomendable hacerlo con la cuenta de root por motivos de seguridad, en otro articulo me extendere sobre la securizacion de docker , por ahora y para pruebas lo dejaremos asi.
-
-* -d: ejecuta el contenedor en segundo plano (detach) .
-
-```bash
-sudo docker run --name=scp-mysql -p3306:3306 -v mysql-volume:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=scp123 -e MYSQL_ROOT_HOST=% -d mysql/mysql-server:8.0.20
-```
-> add explciacion!!~~~~
 
 <p align="center">
 <img src="/ProyectoBD/assets/images/Dockersql/docker3.png">
