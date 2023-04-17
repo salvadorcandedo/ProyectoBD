@@ -143,16 +143,19 @@ Si observamos el campo direccion vemos la clara diferencia entre las bases de da
  {
         "nombre":"Pedro",
         "edad":"9",
-        "Direccion"{"Calle":"Porto""Numero":"2""Ciudad":"NuncaJamas"},
+        "Direccion":{"Calle":"Porto","Numero":"2","Ciudad":"NuncaJamas"},
         "Num":"981717171"
 },
 {
         "nombre":"Maria",
         "edad":"29",
-        "Direccion:{"Calle":"Vereda""Numero":"2""Ciudad":"NuevaYork"},
+        "Direccion":{"Calle":"Vereda","Numero":"2","Ciudad":"NuevaYork"},
  }
 ]
 ```
+ <p align="center">
+<img src="/ProyectoBD/assets/images/mongobb1/mongo2.png">
+</p>
 ```java
 EMPEZAR EJEMPLO CRUD
 que significa crud?: 
@@ -166,7 +169,7 @@ use clientes
 Si no hay colecciones no ves la BD
 
 show dbs
-
+```java
 test>use clientes                               #usado para cambiar de DB
 switched to db clientes
 #aparece al principio de la sentencia el nombre de la DB
@@ -249,8 +252,8 @@ clientes> db.customers.find({gender: 'male'}).pretty()
 ]
 ```
 
-/** Hace un backup de la DB "sample_airbnb" desde la nube a la maquina local */
-/** Restaura una DB en la nube desde los datos en local */
+* Hace un backup de la DB "sample_airbnb" desde la nube a la maquina local 
+* Restaura una DB en la nube desde los datos en local 
 
 ```
 
