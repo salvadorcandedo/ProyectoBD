@@ -27,8 +27,8 @@ tags:
 - [Instalar Docker](#instalar-docker)
   - [Instalamos el repositorio de docker con el gestor de paquetes apt de Ubuntu](#instalamos-el-repositorio-de-docker-con-el-gestor-de-paquetes-apt-de-ubuntu)
     - [Hacemos un apt update para refrescar el listado de paquetes y instalamos certificados para permitir a apt usar un repositorio por https:](#hacemos-un-apt-update-para-refrescar-el-listado-de-paquetes-y-instalamos-certificados-para-permitir-a-apt-usar-un-repositorio-por-https)
-    - [Anadir la llave GPG para docker :](#anadir-la-llave-gpg-para-docker-)
-    - [Comando para automatizar la :](#comando-para-automatizar-la-)
+    - [Anadir la llave GPG para docker](#anadir-la-llave-gpg-para-docker)
+    - [Comando para automatizarla](#comando-para-automatizarla)
   - [Instalar la suite de Docker](#instalar-la-suite-de-docker)
 - [Crear Volumen para MySQL](#crear-volumen-para-mysql)
 - [Dockerizar PhpMyAdmin para conectarse a la base de datos Mysql](#dockerizar-phpmyadmin-para-conectarse-a-la-base-de-datos-mysql)
@@ -84,7 +84,7 @@ sudo apt-get install \
 </p>
 
 
-### Anadir la llave GPG para docker :
+### Anadir la llave GPG para docker 
 ```bash
  sudo install -m 0755 -d /etc/apt/keyrings
 
@@ -93,7 +93,7 @@ sudo apt-get install \
  sudo chmod a+r /etc/apt/keyrings/docker.gpg
 ```
 
-### Comando para automatizar la :
+### Comando para automatizarla 
 ```bash
  echo \
   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \

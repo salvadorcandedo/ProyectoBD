@@ -29,7 +29,8 @@ SQL.
  + Las colecciones están compuestas por documentos similar a los registros
  + Los documentos están formados por campos similar a las columnas de las filas
  + En las NoSql los campos pueden ser indexados. Funcionan igual que en las SQL
- + 
+  
+  
 # Iniciar MongoDB
 
 
