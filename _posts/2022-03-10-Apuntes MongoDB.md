@@ -22,6 +22,15 @@ tags:
   - 
   - 
 ---
+- [Mongo DB](#mongo-db)
+- [Iniciar MongoDB](#iniciar-mongodb)
+- [Comandos mongo DB:](#comandos-mongo-db)
+- [Creacion base de datos SCP](#creacion-base-de-datos-scp)
+  - [Array con dos objetos](#array-con-dos-objetos)
+- [Apuntes clase](#apuntes-clase)
+
+
+
 # Mongo DB
 Principales Diferencias entre Bases de datos NoSql y Sql:
  + Una base de datos NoSql está compuesta de colecciones, lo que equivaldría a tablas en las
@@ -30,7 +39,7 @@ SQL.
  + Los documentos están formados por campos similar a las columnas de las filas
  + En las NoSql los campos pueden ser indexados. Funcionan igual que en las SQL
   
-  
+
 # Iniciar MongoDB
 
 
