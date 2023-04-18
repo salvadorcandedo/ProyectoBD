@@ -2,16 +2,17 @@
 layout: single
 title: Administracion
 excerpt: "Proyecto Administración Base de Datos "
-date: 2023-03-10
+date: 2023-04-10
 classes: wide
 header:
   teaser: /assets/images/htb-writeup-magic/magic_logo.png
   teaser_home_page: true
   icon: /assets/images/hackthebox.webp
 categories:
-  - Datamodeler
+  - SQL
   - ssms
   - sql server
+  - 
 tags:
   - 
   - 
@@ -24,6 +25,51 @@ tags:
 
 
 # Proyecto Administracion base de Datos desde 0 
+
+
+- [Proyecto Administracion base de Datos desde 0](#proyecto-administracion-base-de-datos-desde-0)
+- [Creacion de la base de datos](#creacion-de-la-base-de-datos)
+  - [sp\_help](#sp_help)
+- [Tipos de archivos](#tipos-de-archivos)
+- [Modificar base de datos](#modificar-base-de-datos)
+  - [Modificar el tamaño](#modificar-el-tamaño)
+  - [Añadir FileGroups](#añadir-filegroups)
+  - [Creación de tablas](#creación-de-tablas)
+    - [Indicar Clave Primaria](#indicar-clave-primaria)
+    - [anadir datos a una tabla](#anadir-datos-a-una-tabla)
+    - [Modificar tabla con ALTER](#modificar-tabla-con-alter)
+- [Seguridad y protección SSMS](#seguridad-y-protección-ssms)
+  - [Usuarios](#usuarios)
+    - [Cambiar la contraseña de un inicio de sesión:](#cambiar-la-contraseña-de-un-inicio-de-sesión)
+  - [Crear un usuario de base de datos](#crear-un-usuario-de-base-de-datos)
+    - [Crear un usuario de base de datos sin Inicio de Sesión](#crear-un-usuario-de-base-de-datos-sin-inicio-de-sesión)
+  - [Eliminar usuario del rol](#eliminar-usuario-del-rol)
+- [Permisos](#permisos)
+    - [GRANT:](#grant)
+    - [REVOKE:](#revoke)
+    - [DENY:](#deny)
+    - [Ejemplos](#ejemplos)
+- [Permisos sobre objetos](#permisos-sobre-objetos)
+  - [Permiso SELECT:](#permiso-select)
+    - [Ejemplo:](#ejemplo)
+    - [Ejemplo:](#ejemplo-1)
+  - [Permiso CREATE:](#permiso-create)
+- [Schema](#schema)
+- [Politica de Recuperación de Desastres](#politica-de-recuperación-de-desastres)
+  - [Snapshot](#snapshot)
+  - [Backup / Restore](#backup--restore)
+    - [Completo](#completo)
+    - [Diferencial](#diferencial)
+    - [Log](#log)
+  - [Restaurar una base de datos a partir de una copia de seguridad](#restaurar-una-base-de-datos-a-partir-de-una-copia-de-seguridad)
+    - [Coppy\_only](#coppy_only)
+    - [Tail Backup](#tail-backup)
+
+
+
+
+
+
 
 
   

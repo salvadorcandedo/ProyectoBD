@@ -2,7 +2,7 @@
 layout: single
 title: Dockerizamos MySQL en Ubuntu y conectamos con interfaz Web
 excerpt: " "
-date: 2023-03-10
+date: 2023-04-01
 classes: wide
 header:
   teaser: /assets/images/htb-writeup-magic/magic_logo.png

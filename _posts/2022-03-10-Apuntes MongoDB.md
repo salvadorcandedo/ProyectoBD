@@ -3,7 +3,7 @@ layout: single
 excerpt: "Apuntes"
 title: Apuntes MongoDB
 excerpt: 
-date: 2023-03-10
+date: 2023-04-12
 classes: wide
 header:
   teaser:
@@ -156,6 +156,19 @@ Si observamos el campo direccion vemos la clara diferencia entre las bases de da
  <p align="center">
 <img src="/ProyectoBD/assets/imagesdmongodb1/mongo2.png">
 </p>
+
+
+
+
+
+
+
+
+
+----
+
+# Apuntes clase 
+
 ```java
 EMPEZAR EJEMPLO CRUD
 que significa crud?: 
@@ -261,7 +274,7 @@ mongodump --uri mongodb+srv://salvadorcabdedo:Abc123.@mcs.ojlmoig.mongodb.net/sa
 
 ```
 
-Exportar desde cmd en la nuve
+Exportar desde cmd en la nube
 ```bash
 mongoexport --uri mongodb+srv://salvadorcandedo:Abc123.@mcs.oj1moig.mongodb.net/sample_mflix --collection movies --type json --out C:\Data
 ```
