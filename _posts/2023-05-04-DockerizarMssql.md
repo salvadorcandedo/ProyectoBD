@@ -63,7 +63,7 @@ Existen diferentes opciones que podemos usar :
 -- Especificaciones del ubuntu que usaremos a modo de "server" para hostear el contenedor de Docker 
 
 <p align="center">
-<img src="/ProyectoBD/assets/images/Dockersql2/1.png">
+<img src="/ProyectoBD/assets/images/Dockersql2/1.PNG">
 </p>
 
 
@@ -77,7 +77,7 @@ Existen diferentes opciones que podemos usar :
     -d Especificamos el nombre de la imagen de docker en nuestro caso el mssql2019 para ubuntu 20.4
 
 <p align="center">
-<img src="/ProyectoBD/assets/images/Dockersql2/2.png">
+<img src="/ProyectoBD/assets/images/Dockersql2/2.PNG">
 </p>
 
 En este caso debemos añadir sudo al comiendo del comando para pedir permiso de super usuario (super user do) ya que mi usuario scp no es el usuario root pero si se encuentra en el sudoers y puede ejecutar sudo .
@@ -91,7 +91,7 @@ Nos muestra un listado de las imágenes descargadas que existen en nuestro siste
 Ejecutamos el contenedor 
 
 <p align="center">
-<img src="/ProyectoBD/assets/images/Dockersql2/3.png">
+<img src="/ProyectoBD/assets/images/Dockersql2/3.PNG">
 </p>
 
 El comando
@@ -124,7 +124,7 @@ GO
 ```
 
 <p align="center">
-<img src="/ProyectoBD/assets/images/Dockersql2/4.png">
+<img src="/ProyectoBD/assets/images/Dockersql2/4.PNG">
 </p>
 
 Si todo salió bien vemos cómo podemos ingresar comandos en nuestro servidor mssql pero no de la manera más cómoda.
@@ -132,13 +132,13 @@ Si todo salió bien vemos cómo podemos ingresar comandos en nuestro servidor ms
 Vamos a conectarnos a nuestro servidor mssql desde otra máquina en la misma red usando el Visual Studio Code para ello necesitaremos instalar una extensión y saber la ip de nuestro servidor :
 
 <p align="center">
-<img src="/ProyectoBD/assets/images/Dockersql2/5.png">
+<img src="/ProyectoBD/assets/images/Dockersql2/5.PNG">
 </p>
 Nos interesa la interfaz de red enp3s0 ya que la interfaz de docker sólo se usa para comunicarse entre los contenedores y además el puerto 1433 está "fowarded"
 
 
 <p align="center">
-<img src="/ProyectoBD/assets/images/Dockersql2/6.png">
+<img src="/ProyectoBD/assets/images/Dockersql2/6.PNG">
 </p>
 
 Nos debemos instalar esa extensión de visual estudio code para establecer una conexión con el servidor sql 
@@ -150,7 +150,7 @@ Podemos iniciar la conexión una vez instalada la extensión y escribiendo en la
 
 
 <p align="center">
-<img src="/ProyectoBD/assets/images/Dockersql2/7.png">
+<img src="/ProyectoBD/assets/images/Dockersql2/7.PNG">
 </p>
 Nos pedirá autenticar con SQL o AZURE, ya que permitimos el login con el usuario SA le decimos que nos autenticaremos cómo un usuario de SQL , introduciremos nuestra contraseña y un nombre para nuestro servidor, en mi caso SalvaDB.
 
@@ -158,7 +158,7 @@ Nos pedirá autenticar con SQL o AZURE, ya que permitimos el login con el usuari
 
 
 <p align="center">
-<img src="/ProyectoBD/assets/images/Dockersql2/8.png">
+<img src="/ProyectoBD/assets/images/Dockersql2/8.PNG">
 </p>
 
 
@@ -166,5 +166,5 @@ Nos pedirá autenticar con SQL o AZURE, ya que permitimos el login con el usuari
 # MSSQL FUNCIONANDO Y TRABAJANDO CON EL VISUAL STUDIO CODE 
 
 <p align="center">
-<img src="/ProyectoBD/assets/images/Dockersql2/9.png">
+<img src="/ProyectoBD/assets/images/Dockersql2/9.PNG">
 </p>
