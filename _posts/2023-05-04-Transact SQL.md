@@ -1,7 +1,7 @@
 ---
 layout: single
-title: Instalar Instancia de SSMS (MICROSOFT SQL) En docker y conectarnos por visual Studio
-excerpt: "Modelo Lógico Conceptual."
+title: Transact SQL
+excerpt: "Transact SQL Proyecto"
 date: 2023-01-15
 classes: wide
 header:
@@ -167,12 +167,14 @@ Select Monto From Gastos
 | 150.00  |
 | 500.00  |
 | 300.00  |
+
 ```sql
 Select GastoID,Descripcion,Monto + 50 
 AS Precio
 From Gastos
 Go
 ```
+
 | GastoID | Descripción               | Precio   |
 |---------|---------------------------|----------|
 | 1       | Mantenimiento de jardín   | 250.00   |
@@ -182,10 +184,10 @@ Go
 | 5       | Reparación de ascensor    | 550.00   |
 | 6       | Mantenimiento de piscina  | 350.00   |
 
-# 7. Predicados
+# Predicados
   * Añadir shorcuts!!!!!!!
 
-## 7.1. Between
+## Between
 > Vamos a sacar el Id del inquilino y el id del contrato de los contratos que se realizaron entre el primer mes del año y el cuarto.
 
 ```sql
@@ -201,6 +203,7 @@ WHERE FechaInicio BETWEEN '2023-01-1' and '2023-04-01'
 | 1           | 1          | 2023-01-01  |
 | 2           | 2          | 2023-02-01  |
 | 3           | 3          | 2023-03-01  |
+
 ---
 
 ## In 
@@ -315,6 +318,7 @@ where Telefono like '555-5___'
 GO
 ---(4 filas afectadas)
 ```
+
 | Nombre         | Teléfono |
 |----------------|----------|
 | Ana Martínez   | 555-5678 |
@@ -329,6 +333,7 @@ Creo varios campos duplicados en mi tabla nombre para demostrar el ejemplo:
 ```sql
 SELECT Nombre FROM Inquilinos
 ```
+
 | Nombre          |
 |-----------------|
 | Carlos Ramírez  |
@@ -343,6 +348,7 @@ SELECT Nombre FROM Inquilinos
 | Sergio Ramos    |
 | Ana López       |
 | Pedro Jiménez   |
+
 ```sql
 Select distinct nombre
 From usuarios
@@ -399,7 +405,7 @@ Go
 ---(12 filas afectadas)
 ```
 
-###  ordenar por `campos calculados`
+###  Ordenar por `campos calculados`
 ```sql
 Select GastoID,Descripcion,Monto from Gastos
 ```
@@ -412,13 +418,14 @@ Select GastoID,Descripcion,Monto from Gastos
 | 5       | Reparación de ascensor    | 500.00  |
 | 6       | Mantenimiento de piscina  | 300.00  |
 
-Pongamos que necesitamos sumarle 100 euros a todos los montos de la tabla gastos y ordenarlos de forma ascendente:
+> Pongamos que necesitamos sumarle 100 euros a todos los montos de la tabla gastos y ordenarlos de forma ascendente:
 ```sql
 Select GastoID,Descripcion,Monto + 100 as PrecioFinal
 From Gastos
 Order by  PrecioFinal
 Go
 ```
+
 | GastoID | Descripcion              | PrecioFinal |
 |---------|--------------------------|-------------|
 | 4       | Limpieza común           | 250.00      |
@@ -478,7 +485,7 @@ order by InquilinoID
 Offset 1 Rows fetch next 5 rows only
 Go
 ```
-Nos muestra la columna a partir del ID 2 y nos printea las 5 siguientes
+> Nos muestra la columna a partir del ID 2 y nos printea las 5 siguientes
 
 
 
@@ -490,9 +497,11 @@ Filtramos por la fila que contenga el número más alto en la columna monto
 select Max(monto) as COSTEMAXIMO
 from Gastos
 ```
+
 | COSTEMAXIMO |
 |-------------|
 |   500.00    |
+
 Podemos sacarlo junto con otra columna con un where
 
 ```sql
@@ -500,17 +509,234 @@ SELECT Descripcion, Monto AS COSTEMAXIMO
 FROM Gastos
 WHERE Monto = (SELECT MAX(Monto) FROM Gastos) 
 ```
+
 | Descripcion             | COSTEMAXIMO |
 |-------------------------|-------------|
 | Reparación de ascensor | 500.00      |
 
 ### Min
+
 Filtramos por la fila que contanga el menor valor en la columna de Monto.
 ```sql
 SELECT Descripcion, Monto AS COSTEMINIMO
 FROM Gastos
 WHERE Monto = (SELECT MIN(Monto) FROM Gastos) 
 ```
+
 | Descripcion   | COSTEMINIMO |
 |---------------|-------------|
 | Limpieza común | 150.00      |
+
+## Count
+
+> Supongamos que nos interesa saber el número de Inquilinos que hay actualmente instalados, con Count(*) contamos todas las filas de esa columna.
+
+```sql
+Select Count(InquilinoID) as [Numero de Inquilinos]
+From Inquilinos 
+Go
+---Total execution time: 00:00:00.114
+```
+
+## AVG (average)
+
+AVG lo usamos para sacar medias 
+> Imaginemos que queremos sacar la media de nuestros gastos de nuestra base de datos, con la siguiente query seleccionamos todos los gastos y realiza una media
+
+```sql
+SELECT Monto FROM Gastos
+SELECT AVG(Monto) AS MediaGastos FROM Gastos;
+--- (6 filas afectadas) 
+--- 	
+--- 	(1 fila afectada)
+```
+
+| MediaGastos |
+|-------------|
+| 308.333333  |
+
+
+| Monto     |
+| --------- |
+| 200.00    |
+| 300.00    |
+| 400.00    |
+| 150.00    |
+| 500.00    |
+| 300.00    |
+| 290.00    |
+
+## Sum
+
+> Sum se utiliza para sumar los datos de una columna, por ejemplo, vamos a sumar el monto para obtener los gastos totales 
+
+```sql
+SELECT SUM(Monto) AS TotalGastos
+FROM Gastos;
+---(1 fila afectada)
+```
+
+
+## GROUP BY
+
+Tabla: Inquilinos
+
+| InquilinoID | Nombre          | Direccion           | Email                | Telefono   |
+|-------------|-----------------|---------------------|----------------------|------------|
+| 1           | Carlos Ramírez  | Avenida Libertad 789| carlos@example.com   | 555-1234   |
+| 2           | Ana Martínez    | Calle Sol 456       | ana@example.com      | 555-5678   |
+| 3           | Luisa Torres    | Paseo Marítimo 123  | luisa@example.com    | 555-9012   |
+| 4           | Sergio Ramos    | Calle Mayor 987     | sergio@example.com   | 555-4444   |
+| 5           | Ana López       | Avenida del Sol 654 | ana@example.com      | 555-5555   |
+| 6           | Pedro Jiménez   | Paseo Marítimo 321  | pedro@example.com    | 555-6666   |
+
+Podemos observar que el email de ana@example.com se repite varias veces, con un COUNT seguido de un GROUP BY podemos sacar el número del total de inquilinos que usan ese email.
+
+```sql
+SELECT Email, COUNT(*) AS TotalInquilinos, Nombre
+FROM Inquilinos
+GROUP BY Email;
+```
+> supongamos que queremos saber cuantos inquilinos tienen el mismo correo electrónico repetido en nuestra tabla 
+
+| Email              | TotalInquilinos |
+|--------------------|-----------------|
+| carlos@example.com | 1               |
+| ana@example.com    | 2               |
+| luisa@example.com  | 1               |
+| sergio@example.com | 1               |
+| pedro@example.com  | 1               |
+
+## HAVING
+
+> Con el mismo ejemplo anterior supongamos que queremos filtrar los resultados después de aplicar el GROUP BY. De esta forma solo se muestran los campos que muestran solo los correos electrónicos que tienen más de un inquilino asociado.
+
+```sql
+SELECT Email, COUNT(*) AS TotalInquilinos
+FROM Inquilinos
+GROUP BY Email
+HAVING COUNT(*) > 1;
+```
+
+| Email              | TotalInquilinos |
+|--------------------|-----------------|
+| ana@example.com    | 2               |
+
+# Criterios de agrupamiento 
+
+## GROUP BY ROLLUP
+
+con GROUP BY WITH ROLLUP podemos obtener un resumen completo de los datos agrupados, mostrando tanto los resultados específicos de cada grupo como los totales parciales y el total general.
+
+```sql
+SELECT Monto,SUM(Monto) as sumamonto 
+FROM Pagos
+group by ROLLUP (Monto) 
+```
+
+Por ejemplo, podemos sacar la suma total del monto 
+
+
+| Monto   | sumamonto |
+|---------|-----------|
+| 800.00  | 800.00    |
+| 1000.00 | 1000.00   |
+| 1200.00 | 1200.00   |
+| NULL    | 3000.00   |
+
+> El valor null contiene la suma de toda la columna monto 
+
+Podemos filtrar solo por esa fila del resultado con HAVING:
+
+```sql
+SELECT Monto, SUM(Monto) AS sumamonto
+FROM Gastos
+GROUP BY ROLLUP(Monto)
+HAVING Monto IS NULL; 
+```
+## Grouping sets ( )
+
+
+Select codigoprecio,sum(codigoprecio) as sumaprecio
+from precio
+group by GROUPING SETS (CodigoPrecio,())
+Go
+
+
+
+# UNION / INTERSECT / EXCEPT 
+
+# Union
+
+```sql
+
+SELECT InquilinoID as ID, Nombre FROM Inquilinos
+UNION
+SELECT ClienteID, Nombre From Clientes
+
+```
+| ID | Nombre          |
+|----|-----------------|
+| 1  | Carlos Ramírez  |
+| 1  | Laura Rodríguez |
+| 2  | Ana Martínez    |
+| 2  | Roberto Sánchez |
+| 3  | Luisa Torres    |
+| 3  | María González  |
+| 4  | Sergio Ramos    |
+| 5  | Ana López       |
+| 6  | Pedro Jiménez   |
+
+> Unimos el valor del las columnas seleccionadas de la la tabla segunda en la tabla primera. En este caso unimos los IDs de los clientes junto a los nombres de la tabla Clientes en las dos columnas de la tabla Inquilinos.
+
+## Intersect 
+
+La operación INTERSECT se utiliza para combinar los resultados de dos consultas y obtener solo las filas que sean comunes a ambas consultas. Es decir, devuelve los registros que se encuentran en ambas consultas.
+
+
+
+
+```sql
+SELECT Nombre as nombreClientes
+	FROM Clientes
+```
+
+| Nombre           |
+|------------------|
+| Laura Rodríguez  |
+| Roberto Sánchez  |
+| María González   |
+
+```sql
+SELECT Nombre as NombreInquilinos
+	FROM Inquilinos
+```
+
+
+| NombreInquilinos |
+|------------------|
+| Carlos Ramírez   |
+| Ana Martínez     |
+| Luisa Torres     |
+| Sergio Ramos     |
+| Ana López        |
+| Pedro Jiménez    |
+
+ que Nombres no están en la tabla Inquilinos
+
+```sql
+SELECT Nombre AS 'NombreNoestan'
+	FROM Clientes
+EXCEPT
+SELECT Nombre
+	FROM Inquilinos;
+```
+
+| NombreNoestan    |
+|------------------|
+| Laura Rodríguez  |
+| Roberto Sánchez  |
+| María González   |
+
+
+
