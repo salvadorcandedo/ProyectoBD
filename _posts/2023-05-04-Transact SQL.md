@@ -2,18 +2,16 @@
 layout: single
 title: Transact SQL
 excerpt: "Transact SQL Proyecto"
-date: 2023-01-15
+date: 2023-05-30
 classes: wide
 header:
   teaser: 
   teaser_home_page: true
   icon: 
 categories:
-  - Datamodeler
   - ssms
-  - sql server
 tags:
-  - 
+  - TransactSQL
   - 
   - 
   - 
@@ -675,6 +673,7 @@ UNION
 SELECT ClienteID, Nombre From Clientes
 
 ```
+
 | ID | Nombre          |
 |----|-----------------|
 | 1  | Carlos Ramírez  |
@@ -740,3 +739,275 @@ SELECT Nombre
 
 
 
+
+
+
+
+
+# Join
+  ## INNER JOIN
+> Supongamos que queremos  una consulta que nos muestre los nombres de los inquilinos y la fecha de inicio del contrato junto con la de la fecha de finalizacion: 
+```sql
+SELECT I.Nombre AS NombreInquilino, CA.ContratoID, CA.FechaInicio, CA.FechaFin
+FROM Inquilinos I
+INNER JOIN ContratosAlquiler CA ON I.InquilinoID = CA.InquilinoID;
+```
+
+
+> Puedemos usar utilizar la cláusula INNER JOIN para combinar las tablas "ContratosAlquiler" e "Inquilinos" en una sola consulta. 
+
+
+| NombreInquilino | ContratoID | FechaInicio | FechaFin   |
+|-----------------|------------|-------------|------------|
+| Carlos Ramírez  | 1          | 2023-01-01  | 2023-12-31 |
+| Ana Martínez    | 2          | 2023-02-01  | 2023-07-31 |
+| Luisa Torres    | 3          | 2023-03-01  | 2023-09-30 |
+
+
+ "CA" es el alias de tabla para la tabla "ContratosAlquiler", 
+  e "I" es el alias de tabla para la tabla "Inquilinos"
+
+
+
+  ## LEFT OUTER JOIN
+
+Queremos obtener una lista de todos los inquilinos junto con los contratos de alquiler correspondientes, incluso aquellos inquilinos que `no` tengan contratos de alquiler. 
+  
+```sql
+SELECT I.Nombre AS NombreInquilino, CA.ContratoID, CA.FechaInicio, CA.FechaFin
+FROM Inquilinos I
+LEFT OUTER JOIN ContratosAlquiler CA ON I.InquilinoID = CA.InquilinoID;
+```
+
+| NombreInquilino | ContratoID | FechaInicio | FechaFin   |
+|-----------------|------------|-------------|------------|
+| Carlos Ramírez  | 1          | 2023-01-01  | 2023-12-31 |
+| Ana Martínez    | 2          | 2023-02-01  | 2023-07-31 |
+| Luisa Torres    | 3          | 2023-03-01  | 2023-09-30 |
+
+Usamos `LEFT OUTER JOIN` para combinar las tablas "Inquilinos" y "ContratosAlquiler" según la columna "InquilinoID". La cláusula LEFT OUTER JOIN devuelve todos los registros de la tabla izquierda (Inquilinos) y los registros coincidentes de la tabla derecha (ContratosAlquiler). Si no hay coincidencias en la tabla derecha, se mostrarán valores `NULL`
+
+| NombreInquilino | ContratoID | FechaInicio | FechaFin   |
+|-----------------|------------|-------------|------------|
+| Carlos Ramírez  | 1          | 2023-01-01  | 2023-12-31 |
+| Ana Martínez    | 2          | 2023-02-01  | 2023-07-31 |
+| Luisa Torres    | 3          | 2023-03-01  | 2023-09-30 |
+| Sergio Ramos    | NULL       | NULL        | NULL       |
+| Ana López       | NULL       | NULL        | NULL       |
+| Pedro Jiménez   | NULL       | NULL        | NULL       |
+
+## RIGHT OUTER JOIN
+
+```sql
+SELECT I.Nombre AS NombreInquilino, CA.ContratoID, CA.FechaInicio, CA.FechaFin
+FROM Inquilinos I
+RIGHT OUTER JOIN ContratosAlquiler CA ON I.InquilinoID = CA.InquilinoID;
+```
+
+RIGHT OUTER JOIN hace lo mismo que left outer join solo que devuelve los campos de la tabla derech (contratos de alquiler) y los registros que coincidan en la tabla de la izquierda (Inquilinos), en esete caso, InquilinoID en la tabla Contratos De alquiler solo tiene 3 filas mientras que en la de Inquilinos hay 6, en este caso no se nos devuelven valores `Null`.
+
+# Operadores de relacion 
+
+
+
+## = (Igual que) 
+
+
+
+
+SELECT F.Nombre AS NombrePropiedad
+FROM Fincas F, ContratosAlquiler CA
+WHERE F.FincaID = CA.ContratoID
+
+
+
+
+AND CA.FechaInicio > '2023-02-01';
+
+
+
+## != (no es igual)
+
+
+## < (menor que)
+
+
+
+## >= (mayor que)
+
+
+## <= (menor o igual que)
+
+
+
+
+
+
+# Procedimientos de almacenado 
+Un procedimiento almacenado en SQL Server es un objeto de la base de datos que contiene un conjunto de instrucciones SQL agrupadas bajo un nombre.
+
+```sql
+CREATE PROCEDURE ObtenerInquilinos
+AS
+BEGIN
+    SELECT *
+    FROM Inquilinos;
+END;
+--->Se puede hace la llamada ObtenerInquilinos para ejecutar el procedimiento de almacenado
+EXEC ObtenerInquilinos
+```
+
+
+
+# Vistas
+ las Vistas representan una consulta almacenada como una tabla virtual. Son resultados precalculados de una consulta que se almacenan en la base de datos y se pueden utilizar como tablas normales en otras consultas. 
+
+
+>Podemos crear una vista para obtener un listado de todos los contratos de alquiler activos junto con la información relevante de los inquilinos y las fincas involucradas:
+
+Vista que nos muestra el numero de contratos que posee cada inquilino
+```sql
+CREATE VIEW VistaInquilinosConContratos
+AS
+SELECT I.InquilinoID, I.Nombre, COUNT(CA.ContratoID) AS CantidadContratos
+FROM Inquilinos I
+LEFT JOIN ContratosAlquiler CA ON I.InquilinoID = CA.InquilinoID
+GROUP BY I.InquilinoID, I.Nombre;
+```
+Ahora cuando hagamos un select a la Vista nos aparecera el numero de contratos que tiene cada Inquilino
+
+| InquilinoID | Nombre          | CantidadContratos |
+|-------------|-----------------|------------------:|
+| 1           | Carlos Ramírez  |                 1 |
+| 2           | Ana Martínez    |                 2 |
+| 3           | Luisa Torres    |                 1 |
+| 4           | Sergio Ramos    |                 3 |
+| 5           | Ana López       |                 0 |
+| 6           | Pedro Jiménez   |                 1 |
+| 7           | Carlos Ramírez  |                 0 |
+| 8           | Ana Martínez    |                 0 |
+| 9           | Luisa Torres    |                 1 |
+| 10          | Cerberus        |                 1 |
+| 11          | Ana López       |                 1 |
+| 12          | Pedro Jiménez   |                 1 |
+
+
+Con 'Exec sp_helptext VistaInquilinosConContratos' Podemos ver el codigo de la vista una Columna "text"
+
+
+
+
+
+
+# Subqueries
+ Una subquery o subconsulta anidada, es una consulta SQL que se encuentra dentro de otra consulta principal
+ se usa para  aportar valores o resultados que se utilizan en la consulta principal.
+
+> Supongamos que queremos obtener una lista de inquilinos que tienen contratos de alquiler activos
+
+```sql
+SELECT Nombre AS NombreInquilino
+FROM Inquilinos
+WHERE InquilinoID IN (SELECT InquilinoID FROM ContratosAlquiler WHERE FechaFin > GETDATE());
+
+--SELECT fechafin from Inquilinos
+--FechaFIn
+--2023-12-31
+--2023-07-31
+--2023-09-30
+
+-- Las fechas de finalizacion de contrato son  mas altas (>) que la fecha actual por lo que se muestran los tres inquilinos en la tabla 
+```
+La subconsulta `SELECT InquilinoID FROM ContratosAlquiler WHERE FechaFin > GETDATE()` se ejecuta primero para obtener una lista de los Inquilinos (InquilinoID).Luego, la consulta principal selecciona los nombres de los inquilinos cuyo InquilinoID está presente en el resultado de la subconsulta(fecha de finalizacion > fecha actual).
+
+| Nombre        |
+|---------------|
+| Carlos Ramírez|
+| Ana Martínez  |
+| Luisa Torres  |
+
+
+
+# Output
+La instrucción OUTPUT  se utiliza para devolver los resultados de una operación de inserción(INSERT), actualización(UPDATE) o eliminación(DELETE) en una tabla. 
+
+```sql
+INSERT INTO Inquilinos_New (Nombre, Direccion, Email)
+OUTPUT inserted.InquilinoID
+VALUES ('Diablito Pérez', 'Calle Principal 123', 'juan@yahoo.es');
+GO
+```
+> En este caso nos devuelve el id del Inquilino recien insertado en nuestro caso el 13
+
+```sql
+--InquilinoID
+--13
+```
+
+
+# Truncate
+Eliminará todos los datos de las tablas mencionadas, pero la estructura de las tablas se mantendrá intacta.
+```sql
+--- Creo la tabla Prueba
+CREATE TABLE dbo.Prueba
+(
+    ID INT IDENTITY(1,1) NOT NULL PRIMARY KEY, -- primary key column
+    Nombre [NVARCHAR](50),
+    Apellido [NVARCHAR](50) 
+    
+);
+GO
+---Inserto Valores 
+SELECT * FROM Prueba
+
+INSERT INTO PRUEBA (Nombre, Apellido)
+VALUES ('Salva', 'Candedo'),
+       ('Andrea', 'Candedo');
+---
+SELECT count(*) [NUMERO DE PRUEBAS]FROM PRUEBA 
+--NUMERO DE PRUEBAS 
+--2
+TRUNCATE TABLE Prueba
+SELECT * FROM Prueba
+-- Me lo muestra vacio pero la tabla sigue ahi
+Drop TABLE Prueba
+SELECT * FROM Prueba
+--Msg 208, Level 16, State 1, Line 1
+--Invalid object name 'Prueba'.
+```
+
+# RollBack
+
+>se puede utilizar la instrucción ROLLBACK para deshacer cambios realizados en la base de datos en caso de que ocurra un error o una condición no deseada. 
+
+Vamos a crear un procedimiento de almacenado donde usemos RollBack para desacer en caso de que ocurra algun error 
+
+C```sql
+REATE PROCEDURE RegistrarPago
+    @ContratoID INT,
+    @Monto DECIMAL(10, 2),
+    @FechaPago DATE
+AS
+BEGIN
+    BEGIN TRANSACTION;
+
+    BEGIN TRY
+        -- Insertar el pago en la tabla Pagos
+        INSERT INTO Pagos (ContratoID, Monto, FechaPago)
+        VALUES (@ContratoID, @Monto, @FechaPago);
+
+        -- Actualizar el saldo en la tabla ContratosAlquiler
+        UPDATE ContratosAlquiler
+        SET Saldo = Saldo - @Monto
+        WHERE ContratoID = @ContratoID;
+
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        ROLLBACK TRANSACTION;
+        -- Registrar el error en una tabla de registro de errores
+        INSERT INTO Errores (Mensaje, FechaError)
+        VALUES (ERROR_MESSAGE(), GETDATE());
+    END CATCH;
+END;
+```
