@@ -20,6 +20,62 @@ tags:
   - 
 ---
 
+- [Entorno de trabajo](#entorno-de-trabajo)
+  - [Informacion sobre la instalacion](#informacion-sobre-la-instalacion)
+- [Apuntes Transact SQL](#apuntes-transact-sql)
+  - [Funciones del sistema](#funciones-del-sistema)
+- [Concatenación](#concatenación)
+      - [Error valor](#error-valor)
+  - [Where](#where)
+- [Operador de igualdad](#operador-de-igualdad)
+- [Operador Not](#operador-not)
+- [Operadores and/or](#operadores-andor)
+- [Campos calculados](#campos-calculados)
+- [Predicados](#predicados)
+  - [Between](#between)
+  - [In](#in)
+  - [| Avenida Central 456  |             |](#-avenida-central-456---------------)
+  - [Like %](#like-)
+    - [Expresión "^"](#expresión-)
+    - [Expresión "\_"](#expresión-_)
+  - [Distinct](#distinct)
+  - [Order by](#order-by)
+    - [Ordenar por `campos calculados`](#ordenar-por-campos-calculados)
+  - [Datepart](#datepart)
+  - [OFFSET](#offset)
+- [Funciones de Agregación](#funciones-de-agregación)
+  - [MAX/MIN](#maxmin)
+    - [Max](#max)
+    - [Min](#min)
+  - [Count](#count)
+  - [AVG (average)](#avg-average)
+  - [Sum](#sum)
+  - [GROUP BY](#group-by)
+  - [HAVING](#having)
+- [Criterios de agrupamiento](#criterios-de-agrupamiento)
+  - [GROUP BY ROLLUP](#group-by-rollup)
+  - [Grouping sets ( )](#grouping-sets--)
+- [UNION / INTERSECT / EXCEPT](#union--intersect--except)
+- [Union](#union)
+  - [Intersect](#intersect)
+- [Join](#join)
+  - [INNER JOIN](#inner-join)
+  - [LEFT OUTER JOIN](#left-outer-join)
+  - [RIGHT OUTER JOIN](#right-outer-join)
+- [Operadores de relacion](#operadores-de-relacion)
+  - [= (Igual que)](#-igual-que)
+  - [!= (no es igual)](#-no-es-igual)
+  - [\< (menor que)](#-menor-que)
+  - [\>= (mayor que)](#-mayor-que)
+  - [\<= (menor o igual que)](#-menor-o-igual-que)
+- [Procedimientos de almacenado](#procedimientos-de-almacenado)
+- [Vistas](#vistas)
+- [Subqueries](#subqueries)
+- [Output](#output)
+- [Truncate](#truncate)
+- [RollBack](#rollback)
+
+
 
 # Entorno de trabajo
 Ya que trabajo desde casa y mi portátil no tiene los requisitos necesarios para manejar mi máquina de Windows con MS SQL, opté por instalar una instancia de MS SQL dockerizada en mi Raspberry Pi y conectarme a ella desde mi host Windows 10 desde Visual Studio Code.
@@ -205,7 +261,10 @@ WHERE FechaInicio BETWEEN '2023-01-1' and '2023-04-01'
 ---
 
 ## In 
->Ejemplo donde filtramos por dos calles de interés con el predicado `in` 
+
+>Ejemplo donde filtramos por dos calles de interés con el predicado  
+`in` 
+
 ```sql
 Select Direccion AS CallesDeInteres
 From Fincas
@@ -248,6 +307,7 @@ OR Email LIKE '%@yahoo.es';
 GO
 ---	(6 filas afectadas)
 ```
+
 | Nombre          | Email              |
 |-----------------|--------------------|
 | Carlos Ramírez  | carlos@yahoo.es    |
@@ -436,6 +496,7 @@ Go
 
 ## Datepart 
 Podemos Dividir las fechas con datepart y hacer que nos las muestre con columnas personalizadas
+
 ```sql
 Select FincaID,FechaFin,
 Datepart(year,FechaFin) as 'Año Final',
@@ -577,16 +638,6 @@ FROM Gastos;
 
 ## GROUP BY
 
-Tabla: Inquilinos
-
-| InquilinoID | Nombre          | Direccion           | Email                | Telefono   |
-|-------------|-----------------|---------------------|----------------------|------------|
-| 1           | Carlos Ramírez  | Avenida Libertad 789| carlos@example.com   | 555-1234   |
-| 2           | Ana Martínez    | Calle Sol 456       | ana@example.com      | 555-5678   |
-| 3           | Luisa Torres    | Paseo Marítimo 123  | luisa@example.com    | 555-9012   |
-| 4           | Sergio Ramos    | Calle Mayor 987     | sergio@example.com   | 555-4444   |
-| 5           | Ana López       | Avenida del Sol 654 | ana@example.com      | 555-5555   |
-| 6           | Pedro Jiménez   | Paseo Marítimo 321  | pedro@example.com    | 555-6666   |
 
 Podemos observar que el email de ana@example.com se repite varias veces, con un COUNT seguido de un GROUP BY podemos sacar el número del total de inquilinos que usan ese email.
 
