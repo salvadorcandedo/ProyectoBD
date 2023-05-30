@@ -982,12 +982,17 @@ SELECT * FROM Prueba
 
 Vamos a crear un procedimiento de almacenado donde usemos RollBack para desacer en caso de que ocurra algun error 
 
-C```sql
+
+C:\Users\Usuario\ProyectoBD\_posts\2023-05-04-Transact SQL.md
+
+
+```sql
 REATE PROCEDURE RegistrarPago
     @ContratoID INT,
     @Monto DECIMAL(10, 2),
     @FechaPago DATE
 AS
+
 BEGIN
     BEGIN TRANSACTION;
 
