@@ -2,7 +2,7 @@
 layout: single
 title: Instalar Instancia de SSMS (MICROSOFT SQL) En docker y conectarnos por visual Studio
 excerpt: "Modelo Lógico Conceptual."
-date: 2023-01-15
+date: 2023-05-15
 classes: wide
 header:
   teaser: 

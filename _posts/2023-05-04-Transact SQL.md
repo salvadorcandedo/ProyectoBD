@@ -86,7 +86,7 @@ tags:
 - [Ejemplos procedimientos almacenados](#ejemplos-procedimientos-almacenados)
 - [Triggers](#triggers)
   - [AFTER UPDATE](#after-update)
-- [AFTER INSERT CON ROLLBACK](#after-insert-con-rollback)
+  - [AFTER INSERT CON ROLLBACK](#after-insert-con-rollback)
 - [Campo contrasena segura](#campo-contrasena-segura)
 
 
@@ -1538,7 +1538,7 @@ UsuarioID | NombreUsuario | Contrasena           | UltimaModificacion
 
 
 
-# AFTER INSERT CON ROLLBACK
+## AFTER INSERT CON ROLLBACK
 
 ```sql
 CREATE TRIGGER tr_ContrasenaLarga
