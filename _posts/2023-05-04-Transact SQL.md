@@ -85,6 +85,7 @@ tags:
 - [Tablas temporales](#tablas-temporales)
 - [Ejemplos procedimientos almacenados](#ejemplos-procedimientos-almacenados)
 - [Triggers](#triggers)
+  - [AFTER UPDATE](#after-update)
 - [AFTER INSERT CON ROLLBACK](#after-insert-con-rollback)
 - [Campo contrasena segura](#campo-contrasena-segura)
 
@@ -99,6 +100,10 @@ Ya que trabajo desde casa y mi portátil no tiene los requisitos necesarios para
 
 ##  Informacion sobre la instalacion
 
+<p>
+  Proceso de instalacion de 
+  <a href="https://salvadorcandedo.github.io/ProyectoBD/DockerizarMssql">MSSQL en docker </a>.
+</p>
 
 
 
@@ -1487,9 +1492,10 @@ BEGIN
     FROM Usuarios
     INNER JOIN inserted ON Usuarios.UsuarioID = inserted.UsuarioID;
 END;
-
- ## AFTER UPDATE 
 ```
+ ## AFTER UPDATE 
+
+
  Creamos la tabla "Usuarios" con las columnas UsuarioID, NombreUsuario, Contrasena y UltimaModificacion. 
 
 Luego, creamos un trigger llamado "Usuarios_AuditarCambios" que se activa después de realizar una operación de actualización en la tabla "Usuarios".
