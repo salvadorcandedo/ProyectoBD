@@ -69,7 +69,8 @@ tags:
   - [\<= (menor o igual que)](#-menor-o-igual-que)
 - [Procedimientos de almacenado](#procedimientos-de-almacenado)
   - [Con Update](#con-update)
-- [Con variables](#con-variables)
+  - [Con variables \\  IF NOT EXISTS](#con-variables---if-not-exists)
+    - [PROC CAMBIAR CONTRASENA CON IF EXISTS](#proc-cambiar-contrasena-con-if-exists)
 - [Vistas](#vistas)
 - [Subqueries](#subqueries)
 - [Output](#output)
@@ -241,7 +242,16 @@ Go
 | 6       | Mantenimiento de piscina  | 350.00   |
 
 # Predicados
-  * Añadir shorcuts!!!!!!!
+- [Between](#between)
+  - [In](#in)
+  - [Like %](#like-)
+    - [Expresión "^"](#expresión-)
+    - [Expresión "\_"](#expresión-_)
+  - [Distinct](#distinct)
+  - [Order by](#order-by)
+    - [Ordenar por `campos calculados`](#ordenar-por-campos-calculados)
+  - [Datepart](#datepart)
+  - [OFFSET](#offset)
 
 ## Between
 > Vamos a sacar el Id del inquilino y el id del contrato de los contratos que se realizaron entre el primer mes del año y el cuarto.
@@ -1004,7 +1014,7 @@ EXEC ActualizarEstadoAlquileres
 
 
 
-# Con variables 
+## Con variables \  IF NOT EXISTS
 
 En el siguiente procedimiento de almacenado comprobamos que el Nombre de usuario  y la contrasena proporcionadas coincidan con el de la tabla 
 
@@ -1100,6 +1110,123 @@ Go
 
 ```
 
+###  PROC CAMBIAR CONTRASENA CON IF EXISTS
+
+Creo un procedimiento de almacenado que pregunte por el Nombre de usuario la contrasena antigua y una nueva y los guardo en variables 
+
+```sql
+
+--- PROC CAMBIAR CONTRASENA CON IF EXISTS
+
+CREATE OR ALTER PROCEDURE CambiarContrasena
+    @NombreUsuario NVARCHAR(50),
+    @ContrasenaAntigua NVARCHAR(20),
+    @NuevaContrasena NVARCHAR(20)
+AS
+BEGIN
+    -- Verificar si el usuario existe por su nombre de usuario
+    IF EXISTS (SELECT 1 FROM Usuarios WHERE NombreUsuario = @NombreUsuario)
+    BEGIN
+        -- Coincide la contrasena antigua?
+        IF EXISTS (SELECT 1 FROM Usuarios WHERE NombreUsuario = @NombreUsuario AND Contrasena = @ContrasenaAntigua)
+        BEGIN
+            -- Contrasena debe ser menor o igual a 20 :
+            IF LEN(@NuevaContrasena) <= 20
+            BEGIN
+                -- La contrasena debe contener almenos 1 mayuscula "LIKE '%[A-Z]%'" y un numero "LIKE '%[0-9]%'"
+                IF @NuevaContrasena LIKE '%[A-Z]%' AND @NuevaContrasena LIKE '%[0-9]%'
+                BEGIN
+                    -- Si todo se cumple se actualiza la contrasena
+                    UPDATE Usuarios
+                    SET Contrasena = @NuevaContrasena
+                    WHERE NombreUsuario = @NombreUsuario;
+
+                    PRINT 'Contraseña cambiada correctamente.';
+                END
+                ELSE
+                BEGIN
+                    RAISERROR('La nueva contraseña debe contener al menos una letra mayúscula y un número.', 16, 1);
+                    
+                END
+            END
+            ELSE
+            BEGIN
+                RAISERROR('La nueva contraseña no puede tener más de 20 caracteres.', 16, 1);
+                
+            END
+        END
+        ELSE
+        BEGIN
+            RAISERROR('La contraseña antigua no coincide.', 16, 1);
+            
+        END
+    END
+    ELSE
+    BEGIN
+        RAISERROR('El usuario no existe.', 16, 1);
+       
+    END
+END;
+
+```
+
+
+
+
+```sql
+
+EXEC CambiarContrasena @NombreUsuario='Whom',@ContrasenaAntigua='1234',@NuevaContrasena='12345'
+
+--	Msg 50000, Level 16, State 1, Procedure CambiarContrasena, Line 28
+-- La nueva contraseña debe contener al menos una letra mayúscula y un número
+EXEC CambiarContrasena @NombreUsuario='Whom',@ContrasenaAntigua='123456A',@NuevaContrasena='12345'
+--CambiarContrasena, Line 40
+--LANGUAGE contraseña antigua no coincide.
+
+EXEC CambiarContrasena @NombreUsuario='Whom',@ContrasenaAntigua='1234',@NuevaContrasena='12345A'
+--	(1 fila afectada) 
+--- 	
+--- 	(1 fila afectada) 
+--- 	
+--- 	Contraseña cambiada correctamente. 
+--- 	
+--- 	Total execution time: 00:00:00.032
+SELECT Contrasena From Usuarios WHERE NombreUsuario='Whom'
+
+--|Contrasena |
+--| 12345A    |
+```
+> Ahora vamos a crear un trigger que haga que la contrasena deba de tener al menos 8 caracteres cada vez que se realiza un update
+
+```sql
+
+CREATE TRIGGER tr_ValidarLongitudContrasena
+ON Usuarios
+AFTER UPDATE
+AS
+BEGIN
+   IF UPDATE(Contrasena)
+    BEGIN
+        -- Verificar la longitud de la nueva contraseña
+        IF (SELECT LEN(Contrasena) FROM inserted) < 8
+        BEGIN
+            RAISERROR('La nueva contraseña debe tener 8 o más caracteres.', 16, 1);
+            ROLLBACK TRANSACTION; 
+        END
+    END
+END;
+--- Los comandos se han completado correctamente. 
+	
+```
+Ahora veamos que pasa si intento actualizar la contrasena pero tiene menos de 8 caracteres, deberia saltar el trigger aunque use el proc 
+
+```sql
+EXEC CambiarContrasena @NombreUsuario='Whom',@ContrasenaAntigua='12345A',@NuevaContrasena='ABCD12'
+
+--Msg 50000, Level 16, State 1, Procedure tr_ValidarLongitudContrasena, Line 12
+---La nueva contraseña debe tener 8 o más caracteres.
+
+```
 
 
 # Vistas
@@ -1305,27 +1432,17 @@ END;
   ```sql
 BEGIN TRANSACTION;
   BEGIN TRY
-    -- Actualizar el nombre de un propietario de una finca
     UPDATE Fincas
     SET Propietario = 'Ana Perez'
     WHERE FincaID = 1;
 
-    -- Insertar un nuevo contrato de alquiler
+    -- Insertar nuevo contrato
     INSERT INTO ContratosAlquiler (AlquilerID,FechaInicio, FechaFin)
     VALUES (4, '2023-06-01', '2023-12-31');
-
-    -- Confirmar la transacción
-    COMMIT;
   END TRY
-
   BEGIN CATCH
-    -- Deshacer la transacción en caso de error
     ROLLBACK;
-
-    
     PRINT 'Se produjo un error. Se ha realizado un rollback.';
-
-  
   END CATCH;
 
 
@@ -1364,7 +1481,7 @@ BEGIN
     BEGIN TRANSACTION;
 
     BEGIN TRY
-        -- Insertar el pago en la tabla Pagos
+        
         INSERT INTO Pagos (ContratoID, Monto, FechaPago)
         VALUES (@ContratoID, @Monto, @FechaPago);
 
@@ -1377,7 +1494,7 @@ BEGIN
     END TRY
     BEGIN CATCH
         ROLLBACK TRANSACTION;
-        -- Registramos el error en una tabla temporal *errores
+        -- Registro el error en una tabla temporal #errores
         INSERT INTO #Errores (Mensaje, FechaError)
         VALUES (ERROR_MESSAGE(), GETDATE());
     END CATCH;

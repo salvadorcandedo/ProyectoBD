@@ -1139,3 +1139,111 @@ Go
 Exec sp_Loguin @NombreUsuario='Pirata' , @password ='1234'
 Go
 --	La contraseña es incorrecta
+
+SELECT NombreUsuario FROM Usuarios
+ORDER BY USUARIOID DESC
+
+--- PROC CAMBIAR CONTRASENA CON IF EXISTS
+
+CREATE OR ALTER PROCEDURE CambiarContrasena
+    @NombreUsuario NVARCHAR(50),
+    @ContrasenaAntigua NVARCHAR(20),
+    @NuevaContrasena NVARCHAR(20)
+AS
+BEGIN
+    -- Verificar si el usuario existe por su nombre de usuario
+    IF EXISTS (SELECT 1 FROM Usuarios WHERE NombreUsuario = @NombreUsuario)
+    BEGIN
+        -- Coincide la contrasena antigua?
+        IF EXISTS (SELECT 1 FROM Usuarios WHERE NombreUsuario = @NombreUsuario AND Contrasena = @ContrasenaAntigua)
+        BEGIN
+            -- Contrasena debe ser menor o igual a 20 :
+            IF LEN(@NuevaContrasena) <= 20
+            BEGIN
+                -- La contrasena debe contener almenos 1 mayuscula "LIKE '%[A-Z]%'" y un numero "LIKE '%[0-9]%'"
+                IF @NuevaContrasena LIKE '%[A-Z]%' AND @NuevaContrasena LIKE '%[0-9]%'
+                BEGIN
+                    -- Si todo se cumple se actualiza la contrasena
+                    UPDATE Usuarios
+                    SET Contrasena = @NuevaContrasena
+                    WHERE NombreUsuario = @NombreUsuario;
+
+                    PRINT 'Contraseña cambiada correctamente.';
+                END
+                ELSE
+                BEGIN
+                    RAISERROR('La nueva contraseña debe contener al menos una letra mayúscula y un número.', 16, 1);
+                    
+                END
+            END
+            ELSE
+            BEGIN
+                RAISERROR('La nueva contraseña no puede tener más de 20 caracteres.', 16, 1);
+                
+            END
+        END
+        ELSE
+        BEGIN
+            RAISERROR('La contraseña antigua no coincide.', 16, 1);
+            
+        END
+    END
+    ELSE
+    BEGIN
+        RAISERROR('El usuario no existe.', 16, 1);
+       
+    END
+END;
+
+
+
+SELECT * FROM USUARIOS
+
+
+EXEC CambiarContrasena @NombreUsuario='Whom',@ContrasenaAntigua='1234',@NuevaContrasena='12345'
+
+--	Msg 50000, Level 16, State 1, Procedure CambiarContrasena, Line 28
+-- La nueva contraseña debe contener al menos una letra mayúscula y un número
+EXEC CambiarContrasena @NombreUsuario='Whom',@ContrasenaAntigua='123456A',@NuevaContrasena='12345'
+--CambiarContrasena, Line 40
+--LANGUAGE contraseña antigua no coincide.
+
+EXEC CambiarContrasena @NombreUsuario='Whom',@ContrasenaAntigua='1234',@NuevaContrasena='12345A'
+--	(1 fila afectada) 
+--- 	
+--- 	(1 fila afectada) 
+--- 	
+--- 	Contraseña cambiada correctamente. 
+--- 	
+--- 	Total execution time: 00:00:00.032
+SELECT Contrasena From Usuarios WHERE NombreUsuario='Whom'
+
+--|Contrasena |
+--| 12345A    |
+
+
+-- Ahora vamos a crear un trigger que haga que la contrasena deba de tener al menos 8 caracteres cada vez que se realiza un update
+CREATE TRIGGER tr_ValidarLongitudContrasena
+ON Usuarios
+AFTER UPDATE
+AS
+BEGIN
+   
+    IF UPDATE(Contrasena)
+    BEGIN
+        -- Verificar la longitud de la nueva contraseña
+        IF (SELECT LEN(Contrasena) FROM inserted) < 8
+        BEGIN
+            RAISERROR('La nueva contraseña debe tener 8 o más caracteres.', 16, 1);
+            ROLLBACK TRANSACTION; 
+        END
+    END
+END;
+--- Los comandos se han completado correctamente. 
+	
+-- Ahora veamos que pasa si intento actualizar la contrasena pero tiene menos de 8 caracteres, deberia saltar el trigger aunque use el proc 
+
+EXEC CambiarContrasena @NombreUsuario='Whom',@ContrasenaAntigua='12345A',@NuevaContrasena='ABCD12'
+
+--Msg 50000, Level 16, State 1, Procedure tr_ValidarLongitudContrasena, Line 12
+---La nueva contraseña debe tener 8 o más caracteres.
