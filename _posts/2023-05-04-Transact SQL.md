@@ -109,6 +109,11 @@ Ya que trabajo desde casa y mi portátil no tiene los requisitos necesarios para
 
 
 
+<p>
+  Puedes encontrar mis 
+  <a href="https://salvadorcandedo.github.io/ProyectoBD/DockerizarMssql">QUERYS DE SQL</a> en mi repositorio de Github .
+</p>
+
 
 #  Apuntes Transact SQL
 ```sql
