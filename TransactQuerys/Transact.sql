@@ -686,6 +686,9 @@ SELECT * FROM Fincas
 
 
 
+-- Oricedimiento de almacenado con tablas temporales 
+
+
 
 
 EXEC ObtenerInformeInquilinosAlquiler
@@ -786,3 +789,103 @@ SELECT * FROM sys.tables
 DROP TABLE Facturas
 
 Exec sp_helptext VistaInquilinosConContratos
+
+
+
+
+
+
+
+
+
+
+--- MERGE
+
+---crear tabla
+DROP TABLE ActualizacionPrecios
+CREATE TABLE ActualizacionPrecios (
+    FincaID INT,
+    PrecioNuevo DECIMAL(10, 2)
+);
+-- Insertar
+INSERT into ActualizacionPrecios(FincaID,PrecioNuevo)
+VALUES (3, 1000.00)
+
+SELECT FincaID,Monto FROM Alquileres
+
+MERGE INTO Alquileres AS target
+USING ActualizacionPrecios AS source
+    ON target.FincaID = source.FincaID
+WHEN MATCHED THEN
+    UPDATE SET target.monto = source.PrecioNuevo
+WHEN NOT MATCHED BY TARGET THEN
+    INSERT (FincaID, Monto)
+    VALUES (source.FincaID, source.Precionuevo);
+
+Select * from Alquileres    
+
+
+MERGE INTO Alquileres AS target
+USING ActualizacionPrecios AS source
+    ON target.FincaID = source.FincaID
+WHEN MATCHED THEN
+    UPDATE SET target.monto = source.PrecioNuevo, target.FincaId = source.FincaID
+    WHEN NOT MATCHED  THEN
+    INSERT (FincaID, Monto)
+    VALUES (source.FincaID, source.Precionuevo);
+
+Select * from ActualizacionPrecios
+
+
+
+
+
+
+SELECT * FROM Alquileres
+ROLLBACK
+SELECT * FROM ActualizacionPrecios
+
+
+
+Select * from Fincas
+
+BEGIN TRANSACTION;
+
+BEGIN TRY
+    -- Actualizar el nombre de un propietario de una finca
+    UPDATE Fincas
+    SET Propietario = 'Ana Perez'
+    WHERE FincaID = 1;
+
+    -- Insertar un nuevo contrato de alquiler
+    INSERT INTO ContratosAlquiler (AlquilerID,FechaInicio, FechaFin)
+    VALUES (4, '2023-06-01', '2023-12-31');
+
+    -- Confirmar la transacción
+    
+END TRY
+
+BEGIN CATCH
+    -- Deshacer la transacción en caso de error
+    ROLLBACK;
+
+    -- Imprimir un mensaje en caso de rollback
+    PRINT 'Se produjo un error. Se ha realizado un rollback.';
+
+    -- Lanzar el error
+   
+END CATCH;
+
+
+---	Started executing query at Line 849
+--- 	
+--- 	(1 fila afectada) 
+--- 	
+--- 	(0 filas afectadas) 
+--- 	
+--- 	Se produjo un error. Se ha realizado un rollback. 
+--- 	
+--- 	Msg 515, Level 16, State 2, Line 10
+--- Cannot insert the value NULL into column 'ContratoID', table 'AdmFincas.dbo.ContratosAlquiler'; column does not allow nulls. INSERT fails. 
+--- 	
+--- 	Total execution time: 00:00:00.008
