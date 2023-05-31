@@ -236,3 +236,4 @@ VALUES
 
 use AdmFincas
 SELECT * FROM GASTOS
+

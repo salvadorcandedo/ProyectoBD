@@ -207,6 +207,8 @@ GO
 
 
 
+
+
 select Nombre,Telefono 
 from Inquilinos
 where Telefono like '555-5___'
@@ -465,9 +467,33 @@ SELECT * FROM Inquilinos
 SELECT * FROM ContratosAlquiler
 
 --- OPERADORES DE relacion  =,!=,<,<=,>,>=
+--- EXCEPT
+SELECT InquilinoID  as [InquilinosSinContrato] FROM Inquilinos 
+    EXCEPT
+Select InquilinoID  FROM ContratosAlquiler 
+--- InquilinosSinContrato
+--- 5
+--- 7
+--- 8
+SELECT I.InquilinoID, I.Nombre as [InquilinosSinContrato]
+FROM Inquilinos I
+WHERE I.InquilinoID IN (
+    SELECT InquilinoID
+    FROM Inquilinos
+    EXCEPT
+    SELECT InquilinoID
+    FROM ContratosAlquiler
+);
 
 
 
+
+
+UPDATE ContratosAlquiler
+
+SELECT * FROM Alquileres
+SELECT * FROM Pagos
+SELECT * FROM ContratosAlquiler
 SELECT F.Nombre AS NombrePropiedad
 FROM Fincas F, ContratosAlquiler CA
 WHERE F.FincaID = CA.ContratoID
@@ -692,18 +718,16 @@ SELECT * FROM Fincas
 
 
 EXEC ObtenerInformeInquilinosAlquiler
-CREATE PROCEDURE ObtenerInformeInquilinosAlquiler
+CREATE OR ALTER PROCEDURE ObtenerInformeInquilinosAlquiler
 AS
 BEGIN
-    SET NOCOUNT ON;
-
-    -- Variables para almacenar los resultados
-    DECLARE @NombreInquilino NVARCHAR(50);
+    
+DECLARE @NombreInquilino NVARCHAR(50);
     DECLARE @DireccionInquilino NVARCHAR(100);
     DECLARE @FechaInicioContrato DATE;
     DECLARE @FechaFinContrato DATE;
 
-    -- Tabla temporal para almacenar los resultados
+    -- Tabla temporal 
     CREATE TABLE #InformeInquilinosAlquiler (
         NombreInquilino NVARCHAR(50),
         DireccionInquilino NVARCHAR(100),
@@ -711,7 +735,7 @@ BEGIN
         FechaFinContrato DATE
     );
 
-    -- Obtener los datos de los inquilinos con contratos de alquiler activos
+    -- Consigo los Inquilinos con Contratos de alquiler activos 
     INSERT INTO #InformeInquilinosAlquiler
     SELECT I.Nombre, I.Direccion, CA.FechaInicio, CA.FechaFin
     FROM Inquilinos I
@@ -719,10 +743,10 @@ BEGIN
     WHERE CA.FechaInicio <= GETDATE() AND CA.FechaFin >= GETDATE();
 
     -- Recorrer los resultados y realizar operaciones adicionales si es necesario
-    DECLARE @RowCount INT = 1;
-    DECLARE @TotalRows INT = (SELECT COUNT(*) FROM #InformeInquilinosAlquiler);
+    DECLARE @FilasContador INT = 1;
+    DECLARE @TotalFilas INT = (SELECT COUNT(*) FROM #InformeInquilinosAlquiler);
 
-    WHILE @RowCount <= @TotalRows
+    WHILE @FilasContador <= @TotalFilas
     BEGIN
         -- Obtener los datos de cada fila del informe
         SELECT @NombreInquilino = NombreInquilino,
@@ -730,14 +754,14 @@ BEGIN
                @FechaInicioContrato = FechaInicioContrato,
                @FechaFinContrato = FechaFinContrato
         FROM (
-            SELECT ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS RowNum,
+            SELECT ROW_NUMBER() OVER AS FilaNum,
                    NombreInquilino,
                    DireccionInquilino,
                    FechaInicioContrato,
                    FechaFinContrato
             FROM #InformeInquilinosAlquiler
         ) AS Temp
-        WHERE RowNum = @RowCount;
+        WHERE FilaNum = @FilasContador;
 
         -- Realizar operaciones adicionales con los datos obtenidos
         -- Por ejemplo, imprimir los datos en un formato específico
@@ -748,8 +772,9 @@ BEGIN
         PRINT 'Fecha de fin del contrato: ' + CONVERT(NVARCHAR, @FechaFinContrato, 103);
         PRINT '--------------------------------------';
 
-        SET @RowCount += 1;
-    END;
+        SET @FilasContador += 1;
+END;
+
 
     -- Eliminar la tabla temporal
     DROP TABLE #InformeInquilinosAlquiler;
@@ -889,3 +914,6 @@ END CATCH;
 --- Cannot insert the value NULL into column 'ContratoID', table 'AdmFincas.dbo.ContratosAlquiler'; column does not allow nulls. INSERT fails. 
 --- 	
 --- 	Total execution time: 00:00:00.008
+
+
+SELECT sp.helpconstraint Fincas;
