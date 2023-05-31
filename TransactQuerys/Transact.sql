@@ -917,3 +917,225 @@ END CATCH;
 
 
 SELECT sp.helpconstraint Fincas;
+
+
+DROP TABLE Usuarios
+-- Crear la tabla Usuarios
+CREATE TABLE Usuarios (
+    Nombre INT IDENTITY(1,1) PRIMARY KEY,
+    NombreUsuario VARCHAR(50),
+    Contrasena VARCHAR(50),
+    UltimaModificacion DATETIME
+);
+
+-- Insertar datos en la tabla Usuarios
+INSERT INTO Usuarios (NombreUsuario, Contrasena, UltimaModificacion)
+VALUES ('Pirata', 'YoSoyColaTuPegaMento', GETDATE()),
+       ('Whom', 'helloWorld', GETDATE()),
+       ('Paquita', 'Paquitasalas123', GETDATE());
+
+
+SELECT * FROM Usuarios
+
+CREATE TRIGGER Usuarios_AuditarCambios
+ON Usuarios
+AFTER UPDATE
+AS
+BEGIN
+    UPDATE Usuarios
+    SET UltimaModificacion = GETDATE()
+    FROM Usuarios
+    INNER JOIN inserted ON Usuarios.Nombre = inserted.Nombre;
+END;
+
+SELECT * FROM USUARIOS
+UPDATE Usuarios
+Set Contrasena = 'NuevaPassword'
+WHERE Nombre= '3'
+
+
+
+-- Drop 'ColumnName' from table 'TableName' in schema 'SchemaName'
+ALTER TABLE Inquilinos
+    DROP COLUMN Alquilado
+GO
+
+SELECT Alquilado FROM Alquileres
+
+ALTER TABLE Alquileres
+ADD alquilado VARCHAR(10);
+
+UPDATE Alquileres
+SET 
+
+
+
+
+ALTER TABLE Alquileres
+ADD alquilado VARCHAR(10);
+
+
+SELECT * FROM ContratosAlquiler
+ SELECT * FROM Inquilinos
+SELECT * FROM Alquileres
+
+
+CREATE OR ALTER PROCEDURE ActualizarEstadoAlquileres
+AS
+BEGIN
+    UPDATE Alquileres
+    SET Alquilado = CASE
+        WHEN FechaFin >= GETDATE() THEN 'Alquilado'
+        ELSE 'No alquilado'
+        END;
+
+    SELECT I.Nombre as 'No Alquilados'
+    FROM Alquileres A
+    INNER JOIN ContratosAlquiler CA ON A.AlquilerID = CA.AlquilerID
+    INNER JOIN Inquilinos I ON CA.InquilinoID = I.InquilinoID
+    WHERE A.Alquilado = 'No alquilado';
+    
+    SELECT I.Nombre as 'Alquilados'
+    FROM Alquileres A
+    INNER JOIN ContratosAlquiler CA ON A.AlquilerID = CA.AlquilerID
+    INNER JOIN Inquilinos I ON CA.InquilinoID = I.InquilinoID
+    WHERE A.Alquilado = 'Alquilado';
+    
+
+
+END;
+
+
+EXEC ActualizarEstadoAlquileres
+
+SELECT * FROM Alquileres
+SELECT * FROM ContratosAlquiler
+SELECT * FROM Inquilinos
+
+ALTER TABLE Alquileres ALTER COLUMN alquilado VARCHAR(20);
+
+
+UPDATE Alquileres
+SET FechaFin = '2023-3-27'
+WHERE AlquilerID = 1;
+
+SELECT * FROM ContratosAlquiler
+
+
+
+SELECT * FROM usuarios
+
+CREATE TRIGGER tr_Contrasena
+BEFORE INSERT ON AdmFincas.Usuarios
+FOR EACH ROW
+BEGIN
+
+
+
+
+CREATE TRIGGER tr_ContrasenaLarga
+ON usuarios
+AFTER INSERT
+AS
+BEGIN
+    -- Lógica a realizar después de la inserción
+    -- Puede incluir validaciones, cálculos u otras operaciones
+
+    -- Ejemplo: Verificar la complejidad de la contraseña después de la inserción
+    IF EXISTS (SELECT 1 FROM inserted WHERE LEN(Contrasena) < 8)
+    BEGIN
+        RAISERROR ('La contraseña debe tener al menos 8 caracteres', 16, 1);
+        ROLLBACK;
+    END;
+END;
+
+SELECT * from usuarios
+
+INSERT INTO Usuarios (NombreUsuario, Contrasena)
+VALUES ('Link', '12345678');
+
+-- Msg 50000, Level 16, State 1, Procedure tr_ContrasenaLarga, Line 12
+-- La contraseña debe tener al menos 8 caracteres 
+-- 	
+-- 	Msg 3609, Level 16, State 1, Line 1
+-- The transaction ended in the trigger. The batch has been aborted.
+
+
+SHOW TRIGGERS 
+FROM AdmFincas;
+
+USE AdmFincas;
+GO
+
+SELECT name AS TriggerName, OBJECT_NAME(parent_id) AS TableName, create_date AS CreatedDate
+FROM sys.triggers
+WHERE parent_class = 1;
+
+SELECT * FROM Sys.triggers
+SELECT * FROM sys.procedures
+EXEC 
+
+
+Drop proc if exists sp_Loguin
+Go
+
+CREATE OR ALTER PROCEDURE sp_loguin
+    @NombreUsuario VARCHAR(50),
+    @Password VARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+   
+	IF NOT EXISTS (SELECT * FROM Usuarios WHERE NombreUsuario = @NombreUsuario)
+    BEGIN
+        PRINT 'Error: El usuario no existe';
+        RETURN;
+    END
+
+    ELSE IF NOT EXISTS (SELECT * FROM Usuarios
+							WHERE NombreUsuario = @NombreUsuario
+								AND Contrasena = @Password)
+    BEGIN
+        PRINT 'La contraseña es incorrecta';
+        RETURN;
+    END
+	 
+	DECLARE @ID_DELUsuario INT;
+
+    SELECT @ID_DELUsuario = UsuarioID
+    FROM Usuarios
+    WHERE Nombreusuario = @NombreUsuario;
+
+    PRINT 'Buenas, Tu ID es: ' + CAST(@ID_DELUsuario AS VARCHAR(1));
+
+end
+GO
+
+
+select * from usuarios
+
+Exec sp_Loguin @NombreUsuario ='Pirata' , @password='YoSoyColaTuPegamento'
+Go
+-- Buenas, Tu ID es: 1 
+	
+
+
+Exec sp_Loguin @NombreUsuario='2' , @password ='12345'
+Go
+--La contraseña es incorrecta
+
+Exec sp_Loguin @NombreUsuario='55' , @password ='Who?'
+Go
+--Error: El usuario no existe
+
+
+Exec sp_Loguin @NombreUsuario ='Pirata' , @password='YoSoyColaTuPegamento'
+Go
+-- Buenas, Tu ID es: 1
+Exec sp_Loguin @NombreUsuario='2' , @password ='12345'
+Go
+--Error: El usuario no existe 
+	
+Exec sp_Loguin @NombreUsuario='Pirata' , @password ='1234'
+Go
+--	La contraseña es incorrecta
