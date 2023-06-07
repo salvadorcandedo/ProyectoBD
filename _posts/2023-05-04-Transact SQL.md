@@ -20,35 +20,39 @@ tags:
   - 
 ---
 
-- [Entorno de trabajo](#entorno-de-trabajo)
-  - [Informacion sobre la instalacion](#informacion-sobre-la-instalacion)
-- [Apuntes Transact SQL](#apuntes-transact-sql)
-  - [Funciones del sistema](#funciones-del-sistema)
-- [Concatenación](#concatenación)
-  - [Where](#where)
-- [Operador de igualdad](#operador-de-igualdad)
+- [1.-  SELECTS](#1---selects)
+  - [SELECT CONCATENADO](#select-concatenado)
+    - [Excepción campo numeric/decimal/integer](#excepción-campo-numericdecimalinteger)
+  - [DEFINIR CABECERAS](#definir-cabeceras)
+- [Filtros con expresiones lógicas](#filtros-con-expresiones-lógicas)
+  - [WHERE](#where)
+  - [Where =](#where-)
+  - [Where \>](#where--1)
+  - [Where \<](#where--2)
+- [Ordenación de datos de salida](#ordenación-de-datos-de-salida)
+  - [Order by](#order-by)
+    - [con DESC (descendiente)](#con-desc-descendiente)
+- [Expresiones regulares](#expresiones-regulares)
+  - [Like % (wildcard)](#like--wildcard)
+    - [LIKE con Expresión "^"](#like-con-expresión-)
+    - [LIKE con Expresión "\_"](#like-con-expresión-_)
+- [Funciones de agregación](#funciones-de-agregación)
+  - [COUNT](#count)
+  - [Sum](#sum)
+  - [MAX](#max)
+  - [MIN](#min)
+  - [AVG](#avg)
+  - [DISTINCT](#distinct)
+- [Agrupación](#agrupación)
+  - [Group by](#group-by)
+- [And / OR](#and--or)
 - [Operador Not](#operador-not)
-- [Operadores and/or](#operadores-andor)
-- [Campos calculados](#campos-calculados)
-- [Predicados](#predicados)
   - [Between](#between)
   - [In](#in)
-  - [Like %](#like-)
-    - [Expresión "^"](#expresión-)
-    - [Expresión "\_"](#expresión-_)
-  - [Distinct](#distinct)
-  - [Order by](#order-by)
-    - [Ordenar por `campos calculados`](#ordenar-por-campos-calculados)
   - [Datepart](#datepart)
   - [OFFSET](#offset)
-- [Funciones de Agregación](#funciones-de-agregación)
-  - [MAX/MIN](#maxmin)
-    - [Max](#max)
-    - [Min](#min)
-  - [Count](#count)
-  - [AVG (average)](#avg-average)
-  - [Sum](#sum)
-  - [GROUP BY](#group-by)
+- [Funciones de Agregación](#funciones-de-agregación-1)
+  - [GROUP BY](#group-by-1)
   - [HAVING](#having)
 - [Criterios de agrupamiento](#criterios-de-agrupamiento)
   - [GROUP BY ROLLUP](#group-by-rollup)
@@ -61,12 +65,6 @@ tags:
   - [INNER JOIN](#inner-join)
   - [LEFT OUTER JOIN](#left-outer-join)
   - [RIGHT OUTER JOIN](#right-outer-join)
-- [Operadores de relacion](#operadores-de-relacion)
-  - [= (Igual que)](#-igual-que)
-  - [!= (no es igual)](#-no-es-igual)
-  - [\< (menor que)](#-menor-que)
-  - [\>= (mayor que)](#-mayor-que)
-  - [\<= (menor o igual que)](#-menor-o-igual-que)
 - [Procedimientos de almacenado](#procedimientos-de-almacenado)
   - [Con Update](#con-update)
   - [Con variables \\  IF NOT EXISTS](#con-variables---if-not-exists)
@@ -92,14 +90,8 @@ tags:
 
 
 
-# Entorno de trabajo
-Ya que trabajo desde casa y mi portátil no tiene los requisitos necesarios para manejar mi máquina de Windows con MS SQL, opté por instalar una instancia de MS SQL dockerizada en mi Raspberry Pi y conectarme a ella desde mi host Windows 10 desde Visual Studio Code.
 
-<p align="center">
-<img src="/ProyectoBD/assets/images/Transact/1.png">
-</p>
-
-##  Informacion sobre la instalacion
+## Comentario previo al trabajo de TransactSQL
 
 <p>
   Proceso de instalacion de 
@@ -115,22 +107,12 @@ Ya que trabajo desde casa y mi portátil no tiene los requisitos necesarios para
 </p>
 
 
-#  Apuntes Transact SQL
-```sql
-
-Use pubs
-Select * from dbo.authors
-Go
---- 	(23 filas afectadas) 
-
-```
-
 
 ## Funciones del sistema
 
 Sacar el nombre de la base de datos
 ```sql
-select db_name()
+SELECT db_name()
 Go
 ```
 Nombre Inicio de sesion original 
@@ -140,98 +122,46 @@ Print original_login()
 
 ----------------------------------
 
-#  Concatenación
 
----
-> Vamos a concatenar dos columnas de la tabla employess y que nos los separe con una coma :
+
+# 1.-  SELECTS
+
 
 ```sql
-Select fname + ' , ' +lname as [Nombre Completo]
+USE AdmFincas
+GO
+SELECT * FROM alquileres
+GO
+--	(12 filas afectadas)
+```
+
+  ## SELECT CONCATENADO
+> Aquí realizo un SELECT y lo concateno con dos pipes
+
+```sql
+USE AdmFincas
+GO
+SELECT Nombre + '||' + Email 
+FROM Inquilinos
+GO
+```
+
+> Aqui con una coma usando pubs
+
+```sql
+USE pubs
+SELECT fname + ' , ' +lname 
 From employee
 Go 
 ```
-
 <p align="center">
 <img src="/ProyectoBD/assets/images/Transact/2.png">
 </p>
 
-
-## Where
+### Excepción campo numeric/decimal/integer
+> Si se trata de un dato tipo numeric,decimal o integer el  número se sumará 
 ```sql
-Select lname,fname
-From employee
-Where minit is null
-Go
--- 	(0 filas afectadas)
-```
-
-# Operador de igualdad 
-```sql
---  Ver el nombre de usuario "Cruz"
-
-Select lname,fname
-From employee
-Where lname= 'Cruz';
-Go
-
----(1 fila afectada) 
--- 
-
- -- podemos hacer el contrario del comando,con la expresion -- "!="
-
-
-Select lname,fname
-From employee
-Where lname != 'Cruz';
-Go
---- (42 filas afectadas)
-```
-
-# Operador Not
-
-```sql
-Select lname,fname
-From employee
-Where not lname= 'Cruz';
-Go
-
----42 filas afectadas) 
----Total execution time: 00:00:00.022
-```
-
-
-#  Operadores and/or
-
-```sql
-Select lname,fname,job_id
-From employee
-Where (job_id='13')
-and lname= 'Cruz'
-or fname = 'Paolo';
-Go
----(1 fila afectada)
-
-```
-
-# Campos calculados
-> Es temporal,no se guarda el resultado de la operación
-
-```sql
-Use AdmFincas
-Select Monto From Gastos
-```
-
-| Monto   |
-|---------|
-| 200.00  |
-| 300.00  |
-| 400.00  |
-| 150.00  |
-| 500.00  |
-| 300.00  |
-
-```sql
-Select GastoID,Descripcion,Monto + 50 
+SELECT GastoID,Descripcion,Monto + 50 
 AS Precio
 From Gastos
 Go
@@ -246,60 +176,123 @@ Go
 | 5       | Reparación de ascensor    | 550.00   |
 | 6       | Mantenimiento de piscina  | 350.00   |
 
-# Predicados
-- [Between](#between)
-  - [In](#in)
-  - [Like %](#like-)
-    - [Expresión "^"](#expresión-)
-    - [Expresión "\_"](#expresión-_)
-  - [Distinct](#distinct)
-  - [Order by](#order-by)
-    - [Ordenar por `campos calculados`](#ordenar-por-campos-calculados)
-  - [Datepart](#datepart)
-  - [OFFSET](#offset)
-
-## Between
-> Vamos a sacar el Id del inquilino y el id del contrato de los contratos que se realizaron entre el primer mes del año y el cuarto.
+> podemos evitarlo realizando un cast o un convert sobre el dato que deseemos manipular
 
 ```sql
-SELECT * FROM ContratosAlquiler
-Select InquilinoID,ContratoID,FechaInicio
-FROM ContratosAlquiler
-WHERE FechaInicio BETWEEN '2023-01-1' and '2023-04-01'
----	(3 filas afectadas) 
-```
-
-| InquilinoID | ContratoID | FechaInicio |
-|-------------|------------|-------------|
-| 1           | 1          | 2023-01-01  |
-| 2           | 2          | 2023-02-01  |
-| 3           | 3          | 2023-03-01  |
-
----
-
-## In
-
->Ejemplo donde filtramos por dos calles de interés con el predicado  `in` 
-
-```sql
-Select Direccion 
-From Fincas
-Where Direccion in ('Avenida Central 456','Calle Principal 123')
+USE AdmFincas
+SELECT GastoID,Descripcion,CAST(Monto AS VARCHAR(20)) + '50' 
+AS Precio
+From Gastos
 Go
--- 	(2 filas afectadas)
 ```
 
-| CallesDeInteres |
-|------------------|
-| Calle Principal 123 |
-| Avenida Central 456 |
 
 
-## Like %
+| GastoID | Descripcion                 | Precio    |
+| ------- | --------------------------- | --------- |
+| 1       | Mantenimiento de jardín     | 200.0050  |
+| 2       | Reparación de fontanería    | 300.0050  |
+| 3       | Pintura de fachada          | 400.0050  |
+| 4       | Limpieza común              | 150.0050  |
+| 5       | Reparación de ascensor      | 500.0050  |
+| 6       | Mantenimiento de piscina    | 300.0050  |
+
+## DEFINIR CABECERAS 
+Podemos definir las cabeceras con el uso de AS
+
+```sql
+USE AdmFincas
+GO
+SELECT Nombre + '||' + Email AS 'Informacion Inquilino'
+FROM Inquilinos
+GO
+USE pubs
+SELECT fname + ' , ' +lname AS [Nombre Completo]
+From employee
+Go 
+```
+
+# Filtros con expresiones lógicas
+
+ ##  WHERE
+ Podemos filtrar los datos de una tabla mediante la cláusula WHERE y una condición lógica. (que el ID de la finca sea 1 , o que muestre los alquileres cuyo monto sea mayor que 1050 euros)
+
+  ## Where =
+
+```sql
+USE AdmFincas
+GO
+SELECT FincaID, Monto FROM Alquileres
+WHERE FincaID = 1
+GO
+```
+  ## Where >
+
+```sql
+  USE AdmFincas
+GO
+SELECT FincaID, Monto FROM Alquileres
+WHERE Monto > 1050.00
+GO
+```
+  ## Where <
+ 
+```sql
+USE AdmFincas
+GO
+SELECT FincaID, Monto FROM alquileres
+WHERE Monto < 1000.00
+```
+
+# Ordenación de datos de salida
+Si deseamos ordenar los datos de salida  debemos usar ORDER BY
+
+## Order by
+> Ordenamos De manera Ascendente el precio de las fincas en alquiler
+
+```sql
+SELECT Monto, FincaID 
+From Inquilinos
+Order by Monto
+Go
+```
+
+|Monto   |FincaID|
+|--------|-------|
+|900.00  |4      |
+|900.00  |12     |
+|950.00  |7      |
+|1000.00 |3      |
+|1000.00 |6      |
+|1000.00 |1      |
+|1000.00 |10     |
+|1050.00 |8      |
+|1100.00 |5      |
+|1150.00 |9      |
+|1200.00 |11     |
+|2000.00 |2      |
+
+
+Podemos ordenarlos de manera descencente
+### con DESC (descendiente)
+
+```sql
+SELECT FincaId, Monto
+From Alquileres
+Order by Monto DESC
+Go
+---(12 filas afectadas)
+```
+
+
+# Expresiones regulares
+Si queremos filtrar por de texto, combinaciones de caracteres o patrones particulares debemos usar el LIKE junto con WHERE
+
+## Like % (wildcard)
 >Sacamos todos Emails que contengan "example.com" puede sernos útil para filtrar por empresas de correo electróniuco cómo "yahoo.es" o "gmail.com"
 
 ```sql
-select Nombre,Email
+SELECT Nombre,Email
 from Inquilinos
 where Email like '%example.com'
 ```
@@ -320,7 +313,8 @@ Un ejemplo podría ser la siguiente query usando el operador `OR` :
 SELECT Nombre,Email
 FROM Inquilinos
 WHERE Email LIKE '%@gmail.com' 
-OR Email LIKE '%@yahoo.es';
+OR 
+Email LIKE '%@yahoo.es';
 GO
 ---	(6 filas afectadas)
 ```
@@ -360,7 +354,7 @@ SELECT Telefono,Nombre FROM Inquilinos
 | 555-6666 | Pedro Jiménez  |
 
 ```sql
-Select Nombre,Telefono
+SELECT Nombre,Telefono
 FROM Inquilinos
 WHERE telefono LIKE '555-[1-4]%'
 GO
@@ -374,24 +368,24 @@ GO
 | Carlos Ramírez | 555-1234 |
 | Sergio Ramos   | 555-4444 |
 
-### Expresión "^"
+### LIKE con Expresión "^"
 
 Podemos indicar el contrario de la siguiente forma
 
 ```sql
-Select Nombre,Telefono
+SELECT Nombre,Telefono
 FROM Inquilinos
 WHERE telefono LIKE '555-[^1-4]%'
 GO
 ---(8 filas afectadas)
 ```
 
-### Expresión "_"
+### LIKE con Expresión "_"
 
 Podemos usar el guion bajo para indicar que no sabemos el caracter que ocupa en ese segmento
 
 ```sql
-select Nombre,Telefono 
+SELECT Nombre,Telefono 
 from Inquilinos
 where Telefono like '555-5___'
 GO
@@ -405,9 +399,88 @@ GO
 | Ana Martínez   | 555-5678 |
 | Ana López      | 555-5555 |
 
-## Distinct
 
-Se utiliza para evitar títulos duplicados
+
+# Funciones de agregación
+
+Toman una serie de registros, efectúan una operación sobre todos ellos y devuelven un único resultado
+
+## COUNT  
+
+> Supongamos que nos interesa saber el número de Inquilinos que hay actualmente instalados, con Count(*) contamos todas las filas de esa columna.
+
+```sql
+SELECT Count(InquilinoID) as [Numero de Inquilinos]
+From Inquilinos 
+Go
+---Total execution time: 00:00:00.114
+```
+
+## Sum
+
+> Sum se utiliza para sumar los datos de una columna, por ejemplo, vamos a sumar el monto para obtener los gastos totales 
+
+```sql
+SELECT SUM(Monto) AS TotalGastos
+FROM Gastos;
+---(1 fila afectada)
+```
+
+## MAX
+
+
+Filtramos por la fila que contenga el número más alto en la columna monto
+```sql
+SELECT Max(monto) as COSTE_MAS_ALTO
+from Gastos
+```
+
+| COSTE_MAS_ALTO |
+|-------------|
+|   500.00    |
+
+Podemos sacarlo junto con otra columna con un where
+
+```sql
+SELECT Descripcion, Monto AS COSTE_MAS_ALTO 
+FROM Gastos
+WHERE Monto = (SELECT MAX(Monto) FROM Gastos) 
+```
+
+| Descripcion             | COSTE_MAS_ALTO |
+|-------------------------|-------------|
+| Reparación de ascensor | 500.00       |
+
+
+## MIN 
+
+
+Filtramos por la fila que contanga el menor valor en la columna de Monto.
+```sql
+SELECT Descripcion, Monto AS COSTEMINIMO
+FROM Gastos
+WHERE Monto = (SELECT MIN(Monto) FROM Gastos) 
+```
+
+| Descripcion   | COSTEMINIMO |
+|---------------|-------------|
+| Limpieza común | 150.00     |
+
+## AVG 
+Podemos sacar la media (average) de los datos de una columna
+
+```sql
+USE AdmFincas
+SELECT AVG(Monto) FROM GASTOS as MEDIA_GASTOS
+```
+| MEDIA_GASTOS   |
+|--------------:|
+| 308.333333    |
+
+## DISTINCT
+
+Se utiliza para Mostrar los campos duplicados
+
 Creo varios campos duplicados en mi tabla nombre para demostrar el ejemplo:
 ```sql
 SELECT Nombre FROM Inquilinos
@@ -429,7 +502,7 @@ SELECT Nombre FROM Inquilinos
 | Pedro Jiménez   |
 
 ```sql
-Select distinct nombre
+SELECT distinct nombre
 From usuarios
 Go
 --- 	(6 filas afectadas)
@@ -446,82 +519,157 @@ Go
 
 > Podemos observar cómo nos filtra solo los campos Duplicados en la columna nombres 
 
+# Agrupación
 
-## Order by
-> Ordenamos De manera Ascendente(alfabéticamente) las direcciones de todos los Inquilinos 
+## Group by
+
+Por ejemplo, si deseamos conocer el número de
+fincas correspondientes a un tipo de suelo particular
+```sql
+USE ADMFincas
+SELECT COUNT(AlquilerID) AS 'NUMERO DE FINCAS' , InquilinoID
+FROM ContratosAlquiler 
+GROUP BY InquilinoID
+GO
+```
+Con este Group by ordenamos los ID delos Inquilinos del 1 al 12 y al lado podemos ver el Número de fincas que posee cada uno .
+
+Ya que tengo el nombre de cada Inquilino en otra tabla se me ocurrió hacerle un JOIN 
 
 ```sql
-Select*
-From Inquilinos
-Order by Direccion
+USE ADMFincas
+SELECT COUNT(AlquilerID) AS 'NUMERO DE FINCAS' , I.Nombre 
+FROM ContratosAlquiler CA
+
+INNER JOIN Inquilinos I ON CA.InquilinoID = I.InquilinoID
+GROUP BY I.Nombre, CA.InquilinoID
+GO
+```
+| NUMERO DE FINCAS | Nombre           |
+|-----------------:|-----------------|
+|                1 | Carlos Ramírez  |
+|                2 | Ana Martínez    |
+|                1 | Luisa Torres    |
+|                3 | Sergio Ramos    |
+|                1 | Pedro Jiménez   |
+|                1 | Luisa Torres    |
+|                1 | Cerberus        |
+|                1 | Ana López       |
+|                1 | Pedro Jiménez   |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# And / OR
+
+El operador `OR` nos muestra los datos de los inquilinos que tengan 30 O 33 años
+```sql
+-- OR
+USE AdmFincas
+GO
+SELECT * FROM Inquilinos
+WHERE Edad = 30 OR Edad = 33
+GO
+GO
+```
+El Operador AND nos mostrará los datos de la coluumna Inquilinos que cumplan con ambas condiciones.
+
+```sql
+-- AND
+USE AdmFincas
+GO
+SELECT * FROM Inquilinos
+WHERE InquilinoID = 1 AND Direccion  = 'Avenida Libertad 789'
+GO
+```
+
+# Operador Not
+
+```sql
+USE Pubs
+SELECT lname,fname
+From employee
+Where not lname= 'Cruz';
 Go
----(12 filas afectadas)
+
+---42 filas afectadas) 
+---Total execution time: 00:00:00.022
 ```
 
 
-| InquilinoID | Nombre         | Direccion            | Email              | Telefono  |
-|-------------|----------------|----------------------|--------------------|-----------|
-| 5           | Ana López      | Avenida del Sol 654  | ana@example.com    | 555-5555  |
-| 11          | Ana López      | Avenida del Sol 654  | ana@yahoo.es       | 555-5555  |
-| 1           | Carlos Ramírez | Avenida Libertad 789 | carlos@example.com | 555-1234  |
-| 7           | Carlos Ramírez | Avenida Libertad 789 | carlos@yahoo.es    | 555-1234  |
-| 4           | Sergio Ramos   | Calle Mayor 987      | sergio@example.com | 555-4444  |
-| 10          | Sergio Ramos   | Calle Mayor 987      | sergio@gmail.com   | 555-4444  |
-| 8           | Ana Martínez   | Calle Sol 456        | ana@gmail.com      | 555-5678  |
-| 2           | Ana Martínez   | Calle Sol 456        | ana@example.com    | 555-5678  |
-| 3           | Luisa Torres   | Paseo Marítimo 123   | luisa@example.com  | 555-9012  |
-| 9           | Luisa Torres   | Paseo Marítimo 123   | luisa@yahoo.es     | 555-9012  |
-| 6           | Pedro Jiménez  | Paseo Marítimo 321   | pedro@example.com  | 555-6666  |
-| 12          | Pedro Jiménez  | Paseo Marítimo 321   | pedro@gmail.com    | 555-6666  |
 
-Podemos ordenarlos de manera descencente
+## Between
+> Vamos a sacar el Id del inquilino y el id del contrato de los contratos que se realizaron entre el primer mes del año y el cuarto.
 
 ```sql
-Select*
-From Inquilinos
-Order by Direccion desc
+SELECT * FROM ContratosAlquiler
+SELECT InquilinoID,ContratoID,FechaInicio
+FROM ContratosAlquiler
+WHERE FechaInicio BETWEEN '2023-01-1' and '2023-04-01'
+---	(3 filas afectadas) 
+```
+
+| InquilinoID | ContratoID | FechaInicio |
+|-------------|------------|-------------|
+| 1           | 1          | 2023-01-01  |
+| 2           | 2          | 2023-02-01  |
+| 3           | 3          | 2023-03-01  |
+
+---
+
+## In
+
+>Ejemplo donde filtramos por dos calles de interés con el predicado  `in` 
+
+```sql
+SELECT Direccion 
+From Fincas
+Where Direccion in ('Avenida Central 456','Calle Principal 123')
 Go
----(12 filas afectadas)
+-- 	(2 filas afectadas)
 ```
 
-###  Ordenar por `campos calculados`
-```sql
-Select GastoID,Descripcion,Monto from Gastos
-```
+| CallesDeInteres |
+|------------------|
+| Calle Principal 123 |
+| Avenida Central 456 |
 
-| GastoID | Descripcion               | Monto   |
-|---------|---------------------------|---------|
-| 1       | Mantenimiento de jardín   | 200.00  |
-| 2       | Reparación de fontanería  | 300.00  |
-| 3       | Pintura de fachada        | 400.00  |
-| 4       | Limpieza común            | 150.00  |
-| 5       | Reparación de ascensor    | 500.00  |
-| 6       | Mantenimiento de piscina  | 300.00  |
 
-> Pongamos que necesitamos sumarle 100 euros a todos los montos de la tabla gastos y ordenarlos de forma ascendente:
 
-```sql
-Select GastoID,Descripcion,Monto + 100 as PrecioFinal
-From Gastos
-Order by  PrecioFinal
-Go
-```
 
-| GastoID | Descripcion              | PrecioFinal |
-|---------|--------------------------|-------------|
-| 4       | Limpieza común           | 250.00      |
-| 1       | Mantenimiento de jardín  | 300.00      |
-| 2       | Reparación de fontanería | 400.00      |
-| 6       | Mantenimiento de piscina | 400.00      |
-| 3       | Pintura de fachada       | 500.00      |
-| 5       | Reparación de ascensor   | 600.00      |
 
 
 ## Datepart 
 Podemos Dividir las fechas con datepart y hacer que nos las muestre con columnas personalizadas
 
 ```sql
-Select FincaID,FechaFin,
+SELECT FincaID,FechaFin,
 Datepart(year,FechaFin) as 'Año Final',
 Datepart(month,FechaFin) as 'Mes Final',
 Datepart(day,FechaFin) as 'Dia Final'
@@ -544,7 +692,7 @@ Podemos crear un procedimiento de almacenado para ejecutarlo cuando nos haga fal
 ```sql
 Create or alter procedure fecha_FIN
 As 
-    Select FechaFin,
+    SELECT FechaFin,
         Datepart(year,FechaFin) as 'Año Final',
         Datepart(month,FechaFin) as 'Mes Final',
         Datepart(day,FechaFin) as 'Dia Final'
@@ -563,7 +711,7 @@ Execute fecha_FIN
 
 Con offset podemos saltarnos filas 
 ```sql
-Select InquilinoID from Inquilinos
+SELECT InquilinoID from Inquilinos
 order by InquilinoID
 Offset 1 Rows fetch next 5 rows only
 Go
@@ -573,95 +721,6 @@ Go
 
 
 # Funciones de Agregación
-
-## MAX/MIN
-
-### Max
-
-Filtramos por la fila que contenga el número más alto en la columna monto
-```sql
-select Max(monto) as COSTEMAXIMO
-from Gastos
-```
-
-| COSTEMAXIMO |
-|-------------|
-|   500.00    |
-
-Podemos sacarlo junto con otra columna con un where
-
-```sql
-SELECT Descripcion, Monto AS COSTEMAXIMO 
-FROM Gastos
-WHERE Monto = (SELECT MAX(Monto) FROM Gastos) 
-```
-
-| Descripcion             | COSTEMAXIMO |
-|-------------------------|-------------|
-| Reparación de ascensor | 500.00      |
-
-### Min
-
-Filtramos por la fila que contanga el menor valor en la columna de Monto.
-```sql
-SELECT Descripcion, Monto AS COSTEMINIMO
-FROM Gastos
-WHERE Monto = (SELECT MIN(Monto) FROM Gastos) 
-```
-
-| Descripcion   | COSTEMINIMO |
-|---------------|-------------|
-| Limpieza común | 150.00      |
-
-## Count
-
-> Supongamos que nos interesa saber el número de Inquilinos que hay actualmente instalados, con Count(*) contamos todas las filas de esa columna.
-
-```sql
-Select Count(InquilinoID) as [Numero de Inquilinos]
-From Inquilinos 
-Go
----Total execution time: 00:00:00.114
-```
-
-## AVG (average)
-
-AVG lo usamos para sacar medias 
-> Imaginemos que queremos sacar la media de nuestros gastos de nuestra base de datos, con la siguiente query seleccionamos todos los gastos y realiza una media
-
-```sql
-SELECT Monto FROM Gastos
-SELECT AVG(Monto) AS MediaGastos FROM Gastos;
---- (6 filas afectadas) 
---- 	
---- 	(1 fila afectada)
-```
-
-| MediaGastos |
-|-------------|
-| 308.333333  |
-
-
-| Monto     |
-| --------- |
-| 200.00    |
-| 300.00    |
-| 400.00    |
-| 150.00    |
-| 500.00    |
-| 300.00    |
-| 290.00    |
-
-## Sum
-
-> Sum se utiliza para sumar los datos de una columna, por ejemplo, vamos a sumar el monto para obtener los gastos totales 
-
-```sql
-SELECT SUM(Monto) AS TotalGastos
-FROM Gastos;
----(1 fila afectada)
-```
-
 
 ## GROUP BY
 
@@ -733,7 +792,7 @@ HAVING Monto IS NULL;
 ## Grouping sets ( )
 
 
-Select codigoprecio,sum(codigoprecio) as sumaprecio
+SELECT codigoprecio,sum(codigoprecio) as sumaprecio
 from precio
 group by GROUPING SETS (CodigoPrecio,())
 Go
@@ -818,7 +877,7 @@ SELECT Nombre
 ```sql
 SELECT InquilinoID  as [InquilinosSinContrato] FROM Inquilinos 
     EXCEPT
-Select InquilinoID  FROM ContratosAlquiler 
+SELECT InquilinoID  FROM ContratosAlquiler 
 --- InquilinosSinContrato
 --- 5
 --- 7
@@ -909,38 +968,6 @@ RIGHT OUTER JOIN ContratosAlquiler CA ON I.InquilinoID = CA.InquilinoID;
 ```
 
 RIGHT OUTER JOIN hace lo mismo que left outer join solo que devuelve los campos de la tabla derech (contratos de alquiler) y los registros que coincidan en la tabla de la izquierda (Inquilinos), en esete caso, InquilinoID en la tabla Contratos De alquiler solo tiene 3 filas mientras que en la de Inquilinos hay 6, en este caso no se nos devuelven valores `Null`.
-
-# Operadores de relacion 
-
-
-
-## = (Igual que) 
-
-
-
-
-```sql
-SELECT F.Nombre AS NombrePropiedad
-FROM Fincas F, ContratosAlquiler CA
-WHERE F.FincaID = CA.ContratoID
-AND CA.FechaInicio > '2023-02-01';
-```
-
-
-
-## != (no es igual)
-
-
-## < (menor que)
-
-
-
-## >= (mayor que)
-
-
-## <= (menor o igual que)
-
-
 
 
 
@@ -1249,7 +1276,7 @@ FROM Inquilinos I
 LEFT JOIN ContratosAlquiler CA ON I.InquilinoID = CA.InquilinoID
 GROUP BY I.InquilinoID, I.Nombre;
 ```
-Ahora cuando hagamos un select a la Vista nos aparecera el numero de contratos que tiene cada Inquilino
+Ahora cuando hagamos un SELECT a la Vista nos aparecera el numero de contratos que tiene cada Inquilino
 
 | InquilinoID | Nombre          | CantidadContratos |
 |-------------|-----------------|------------------:|
@@ -1371,7 +1398,7 @@ SELECT FincaID,Monto FROM Alquileres
 ```
 Tabla Alquileres:
 ```sql
-Select top 3 FincaID,Monto FROM Alquileres
+SELECT top 3 FincaID,Monto FROM Alquileres
 ```
 
 | FincaID | Monto    |
@@ -1394,7 +1421,7 @@ WHEN NOT MATCHED BY TARGET THEN
     VALUES (source.FincaID, source.Precionuevo);
 ```
 ```sql
-Select FincaID, Monto from Alquileres
+SELECT FincaID, Monto from Alquileres
 Where FincaID = 3;
 ```
 
