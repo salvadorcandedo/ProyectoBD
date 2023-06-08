@@ -45,32 +45,33 @@ tags:
   - [DISTINCT](#distinct)
 - [Agrupación](#agrupación)
   - [Group by](#group-by)
+  - [HAVING](#having)
+    - [GROUP BY Ejemplo 2](#group-by-ejemplo-2)
+    - [HAVING ejemplo 2](#having-ejemplo-2)
+- [Consultas sobre varias tablas](#consultas-sobre-varias-tablas)
+  - [UNION](#union)
+  - [INTERSECT](#intersect)
+  - [EXCEPT](#except)
+- [JOIN](#join)
+  - [INNER JOIN](#inner-join)
+  - [LEFT JOIN](#left-join)
+  - [RIGHT  JOIN](#right--join)
+- [Subconsultas](#subconsultas)
+- [Integridad referencial](#integridad-referencial)
 - [And / OR](#and--or)
 - [Operador Not](#operador-not)
   - [Between](#between)
   - [In](#in)
   - [Datepart](#datepart)
   - [OFFSET](#offset)
-- [Funciones de Agregación](#funciones-de-agregación-1)
-  - [GROUP BY](#group-by-1)
-  - [HAVING](#having)
 - [Criterios de agrupamiento](#criterios-de-agrupamiento)
   - [GROUP BY ROLLUP](#group-by-rollup)
-  - [Grouping sets ( )](#grouping-sets--)
-- [UNION / INTERSECT / EXCEPT](#union--intersect--except)
-  - [Union (Union de dos tablas diferentes)](#union-union-de-dos-tablas-diferentes)
-  - [Intersect (campos comunes)](#intersect-campos-comunes)
-  - [Except (campos no comunes)](#except-campos-no-comunes)
-- [Join](#join)
-  - [INNER JOIN](#inner-join)
-  - [LEFT OUTER JOIN](#left-outer-join)
-  - [RIGHT OUTER JOIN](#right-outer-join)
+- [](#)
 - [Procedimientos de almacenado](#procedimientos-de-almacenado)
   - [Con Update](#con-update)
   - [Con variables \\  IF NOT EXISTS](#con-variables---if-not-exists)
     - [PROC CAMBIAR CONTRASENA CON IF EXISTS](#proc-cambiar-contrasena-con-if-exists)
 - [Vistas](#vistas)
-- [Subqueries](#subqueries)
 - [Output](#output)
 - [Truncate](#truncate)
 - [Merge](#merge)
@@ -546,7 +547,7 @@ GROUP BY I.Nombre, CA.InquilinoID
 GO
 ```
 | NUMERO DE FINCAS | Nombre           |
-|-----------------:|-----------------|
+|-----------------|-----------------|
 |                1 | Carlos Ramírez  |
 |                2 | Ana Martínez    |
 |                1 | Luisa Torres    |
@@ -557,6 +558,252 @@ GO
 |                1 | Ana López       |
 |                1 | Pedro Jiménez   |
 
+## HAVING
+
+Podemos usar "HAVING" junto con "GROUP BY"
+
+La siguiente query nos muestra los ID´s de los Inquilinos que poseen más de 1 Finca
+```sql
+USE ADMFincas
+SELECT COUNT(AlquilerID) AS 'NUMERO DE FINCAS' , InquilinoID
+FROM ContratosAlquiler 
+GROUP BY InquilinoID
+HAVING Count(AlquilerID) > 1
+GO
+```
+### GROUP BY Ejemplo 2
+
+
+Podemos observar que el email de ana@example.com se repite varias veces, con un COUNT seguido de un GROUP BY podemos sacar el número del total de inquilinos que usan ese email.
+
+```sql
+SELECT Email, COUNT(*) AS TotalInquilinos, Nombre
+FROM Inquilinos
+GROUP BY Email;
+```
+> supongamos que queremos saber cuantos inquilinos tienen el mismo correo electrónico repetido en nuestra tabla 
+
+| Email              | TotalInquilinos |
+|--------------------|-----------------|
+| carlos@example.com | 1               |
+| ana@example.com    | 2               |
+| luisa@example.com  | 1               |
+| sergio@example.com | 1               |
+| pedro@example.com  | 1               |
+
+### HAVING ejemplo 2
+
+> Con el mismo ejemplo anterior supongamos que queremos filtrar los resultados después de aplicar el GROUP BY. De esta forma solo se muestran los campos que muestran solo los correos electrónicos que tienen más de un inquilino asociado.
+
+```sql
+SELECT Email, COUNT(*) AS TotalInquilinos
+FROM Inquilinos
+GROUP BY Email
+HAVING COUNT(*) > 1;
+```
+
+| Email              | TotalInquilinos |
+|--------------------|-----------------|
+| ana@example.com    | 2               |
+
+
+
+# Consultas sobre varias tablas
+
+Para realizar este apartado usaré mi tabla "usuarios" donde registro los datos de los registros en la página web.
+
+## UNION
+  * Duplico la tabla usuarios
+```sql
+SELECT * 
+    INTO UsuariosDuplicado
+    FROM Usuarios
+GO
+```
+ * Realizo cabios en la tabla duplicada.
+  
+  Query:
+  <p>
+  <a href="https://salvadorcandedo.github.io/ProyectoBD/TransactQuerys\TRANSACTSQL\Union Intersect Except\Union.sql"></a> 
+</p>
+
+* Tabla Usuarios:
+  
+| UsuarioID | NombreUsuario | Contrasena              | UltimaModificacion       |
+|----------:|--------------|-------------------------|--------------------------|
+|         1 | Pirata       | YoSoyColaTuPegaMento    | 2023-05-31 09:04:32.730  |
+|         2 | Whom         | 12345A                  | 2023-05-31 13:55:32.360  |
+|         3 | Paquita      | NuevaPassword           | 2023-05-31 09:12:23.570  |
+|         5 | Link         | 12345678                | NULL                     |
+
+
+
+* Tabla UsuariosDuplicado:
+  
+| UsuarioID | NombreUsuario | Contrasena              | UltimaModificacion       |
+|----------:|--------------|-------------------------|--------------------------|
+|         1 | Pirata       | YoSoyColaTuPegaMento    | 2023-05-31 09:04:32.730  |
+|         2 | Uriel        | 12345A                  | 2023-05-31 13:55:32.360  |
+|         3 | Paquita      | NuevaPassword           | 2023-05-31 09:12:23.570  |
+|         5 | Link         | 12345678                | NULL                     |
+|         6 | Manuel       | 1234                    | 2023-06-07 22:39:19.070  |
+
+
+Cuando le realizo el union se nos muestran los datos de ambas tablas inclusive los duplicados en una única respuesta
+
+```sql
+SELECT * FROM Usuarios
+UNION
+SELECT * FROM UsuariosDuplicado
+```
+
+| UsuarioID | NombreUsuario | Contrasena              | UltimaModificacion       |
+|----------:|--------------|-------------------------|--------------------------|
+|         1 | Pirata       | YoSoyColaTuPegaMento    | 2023-05-31 09:04:32.730  |
+|         2 | Uriel        | 12345A                  | 2023-05-31 13:55:32.360  |
+|         2 | Whom         | 12345A                  | 2023-05-31 13:55:32.360  |
+|         3 | Paquita      | NuevaPassword           | 2023-05-31 09:12:23.570  |
+|         5 | Link         | 12345678                | NULL                     |
+|         6 | Manuel       | 1234                    | 2023-06-07 22:39:19.070  |
+
+El usuario con Id 2 al cual se le había realizado el cambio de nombre aparece con el nombre nuevo, también esta el usuario con id 6 que sólo se había añadido en la primera tabla.
+
+
+## INTERSECT
+
+ Intersect devuelve solo los campos comunes en ambas tablas
+
+```sql
+Select * FROM Usuarios
+INTERSECT
+SELECT * FROM UsuariosDuplicado
+```
+
+| UsuarioID | NombreUsuario | Contrasena              | UltimaModificacion       |
+|----------:|--------------|-------------------------|--------------------------|
+|         1 | Pirata       | YoSoyColaTuPegaMento    | 2023-05-31 09:04:32.730  |
+|         3 | Paquita      | NuevaPassword           | 2023-05-31 09:12:23.570  |
+|         5 | Link         | 12345678                | NULL                     |
+
+
+
+## EXCEPT 
+Except nos muestra los campos distintos entre ambas tablas
+
+```sql
+SELECT * FROM Usuarios
+EXCEPT 
+SELECT * FROM UsuariosDuplicado
+```
+
+| UsuarioID | NombreUsuario | Contrasena              | UltimaModificacion       |
+|----------:|--------------|-------------------------|--------------------------|
+|         1 | Pirata       | YoSoyColaTuPegaMento    | 2023-05-31 09:04:32.730  |
+
+
+
+# JOIN
+
+
+
+  ## INNER JOIN
+> Supongamos que queremos  una consulta que nos muestre los nombres de los inquilinos y la fecha de inicio del contrato junto con la de la fecha de finalizacion:
+>  
+```sql
+SELECT I.Nombre AS NombreInquilino, CA.ContratoID, CA.FechaInicio, CA.FechaFin
+FROM Inquilinos I
+INNER JOIN ContratosAlquiler CA ON I.InquilinoID = CA.InquilinoID;
+```
+
+
+> Puedemos usar utilizar la cláusula INNER JOIN para combinar las tablas "ContratosAlquiler" e "Inquilinos" en una sola consulta. 
+
+
+| NombreInquilino | ContratoID | FechaInicio | FechaFin   |
+|-----------------|------------|-------------|------------|
+| Carlos Ramírez  | 1          | 2023-01-01  | 2023-12-31 |
+| Ana Martínez    | 2          | 2023-02-01  | 2023-07-31 |
+| Luisa Torres    | 3          | 2023-03-01  | 2023-09-30 |
+
+
+ "CA" es el alias de tabla para la tabla "ContratosAlquiler", 
+  e "I" es el alias de tabla para la tabla "Inquilinos"
+
+
+
+  ## LEFT JOIN
+
+Queremos obtener una lista de todos los inquilinos junto con los contratos de alquiler correspondientes, incluso aquellos inquilinos que `no` tengan contratos de alquiler. 
+  
+```sql
+SELECT I.Nombre AS NombreInquilino, CA.ContratoID, CA.FechaInicio, CA.FechaFin
+FROM Inquilinos I
+LEFT  JOIN ContratosAlquiler CA ON I.InquilinoID = CA.InquilinoID;
+```
+
+| NombreInquilino | ContratoID | FechaInicio | FechaFin   |
+|-----------------|------------|-------------|------------|
+| Carlos Ramírez  | 1          | 2023-01-01  | 2023-12-31 |
+| Ana Martínez    | 2          | 2023-02-01  | 2023-07-31 |
+| Luisa Torres    | 3          | 2023-03-01  | 2023-09-30 |
+
+Usamos `LEFT OUTER JOIN` para combinar las tablas "Inquilinos" y "ContratosAlquiler" según la columna "InquilinoID". La cláusula LEFT OUTER JOIN devuelve todos los registros de la tabla izquierda (Inquilinos) y los registros coincidentes de la tabla derecha (ContratosAlquiler). Si no hay coincidencias en la tabla derecha, se mostrarán valores `NULL`
+
+| NombreInquilino | ContratoID | FechaInicio | FechaFin   |
+|-----------------|------------|-------------|------------|
+| Carlos Ramírez  | 1          | 2023-01-01  | 2023-12-31 |
+| Ana Martínez    | 2          | 2023-02-01  | 2023-07-31 |
+| Luisa Torres    | 3          | 2023-03-01  | 2023-09-30 |
+| Sergio Ramos    | NULL       | NULL        | NULL       |
+| Ana López       | NULL       | NULL        | NULL       |
+| Pedro Jiménez   | NULL       | NULL        | NULL       |
+
+## RIGHT  JOIN
+
+```sql
+SELECT I.Nombre AS NombreInquilino, CA.ContratoID, CA.FechaInicio, CA.FechaFin
+FROM Inquilinos I
+RIGHT  JOIN ContratosAlquiler CA ON I.InquilinoID = CA.InquilinoID;
+```
+
+RIGHT OUTER JOIN hace lo mismo que left outer join solo que devuelve los campos de la tabla derecha (contratos de alquiler) y los registros que coincidan en la tabla de la izquierda (Inquilinos), en esete caso, InquilinoID en la tabla Contratos De alquiler solo tiene 3 filas mientras que en la de Inquilinos hay 6, en este caso no se nos devuelven valores `Null`.
+
+
+# Subconsultas
+
+ Una subquery  es una consulta dentro de una
+consulta.  
+la  consulta que se encuentra fuera de los parentesis "()" toma los datos del resultado de la query que está dentro de los paréntesis
+
+> Supongamos que queremos obtener una lista de inquilinos que tienen contratos de alquiler activos
+
+```sql
+SELECT Nombre AS NombreInquilino
+FROM Inquilinos
+WHERE InquilinoID IN (SELECT InquilinoID FROM ContratosAlquiler WHERE FechaFin > GETDATE());
+
+--SELECT fechafin from Inquilinos
+--FechaFIn
+--2023-12-31
+--2023-07-31
+--2023-09-30
+
+-- Las fechas de finalizacion de contrato son  mas altas (>) que la fecha actual por lo que se muestran los tres inquilinos en la tabla 
+```
+La subconsulta `SELECT InquilinoID FROM ContratosAlquiler WHERE FechaFin > GETDATE()` se ejecuta primero para obtener una lista de los Inquilinos (InquilinoID).Luego, la consulta principal selecciona los nombres de los inquilinos cuyo InquilinoID está presente en el resultado de la subconsulta(fecha de finalizacion > fecha actual).
+
+| Nombre        |
+|---------------|
+| Carlos Ramírez|
+| Ana Martínez  |
+| Luisa Torres  |
+
+# Integridad referencial
+
+
+
+
+CREATE TABLE 
 
 
 
@@ -577,6 +824,12 @@ GO
 
 
 
+
+
+
+
+
+   
 
 
 
@@ -720,42 +973,8 @@ Go
 
 
 
-# Funciones de Agregación
-
-## GROUP BY
 
 
-Podemos observar que el email de ana@example.com se repite varias veces, con un COUNT seguido de un GROUP BY podemos sacar el número del total de inquilinos que usan ese email.
-
-```sql
-SELECT Email, COUNT(*) AS TotalInquilinos, Nombre
-FROM Inquilinos
-GROUP BY Email;
-```
-> supongamos que queremos saber cuantos inquilinos tienen el mismo correo electrónico repetido en nuestra tabla 
-
-| Email              | TotalInquilinos |
-|--------------------|-----------------|
-| carlos@example.com | 1               |
-| ana@example.com    | 2               |
-| luisa@example.com  | 1               |
-| sergio@example.com | 1               |
-| pedro@example.com  | 1               |
-
-## HAVING
-
-> Con el mismo ejemplo anterior supongamos que queremos filtrar los resultados después de aplicar el GROUP BY. De esta forma solo se muestran los campos que muestran solo los correos electrónicos que tienen más de un inquilino asociado.
-
-```sql
-SELECT Email, COUNT(*) AS TotalInquilinos
-FROM Inquilinos
-GROUP BY Email
-HAVING COUNT(*) > 1;
-```
-
-| Email              | TotalInquilinos |
-|--------------------|-----------------|
-| ana@example.com    | 2               |
 
 # Criterios de agrupamiento 
 
@@ -789,189 +1008,15 @@ FROM Gastos
 GROUP BY ROLLUP(Monto)
 HAVING Monto IS NULL; 
 ```
-## Grouping sets ( )
-
-
-SELECT codigoprecio,sum(codigoprecio) as sumaprecio
-from precio
-group by GROUPING SETS (CodigoPrecio,())
-Go
-
-
-
-# UNION / INTERSECT / EXCEPT 
-
-## Union (Union de dos tablas diferentes)
-
-```sql
-
-SELECT InquilinoID as ID, Nombre FROM Inquilinos
-UNION
-SELECT ClienteID, Nombre From Clientes
-
-```
-
-| ID | Nombre          |
-|----|-----------------|
-| 1  | Carlos Ramírez  |
-| 1  | Laura Rodríguez |
-| 2  | Ana Martínez    |
-| 2  | Roberto Sánchez |
-| 3  | Luisa Torres    |
-| 3  | María González  |
-| 4  | Sergio Ramos    |
-| 5  | Ana López       |
-| 6  | Pedro Jiménez   |
-
-> Unimos el valor del las columnas seleccionadas de la la tabla segunda en la tabla primera. En este caso unimos los IDs de los clientes junto a los nombres de la tabla Clientes en las dos columnas de la tabla Inquilinos.
-
-## Intersect (campos comunes)
-
-La operación INTERSECT se utiliza para combinar los resultados de dos consultas y obtener solo las filas que sean comunes a ambas consultas. Es decir, devuelve los registros que se encuentran en ambas consultas.
-
-
-```sql
-SELECT Nombre as nombreClientes
-	FROM Clientes
-```
-
-| Nombre           |
-|------------------|
-| Laura Rodríguez  |
-| Roberto Sánchez  |
-| María González   |
-
-```sql
-SELECT Nombre as NombreInquilinos
-	FROM Inquilinos
-```
-
-
-| NombreInquilinos |
-|------------------|
-| Carlos Ramírez   |
-| Ana Martínez     |
-| Luisa Torres     |
-| Sergio Ramos     |
-| Ana López        |
-| Pedro Jiménez    |
-
- que Nombres no están en la tabla Inquilinos
-
-```sql
-SELECT Nombre AS 'NombreNoestan'
-	FROM Clientes
-EXCEPT
-SELECT Nombre
-	FROM Inquilinos;
-```
-
-| NombreNoestan    |
-|------------------|
-| Laura Rodríguez  |
-| Roberto Sánchez  |
-| María González   |
-
-## Except (campos no comunes)
-> Queremos saber que Inquilinos no tienen Contrato
-```sql
-SELECT InquilinoID  as [InquilinosSinContrato] FROM Inquilinos 
-    EXCEPT
-SELECT InquilinoID  FROM ContratosAlquiler 
---- InquilinosSinContrato
---- 5
---- 7
---- 8
-```
-Podemos sacar el nombre del inquilino al lado con una subquery:
-```sql
-SELECT I.InquilinoID, I.Nombre as [InquilinosSinContrato]
-FROM Inquilinos I
-WHERE I.InquilinoID IN (
-    SELECT InquilinoID
-    FROM Inquilinos
-    EXCEPT
-    SELECT InquilinoID
-    FROM ContratosAlquiler
-);
-```
-
-| InquilinoID | InquilinosSinContrato |
-|-------------|-----------------------|
-| 5           | Ana López             |
-| 7           | Carlos Ramírez        |
-| 8           | Ana Martínez          |
 
 
 
 
 
 
-# Join
-  ## INNER JOIN
-> Supongamos que queremos  una consulta que nos muestre los nombres de los inquilinos y la fecha de inicio del contrato junto con la de la fecha de finalizacion: 
-```sql
-SELECT I.Nombre AS NombreInquilino, CA.ContratoID, CA.FechaInicio, CA.FechaFin
-FROM Inquilinos I
-INNER JOIN ContratosAlquiler CA ON I.InquilinoID = CA.InquilinoID;
-```
 
 
-> Puedemos usar utilizar la cláusula INNER JOIN para combinar las tablas "ContratosAlquiler" e "Inquilinos" en una sola consulta. 
-
-
-| NombreInquilino | ContratoID | FechaInicio | FechaFin   |
-|-----------------|------------|-------------|------------|
-| Carlos Ramírez  | 1          | 2023-01-01  | 2023-12-31 |
-| Ana Martínez    | 2          | 2023-02-01  | 2023-07-31 |
-| Luisa Torres    | 3          | 2023-03-01  | 2023-09-30 |
-
-
- "CA" es el alias de tabla para la tabla "ContratosAlquiler", 
-  e "I" es el alias de tabla para la tabla "Inquilinos"
-
-
-
-  ## LEFT OUTER JOIN
-
-Queremos obtener una lista de todos los inquilinos junto con los contratos de alquiler correspondientes, incluso aquellos inquilinos que `no` tengan contratos de alquiler. 
-  
-```sql
-SELECT I.Nombre AS NombreInquilino, CA.ContratoID, CA.FechaInicio, CA.FechaFin
-FROM Inquilinos I
-LEFT OUTER JOIN ContratosAlquiler CA ON I.InquilinoID = CA.InquilinoID;
-```
-
-| NombreInquilino | ContratoID | FechaInicio | FechaFin   |
-|-----------------|------------|-------------|------------|
-| Carlos Ramírez  | 1          | 2023-01-01  | 2023-12-31 |
-| Ana Martínez    | 2          | 2023-02-01  | 2023-07-31 |
-| Luisa Torres    | 3          | 2023-03-01  | 2023-09-30 |
-
-Usamos `LEFT OUTER JOIN` para combinar las tablas "Inquilinos" y "ContratosAlquiler" según la columna "InquilinoID". La cláusula LEFT OUTER JOIN devuelve todos los registros de la tabla izquierda (Inquilinos) y los registros coincidentes de la tabla derecha (ContratosAlquiler). Si no hay coincidencias en la tabla derecha, se mostrarán valores `NULL`
-
-| NombreInquilino | ContratoID | FechaInicio | FechaFin   |
-|-----------------|------------|-------------|------------|
-| Carlos Ramírez  | 1          | 2023-01-01  | 2023-12-31 |
-| Ana Martínez    | 2          | 2023-02-01  | 2023-07-31 |
-| Luisa Torres    | 3          | 2023-03-01  | 2023-09-30 |
-| Sergio Ramos    | NULL       | NULL        | NULL       |
-| Ana López       | NULL       | NULL        | NULL       |
-| Pedro Jiménez   | NULL       | NULL        | NULL       |
-
-## RIGHT OUTER JOIN
-
-```sql
-SELECT I.Nombre AS NombreInquilino, CA.ContratoID, CA.FechaInicio, CA.FechaFin
-FROM Inquilinos I
-RIGHT OUTER JOIN ContratosAlquiler CA ON I.InquilinoID = CA.InquilinoID;
-```
-
-RIGHT OUTER JOIN hace lo mismo que left outer join solo que devuelve los campos de la tabla derech (contratos de alquiler) y los registros que coincidan en la tabla de la izquierda (Inquilinos), en esete caso, InquilinoID en la tabla Contratos De alquiler solo tiene 3 filas mientras que en la de Inquilinos hay 6, en este caso no se nos devuelven valores `Null`.
-
-
-
-
+#
 # Procedimientos de almacenado 
 
 Un procedimiento almacenado en SQL Server es un objeto de la base de datos que contiene un conjunto de instrucciones SQL agrupadas bajo un nombre.
@@ -1301,32 +1346,6 @@ Con 'Exec sp_helptext VistaInquilinosConContratos' Podemos ver el codigo de la v
 
 
 
-# Subqueries
- Una subquery o subconsulta anidada, es una consulta SQL que se encuentra dentro de otra consulta principal
- se usa para  aportar valores o resultados que se utilizan en la consulta principal.
-
-> Supongamos que queremos obtener una lista de inquilinos que tienen contratos de alquiler activos
-
-```sql
-SELECT Nombre AS NombreInquilino
-FROM Inquilinos
-WHERE InquilinoID IN (SELECT InquilinoID FROM ContratosAlquiler WHERE FechaFin > GETDATE());
-
---SELECT fechafin from Inquilinos
---FechaFIn
---2023-12-31
---2023-07-31
---2023-09-30
-
--- Las fechas de finalizacion de contrato son  mas altas (>) que la fecha actual por lo que se muestran los tres inquilinos en la tabla 
-```
-La subconsulta `SELECT InquilinoID FROM ContratosAlquiler WHERE FechaFin > GETDATE()` se ejecuta primero para obtener una lista de los Inquilinos (InquilinoID).Luego, la consulta principal selecciona los nombres de los inquilinos cuyo InquilinoID está presente en el resultado de la subconsulta(fecha de finalizacion > fecha actual).
-
-| Nombre        |
-|---------------|
-| Carlos Ramírez|
-| Ana Martínez  |
-| Luisa Torres  |
 
 
 
