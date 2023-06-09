@@ -1,0 +1,2 @@
+USE AdmFincas
+SELECT * FROM FINCAS

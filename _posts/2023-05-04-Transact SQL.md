@@ -68,16 +68,19 @@ tags:
   - [Con Variables](#con-variables)
   - [Estructura IF - ELSE](#estructura-if---else)
   - [Estructura CASE - WHEN - THEN - ELSE](#estructura-case---when---then---else)
+- [Output](#output)
+- [RollBack](#rollback)
+- [Tablas temporales](#tablas-temporales)
 - [Trigers](#trigers)
-- [Triggers](#triggers)
+  - [Listar Triggers](#listar-triggers)
+  - [Triggers en Tablas](#triggers-en-tablas)
+    - [Trigger Longitud de contraseña](#trigger-longitud-de-contraseña)
+    - [Trigger auditar cambios](#trigger-auditar-cambios)
   - [AFTER UPDATE](#after-update)
   - [AFTER INSERT CON ROLLBACK](#after-insert-con-rollback)
   - [AFTER UPDATE](#after-update-1)
   - [AFTER INSERT CON ROLLBACK](#after-insert-con-rollback-1)
 - [Vistas](#vistas)
-- [Output](#output)
-- [RollBack](#rollback)
-- [Tablas temporales](#tablas-temporales)
 
 
 
@@ -983,15 +986,7 @@ En este PROC llamado "ObtenerInquilinos realizamos un select sobre toda la tabla
 
 
 ## Estructura Case
-SELECT campo1, campo2, campo3 AS 'CP',
-CASE CP_CONCELLOS_COD_CONCELLO
-WHEN '(valor)' THEN '(valor)'
-WHEN '(valor)' THEN '(valor)'
-WHEN '(valor)' THEN '(valor)
-ELSE '(Otro valor)'
-END 
-FROM (tabla);
-GO
+
 
 
 >Este procedimiento nos sirve para descubir el nombre de aquellos inquilinos que no estan alquilados.
@@ -1135,9 +1130,115 @@ SELECT Contrasena From Usuarios WHERE NombreUsuario='Whom'
 
 
 
+
+
+
+
+# Output
+La instrucción OUTPUT  se utiliza para devolver los resultados de una operación de inserción(INSERT), actualización(UPDATE) o eliminación(DELETE) en una tabla. 
+
+```sql
+INSERT INTO Inquilinos_New (Nombre, Direccion, Email)
+OUTPUT inserted.InquilinoID
+VALUES ('Diablito Pérez', 'Calle Principal 123', 'juan@yahoo.es');
+GO
+```
+> En este caso nos devuelve el id del Inquilino recien insertado en nuestro caso el 13
+
+```sql
+--InquilinoID
+--13
+```
+
+
+
+
+
+# RollBack
+
+>se puede utilizar la instrucción ROLLBACK para deshacer cambios realizados en la base de datos en caso de que ocurra un error o una condición no deseada. 
+
+Vamos a crear un procedimiento de almacenado donde usamos rollback RollBack para desacer en caso de que ocurra algun error 
+
+
+```sql
+CREATE PROCEDURE RegistrarPago
+    @ContratoID INT,
+    @Monto DECIMAL(10, 2),
+    @FechaPago DATE
+AS
+
+BEGIN
+    BEGIN TRANSACTION;
+
+    BEGIN TRY
+        
+        INSERT INTO Pagos (ContratoID, Monto, FechaPago)
+        VALUES (@ContratoID, @Monto, @FechaPago);
+
+        -- Actualizar el saldo en la tabla ContratosAlquiler
+        UPDATE ContratosAlquiler
+        SET Saldo = Saldo - @Monto
+        WHERE ContratoID = @ContratoID;
+
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        ROLLBACK TRANSACTION;
+        -- Registro el error en una tabla temporal #errores
+        INSERT INTO #Errores (Mensaje, FechaError)
+        VALUES (ERROR_MESSAGE(), GETDATE());
+    END CATCH;
+END;
+```
+# Tablas temporales 
+Las tablas temporales con"#" en su nombre son útiles cuando necesitas almacenar datos temporales durante la sesion.
+son visibles solo para la conexión actual y se eliminan automáticamente cuando la conexión se cierra.
+
+```sql
+-- Crear tabla temporal
+CREATE TABLE #TempInquilinos (
+    InquilinoID INT,
+    Nombre VARCHAR(50),
+    Email VARCHAR(100)
+);
+
+-- Insertar datos en la tabla temporal
+INSERT INTO #TempInquilinos (InquilinoID, Nombre, Email)
+VALUES (1, 'Juancho', 'juachito@example.com'),
+       (2, 'Guybrush Treephood', 'Monkeyisland@example.com'),
+       (3, 'Carlos Gómez', 'Carlos@example.com');
+
+
+SELECT * FROM #TempInquilinos;
+
+DROP TABLE #TempInquilinos;
+```
+
+
+
 # Trigers 
+
+Un trigger  es un objeto de base de datos que se utiliza para responder automáticamente a eventos específicos que ocurren en una tabla, como inserciones(INSERT), actualizaciones(UPDATE) o eliminaciones (DELETE) de registros.
+
+
+## Listar Triggers
+
+```sql
+-- Listar Triggers
+Use AdmFincas;
+SELECT * FROM Sys.triggers
+
+--ListarBonito
+SELECT name AS TriggerName, OBJECT_NAME(parent_id) AS TableName, create_date AS CreatedDate
+FROM sys.triggers
+```
+
+
+## Triggers en Tablas
 > Ahora vamos a crear un trigger que haga que la contrasena deba de tener al menos 8 caracteres cada vez que se realiza un update
 
+### Trigger Longitud de contraseña 
 ```sql
 
 CREATE TRIGGER tr_ValidarLongitudContrasena
@@ -1167,42 +1268,10 @@ EXEC CambiarContrasena @NombreUsuario='Whom',@ContrasenaAntigua='12345A',@NuevaC
 ---La nueva contraseña debe tener 8 o más caracteres.
 
 ```
-
-
-# Triggers
-
-
-
-
+### Trigger auditar cambios
 
 ```sql
--- Listar Triggers
-Use AdmFincas;
-SELECT * FROM Sys.triggers
-
---ListarBonito
-SELECT name AS TriggerName, OBJECT_NAME(parent_id) AS TableName, create_date AS CreatedDate
-FROM sys.triggers
-```
-Un trigger es un objeto de base de datos que se activa automáticamente en respuesta a un evento específico, como una operación de inserción, actualización o eliminación en una tabla.
-
-```sql
-
-CREATE TABLE Usuarios (
-    UsuarioID INT IDENTITY(1,1) PRIMARY KEY,
-    NombreUsuario VARCHAR(50),
-    Contrasena VARCHAR(50),
-    UltimaModificacion DATETIME
-);
--- Insertar datos en la tabla Usuarios
-INSERT INTO Usuarios (NombreUsuario, Contrasena, UltimaModificacion)
-VALUES ('usuario1', 'contrasena1', GETDATE()),
-       ('usuario2', 'contrasena2', GETDATE()),
-       ('usuario3', 'contrasena3', GETDATE());
-
-
-
-CREATE TRIGGER Usuarios_AuditarCambios
+CREATE OR ALTER TRIGGER Usuarios_AuditarCambios
 ON Usuarios
 AFTER UPDATE
 AS
@@ -1235,7 +1304,7 @@ END;
 
 Cuando se actualiza una fila en la tabla "Usuarios", el trigger se dispara y ejecuta una consulta de actualización. La columna "UltimaModificacion" en la tabla "Usuarios" se actualiza con la fecha y hora actuales (GETDATE()) 
 
-Proof:
+
 
 UsuarioID | NombreUsuario | Contrasena            | UltimaModificacion
 --------- | ------------- | --------------------- | ---------------------
@@ -1452,93 +1521,6 @@ Ahora cuando hagamos un SELECT a la Vista nos aparecera el numero de contratos q
 Con 'Exec sp_helptext VistaInquilinosConContratos' Podemos ver el codigo de la vista una Columna "text"
 
 
-
-
-
-
-
-
-
-# Output
-La instrucción OUTPUT  se utiliza para devolver los resultados de una operación de inserción(INSERT), actualización(UPDATE) o eliminación(DELETE) en una tabla. 
-
-```sql
-INSERT INTO Inquilinos_New (Nombre, Direccion, Email)
-OUTPUT inserted.InquilinoID
-VALUES ('Diablito Pérez', 'Calle Principal 123', 'juan@yahoo.es');
-GO
-```
-> En este caso nos devuelve el id del Inquilino recien insertado en nuestro caso el 13
-
-```sql
---InquilinoID
---13
-```
-
-
-
-
-
-# RollBack
-
->se puede utilizar la instrucción ROLLBACK para deshacer cambios realizados en la base de datos en caso de que ocurra un error o una condición no deseada. 
-
-Vamos a crear un procedimiento de almacenado donde usamos rollback RollBack para desacer en caso de que ocurra algun error 
-
-
-```sql
-CREATE PROCEDURE RegistrarPago
-    @ContratoID INT,
-    @Monto DECIMAL(10, 2),
-    @FechaPago DATE
-AS
-
-BEGIN
-    BEGIN TRANSACTION;
-
-    BEGIN TRY
-        
-        INSERT INTO Pagos (ContratoID, Monto, FechaPago)
-        VALUES (@ContratoID, @Monto, @FechaPago);
-
-        -- Actualizar el saldo en la tabla ContratosAlquiler
-        UPDATE ContratosAlquiler
-        SET Saldo = Saldo - @Monto
-        WHERE ContratoID = @ContratoID;
-
-        COMMIT TRANSACTION;
-    END TRY
-    BEGIN CATCH
-        ROLLBACK TRANSACTION;
-        -- Registro el error en una tabla temporal #errores
-        INSERT INTO #Errores (Mensaje, FechaError)
-        VALUES (ERROR_MESSAGE(), GETDATE());
-    END CATCH;
-END;
-```
-# Tablas temporales 
-Las tablas temporales con"#" en su nombre son útiles cuando necesitas almacenar datos temporales durante la sesion.
-son visibles solo para la conexión actual y se eliminan automáticamente cuando la conexión se cierra.
-
-```sql
--- Crear tabla temporal
-CREATE TABLE #TempInquilinos (
-    InquilinoID INT,
-    Nombre VARCHAR(50),
-    Email VARCHAR(100)
-);
-
--- Insertar datos en la tabla temporal
-INSERT INTO #TempInquilinos (InquilinoID, Nombre, Email)
-VALUES (1, 'Juancho', 'juachito@example.com'),
-       (2, 'Guybrush Treephood', 'Monkeyisland@example.com'),
-       (3, 'Carlos Gómez', 'Carlos@example.com');
-
-
-SELECT * FROM #TempInquilinos;
-
-DROP TABLE #TempInquilinos;
-```
 
 
 
