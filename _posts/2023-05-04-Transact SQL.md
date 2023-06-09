@@ -24,6 +24,9 @@ tags:
   - [SELECT CONCATENADO](#select-concatenado)
     - [Excepción campo numeric/decimal/integer](#excepción-campo-numericdecimalinteger)
   - [DEFINIR CABECERAS](#definir-cabeceras)
+- [Criterios de Busqueda](#criterios-de-busqueda)
+- [And / OR](#and--or)
+  - [OFFSET](#offset)
 - [Filtros con expresiones lógicas](#filtros-con-expresiones-lógicas)
   - [WHERE](#where)
   - [Where =](#where-)
@@ -58,36 +61,24 @@ tags:
   - [RIGHT  JOIN](#right--join)
 - [Subconsultas](#subconsultas)
 - [Integridad referencial](#integridad-referencial)
-- [And / OR](#and--or)
-- [Operador Not](#operador-not)
-  - [Between](#between)
-  - [In](#in)
-  - [Datepart](#datepart)
-  - [OFFSET](#offset)
-- [Criterios de agrupamiento](#criterios-de-agrupamiento)
-  - [GROUP BY ROLLUP](#group-by-rollup)
-- [](#)
-- [Procedimientos de almacenado](#procedimientos-de-almacenado)
-  - [Con Update](#con-update)
-  - [Con variables \\  IF NOT EXISTS](#con-variables---if-not-exists)
-    - [PROC CAMBIAR CONTRASENA CON IF EXISTS](#proc-cambiar-contrasena-con-if-exists)
-- [Vistas](#vistas)
-- [Output](#output)
 - [Truncate](#truncate)
 - [Merge](#merge)
-  - [MERGE INTO](#merge-into)
-- [Bloques de instruciones](#bloques-de-instruciones)
-  - [BEGIN \& END](#begin--end)
-  - [BEGIN TRANSACTION](#begin-transaction)
-  - [BEGIN TRY](#begin-try)
-  - [BEGIN CATH](#begin-cath)
-- [RollBack](#rollback)
-- [Tablas temporales](#tablas-temporales)
-- [Ejemplos procedimientos almacenados](#ejemplos-procedimientos-almacenados)
+- [Procedimientos de Almacenado](#procedimientos-de-almacenado)
+  - [Estructura Case](#estructura-case)
+  - [Con Variables](#con-variables)
+  - [Estructura IF - ELSE](#estructura-if---else)
+  - [Estructura CASE - WHEN - THEN - ELSE](#estructura-case---when---then---else)
+- [Trigers](#trigers)
 - [Triggers](#triggers)
   - [AFTER UPDATE](#after-update)
   - [AFTER INSERT CON ROLLBACK](#after-insert-con-rollback)
-- [Campo contrasena segura](#campo-contrasena-segura)
+  - [AFTER UPDATE](#after-update-1)
+  - [AFTER INSERT CON ROLLBACK](#after-insert-con-rollback-1)
+- [Vistas](#vistas)
+- [Output](#output)
+- [RollBack](#rollback)
+- [Tablas temporales](#tablas-temporales)
+- [Ejemplos procedimientos almacenados](#ejemplos-procedimientos-almacenados)
 
 
 
@@ -212,6 +203,47 @@ SELECT fname + ' , ' +lname AS [Nombre Completo]
 From employee
 Go 
 ```
+# Criterios de Busqueda
+# And / OR
+
+El operador `OR` nos muestra los datos de los inquilinos que tengan 30 O 33 años
+```sql
+-- OR
+USE AdmFincas
+GO
+SELECT * FROM Inquilinos
+WHERE Edad = 30 OR Edad = 33
+GO
+GO
+```
+El Operador AND nos mostrará los datos de la coluumna Inquilinos que cumplan con ambas condiciones.
+
+```sql
+-- AND
+USE AdmFincas
+GO
+SELECT * FROM Inquilinos
+WHERE InquilinoID = 1 AND Direccion  = 'Avenida Libertad 789'
+GO
+```
+
+
+
+
+
+## OFFSET 
+
+Con offset podemos saltarnos filas 
+```sql
+SELECT InquilinoID from Inquilinos
+order by InquilinoID
+Offset 1 Rows fetch next 5 rows only
+Go
+```
+> Nos muestra la columna a partir del ID 2 y nos printea las 5 siguientes
+
+
+
 
 # Filtros con expresiones lógicas
 
@@ -800,240 +832,168 @@ La subconsulta `SELECT InquilinoID FROM ContratosAlquiler WHERE FechaFin > GETDA
 
 # Integridad referencial
 
+La integridad referencial en una base de datos se compone de restricciones (constraints) que referencian los datos de una tabla y nos permite proteger la base de datos de 
+algún drop innecesario.
 
 
+Vamos a crear la tabla Empleados que contendrá una foreing key de la tabla Fincas ya que cada encargado tendrá asignada el ID de una finca . A su vez creamos una constraint en con nombre "FK_REFERENCIADA_FINCAID"
 
-CREATE TABLE 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-
-
-
-
-
-
-
-
-
-# And / OR
-
-El operador `OR` nos muestra los datos de los inquilinos que tengan 30 O 33 años
 ```sql
--- OR
 USE AdmFincas
-GO
-SELECT * FROM Inquilinos
-WHERE Edad = 30 OR Edad = 33
-GO
-GO
-```
-El Operador AND nos mostrará los datos de la coluumna Inquilinos que cumplan con ambas condiciones.
+SELECT * FROM Fincas
 
+-- CREO LA TABLA ENCARGADOS CON CONSTRAINT Y CLAVE FORANEA DE LA TABLA FINCAS
+CREATE TABLE Encargados (
+    ID_Encargado INT IDENTITY(1,1) PRIMARY KEY,
+    Nombre VARCHAR(30),
+    FincaID INT,
+   CONSTRAINT FK_REFERENCIADA_FincaID FOREIGN KEY (FincaID) REFERENCES Fincas(FincaID)
+);
+
+
+-- INSERTO DATOS EN LA TABLA ENCARGADOS
+INSERT INTO Encargados (Nombre, FincaID)
+VALUES ('Roberto Carlos', 1),
+         ('Elena Pazos', 1);
+
+
+SELECT * FROM Encargados
+
+--INTENTO DE HACERLE UN DROP A LA TABLA PADRE (FINCAS)
+
+DROP TABLE Fincas
+--	Msg 3726, Level 16, State 1, Line 2
+--- Could not drop object 'Fincas' because it is referenced by a FOREIGN KEY constraint.
+
+--- Quitamos el constraint
+ALTER TABLE Encargados
+DROP CONSTRAINT FK_REFERENCIADA_FincaID;
+GO
+--	Los comandos se han completado correctamente. 
+	
+--	Total execution time: 00:00:00.052
+## Ahora podemos hacerle un drop a fincas
+DROP TABLE Fincas
+```
+
+# Truncate
+Eliminará todos los datos de las tablas mencionadas, pero la estructura de las tablas se mantendrá intacta.
 ```sql
--- AND
-USE AdmFincas
+--- Creo la tabla Prueba
+CREATE TABLE dbo.Prueba
+(
+    ID INT IDENTITY(1,1) NOT NULL PRIMARY KEY, -- primary key column
+    Nombre [NVARCHAR](50),
+    Apellido [NVARCHAR](50) 
+    
+);
 GO
-SELECT * FROM Inquilinos
-WHERE InquilinoID = 1 AND Direccion  = 'Avenida Libertad 789'
-GO
-```
+---Inserto Valores 
+SELECT * FROM Prueba
 
-# Operador Not
-
-```sql
-USE Pubs
-SELECT lname,fname
-From employee
-Where not lname= 'Cruz';
-Go
-
----42 filas afectadas) 
----Total execution time: 00:00:00.022
-```
-
-
-
-## Between
-> Vamos a sacar el Id del inquilino y el id del contrato de los contratos que se realizaron entre el primer mes del año y el cuarto.
-
-```sql
-SELECT * FROM ContratosAlquiler
-SELECT InquilinoID,ContratoID,FechaInicio
-FROM ContratosAlquiler
-WHERE FechaInicio BETWEEN '2023-01-1' and '2023-04-01'
----	(3 filas afectadas) 
-```
-
-| InquilinoID | ContratoID | FechaInicio |
-|-------------|------------|-------------|
-| 1           | 1          | 2023-01-01  |
-| 2           | 2          | 2023-02-01  |
-| 3           | 3          | 2023-03-01  |
-
+INSERT INTO PRUEBA (Nombre, Apellido)
+VALUES ('Salva', 'Candedo'),
+       ('Andrea', 'Candedo');
 ---
+SELECT count(*) [NUMERO DE PRUEBAS]FROM PRUEBA 
+--NUMERO DE PRUEBAS 
+--2
+TRUNCATE TABLE Prueba
+SELECT * FROM Prueba
+-- Me lo muestra vacio pero la tabla sigue ahi
 
-## In
-
->Ejemplo donde filtramos por dos calles de interés con el predicado  `in` 
-
-```sql
-SELECT Direccion 
-From Fincas
-Where Direccion in ('Avenida Central 456','Calle Principal 123')
-Go
--- 	(2 filas afectadas)
 ```
 
-| CallesDeInteres |
-|------------------|
-| Calle Principal 123 |
-| Avenida Central 456 |
+# Merge
+La instrucción MERGE se utiliza para combinar operaciones de inserción, actualización y eliminación en una sola consulta.
 
 
-
-
-
-
-## Datepart 
-Podemos Dividir las fechas con datepart y hacer que nos las muestre con columnas personalizadas
+> En este ejemplo, estamos utilizando MERGE para actualizar los precios de los Alquieres existentes y, si no existen, insertar nuevas propiedades en la tabla "actualizaciondeprecios".
 
 ```sql
-SELECT FincaID,FechaFin,
-Datepart(year,FechaFin) as 'Año Final',
-Datepart(month,FechaFin) as 'Mes Final',
-Datepart(day,FechaFin) as 'Dia Final'
-From Alquileres
+---crear tabla
+DROP TABLE ActualizacionPrecios
+CREATE TABLE ActualizacionPrecios (
+    FincaID INT,
+    PrecioNuevo DECIMAL(10, 2)
+);
+-- Insertar
+INSERT into ActualizacionPrecios(FincaID,PrecioNuevo)
+VALUES (3, 1000.00)
 
-Order By Datepart(year,FechaFin), Datepart(month,FechaFin), Datepart(day,FechaFin) desc
-Go
----	(3 filas afectadas)
+SELECT FincaID,Monto FROM Alquileres
+```
+Tabla Alquileres:
+```sql
+SELECT top 3 FincaID,Monto FROM Alquileres
 ```
 
-| FincaID | FechaFin   | Año Final | Mes Final | Dia Final |
-|---------|------------|-----------|-----------|-----------|
-| 2       | 2023-07-31 | 2023      | 7         | 31        |
-| 3       | 2023-09-30 | 2023      | 9         | 30        |
-| 1       | 2023-12-31 | 2023      | 12        | 31        |
+| FincaID | Monto    |
+|---------|----------|
+| 1       | 1000.00  |
+| 2       | 2000.00  |
+| 3       | 1200.00  |
 
-
-Podemos crear un procedimiento de almacenado para ejecutarlo cuando nos haga falta
 
 ```sql
-Create or alter procedure fecha_FIN
-As 
-    SELECT FechaFin,
-        Datepart(year,FechaFin) as 'Año Final',
-        Datepart(month,FechaFin) as 'Mes Final',
-        Datepart(day,FechaFin) as 'Dia Final'
-    From Alquileres
-    Order By Datepart(year,FechaFin), Datepart(month,FechaFin), Datepart(day,FechaFin) desc
-Go
----Total execution time: 00:00:00.020
+MERGE INTO Alquileres AS target
+USING ActualizacionPrecios AS source
+    ON target.FincaID = source.FincaID
+WHEN MATCHED THEN
+    UPDATE SET target.monto = source.PrecioNuevo , target.FincaID = source.FincaID
+WHEN NOT MATCHED BY TARGET THEN
+    INSERT (FincaID, Monto)
+    VALUES (source.FincaID, source.Precionuevo);
+```
+```sql
+SELECT FincaID, Monto from Alquileres
+Where FincaID = 3;
 ```
 
+| FincaID | Monto    |
+|---------|----------|
+| 3       | 1000.00  |
+
+Este Script revisará los datos en la tabla `ActualizacionPrecios` y los compara con la tabla `Alquileres`
+Cuando ejecutamos el MERGE INTO se compara las columnas de FincaID y Monto con los de FincaID y Precionuevo de la otra tabla, si son iguales entonces realiza un update de ambos campos, si no son iguales actualiza los datos de la tabla `ActualizacionPrecios` en nuesto caso (FincaID=3 Precionuevo=1000.00) en `Alquileres`
+
+
+
+
+# Procedimientos de Almacenado
+
+
+Un procedimiento almacenado es un objeto de la base de datos que contiene un conjunto de instrucciones SQL agrupadas bajo un nombre.
+
+Un ejemplo de un procedimiento de almacenado básico :
 ```sql
-Execute fecha_FIN
----	(3 filas afectadas)
-```
-
-## OFFSET 
-
-Con offset podemos saltarnos filas 
-```sql
-SELECT InquilinoID from Inquilinos
-order by InquilinoID
-Offset 1 Rows fetch next 5 rows only
-Go
-```
-> Nos muestra la columna a partir del ID 2 y nos printea las 5 siguientes
-
-
-
-
-
-
-# Criterios de agrupamiento 
-
-## GROUP BY ROLLUP
-
-con GROUP BY WITH ROLLUP podemos obtener un resumen completo de los datos agrupados, mostrando tanto los resultados específicos de cada grupo como los totales parciales y el total general.
-
-```sql
-SELECT Monto,SUM(Monto) as sumamonto 
-FROM Pagos
-group by ROLLUP (Monto) 
-```
-
-Por ejemplo, podemos sacar la suma total del monto 
-
-
-| Monto   | sumamonto |
-|---------|-----------|
-| 800.00  | 800.00    |
-| 1000.00 | 1000.00   |
-| 1200.00 | 1200.00   |
-| NULL    | 3000.00   |
-
-> El valor null contiene la suma de toda la columna monto 
-
-Podemos filtrar solo por esa fila del resultado con HAVING:
-
-```sql
-SELECT Monto, SUM(Monto) AS sumamonto
-FROM Gastos
-GROUP BY ROLLUP(Monto)
-HAVING Monto IS NULL; 
-```
-
-
-
-
-
-
-
-
-#
-# Procedimientos de almacenado 
-
-Un procedimiento almacenado en SQL Server es un objeto de la base de datos que contiene un conjunto de instrucciones SQL agrupadas bajo un nombre.
-
-```sql
-CREATE PROCEDURE ObtenerInquilinos
+USE AdmFincas
+GO
+CREATE OR ALTER PROCEDURE ObtenerInquilinos
 AS
 BEGIN
     SELECT *
     FROM Inquilinos;
 END;
-
-EXEC ObtenerInquilinos
 ```
-## Con Update
+En este PROC llamado "ObtenerInquilinos realizamos un select sobre toda la tabla inquilinos . A continuación realizo varios procedimientos de almacenado para demostrar el potencial de los mismos:
 
->Este procedimiento nos sirve para descubir el nombre de aquellos inquilinos que no estan alquilados. Ademas se encarga de modificar la columna Alquilado en la tabla Alquileres 
+
+
+## Estructura Case
+SELECT campo1, campo2, campo3 AS 'CP',
+CASE CP_CONCELLOS_COD_CONCELLO
+WHEN '(valor)' THEN '(valor)'
+WHEN '(valor)' THEN '(valor)'
+WHEN '(valor)' THEN '(valor)
+ELSE '(Otro valor)'
+END 
+FROM (tabla);
+GO
+
+
+>Este procedimiento nos sirve para descubir el nombre de aquellos inquilinos que no estan alquilados.
+ Además se encarga de modificar la columna Alquilado en la tabla Alquileres 
 
 
 ```sql
@@ -1082,7 +1042,6 @@ EXEC ActualizarEstadoAlquileres
 | Ana López         |
 | Pedro Jiménez     |
 
----
 
 | No Alquilados     |
 |-------------------|
@@ -1090,22 +1049,23 @@ EXEC ActualizarEstadoAlquileres
 | Ana Martínez      |
 
 
+--- 
 
-## Con variables \  IF NOT EXISTS
+## Con Variables
 
-En el siguiente procedimiento de almacenado comprobamos que el Nombre de usuario  y la contrasena proporcionadas coincidan con el de la tabla 
+En el siguiente procedimiento de almacenado comprobamos que el Nombre de usuario  y la contraseña proporcionadas y almacenadas en una variable  coincidan con el de la tabla 
 
 ```sql
+USE AdmFincas
+
 CREATE OR ALTER PROCEDURE sp_loguin
     @NombreUsuario VARCHAR(50),
     @Password VARCHAR(50)
 AS
 BEGIN
-    SET NOCOUNT ON;
-   
-	IF NOT EXISTS (SELECT * FROM Usuarios WHERE NombreUsuario = @NombreUsuario)
+   IF NOT EXISTS (SELECT * FROM Usuarios WHERE NombreUsuario = @NombreUsuario)
     BEGIN
-        PRINT 'Error: El usuario no existe';
+        PRINT 'El usuario no existe';
         RETURN;
     END
 
@@ -1117,137 +1077,27 @@ BEGIN
         RETURN;
     END
 	 
-   --- Aqui tengo que convertir el ID en un VARCHAR ya que me da error al displayear el int en una string
-	DECLARE @ID_DELUsuario INT;
-
-    SELECT @ID_DELUsuario = UsuarioID
-    FROM Usuarios
-    WHERE Nombreusuario = @NombreUsuario;
-
-    PRINT 'Buenas, Tu ID es: ' + CAST(@ID_DELUsuario AS VARCHAR(3));
-
-end
-GO
-```
-Prueba
-```sql
-Exec sp_Loguin @NombreUsuario ='Pirata' , @password='YoSoyColaTuPegamento'
-Go
--- Buenas, Tu ID es: 1 
-```
-Otro ejemplo pero proporcionando las ID 
-```sql
-CREATE OR ALTER PROCEDURE sp_loguin
-    @Codigousuario INT,
-    @Password VARCHAR(50)
-AS
-BEGIN
-    SET NOCOUNT ON;
-   
-	IF NOT EXISTS (SELECT * FROM Usuarios WHERE UsuarioID = @codigousuario)
-    BEGIN
-        PRINT 'Error: El usuario no existe';
-        RETURN;
-    END
-
-    ELSE IF NOT EXISTS (SELECT * FROM Usuarios
-							WHERE UsuarioId = @Codigousuario
-								AND Contrasena = @Password)
-    BEGIN
-        PRINT 'La contraseña es incorrecta';
-        RETURN;
-    END
-	 
-	DECLARE @nombreUsuario VARCHAR(100);
-
-    SELECT @nombreUsuario = NombreUsuario
-    FROM Usuarios
-    WHERE UsuarioID = @codigousuario;
-
-    PRINT 'Buenas, Tu nombre de usuario es: ' + @nombreUsuario;
-
-end
+    PRINT 'Buenas, ' + @NombreUsuario + ' Login successful';
+END
 GO
 
---- PRUEBAS
 
+-- Prueba loguin correcto
 
-Exec sp_Loguin @codigousuario ='1' , @password='YoSoyColaTuPegamento'
-Go
--- Buenas, Tu nombre de usuario es: Pirata 
+EXEC sp_loguin @NombreUsuario=Pirata, @Password=YoSoyColaTuPegamento
+-- Buenas, Pirata Login successful 
+	
+-- Prueba Password mala
+EXEC sp_loguin @NombreUsuario=Pirata, @Password=1234
+-- La contraseña es incorrecta 
+-- 	
+-- 	Total execution time: 00:00:00.004
+
+EXEC sp_loguin @NombreUsuario=Marina, @Password=1234
+--- El usuario no existe 
 	
 
-Exec sp_Loguin @codigousuario='2' , @password ='12345'
-Go
---La contraseña es incorrecta
-
-Exec sp_Loguin @codigousuario='55' , @password ='Who?'
-Go
---Error: El usuario no existe
-
 ```
-
-###  PROC CAMBIAR CONTRASENA CON IF EXISTS
-
-Creo un procedimiento de almacenado que pregunte por el Nombre de usuario la contrasena antigua y una nueva y los guardo en variables 
-
-```sql
-
---- PROC CAMBIAR CONTRASENA CON IF EXISTS
-
-CREATE OR ALTER PROCEDURE CambiarContrasena
-    @NombreUsuario NVARCHAR(50),
-    @ContrasenaAntigua NVARCHAR(20),
-    @NuevaContrasena NVARCHAR(20)
-AS
-BEGIN
-    -- Verificar si el usuario existe por su nombre de usuario
-    IF EXISTS (SELECT 1 FROM Usuarios WHERE NombreUsuario = @NombreUsuario)
-    BEGIN
-        -- Coincide la contrasena antigua?
-        IF EXISTS (SELECT 1 FROM Usuarios WHERE NombreUsuario = @NombreUsuario AND Contrasena = @ContrasenaAntigua)
-        BEGIN
-            -- Contrasena debe ser menor o igual a 20 :
-            IF LEN(@NuevaContrasena) <= 20
-            BEGIN
-                -- La contrasena debe contener almenos 1 mayuscula "LIKE '%[A-Z]%'" y un numero "LIKE '%[0-9]%'"
-                IF @NuevaContrasena LIKE '%[A-Z]%' AND @NuevaContrasena LIKE '%[0-9]%'
-                BEGIN
-                    -- Si todo se cumple se actualiza la contrasena
-                    UPDATE Usuarios
-                    SET Contrasena = @NuevaContrasena
-                    WHERE NombreUsuario = @NombreUsuario;
-
-                    PRINT 'Contraseña cambiada correctamente.';
-                END
-                ELSE
-                BEGIN
-                    RAISERROR('La nueva contraseña debe contener al menos una letra mayúscula y un número.', 16, 1);
-                    
-                END
-            END
-            ELSE
-            BEGIN
-                RAISERROR('La nueva contraseña no puede tener más de 20 caracteres.', 16, 1);
-                
-            END
-        END
-        ELSE
-        BEGIN
-            RAISERROR('La contraseña antigua no coincide.', 16, 1);
-            
-        END
-    END
-    ELSE
-    BEGIN
-        RAISERROR('El usuario no existe.', 16, 1);
-       
-    END
-END;
-
-```
-
-
 
 
 ```sql
@@ -1273,6 +1123,14 @@ SELECT Contrasena From Usuarios WHERE NombreUsuario='Whom'
 --|Contrasena |
 --| 12345A    |
 ```
+## Estructura IF - ELSE
+
+
+## Estructura CASE - WHEN - THEN - ELSE
+
+
+
+# Trigers 
 > Ahora vamos a crear un trigger que haga que la contrasena deba de tener al menos 8 caracteres cada vez que se realiza un update
 
 ```sql
@@ -1306,321 +1164,10 @@ EXEC CambiarContrasena @NombreUsuario='Whom',@ContrasenaAntigua='12345A',@NuevaC
 ```
 
 
-# Vistas
- las Vistas representan una consulta almacenada como una tabla virtual. Son resultados precalculados de una consulta que se almacenan en la base de datos y se pueden utilizar como tablas normales en otras consultas. 
-
-
->Podemos crear una vista para obtener un listado de todos los contratos de alquiler activos junto con la información relevante de los inquilinos y las fincas involucradas:
-
-Vista que nos muestra el numero de contratos que posee cada inquilino
-```sql
-CREATE VIEW VistaInquilinosConContratos
-AS
-SELECT I.InquilinoID, I.Nombre, COUNT(CA.ContratoID) AS CantidadContratos
-FROM Inquilinos I
-LEFT JOIN ContratosAlquiler CA ON I.InquilinoID = CA.InquilinoID
-GROUP BY I.InquilinoID, I.Nombre;
-```
-Ahora cuando hagamos un SELECT a la Vista nos aparecera el numero de contratos que tiene cada Inquilino
-
-| InquilinoID | Nombre          | CantidadContratos |
-|-------------|-----------------|------------------:|
-| 1           | Carlos Ramírez  |                 1 |
-| 2           | Ana Martínez    |                 2 |
-| 3           | Luisa Torres    |                 1 |
-| 4           | Sergio Ramos    |                 3 |
-| 5           | Ana López       |                 0 |
-| 6           | Pedro Jiménez   |                 1 |
-| 7           | Carlos Ramírez  |                 0 |
-| 8           | Ana Martínez    |                 0 |
-| 9           | Luisa Torres    |                 1 |
-| 10          | Cerberus        |                 1 |
-| 11          | Ana López       |                 1 |
-| 12          | Pedro Jiménez   |                 1 |
-
-
-Con 'Exec sp_helptext VistaInquilinosConContratos' Podemos ver el codigo de la vista una Columna "text"
-
-
-
-
-
-
-
-
-
-# Output
-La instrucción OUTPUT  se utiliza para devolver los resultados de una operación de inserción(INSERT), actualización(UPDATE) o eliminación(DELETE) en una tabla. 
-
-```sql
-INSERT INTO Inquilinos_New (Nombre, Direccion, Email)
-OUTPUT inserted.InquilinoID
-VALUES ('Diablito Pérez', 'Calle Principal 123', 'juan@yahoo.es');
-GO
-```
-> En este caso nos devuelve el id del Inquilino recien insertado en nuestro caso el 13
-
-```sql
---InquilinoID
---13
-```
-
-
-# Truncate
-Eliminará todos los datos de las tablas mencionadas, pero la estructura de las tablas se mantendrá intacta.
-```sql
---- Creo la tabla Prueba
-CREATE TABLE dbo.Prueba
-(
-    ID INT IDENTITY(1,1) NOT NULL PRIMARY KEY, -- primary key column
-    Nombre [NVARCHAR](50),
-    Apellido [NVARCHAR](50) 
-    
-);
-GO
----Inserto Valores 
-SELECT * FROM Prueba
-
-INSERT INTO PRUEBA (Nombre, Apellido)
-VALUES ('Salva', 'Candedo'),
-       ('Andrea', 'Candedo');
----
-SELECT count(*) [NUMERO DE PRUEBAS]FROM PRUEBA 
---NUMERO DE PRUEBAS 
---2
-TRUNCATE TABLE Prueba
-SELECT * FROM Prueba
--- Me lo muestra vacio pero la tabla sigue ahi
-Drop TABLE Prueba
-SELECT * FROM Prueba
---Msg 208, Level 16, State 1, Line 1
---Invalid object name 'Prueba'.
-```
-# Merge
-La instrucción MERGE se utiliza para combinar operaciones de inserción, actualización y eliminación en una sola consulta.
-
-
-> En este ejemplo, estamos utilizando MERGE para actualizar los precios de los Alquieres existentes y, si no existen, insertar nuevas propiedades en la tabla "actualizaciondeprecios".
-
-```sql
----crear tabla
-DROP TABLE ActualizacionPrecios
-CREATE TABLE ActualizacionPrecios (
-    FincaID INT,
-    PrecioNuevo DECIMAL(10, 2)
-);
--- Insertar
-INSERT into ActualizacionPrecios(FincaID,PrecioNuevo)
-VALUES (3, 1000.00)
-
-SELECT FincaID,Monto FROM Alquileres
-```
-Tabla Alquileres:
-```sql
-SELECT top 3 FincaID,Monto FROM Alquileres
-```
-
-| FincaID | Monto    |
-|---------|----------|
-| 1       | 1000.00  |
-| 2       | 2000.00  |
-| 3       | 1200.00  |
-
-
-## MERGE INTO
-
-```sql
-MERGE INTO Alquileres AS target
-USING ActualizacionPrecios AS source
-    ON target.FincaID = source.FincaID
-WHEN MATCHED THEN
-    UPDATE SET target.monto = source.PrecioNuevo , target.FincaID = source.FincaID
-WHEN NOT MATCHED BY TARGET THEN
-    INSERT (FincaID, Monto)
-    VALUES (source.FincaID, source.Precionuevo);
-```
-```sql
-SELECT FincaID, Monto from Alquileres
-Where FincaID = 3;
-```
-
-| FincaID | Monto    |
-|---------|----------|
-| 3       | 1000.00  |
-
-Este Script revisara los datos en la tabla `ActualizacionPrecios` y los compara con la tabla `Alquileres`
-Cuando ejecutamos el MERGE INTO se compara las columnas de FincaID y Monto con los de FincaID y Precionuevo de la otra tabla, si son iguales entonces realiza un update de ambos campos, si no son iguales actualiza los datos de la tabla `ActualizacionPrecios` en nuesto caso (FincaID=3 Precionuevo=1000.00) en `Alquileres`
-
-
-
-# Bloques de instruciones 
-
-  ## BEGIN & END
-Permiten agrupar varias instrucciones SQL juntas y ejecutarlas como una unidad lógica. 
-
-```sql
-BEGIN
-    UPDATE Inquilinos
-    SET Direccion = 'Calle Nueva 123',
-        Email = 'NuevoCorreo@gmail.com'
-    WHERE InquilinoID = 1;
-
-    UPDATE ContratosAlquiler
-    SET Monto = 1200.00
-    WHERE InquilinoID = 1;
-END;
-```
->Además de BEGIN y END, existen otras palabras clave para controlar la transacción y manejar excepciones en bloques de código. 
-  ## BEGIN TRANSACTION
-  + Indica el inicio de una transacción. Una transacción es una unidad lógica de trabajo que consiste en una serie de operaciones de base de datos que deben ser tratadas como una entidad única. 
-
-  ## BEGIN TRY
-  + Indica el inicio de un bloque TRY-CATCH,. Se utiliza para encapsular el código que puede generar excepciones y proporciona una estructura en caso de que se produzca un error.
-  ## BEGIN CATH
-  + Se utiliza para capturar y manejar las excepciones que se producen dentro del bloque TRY. 
-  (aquí se puede definir el código que se ejecutará en caso de que se produzca una excepción)
- 
-  ```sql
-BEGIN TRANSACTION;
-  BEGIN TRY
-    UPDATE Fincas
-    SET Propietario = 'Ana Perez'
-    WHERE FincaID = 1;
-
-    -- Insertar nuevo contrato
-    INSERT INTO ContratosAlquiler (AlquilerID,FechaInicio, FechaFin)
-    VALUES (4, '2023-06-01', '2023-12-31');
-  END TRY
-  BEGIN CATCH
-    ROLLBACK;
-    PRINT 'Se produjo un error. Se ha realizado un rollback.';
-  END CATCH;
-
-
----	Started executing query at Line 849
---- 	
---- 	(1 fila afectada) 
---- 	
---- 	(0 filas afectadas) 
---- 	
---- 	Se produjo un error. Se ha realizado un rollback. 
---- 	
---- 	Msg 515, Level 16, State 2, Line 10
---- Cannot insert the value NULL into column 'ContratoID', table 'AdmFincas.dbo.ContratosAlquiler'; column does not allow nulls. INSERT fails. 
---- 	
---- 	Total execution time: 00:00:00.008
-```
-> En este script observamos como se intenta aplicar cambios en la tabla Fincas y en la tabla ContratosAlquiler.
-
-En caso de producirse un error en la query se ejecuta un `rollback` y se deshacen los cambios realizados en ambas tablas, ya que no pudo realizarse el cambio en `ContratosAlquiler` por la clave `ContratoID` tampoco se guardan los cambios en la tabla `Fincas` Por lo que el propietario de la Finca con ID 1 no se cambia .
-
-# RollBack
-
->se puede utilizar la instrucción ROLLBACK para deshacer cambios realizados en la base de datos en caso de que ocurra un error o una condición no deseada. 
-
-Vamos a crear un procedimiento de almacenado donde usamos rollback RollBack para desacer en caso de que ocurra algun error 
-
-
-```sql
-CREATE PROCEDURE RegistrarPago
-    @ContratoID INT,
-    @Monto DECIMAL(10, 2),
-    @FechaPago DATE
-AS
-
-BEGIN
-    BEGIN TRANSACTION;
-
-    BEGIN TRY
-        
-        INSERT INTO Pagos (ContratoID, Monto, FechaPago)
-        VALUES (@ContratoID, @Monto, @FechaPago);
-
-        -- Actualizar el saldo en la tabla ContratosAlquiler
-        UPDATE ContratosAlquiler
-        SET Saldo = Saldo - @Monto
-        WHERE ContratoID = @ContratoID;
-
-        COMMIT TRANSACTION;
-    END TRY
-    BEGIN CATCH
-        ROLLBACK TRANSACTION;
-        -- Registro el error en una tabla temporal #errores
-        INSERT INTO #Errores (Mensaje, FechaError)
-        VALUES (ERROR_MESSAGE(), GETDATE());
-    END CATCH;
-END;
-```
-# Tablas temporales 
-Las tablas temporales con"#" en su nombre son útiles cuando necesitas almacenar datos temporales durante la sesion.
-son visibles solo para la conexión actual y se eliminan automáticamente cuando la conexión se cierra.
-
-```sql
--- Crear tabla temporal
-CREATE TABLE #TempInquilinos (
-    InquilinoID INT,
-    Nombre VARCHAR(50),
-    Email VARCHAR(100)
-);
-
--- Insertar datos en la tabla temporal
-INSERT INTO #TempInquilinos (InquilinoID, Nombre, Email)
-VALUES (1, 'Juancho', 'juachito@example.com'),
-       (2, 'Guybrush Treephood', 'Monkeyisland@example.com'),
-       (3, 'Carlos Gómez', 'Carlos@example.com');
-
-
-SELECT * FROM #TempInquilinos;
-
-DROP TABLE #TempInquilinos;
-```
-
-
-
-# Ejemplos procedimientos almacenados
-
-
-
-```sql
-EXEC ObtenerInformeInquilinosAlquiler
-CREATE OR ALTER PROCEDURE ObtenerInformeInquilinosAlquiler
-AS
-BEGIN
-    
-DECLARE @NombreInquilino NVARCHAR(50);
-    DECLARE @DireccionInquilino NVARCHAR(100);
-    DECLARE @FechaInicioContrato DATE;
-    DECLARE @FechaFinContrato DATE;
-
-    -- Tabla temporal 
-    CREATE TABLE #InformeInquilinosAlquiler (
-        NombreInquilino NVARCHAR(50),
-        DireccionInquilino NVARCHAR(100),
-        FechaInicioContrato DATE,
-        FechaFinContrato DATE
-    );
-
-    -- Consigo los Inquilinos con Contratos de alquiler activos 
-    INSERT INTO #InformeInquilinosAlquiler
-    SELECT I.Nombre, I.Direccion, CA.FechaInicio, CA.FechaFin
-    FROM Inquilinos I
-    INNER JOIN ContratosAlquiler CA ON I.InquilinoID = CA.InquilinoID
-    WHERE CA.FechaInicio <= GETDATE() AND CA.FechaFin >= GETDATE();
-
-        -- Print las variables convierto a varchar las fechas
-        PRINT 'Información del inquilino:';
-        PRINT 'Nombre: ' + @NombreInquilino;
-        PRINT 'Dirección: ' + @DireccionInquilino;
-        PRINT 'Fecha de inicio del contrato: ' + CONVERT(NVARCHAR, @FechaInicioContrato, 103);
-        PRINT 'Fecha de fin del contrato: ' + CONVERT(NVARCHAR, @FechaFinContrato, 103);
-        PRINT '--------------------------------------';
-
-        SET @FilasContador += 1;
-    END;
-```
-
-
 # Triggers
+
+
+
 
 
 ```sql
@@ -1743,4 +1290,293 @@ VALUES ('Link', '12345678');
 	--	Total execution time: 00:00:00.066
 ```
 
-# Campo contrasena segura
+```sql
+-- Listar Triggers
+Use AdmFincas;
+SELECT * FROM Sys.triggers
+
+--ListarBonito
+SELECT name AS TriggerName, OBJECT_NAME(parent_id) AS TableName, create_date AS CreatedDate
+FROM sys.triggers
+```
+Un trigger es un objeto de base de datos que se activa automáticamente en respuesta a un evento específico, como una operación de inserción, actualización o eliminación en una tabla.
+
+```sql
+
+CREATE TABLE Usuarios (
+    UsuarioID INT IDENTITY(1,1) PRIMARY KEY,
+    NombreUsuario VARCHAR(50),
+    Contrasena VARCHAR(50),
+    UltimaModificacion DATETIME
+);
+-- Insertar datos en la tabla Usuarios
+INSERT INTO Usuarios (NombreUsuario, Contrasena, UltimaModificacion)
+VALUES ('usuario1', 'contrasena1', GETDATE()),
+       ('usuario2', 'contrasena2', GETDATE()),
+       ('usuario3', 'contrasena3', GETDATE());
+
+
+
+CREATE TRIGGER Usuarios_AuditarCambios
+ON Usuarios
+AFTER UPDATE
+AS
+BEGIN
+    UPDATE Usuarios
+    SET UltimaModificacion = GETDATE()
+    FROM Usuarios
+    INNER JOIN inserted ON Usuarios.UsuarioID = inserted.UsuarioID;
+END;
+```
+ ## AFTER UPDATE 
+
+
+ Creamos la tabla "Usuarios" con las columnas UsuarioID, NombreUsuario, Contrasena y UltimaModificacion. 
+
+Luego, creamos un trigger llamado "Usuarios_AuditarCambios" que se activa después de realizar una operación de actualización en la tabla "Usuarios".
+
+```sql
+CREATE TRIGGER Usuarios_AuditarCambios
+ON Usuarios
+AFTER UPDATE
+AS
+BEGIN
+    UPDATE Usuarios
+    SET UltimaModificacion = GETDATE()
+    FROM Usuarios
+    INNER JOIN inserted ON Usuarios.UsuarioID = inserted.UsuarioID;
+END;
+```
+
+Cuando se actualiza una fila en la tabla "Usuarios", el trigger se dispara y ejecuta una consulta de actualización. La columna "UltimaModificacion" en la tabla "Usuarios" se actualiza con la fecha y hora actuales (GETDATE()) 
+
+Proof:
+
+UsuarioID | NombreUsuario | Contrasena            | UltimaModificacion
+--------- | ------------- | --------------------- | ---------------------
+1         | Pirata        | YoSoyColaTuPegaMento   | 2023-05-25 09:04:32.730
+2         | Whom          | helloWorld             | 2023-05-25 09:04:32.730
+3         | Paquita       | Paquitasalas123        | 2023-05-25 09:04:32.730
+
+```sql
+SELECT * FROM USUARIOS
+UPDATE Usuarios
+Set Contrasena = 'NuevaPassword'
+WHERE UsuarioID= '3'
+```
+
+UsuarioID | NombreUsuario | Contrasena           | UltimaModificacion
+--------- | ------------- | -------------------- | --------------------------
+1         | Pirata        | YoSoyColaTuPegaMento  | 2023-05-25 09:04:32.730
+2         | Whom          | helloWorld            | 2023-05-25 09:04:32.730
+3         | Paquita       | NuevaPassword         | 2023-05-25 09:12:23.570
+
+
+
+## AFTER INSERT CON ROLLBACK
+
+```sql
+CREATE TRIGGER tr_ContrasenaLarga
+ON usuarios
+AFTER INSERT
+AS
+BEGIN
+    
+    IF EXISTS (SELECT 1 FROM inserted WHERE LEN(Contrasena) < 8)
+    BEGIN
+        RAISERROR ('La contraseña debe tener al menos 8 caracteres', 16, 1);
+        ROLLBACK;
+    END;
+END;
+
+SELECT * from usuarios
+```
+```sql
+INSERT INTO Usuarios (NombreUsuario, Contrasena)
+VALUES ('Link', '1234');
+
+-- Msg 50000, Level 16, State 1, Procedure tr_ContrasenaLarga, Line 12
+-- La contraseña debe tener al menos 8 caracteres 
+-- 	
+-- 	Msg 3609, Level 16, State 1, Line 1
+-- The transaction ended in the trigger. The batch has been aborted.
+```
+>Al no cumplir con las condiciones del Trigger este realiza un rollback y muestra el error de que la contrasena almenos debe de poseer 8 caracteres .
+
+```sql
+INSERT INTO Usuarios (NombreUsuario, Contrasena)
+VALUES ('Link', '12345678');
+--	Started executing query at Line 1054
+	--	Total execution time: 00:00:00.066
+```
+
+
+# Vistas
+ las Vistas representan una consulta almacenada como una tabla virtual. Son resultados precalculados de una consulta que se almacenan en la base de datos y se pueden utilizar como tablas normales en otras consultas. 
+
+
+>Podemos crear una vista para obtener un listado de todos los contratos de alquiler activos junto con la información relevante de los inquilinos y las fincas involucradas:
+
+Vista que nos muestra el numero de contratos que posee cada inquilino
+```sql
+CREATE VIEW VistaInquilinosConContratos
+AS
+SELECT I.InquilinoID, I.Nombre, COUNT(CA.ContratoID) AS CantidadContratos
+FROM Inquilinos I
+LEFT JOIN ContratosAlquiler CA ON I.InquilinoID = CA.InquilinoID
+GROUP BY I.InquilinoID, I.Nombre;
+```
+Ahora cuando hagamos un SELECT a la Vista nos aparecera el numero de contratos que tiene cada Inquilino
+
+| InquilinoID | Nombre          | CantidadContratos |
+|-------------|-----------------|------------------:|
+| 1           | Carlos Ramírez  |                 1 |
+| 2           | Ana Martínez    |                 2 |
+| 3           | Luisa Torres    |                 1 |
+| 4           | Sergio Ramos    |                 3 |
+| 5           | Ana López       |                 0 |
+| 6           | Pedro Jiménez   |                 1 |
+| 7           | Carlos Ramírez  |                 0 |
+| 8           | Ana Martínez    |                 0 |
+| 9           | Luisa Torres    |                 1 |
+| 10          | Cerberus        |                 1 |
+| 11          | Ana López       |                 1 |
+| 12          | Pedro Jiménez   |                 1 |
+
+
+Con 'Exec sp_helptext VistaInquilinosConContratos' Podemos ver el codigo de la vista una Columna "text"
+
+
+
+
+
+
+
+
+
+# Output
+La instrucción OUTPUT  se utiliza para devolver los resultados de una operación de inserción(INSERT), actualización(UPDATE) o eliminación(DELETE) en una tabla. 
+
+```sql
+INSERT INTO Inquilinos_New (Nombre, Direccion, Email)
+OUTPUT inserted.InquilinoID
+VALUES ('Diablito Pérez', 'Calle Principal 123', 'juan@yahoo.es');
+GO
+```
+> En este caso nos devuelve el id del Inquilino recien insertado en nuestro caso el 13
+
+```sql
+--InquilinoID
+--13
+```
+
+
+
+
+
+# RollBack
+
+>se puede utilizar la instrucción ROLLBACK para deshacer cambios realizados en la base de datos en caso de que ocurra un error o una condición no deseada. 
+
+Vamos a crear un procedimiento de almacenado donde usamos rollback RollBack para desacer en caso de que ocurra algun error 
+
+
+```sql
+CREATE PROCEDURE RegistrarPago
+    @ContratoID INT,
+    @Monto DECIMAL(10, 2),
+    @FechaPago DATE
+AS
+
+BEGIN
+    BEGIN TRANSACTION;
+
+    BEGIN TRY
+        
+        INSERT INTO Pagos (ContratoID, Monto, FechaPago)
+        VALUES (@ContratoID, @Monto, @FechaPago);
+
+        -- Actualizar el saldo en la tabla ContratosAlquiler
+        UPDATE ContratosAlquiler
+        SET Saldo = Saldo - @Monto
+        WHERE ContratoID = @ContratoID;
+
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        ROLLBACK TRANSACTION;
+        -- Registro el error en una tabla temporal #errores
+        INSERT INTO #Errores (Mensaje, FechaError)
+        VALUES (ERROR_MESSAGE(), GETDATE());
+    END CATCH;
+END;
+```
+# Tablas temporales 
+Las tablas temporales con"#" en su nombre son útiles cuando necesitas almacenar datos temporales durante la sesion.
+son visibles solo para la conexión actual y se eliminan automáticamente cuando la conexión se cierra.
+
+```sql
+-- Crear tabla temporal
+CREATE TABLE #TempInquilinos (
+    InquilinoID INT,
+    Nombre VARCHAR(50),
+    Email VARCHAR(100)
+);
+
+-- Insertar datos en la tabla temporal
+INSERT INTO #TempInquilinos (InquilinoID, Nombre, Email)
+VALUES (1, 'Juancho', 'juachito@example.com'),
+       (2, 'Guybrush Treephood', 'Monkeyisland@example.com'),
+       (3, 'Carlos Gómez', 'Carlos@example.com');
+
+
+SELECT * FROM #TempInquilinos;
+
+DROP TABLE #TempInquilinos;
+```
+
+
+
+# Ejemplos procedimientos almacenados
+
+
+
+```sql
+EXEC ObtenerInformeInquilinosAlquiler
+CREATE OR ALTER PROCEDURE ObtenerInformeInquilinosAlquiler
+AS
+BEGIN
+    
+DECLARE @NombreInquilino NVARCHAR(50);
+    DECLARE @DireccionInquilino NVARCHAR(100);
+    DECLARE @FechaInicioContrato DATE;
+    DECLARE @FechaFinContrato DATE;
+
+    -- Tabla temporal 
+    CREATE TABLE #InformeInquilinosAlquiler (
+        NombreInquilino NVARCHAR(50),
+        DireccionInquilino NVARCHAR(100),
+        FechaInicioContrato DATE,
+        FechaFinContrato DATE
+    );
+
+    -- Consigo los Inquilinos con Contratos de alquiler activos 
+    INSERT INTO #InformeInquilinosAlquiler
+    SELECT I.Nombre, I.Direccion, CA.FechaInicio, CA.FechaFin
+    FROM Inquilinos I
+    INNER JOIN ContratosAlquiler CA ON I.InquilinoID = CA.InquilinoID
+    WHERE CA.FechaInicio <= GETDATE() AND CA.FechaFin >= GETDATE();
+
+        -- Print las variables convierto a varchar las fechas
+        PRINT 'Información del inquilino:';
+        PRINT 'Nombre: ' + @NombreInquilino;
+        PRINT 'Dirección: ' + @DireccionInquilino;
+        PRINT 'Fecha de inicio del contrato: ' + CONVERT(NVARCHAR, @FechaInicioContrato, 103);
+        PRINT 'Fecha de fin del contrato: ' + CONVERT(NVARCHAR, @FechaFinContrato, 103);
+        PRINT '--------------------------------------';
+
+        SET @FilasContador += 1;
+    END;
+```
+
+
