@@ -29,9 +29,9 @@ tags:
   - [OFFSET](#offset)
 - [Filtros con expresiones lógicas](#filtros-con-expresiones-lógicas)
   - [WHERE](#where)
-  - [Where =](#where-)
-  - [Where \>](#where--1)
-  - [Where \<](#where--2)
+  - [Where "="](#where-)
+  - [Where "\>"](#where--1)
+  - [Where "\<"](#where--2)
 - [Ordenación de datos de salida](#ordenación-de-datos-de-salida)
   - [Order by](#order-by)
     - [con DESC (descendiente)](#con-desc-descendiente)
@@ -78,7 +78,6 @@ tags:
 - [Output](#output)
 - [RollBack](#rollback)
 - [Tablas temporales](#tablas-temporales)
-- [Ejemplos procedimientos almacenados](#ejemplos-procedimientos-almacenados)
 
 
 
@@ -248,9 +247,10 @@ Go
 # Filtros con expresiones lógicas
 
  ##  WHERE
+
  Podemos filtrar los datos de una tabla mediante la cláusula WHERE y una condición lógica. (que el ID de la finca sea 1 , o que muestre los alquileres cuyo monto sea mayor que 1050 euros)
 
-  ## Where =
+  ## Where "="
 
 ```sql
 USE AdmFincas
@@ -259,7 +259,7 @@ SELECT FincaID, Monto FROM Alquileres
 WHERE FincaID = 1
 GO
 ```
-  ## Where >
+  ## Where ">"
 
 ```sql
   USE AdmFincas
@@ -268,7 +268,8 @@ SELECT FincaID, Monto FROM Alquileres
 WHERE Monto > 1050.00
 GO
 ```
-  ## Where <
+
+  ## Where "<"
  
 ```sql
 USE AdmFincas
@@ -281,6 +282,7 @@ WHERE Monto < 1000.00
 Si deseamos ordenar los datos de salida  debemos usar ORDER BY
 
 ## Order by
+
 > Ordenamos De manera Ascendente el precio de las fincas en alquiler
 
 ```sql
@@ -506,8 +508,8 @@ Podemos sacar la media (average) de los datos de una columna
 USE AdmFincas
 SELECT AVG(Monto) FROM GASTOS as MEDIA_GASTOS
 ```
-| MEDIA_GASTOS   |
-|--------------:|
+| MEDIA_GASTOS  |
+|---------------|
 | 308.333333    |
 
 ## DISTINCT
@@ -578,8 +580,8 @@ INNER JOIN Inquilinos I ON CA.InquilinoID = I.InquilinoID
 GROUP BY I.Nombre, CA.InquilinoID
 GO
 ```
-| NUMERO DE FINCAS | Nombre           |
-|-----------------|-----------------|
+| NUMERO DE FINCAS | Nombre          |
+|-----------------|------------------|
 |                1 | Carlos Ramírez  |
 |                2 | Ana Martínez    |
 |                1 | Luisa Torres    |
@@ -1070,8 +1072,8 @@ BEGIN
     END
 
     ELSE IF NOT EXISTS (SELECT * FROM Usuarios
-							WHERE NombreUsuario = @NombreUsuario
-								AND Contrasena = @Password)
+		WHERE NombreUsuario = @NombreUsuario
+	AND Contrasena = @Password)
     BEGIN
         PRINT 'La contraseña es incorrecta';
         RETURN;
@@ -1111,6 +1113,7 @@ EXEC CambiarContrasena @NombreUsuario='Whom',@ContrasenaAntigua='123456A',@Nueva
 --LANGUAGE contraseña antigua no coincide.
 
 EXEC CambiarContrasena @NombreUsuario='Whom',@ContrasenaAntigua='1234',@NuevaContrasena='12345A'
+
 --	(1 fila afectada) 
 --- 	
 --- 	(1 fila afectada) 
@@ -1118,11 +1121,13 @@ EXEC CambiarContrasena @NombreUsuario='Whom',@ContrasenaAntigua='1234',@NuevaCon
 --- 	Contraseña cambiada correctamente. 
 --- 	
 --- 	Total execution time: 00:00:00.032
+
 SELECT Contrasena From Usuarios WHERE NombreUsuario='Whom'
 
 --|Contrasena |
 --| 12345A    |
 ```
+
 ## Estructura IF - ELSE
 
 
@@ -1536,47 +1541,5 @@ DROP TABLE #TempInquilinos;
 ```
 
 
-
-# Ejemplos procedimientos almacenados
-
-
-
-```sql
-EXEC ObtenerInformeInquilinosAlquiler
-CREATE OR ALTER PROCEDURE ObtenerInformeInquilinosAlquiler
-AS
-BEGIN
-    
-DECLARE @NombreInquilino NVARCHAR(50);
-    DECLARE @DireccionInquilino NVARCHAR(100);
-    DECLARE @FechaInicioContrato DATE;
-    DECLARE @FechaFinContrato DATE;
-
-    -- Tabla temporal 
-    CREATE TABLE #InformeInquilinosAlquiler (
-        NombreInquilino NVARCHAR(50),
-        DireccionInquilino NVARCHAR(100),
-        FechaInicioContrato DATE,
-        FechaFinContrato DATE
-    );
-
-    -- Consigo los Inquilinos con Contratos de alquiler activos 
-    INSERT INTO #InformeInquilinosAlquiler
-    SELECT I.Nombre, I.Direccion, CA.FechaInicio, CA.FechaFin
-    FROM Inquilinos I
-    INNER JOIN ContratosAlquiler CA ON I.InquilinoID = CA.InquilinoID
-    WHERE CA.FechaInicio <= GETDATE() AND CA.FechaFin >= GETDATE();
-
-        -- Print las variables convierto a varchar las fechas
-        PRINT 'Información del inquilino:';
-        PRINT 'Nombre: ' + @NombreInquilino;
-        PRINT 'Dirección: ' + @DireccionInquilino;
-        PRINT 'Fecha de inicio del contrato: ' + CONVERT(NVARCHAR, @FechaInicioContrato, 103);
-        PRINT 'Fecha de fin del contrato: ' + CONVERT(NVARCHAR, @FechaFinContrato, 103);
-        PRINT '--------------------------------------';
-
-        SET @FilasContador += 1;
-    END;
-```
 
 
