@@ -29,9 +29,9 @@ tags:
   - [OFFSET](#offset)
 - [Filtros con expresiones lógicas](#filtros-con-expresiones-lógicas)
   - [WHERE](#where)
-  - [Where "="](#where-)
-  - [Where "\>"](#where--1)
-  - [Where "\<"](#where--2)
+  - [Where "igual a"](#where-igual-a)
+  - [Where "mayor que"](#where-mayor-que)
+  - [Where "menor que"](#where-menor-que)
 - [Ordenación de datos de salida](#ordenación-de-datos-de-salida)
   - [Order by](#order-by)
     - [con DESC (descendiente)](#con-desc-descendiente)
@@ -73,7 +73,6 @@ tags:
   - [Listar Triggers](#listar-triggers)
     - [TR auditar cambios](#tr-auditar-cambios)
     - [TR\_Longitud de contraseña](#tr_longitud-de-contraseña)
-- [](#)
 - [Vistas](#vistas)
 
 
@@ -142,12 +141,15 @@ SELECT fname + ' , ' +lname
 From employee
 Go 
 ```
+
 <p align="center">
 <img src="/ProyectoBD/assets/images/Transact/2.png">
 </p>
 
 ### Excepción campo numeric/decimal/integer
+
 > Si se trata de un dato tipo numeric,decimal o integer el  número se sumará 
+> 
 ```sql
 SELECT GastoID,Descripcion,Monto + 50 
 AS Precio
@@ -243,11 +245,11 @@ Go
 
 # Filtros con expresiones lógicas
 
- ##  WHERE
+##  WHERE
 
  Podemos filtrar los datos de una tabla mediante la cláusula WHERE y una condición lógica. (que el ID de la finca sea 1 , o que muestre los alquileres cuyo monto sea mayor que 1050 euros)
 
-  ## Where "="
+## Where "igual a"
 
 ```sql
 USE AdmFincas
@@ -256,7 +258,7 @@ SELECT FincaID, Monto FROM Alquileres
 WHERE FincaID = 1
 GO
 ```
-  ## Where ">"
+## Where "mayor que"
 
 ```sql
   USE AdmFincas
@@ -266,7 +268,7 @@ WHERE Monto > 1050.00
 GO
 ```
 
-  ## Where "<"
+## Where "menor que"
  
 ```sql
 USE AdmFincas
@@ -1309,7 +1311,7 @@ VALUES ('Link', '1234');
 >Al no cumplir con las condiciones del Trigger este realiza un rollback y muestra el error de que la contrasena almenos debe de poseer 8 caracteres .
 
 
-#
+
 
 
 # Vistas
