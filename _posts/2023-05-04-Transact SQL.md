@@ -90,7 +90,7 @@ tags:
 
 <p>
   Puedes encontrar mis 
-  <a href="https://salvadorcandedo.github.io/ProyectoBD/DockerizarMssql">QUERYS DE SQL</a> en mi repositorio de Github .
+  <a href="https://github.com/salvadorcandedo/ProyectoBD/tree/master/TransactQuerys/TRANSACTSQL">QUERYS DE SQL</a> en mi repositorio de Github .
 </p>
 
 
