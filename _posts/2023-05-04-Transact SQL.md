@@ -69,7 +69,7 @@ tags:
 - [Output](#output)
 - [RollBack](#rollback)
 - [Tablas temporales](#tablas-temporales)
-- [Trigers](#trigers)
+- [Triggers](#triggers)
   - [Listar Triggers](#listar-triggers)
     - [TR auditar cambios](#tr-auditar-cambios)
     - [TR\_Longitud de contraseña](#tr_longitud-de-contraseña)
@@ -1209,7 +1209,7 @@ DROP TABLE #TempInquilinos;
 
 
 
-# Trigers 
+# Triggers 
 
 Un trigger  es un objeto de base de datos que se utiliza para responder automáticamente a eventos específicos que ocurren en una tabla, como inserciones(INSERT), actualizaciones(UPDATE) o eliminaciones (DELETE) de registros.
 
