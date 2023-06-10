@@ -66,20 +66,14 @@ tags:
 - [Procedimientos de Almacenado](#procedimientos-de-almacenado)
   - [Estructura Case](#estructura-case)
   - [Con Variables](#con-variables)
-  - [Estructura IF - ELSE](#estructura-if---else)
-  - [Estructura CASE - WHEN - THEN - ELSE](#estructura-case---when---then---else)
 - [Output](#output)
 - [RollBack](#rollback)
 - [Tablas temporales](#tablas-temporales)
 - [Trigers](#trigers)
   - [Listar Triggers](#listar-triggers)
-  - [Triggers en Tablas](#triggers-en-tablas)
-    - [Trigger Longitud de contraseña](#trigger-longitud-de-contraseña)
-    - [Trigger auditar cambios](#trigger-auditar-cambios)
-  - [AFTER UPDATE](#after-update)
-  - [AFTER INSERT CON ROLLBACK](#after-insert-con-rollback)
-  - [AFTER UPDATE](#after-update-1)
-  - [AFTER INSERT CON ROLLBACK](#after-insert-con-rollback-1)
+    - [TR auditar cambios](#tr-auditar-cambios)
+    - [TR\_Longitud de contraseña](#tr_longitud-de-contraseña)
+- [](#)
 - [Vistas](#vistas)
 
 
@@ -1123,11 +1117,6 @@ SELECT Contrasena From Usuarios WHERE NombreUsuario='Whom'
 --| 12345A    |
 ```
 
-## Estructura IF - ELSE
-
-
-## Estructura CASE - WHEN - THEN - ELSE
-
 
 
 
@@ -1191,6 +1180,7 @@ BEGIN
     END CATCH;
 END;
 ```
+
 # Tablas temporales 
 Las tablas temporales con"#" en su nombre son útiles cuando necesitas almacenar datos temporales durante la sesion.
 son visibles solo para la conexión actual y se eliminan automáticamente cuando la conexión se cierra.
@@ -1235,40 +1225,15 @@ FROM sys.triggers
 ```
 
 
-## Triggers en Tablas
-> Ahora vamos a crear un trigger que haga que la contrasena deba de tener al menos 8 caracteres cada vez que se realiza un update
+> Vamos a crear un trigger que se dispare cada vez que realizamos un update en la tabla "usuarios"
 
-### Trigger Longitud de contraseña 
-```sql
 
-CREATE TRIGGER tr_ValidarLongitudContrasena
-ON Usuarios
-AFTER UPDATE
-AS
-BEGIN
-   IF UPDATE(Contrasena)
-    BEGIN
-        -- Verificar la longitud de la nueva contraseña
-        IF (SELECT LEN(Contrasena) FROM inserted) < 8
-        BEGIN
-            RAISERROR('La nueva contraseña debe tener 8 o más caracteres.', 16, 1);
-            ROLLBACK TRANSACTION; 
-        END
-    END
-END;
---- Los comandos se han completado correctamente. 
-	
-```
-Ahora veamos que pasa si intento actualizar la contrasena pero tiene menos de 8 caracteres, deberia saltar el trigger aunque use el proc 
+### TR auditar cambios
 
-```sql
-EXEC CambiarContrasena @NombreUsuario='Whom',@ContrasenaAntigua='12345A',@NuevaContrasena='ABCD12'
 
---Msg 50000, Level 16, State 1, Procedure tr_ValidarLongitudContrasena, Line 12
----La nueva contraseña debe tener 8 o más caracteres.
+ Creamos la tabla "Usuarios" con las columnas UsuarioID, NombreUsuario, Contrasena y UltimaModificacion. 
 
-```
-### Trigger auditar cambios
+Luego, creamos un trigger llamado "Usuarios_AuditarCambios" que se activa después de realizar una operación de actualización en la tabla "Usuarios".
 
 ```sql
 CREATE OR ALTER TRIGGER Usuarios_AuditarCambios
@@ -1282,25 +1247,6 @@ BEGIN
     INNER JOIN inserted ON Usuarios.UsuarioID = inserted.UsuarioID;
 END;
 ```
- ## AFTER UPDATE 
-
-
- Creamos la tabla "Usuarios" con las columnas UsuarioID, NombreUsuario, Contrasena y UltimaModificacion. 
-
-Luego, creamos un trigger llamado "Usuarios_AuditarCambios" que se activa después de realizar una operación de actualización en la tabla "Usuarios".
-
-```sql
-CREATE TRIGGER Usuarios_AuditarCambios
-ON Usuarios
-AFTER UPDATE
-AS
-BEGIN
-    UPDATE Usuarios
-    SET UltimaModificacion = GETDATE()
-    FROM Usuarios
-    INNER JOIN inserted ON Usuarios.UsuarioID = inserted.UsuarioID;
-END;
-```
 
 Cuando se actualiza una fila en la tabla "Usuarios", el trigger se dispara y ejecuta una consulta de actualización. La columna "UltimaModificacion" en la tabla "Usuarios" se actualiza con la fecha y hora actuales (GETDATE()) 
 
@@ -1327,7 +1273,9 @@ UsuarioID | NombreUsuario | Contrasena           | UltimaModificacion
 
 
 
-## AFTER INSERT CON ROLLBACK
+### TR_Longitud de contraseña
+
+> Ahora vamos a crear un trigger que haga que la contrasena deba de tener al menos 8 caracteres cada vez que se realiza un insert
 
 ```sql
 CREATE TRIGGER tr_ContrasenaLarga
@@ -1345,7 +1293,9 @@ END;
 
 SELECT * from usuarios
 ```
+
 ```sql
+
 INSERT INTO Usuarios (NombreUsuario, Contrasena)
 VALUES ('Link', '1234');
 
@@ -1355,134 +1305,11 @@ VALUES ('Link', '1234');
 -- 	Msg 3609, Level 16, State 1, Line 1
 -- The transaction ended in the trigger. The batch has been aborted.
 ```
+
 >Al no cumplir con las condiciones del Trigger este realiza un rollback y muestra el error de que la contrasena almenos debe de poseer 8 caracteres .
 
-```sql
-INSERT INTO Usuarios (NombreUsuario, Contrasena)
-VALUES ('Link', '12345678');
---	Started executing query at Line 1054
-	--	Total execution time: 00:00:00.066
-```
 
-```sql
--- Listar Triggers
-Use AdmFincas;
-SELECT * FROM Sys.triggers
-
---ListarBonito
-SELECT name AS TriggerName, OBJECT_NAME(parent_id) AS TableName, create_date AS CreatedDate
-FROM sys.triggers
-```
-Un trigger es un objeto de base de datos que se activa automáticamente en respuesta a un evento específico, como una operación de inserción, actualización o eliminación en una tabla.
-
-```sql
-
-CREATE TABLE Usuarios (
-    UsuarioID INT IDENTITY(1,1) PRIMARY KEY,
-    NombreUsuario VARCHAR(50),
-    Contrasena VARCHAR(50),
-    UltimaModificacion DATETIME
-);
--- Insertar datos en la tabla Usuarios
-INSERT INTO Usuarios (NombreUsuario, Contrasena, UltimaModificacion)
-VALUES ('usuario1', 'contrasena1', GETDATE()),
-       ('usuario2', 'contrasena2', GETDATE()),
-       ('usuario3', 'contrasena3', GETDATE());
-
-
-
-CREATE TRIGGER Usuarios_AuditarCambios
-ON Usuarios
-AFTER UPDATE
-AS
-BEGIN
-    UPDATE Usuarios
-    SET UltimaModificacion = GETDATE()
-    FROM Usuarios
-    INNER JOIN inserted ON Usuarios.UsuarioID = inserted.UsuarioID;
-END;
-```
- ## AFTER UPDATE 
-
-
- Creamos la tabla "Usuarios" con las columnas UsuarioID, NombreUsuario, Contrasena y UltimaModificacion. 
-
-Luego, creamos un trigger llamado "Usuarios_AuditarCambios" que se activa después de realizar una operación de actualización en la tabla "Usuarios".
-
-```sql
-CREATE TRIGGER Usuarios_AuditarCambios
-ON Usuarios
-AFTER UPDATE
-AS
-BEGIN
-    UPDATE Usuarios
-    SET UltimaModificacion = GETDATE()
-    FROM Usuarios
-    INNER JOIN inserted ON Usuarios.UsuarioID = inserted.UsuarioID;
-END;
-```
-
-Cuando se actualiza una fila en la tabla "Usuarios", el trigger se dispara y ejecuta una consulta de actualización. La columna "UltimaModificacion" en la tabla "Usuarios" se actualiza con la fecha y hora actuales (GETDATE()) 
-
-Proof:
-
-UsuarioID | NombreUsuario | Contrasena            | UltimaModificacion
---------- | ------------- | --------------------- | ---------------------
-1         | Pirata        | YoSoyColaTuPegaMento   | 2023-05-25 09:04:32.730
-2         | Whom          | helloWorld             | 2023-05-25 09:04:32.730
-3         | Paquita       | Paquitasalas123        | 2023-05-25 09:04:32.730
-
-```sql
-SELECT * FROM USUARIOS
-UPDATE Usuarios
-Set Contrasena = 'NuevaPassword'
-WHERE UsuarioID= '3'
-```
-
-UsuarioID | NombreUsuario | Contrasena           | UltimaModificacion
---------- | ------------- | -------------------- | --------------------------
-1         | Pirata        | YoSoyColaTuPegaMento  | 2023-05-25 09:04:32.730
-2         | Whom          | helloWorld            | 2023-05-25 09:04:32.730
-3         | Paquita       | NuevaPassword         | 2023-05-25 09:12:23.570
-
-
-
-## AFTER INSERT CON ROLLBACK
-
-```sql
-CREATE TRIGGER tr_ContrasenaLarga
-ON usuarios
-AFTER INSERT
-AS
-BEGIN
-    
-    IF EXISTS (SELECT 1 FROM inserted WHERE LEN(Contrasena) < 8)
-    BEGIN
-        RAISERROR ('La contraseña debe tener al menos 8 caracteres', 16, 1);
-        ROLLBACK;
-    END;
-END;
-
-SELECT * from usuarios
-```
-```sql
-INSERT INTO Usuarios (NombreUsuario, Contrasena)
-VALUES ('Link', '1234');
-
--- Msg 50000, Level 16, State 1, Procedure tr_ContrasenaLarga, Line 12
--- La contraseña debe tener al menos 8 caracteres 
--- 	
--- 	Msg 3609, Level 16, State 1, Line 1
--- The transaction ended in the trigger. The batch has been aborted.
-```
->Al no cumplir con las condiciones del Trigger este realiza un rollback y muestra el error de que la contrasena almenos debe de poseer 8 caracteres .
-
-```sql
-INSERT INTO Usuarios (NombreUsuario, Contrasena)
-VALUES ('Link', '12345678');
---	Started executing query at Line 1054
-	--	Total execution time: 00:00:00.066
-```
+#
 
 
 # Vistas
@@ -1503,7 +1330,7 @@ GROUP BY I.InquilinoID, I.Nombre;
 Ahora cuando hagamos un SELECT a la Vista nos aparecera el numero de contratos que tiene cada Inquilino
 
 | InquilinoID | Nombre          | CantidadContratos |
-|-------------|-----------------|------------------:|
+|-------------|-----------------|------------------ |
 | 1           | Carlos Ramírez  |                 1 |
 | 2           | Ana Martínez    |                 2 |
 | 3           | Luisa Torres    |                 1 |

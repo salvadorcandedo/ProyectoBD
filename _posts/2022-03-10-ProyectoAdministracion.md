@@ -2,7 +2,7 @@
 layout: single
 title: Administracion
 excerpt: "Proyecto Administración Base de Datos "
-date: 2023-04-10
+date: 2023-06-10
 classes: wide
 header:
   teaser: /assets/images/htb-writeup-magic/magic_logo.png
@@ -36,7 +36,7 @@ tags:
   - [Añadir FileGroups](#añadir-filegroups)
   - [Creación de tablas](#creación-de-tablas)
     - [Indicar Clave Primaria](#indicar-clave-primaria)
-    - [anadir datos a una tabla](#anadir-datos-a-una-tabla)
+    - [añadir datos a una tabla](#añadir-datos-a-una-tabla)
     - [Modificar tabla con ALTER](#modificar-tabla-con-alter)
 - [Seguridad y protección SSMS](#seguridad-y-protección-ssms)
   - [Usuarios](#usuarios)
@@ -64,6 +64,12 @@ tags:
   - [Restaurar una base de datos a partir de una copia de seguridad](#restaurar-una-base-de-datos-a-partir-de-una-copia-de-seguridad)
     - [Coppy\_only](#coppy_only)
     - [Tail Backup](#tail-backup)
+- [MongoDB](#mongodb)
+  - [Transformación a un modelo no-SQL](#transformación-a-un-modelo-no-sql)
+    - [Colección Fincas](#colección-fincas)
+  - [Colección propetarios](#colección-propetarios)
+  - [Colección: Inquilinos](#colección-inquilinos)
+  - [Colección: Mantenimientos](#colección-mantenimientos)
 
 
 
@@ -249,7 +255,7 @@ ALTER TABLE Contratos ADD CONSTRAINT Contrato_PK PRIMARY KEY CLUSTERED (ID_Contr
      ALLOW_ROW_LOCKS = ON )
 GO 
 ```
-### anadir datos a una tabla
+### añadir datos a una tabla
 ```sql
 INSERT INTO [dbo].[Contratos]
 VALUES ('1'  , '2Notas2-02-02' , '2003-02-01' )
@@ -677,5 +683,111 @@ RESTORE DATABASE AdmFincas FROM DISK = 'C:\MSSQL\BACKUPS\AdmFincas.bak';
 
 
 
+# MongoDB
+
+MongoDB es un sistema de base de datos NoSQL (Not Only SQL) 
 
 
+Para pasar nuestra base de datos SQL a un modelo NOSQL debemos tener en cuenta:
+
+  *  La estructura de la base de datos pasa a ser  un conjunto de colecciones en lugar de tablas relacionales.
+
+  * Cada colección contendrá documentos que representarán las entidades  del modelo.
+
+  *  Se utilizarán objetos embebidos (anidados) en lugar de referencias externas para representar relaciones uno a uno o uno a pocos.
+
+## Transformación a un modelo no-SQL 
+
+
+### Colección Fincas
+La colección "Fincas" contiene documentos con la información básica de cada finca, incluyendo su ID, nombre, dirección y referencias a las colecciones "Propietarios", "Inquilinos" y "Mantenimientos" a través de IDs.
+```java
+[
+  {
+    "FincaID": 1,
+    "Nombre": "Finca 1",
+    "Direccion": "Calle Principal 123",
+    "PropietarioID": 1,
+    "Inquilinos": [1, 2],
+    "Mantenimientos": [1, 2]
+  },
+  {
+    "FincaID": 2,
+    "Nombre": "Finca 2",
+    "Direccion": "Avenida Central 456",
+    "PropietarioID": 2,
+    "Inquilinos": [3, 4],
+    "Mantenimientos": [3, 4]
+  }
+]
+```
+
+Las colecciones "Propietarios", "Inquilinos" y "Mantenimientos" contienen los documentos con la información detallada de cada entidad. Usé IDs para establecer las relaciones.
+
+## Colección propetarios
+
+```java
+[
+  {
+    "PropietarioID": 1,
+    "Nombre": "Juan Perez"
+  },
+  {
+    "PropietarioID": 2,
+    "Nombre": "Maria Lopez"
+  }
+]
+```
+
+## Colección: Inquilinos
+
+```java
+[
+  {
+    "InquilinoID": 1,
+    "Nombre": "Pedro Martinez"
+  },
+  {
+    "InquilinoID": 2,
+    "Nombre": "Maria Lopez"
+  },
+  {
+    "InquilinoID": 3,
+    "Nombre": "Juan Perez"
+  },
+  {
+    "InquilinoID": 4,
+    "Nombre": "Pedro Martinez"
+  }
+]
+```
+## Colección: Mantenimientos
+
+```java
+[
+  {
+    "MantenimientoID": 1,
+    "FincaID": 1,
+    "Fecha": "2022-01-01",
+    "Descripcion": "Reparación de tuberías"
+  },
+  {
+    "MantenimientoID": 2,
+    "FincaID": 1,
+    "Fecha": "2022-03-01",
+    "Descripcion": "Pintura de fachada"
+  },
+  {
+    "MantenimientoID": 3,
+    "FincaID": 2,
+    "Fecha": "2022-02-01",
+    "Descripcion": "Reparación de ascensor"
+  },
+  {
+    "MantenimientoID": 4,
+    "FincaID": 2,
+    "Fecha": "2022-04-01",
+    "Descripcion": "Limpieza de áreas comunes"
+  }
+]
+```
